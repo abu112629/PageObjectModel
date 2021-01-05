@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Fr</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <rppplanSelectionPO>
+        <spousebuttonYes initial="Indiquez si vous avez un conjoint ou un conjoint de fait.">yes</spousebuttonYes>
+        <connectedPersonbuttonYes initial ="Indiquez si vous êtes une personne rattachée.">no</connectedPersonbuttonYes>
+        <spousebuttonNo>no</spousebuttonNo>
+        <connectedPersonbuttonNo>no</connectedPersonbuttonNo>
+        <spouseFirstNameLabel>
+            <item>Prénom de votre conjoint / conjoint de fait</item>
+        </spouseFirstNameLabel>
+        <spouseSecondNameLabel>
+            <item>Nom de famille de votre conjoint / conjoint de fait</item>
+        </spouseSecondNameLabel>
+        <spouseDOBLabel>
+            <item>Date de naissance de votre conjoint / conjoint de fait</item>
+        </spouseDOBLabel>
+        <spousefirstNameinput>TestFrench</spousefirstNameinput>
+        <spouseSecondNameinput>TESTXYZ</spouseSecondNameinput>
+        <birthDate>Entrez une date de naissance valide. Vérifiez que le jour, le mois et l’année sont exacts.</birthDate>
+        <slctdrpdownMonth>février</slctdrpdownMonth>
+        <birthDay>07</birthDay>
+        <birthYear>2020</birthYear>
+        <connectedPersonDetailedText>
+            <item>
+                Vous êtes une personne rattachée si vous n’êtes pas indépendant de votre employeur, par exemple, si vous êtes un membre de la famille d’un propriétaire de l’entreprise, y compris par les liens du mariage ou de l’adoption. Vous êtes également une personne rattachée si vous êtes un actionnaire déterminé au sens de la Loi de l’impôt sur le revenu (Canada), ou si vous possédez, directement ou indirectement, 10 % ou plus des actions de votre employeur, ou des actions d’une société liée à votre employeur.
+            </item>
+        </connectedPersonDetailedText>
+        <connectedPersonDisclaimer>
+            <item>
+                Si vous êtes une personne rattachée, votre employeur doit soumettre le formulaire T1007 à l’Agence du revenu du Canada dans les 60 jours suivant votre adhésion au RPA.
+            </item>
+        </connectedPersonDisclaimer>
+    </rppplanSelectionPO>
+    <planSelectionPO>
+        <planAdditionalInfoQuestions>
+            <item>
+                Avez-vous un conjoint ou un conjoint de fait?
+            </item>
+            <item>
+                Êtes-vous une personne rattachée?
+            </item>
+        </planAdditionalInfoQuestions>
+        <planList>
+            <item expected="select">
+                RRA
+            </item>
+        </planList>
+        <planHeader>
+            <item>
+                Puisque vous avez sélectionné un RPA, nous avons besoin de renseignements supplémentaires.
+            </item>
+        </planHeader>
+        <plansubHeader>
+            <item>
+                Vous devrez répondre à toutes les questions avant de poursuivre. Selon vos réponses, d’autres questions pourraient s’afficher.
+            </item>
+        </plansubHeader>
+    </planSelectionPO>
+</plan-domain-object>

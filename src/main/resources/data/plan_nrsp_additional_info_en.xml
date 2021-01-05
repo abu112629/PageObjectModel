@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_En</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <nrspAdditionalInfoPO>
+        <usCitizenYes initial="Select if you're a U.S. citizen or resident for tax purposes.">yes</usCitizenYes>
+        <otherCitizenYes initial ="Select if you're a resident of a country other than the U.S. or Canada for tax purposes.">yes</otherCitizenYes>
+        <usCitizenNo>no</usCitizenNo>
+        <otherCitizenNo>no</otherCitizenNo>
+        <secondaryTINyes initial ="Select whether or not you have a TIN for your country/region of tax residence.">yes</secondaryTINyes>
+        <secondaryTINno>no</secondaryTINno>
+        <usTinNumber initial="Enter a valid 9-digit TIN.">123456789</usTinNumber>
+        <selectCountry initial="Select your country/region of tax residence.">AFGHANISTAN</selectCountry>
+        <otherCountryinvalidTIN initial ="Your TIN can only include letters and numbers. Please try again.">@!#</otherCountryinvalidTIN>
+        <otherCountryTIN initial ="Enter your TIN for the selected country/region.">1234567</otherCountryTIN>
+        <ustaxpayerLabel>
+            <item>
+            Enter your U.S. taxpayer identification number (TIN).
+            </item>
+        </ustaxpayerLabel>
+        <otherCountryTINlabel>
+            <item>Enter your TIN for this country/region.</item>
+        </otherCountryTINlabel>
+        <reasonLabel>
+            <item>Let us know why you don't have a TIN for this country.</item>
+        </reasonLabel>
+        <radiobuttonNoOtherTIN initial="Select a reason for why you don't have a TIN.">Other</radiobuttonNoOtherTIN>
+        <reasonExplanationDetails initial="Please explain why you don't have a TIN.">Reason Given</reasonExplanationDetails>
+    </nrspAdditionalInfoPO>
+    <planSelectionPO>
+        <planAdditionalInfoQuestions>
+            <item>
+                Are you a U.S. citizen or resident for tax purposes?
+            </item>
+            <item>
+                Are you a resident of a country other than the U.S. or Canada for tax purposes?
+            </item>
+            <item>
+                Do you have a tax identification number (TIN) for this country/region?
+            </item>
+            <item>
+                Why don't you have a TIN for this country/region?
+            </item>
+        </planAdditionalInfoQuestions>
+        <hintText>
+            <item>Your TIN is a 9-digit number.</item>
+            <item>Max. 30 characters</item>
+            <item>Keep your explanation as short as possible (max. 250 characters).</item>
+        </hintText>
+        <planList>
+            <item expected="select">
+                NRSP
+            </item>
+        </planList>
+        <planHeader>
+            <item>
+                Since you've selected a non-registered plan, we need some additional information from you.
+            </item>
+        </planHeader>
+        <plansubHeader>
+            <item>
+                You'll need to answer all of the questions before continuing. We may ask you more questions depending on your answers.
+            </item>
+        </plansubHeader>
+    </planSelectionPO>
+</plan-domain-object>

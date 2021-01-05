@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Cont_Fr</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <planId>38244</planId>
+        <division>001</division>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <planId>${planId}</planId>
+        <division>${division}</division>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                CELI
+            </item>
+        </planList>
+        <plansubHeader>
+            <item>
+                Selon votre régime, vous pouvez choisir la part de votre chèque de paye que vous souhaitez verser. Assurez-vous de ne pas dépasser les limites de cotisation établies par l’Agence du revenu du Canada qui pourraient s’appliquer à vous. Pour en savoir plus, consultez les règles relatives aux cotisations à ce régime.
+            </item>
+        </plansubHeader>
+        <planProgressBarInfo>
+            <item>Établissement de votre CELI</item>
+        </planProgressBarInfo>
+        <planProgressBarStep>
+            <item>Étape 3 de 5: Choisissez le montant de vos cotisations</item>
+        </planProgressBarStep>
+    </planSelectionPO>
+    <contributionsPO>
+        <contributionAccountDetails>
+            <item>COTIS. SALARIALES FACULTATIVES</item>
+        </contributionAccountDetails>
+        <contributionAccordiondropdown initial="Montant par paie versée toutes les deux semaines. Vous pouvez choisir le montant de vos cotisations, jusquà concurrence du plafond établi par lARC.">Règles relatives aux cotisations</contributionAccordiondropdown>
+    </contributionsPO>
+
+</plan-domain-object>

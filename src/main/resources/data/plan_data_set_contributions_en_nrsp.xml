@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Cont_Eng</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <planId>35447</planId>
+        <division>021</division>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <planId>${planId}</planId>
+        <division>${division}</division>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                NRSP
+            </item>
+        </planList>
+        <plansubHeader>
+            <item>
+                Depending on your plan, you can choose how much of your paycheque you'd like to contribute. Make sure you don't go over any contribution limits set by the Canada Revenue Agency that may apply to you. View the plan's contribution rules for more details.
+            </item>
+        </plansubHeader>
+        <planProgressBarInfo>
+            <item>Your NRSP setup</item>
+        </planProgressBarInfo>
+        <planProgressBarStep>
+            <item>Step 4 of 6: Choose your contribution amount</item>
+        </planProgressBarStep>
+    </planSelectionPO>
+    <nrspAdditionalInfoPO>
+        <usCitizenYes>yes</usCitizenYes>
+        <usCitizenNo>no</usCitizenNo>
+        <otherCitizenYes>yes</otherCitizenYes>
+        <otherCitizenNo>no</otherCitizenNo>
+    </nrspAdditionalInfoPO>
+    <contributionsPO>
+        <contributionAccountDetails>
+            <item>EMPLOYER</item>
+            <item>MEMBER</item>
+            <item>EMPLOYER MATCHING CONTRIBUTIONS</item>
+        </contributionAccountDetails>
+        <contributionAccordiondropdown initial="Per pay period,you may choose to make contributions of any amount">Contribution rules</contributionAccordiondropdown>
+    </contributionsPO>
+
+</plan-domain-object>

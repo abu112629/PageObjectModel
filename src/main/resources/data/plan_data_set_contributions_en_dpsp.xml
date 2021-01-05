@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Cont_Eng</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <planId>66711</planId>
+        <division>01</division>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <planId>${planId}</planId>
+        <division>${division}</division>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                DPSP
+            </item>
+        </planList>
+        <plansubHeader>
+            <item>
+                Depending on your plan, you can choose how much of your paycheque you'd like to contribute. Make sure you don't go over any contribution limits set by the Canada Revenue Agency that may apply to you. View the plan's contribution rules for more details.
+            </item>
+        </plansubHeader>
+        <planProgressBarInfo>
+            <item>Your DPSP setup</item>
+        </planProgressBarInfo>
+        <planProgressBarStep>
+            <item>Step 3 of 5: Choose your contribution amount</item>
+        </planProgressBarStep>
+    </planSelectionPO>
+    <contributionsPO>
+        <contributionAccountDetails>
+            <item>EMPLOYER</item>
+        </contributionAccountDetails>
+        <contributionAccordiondropdown initial="Your employer will match your contribution to the RRSP up to 4% of your earnings.">Contribution rules</contributionAccordiondropdown>
+    </contributionsPO>
+
+</plan-domain-object>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Cont_Eng</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <planId>65624</planId>
+        <division>04</division>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <planId>${planId}</planId>
+        <division>${division}</division>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                RPP
+            </item>
+        </planList>
+        <plansubHeader>
+            <item>
+                Depending on your plan, you can choose how much of your paycheque you'd like to contribute. Make sure you don't go over any contribution limits set by the Canada Revenue Agency that may apply to you. View the plan's contribution rules for more details.
+            </item>
+        </plansubHeader>
+        <planProgressBarInfo>
+            <item>Your RPP setup</item>
+        </planProgressBarInfo>
+        <planProgressBarStep>
+            <item>Step 4 of 6: Choose your contribution amount</item>
+        </planProgressBarStep>
+    </planSelectionPO>
+    <rppAdditionalInfoPO>
+        <spousebuttonYes>yes</spousebuttonYes>
+        <connectedPersonbuttonYes>yes</connectedPersonbuttonYes>
+        <spousebuttonNo>no</spousebuttonNo>
+        <connectedPersonbuttonNo>no</connectedPersonbuttonNo>
+        <birthDate>birthDate</birthDate>
+    </rppAdditionalInfoPO>
+    <contributionsPO>
+        <contributionAccountDetails>
+            <item>EMPLOYER CONTRIBUTIONS</item>
+        </contributionAccountDetails>
+        <contributionAccordiondropdown initial="Your employer will contribute an amount based on your years of employment according to the scale below: less than 5 yrs: 2% 5 yrs but less than 10 yrs: 3.5% 10 yrs but less than 15 yrs: 4.5% 15 yrs or more: 5.5%">Contribution rules</contributionAccordiondropdown>
+    </contributionsPO>
+
+</plan-domain-object>

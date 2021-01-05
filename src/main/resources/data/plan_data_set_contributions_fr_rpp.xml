@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Cont_Fr</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <planId>65624</planId>
+        <division>04</division>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <planId>${planId}</planId>
+        <division>${division}</division>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                RRA
+            </item>
+        </planList>
+        <plansubHeader>
+            <item>
+                Selon votre régime, vous pouvez choisir la part de votre chèque de paye que vous souhaitez verser. Assurez-vous de ne pas dépasser les limites de cotisation établies par l’Agence du revenu du Canada qui pourraient s’appliquer à vous. Pour en savoir plus, consultez les règles relatives aux cotisations à ce régime.
+            </item>
+        </plansubHeader>
+        <planProgressBarInfo>
+            <item>Établissement de votre RRA</item>
+        </planProgressBarInfo>
+        <planProgressBarStep>
+            <item>Étape 4 de 6: Choisissez le montant de vos cotisations</item>
+        </planProgressBarStep>
+    </planSelectionPO>
+    <rppAdditionalInfoPO>
+        <spousebuttonYes>yes</spousebuttonYes>
+        <connectedPersonbuttonYes>yes</connectedPersonbuttonYes>
+        <spousebuttonNo>no</spousebuttonNo>
+        <connectedPersonbuttonNo>no</connectedPersonbuttonNo>
+        <birthDate>birthDate</birthDate>
+    </rppAdditionalInfoPO>
+    <contributionsPO>
+        <contributionAccountDetails>
+            <item>COTIS. PATRONALES</item>
+        </contributionAccountDetails>
+        <contributionAccordiondropdown initial="Votre employeur versera un montant basé sur les années de service déja accomplis conformément au barème ci-dessous: moins de 5 ans: 2% 5 ans mais moins de 10 ans: 3.5% 10 ans mais moins de 15 ans: 4.5% 15 ans et plus: 5.5%">Règles relatives aux cotisations</contributionAccordiondropdown>
+    </contributionsPO>
+
+</plan-domain-object>

@@ -1,0 +1,192 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Plan validation suite" verbose="1" parallel="tests">
+
+    <test name="Validate plans descriptions for English account">
+        <parameter name="data-set" value="data/plan_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.PlanSelectionTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate plans descriptions for French account">
+        <parameter name="data-set" value="data/plan_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.PlanSelectionTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate selected  plan retention for English account">
+        <parameter name="data-set" value="data/plan_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.PlanRetentionTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate selected  plan retention for French account">
+        <parameter name="data-set" value="data/plan_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.PlanRetentionTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Plan error message for English account">
+        <parameter name="data-set" value="data/plan_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.PlanErrorWhenNoPlanSelectedTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Plan error message for French account">
+        <parameter name="data-set" value="data/plan_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.PlanErrorWhenNoPlanSelectedTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate RPP Plan Additional Questions for English Account">
+        <parameter name="data-set" value="data/plan_rpp_additional_info_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.RPPPlanAdditionalInfoTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate RPP Plan Additional Questions for French Account">
+        <parameter name="data-set" value="data/plan_rpp_additional_info_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.RPPPlanAdditionalInfoTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate RPP Connected Person Dynamic Step Details for English Account">
+        <parameter name="data-set" value="data/plan_rpp_additional_info_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.RPPConnectedPersonTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate RPP Connected Person Dynamic Step Details for French Account">
+        <parameter name="data-set" value="data/plan_rpp_additional_info_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.RPPConnectedPersonTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Dynamic Status Labels and Steps for NRSP English Account">
+        <parameter name="data-set" value="data/plan_data_set_en.xml"/>
+        <parameter name="data-set2" value="data/plan_data_set_en_NRSP.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.PlanDynamicStatusBarTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Dynamic Status Labels and Steps for NRSP French Account">
+        <parameter name="data-set" value="data/plan_data_set_fr.xml"/>
+        <parameter name="data-set2" value="data/plan_data_set_fr_NRSP.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.PlanDynamicStatusBarTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Dynamic Status Labels and Steps for RPP English Account">
+        <parameter name="data-set" value="data/plan_data_set_en.xml"/>
+        <parameter name="data-set2" value="data/plan_data_set_en_RPP.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.PlanDynamicStatusBarTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Dynamic Status Labels and Steps for RPP French Account">
+        <parameter name="data-set" value="data/plan_data_set_fr.xml"/>
+        <parameter name="data-set2" value="data/plan_data_set_fr_RPP.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.PlanDynamicStatusBarTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate NRSP Additional Info Questions and Details for English Account">
+        <parameter name="data-set" value="data/plan_nrsp_additional_info_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.NRSPPlanAdditionalInfoTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate NRSP Additional Info Questions and Details for French Account">
+        <parameter name="data-set" value="data/plan_nrsp_additional_info_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.NRSPPlanAdditionalInfoTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate EPSP Additional Info Questions and Details for English Account">
+        <parameter name="data-set" value="data/plan_epsp_additional_info_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.NRSPPlanAdditionalInfoTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate EPSP Additional Info Questions and Details for French Account">
+        <parameter name="data-set" value="data/plan_epsp_additional_info_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.NRSPPlanAdditionalInfoTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate RPP Additional Info Page Errors and Details for English Account">
+        <parameter name="data-set" value="data/plan_rpp_additional_info_errors_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.RPPPlanAdditionalInfoErrorsTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate RPP Additional Info Page Errors and Details for French Account">
+        <parameter name="data-set" value="data/plan_rpp_additional_info_errors_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.RPPPlanAdditionalInfoErrorsTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Spouse Records for RPP Plan saved in Salesforce for English Account">
+        <parameter name="data-set" value="data/plan_rpp_salesforce_save_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.RPPSpouseDetailsSalesforceValidationTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Spouse Records for RPP Plan saved in Salesforce for French Account">
+        <parameter name="data-set" value="data/plan_rpp_salesforce_save_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.RPPSpouseDetailsSalesforceValidationTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Header and Footer for English Account">
+        <parameter name="data-set" value="data/plan_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.CanadaLifeHeaderFooterTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Header and Footer for French Account">
+        <parameter name="data-set" value="data/plan_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.CanadaLifeHeaderFooterTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate RPP Plan Connected Person Additional Question for English Account">
+        <parameter name="data-set" value="data/plan_rpp_additional_info_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.RPPConnectedPersonQuestionTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate RPP Plan Connected Person Additional Question for French Account">
+        <parameter name="data-set" value="data/plan_rpp_additional_info_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.RPPConnectedPersonQuestionTest"/>
+        </classes>
+    </test>
+
+
+</suite>

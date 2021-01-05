@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_En</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                RPP
+            </item>
+        </planList>
+        <planProgressBarInfo>
+            <item>Your RPP setup</item>
+        </planProgressBarInfo>
+        <planProgressBarStep>
+            <item>Step 4 of 5: Choose your investment fund</item>
+        </planProgressBarStep>
+    </planSelectionPO>
+    <rppAdditionalInfoPO>
+        <spousebuttonNo>no</spousebuttonNo>
+        <connectedPersonbuttonNo>no</connectedPersonbuttonNo>
+    </rppAdditionalInfoPO>
+    <investmentPO>
+        <investmentDescription>
+            <item>It’s time to decide which fund you’d like to invest your contributions in. A target date fund is the easiest, hands-off investment option. Just decide what age you want to access your savings and go with the target date fund closest to that date.</item>
+        </investmentDescription>
+        <inputfieldQuestion>
+            <item>At what age do you want to use your savings?</item>
+        </inputfieldQuestion>
+        <inputfieldTip>
+            <item>We’ve preselected an age for you to start. Enter a different age to see the closest available fund.</item>
+        </inputfieldTip>
+        <ageInput expected ="65">99</ageInput>
+        <investmentCardHeader>Target date fund that matches your goals at age 65</investmentCardHeader>
+        <investmentCardSelected>Selected</investmentCardSelected>
+    </investmentPO>>
+
+</plan-domain-object>

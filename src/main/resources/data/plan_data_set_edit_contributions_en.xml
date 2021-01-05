@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Cont_Eng</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <planId>35447</planId>
+        <division>021</division>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <planId>${planId}</planId>
+        <division>${division}</division>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                NRSP
+            </item>
+        </planList>
+        <hintText>
+            <item>Min. 0%, Max. 100%</item>
+            <item>Min. 1%, Max. 4%</item>
+        </hintText>
+    </planSelectionPO>
+    <nrspAdditionalInfoPO>
+        <usCitizenYes>yes</usCitizenYes>
+        <usCitizenNo>no</usCitizenNo>
+        <otherCitizenYes>yes</otherCitizenYes>
+        <otherCitizenNo>no</otherCitizenNo>
+    </nrspAdditionalInfoPO>
+    <contributionsPO>
+        <contributionEmployerPercentageRadioButton initial="Contribution type">%EMPR</contributionEmployerPercentageRadioButton>
+        <contributionEmployerDollarRadioButton>$EMPR</contributionEmployerDollarRadioButton>
+        <contributionEmployerInput initial="Amount">2</contributionEmployerInput>
+        <contributionEmployerPercentageError>Enter an amount between 0% and 100%.</contributionEmployerPercentageError>
+        <contributionEmployerDollarError>Enter an amount between $0 and $99,999.</contributionEmployerDollarError>
+        <contributionMemberInvalidInput>0</contributionMemberInvalidInput>
+        <contributionMemberInput initial="Amount">2</contributionMemberInput>
+        <contributionMemberError>Enter an amount between 1% and 4%.</contributionMemberError>
+        <contributionExplanation>
+            <item>You can't choose a contribution amount here. See this plan's contribution rules for more details.</item>
+        </contributionExplanation>
+    </contributionsPO>
+
+</plan-domain-object>

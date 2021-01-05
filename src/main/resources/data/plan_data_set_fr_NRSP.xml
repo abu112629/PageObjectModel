@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Fr</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                RERN
+                Régime non enregistré d'épargne
+                Épargnez pour des objectifs à court ou à long terme
+                Cotisez sans limite de montant
+                Obtenez une croissance des placements imposable
+                Sélectionner
+            </item>
+        </planList>
+        <planProgressBarInfo>
+            <item>Établissement de votre RERN</item>
+        </planProgressBarInfo>
+        <planProgressBarStep>
+            <item>Étape 3 de 5: Ajoutez un peu plus de renseignements</item>
+        </planProgressBarStep>
+        <errorMessage expected="Vous devez sélectionner au moins un régime avant de continuer."/>
+    </planSelectionPO>
+
+</plan-domain-object>

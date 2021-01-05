@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_En</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                NRSP
+                Non-registered savings plan
+                Save for short- or long-term goals
+                Make unlimited contributions
+                Get taxable investment growth
+                Select
+            </item>
+        </planList>
+        <planProgressBarInfo>
+            <item>Your NRSP setup</item>
+        </planProgressBarInfo>
+        <planProgressBarStep>
+            <item>Step 3 of 5: Add a bit more info</item>
+        </planProgressBarStep>
+        <errorMessage expected="You need to select at least one plan before you can continue."/>
+    </planSelectionPO>
+
+</plan-domain-object>

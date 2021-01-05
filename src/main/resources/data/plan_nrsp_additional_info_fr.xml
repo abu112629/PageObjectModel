@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Fr</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <nrspAdditionalInfoPO>
+        <usCitizenYes initial="Indiquez si vous êtes un citoyen des États-Unis ou un résident américain aux fins de l’impôt sur le revenu.">yes</usCitizenYes>
+        <otherCitizenYes initial ="Indiquez si vous êtes un résident d’un pays autre que les États-Unis ou le Canada aux fins de l’impôt sur le revenu.">yes</otherCitizenYes>
+        <usCitizenNo>no</usCitizenNo>
+        <otherCitizenNo>no</otherCitizenNo>
+        <secondaryTINyes initial ="Indiquez si vous avez ou non un NIF pour votre pays / région de résidence aux fins de l’impôt.">yes</secondaryTINyes>
+        <secondaryTINno>no</secondaryTINno>
+        <usTinNumber initial="Entrez un NIF à neuf chiffres valide.">123456789</usTinNumber>
+        <selectCountry initial="Sélectionnez votre pays/ région de résidence aux fins de l’impôt.">AFGHANISTAN</selectCountry>
+        <otherCountryinvalidTIN initial ="Votre NIF peut uniquement comprendre des lettres et des chiffres. Veuillez essayer de nouveau.">@!#</otherCountryinvalidTIN>
+        <otherCountryTIN initial ="Entrez votre NIF pour ce pays / cette région.">1234567</otherCountryTIN>
+        <ustaxpayerLabel>
+            <item>
+                Entrez votre numéro d’identification fiscale (NIF) américain.
+            </item>
+        </ustaxpayerLabel>
+        <otherCountryTINlabel>
+            <item>Entrez votre NIF pour ce pays / cette région.</item>
+        </otherCountryTINlabel>
+        <reasonLabel>
+            <item>Indiquez la raison pour laquelle vous n’avez pas de NIF pour ce pays.</item>
+        </reasonLabel>
+        <radiobuttonNoOtherTIN initial="Indiquez la raison pour laquelle vous n’avez pas de NIF.">Other</radiobuttonNoOtherTIN>
+        <reasonExplanationDetails initial="Veuillez expliquer pourquoi vous n’avez pas de NIF.">Reason Given</reasonExplanationDetails>
+    </nrspAdditionalInfoPO>
+    <planSelectionPO>
+        <planAdditionalInfoQuestions>
+            <item>
+                Êtes-vous un citoyen des États-Unis ou un résident américain aux fins de l’impôt sur le revenu?
+            </item>
+            <item>
+                Êtes-vous un résident d’un pays ou d’une région autre que le Canada ou les États-Unis aux fins de l’impôt sur le revenu?
+            </item>
+            <item>
+                Avez-vous un numéro d’identification fiscale (NIF) pour ce pays / cette région?
+            </item>
+            <item>
+                Pour quelle raison n’avez-vous pas de NIF pour ce pays / cette région?
+            </item>
+        </planAdditionalInfoQuestions>
+        <planList>
+            <item expected="select">
+                RERN
+            </item>
+        </planList>
+        <hintText>
+            <item>Votre NIF est un numéro à neuf chiffres.</item>
+            <item>30 caractères maximum</item>
+            <item>Soyez le plus concis possible (250 caractères maximum).</item>
+        </hintText>
+        <planHeader>
+            <item>
+                Puisque vous avez sélectionné un régime non enregistré, nous avons besoin de renseignements supplémentaires.
+            </item>
+        </planHeader>
+        <plansubHeader>
+            <item>
+                Vous devrez répondre à toutes les questions avant de poursuivre. Selon vos réponses, d’autres questions pourraient s’afficher.
+            </item>
+        </plansubHeader>
+    </planSelectionPO>
+</plan-domain-object>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Cont_Fr</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <planId>35447</planId>
+        <division>021</division>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <planId>${planId}</planId>
+        <division>${division}</division>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                RERN
+            </item>
+        </planList>
+        <hintText>
+            <item>Min. 0%, Max. 100%</item>
+            <item>Min. 1%, Max. 4%</item>
+        </hintText>
+    </planSelectionPO>
+    <nrspAdditionalInfoPO>
+        <usCitizenYes>yes</usCitizenYes>
+        <usCitizenNo>no</usCitizenNo>
+        <otherCitizenYes>yes</otherCitizenYes>
+        <otherCitizenNo>no</otherCitizenNo>
+    </nrspAdditionalInfoPO>
+    <contributionsPO>
+        <contributionEmployerPercentageRadioButton initial="Type de cotisation">%EMPR</contributionEmployerPercentageRadioButton>
+        <contributionEmployerDollarRadioButton>$EMPR</contributionEmployerDollarRadioButton>
+        <contributionEmployerInput initial="Montant">2</contributionEmployerInput>
+        <contributionEmployerPercentageError>Saisissez un pourcentage entre 0 % et 100 %.</contributionEmployerPercentageError>
+        <contributionEmployerDollarError>Saisissez un montant entre 0 $ et 99 999 $.</contributionEmployerDollarError>
+        <contributionMemberInvalidInput>0</contributionMemberInvalidInput>
+        <contributionMemberInput initial="Montant">2</contributionMemberInput>
+        <contributionMemberError>Saisissez un pourcentage entre 1 % et 4 %.</contributionMemberError>
+        <contributionExplanation>
+            <item>Vous ne pouvez pas choisir de montant pour les cotisations ici. Pour en savoir plus, consultez les règles relatives aux cotisations à ce régime.</item>
+        </contributionExplanation>
+    </contributionsPO>
+
+</plan-domain-object>

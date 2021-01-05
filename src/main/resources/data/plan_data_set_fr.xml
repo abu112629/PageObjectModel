@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Fr</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item>
+                RRA
+                FR CUSTOME NAME
+                L’employeur cotise au régime
+                Payez moins d’impôt maintenant
+                Accédez à l’argent à votre retraite
+                Se transforme en revenu de retraite imposable
+                L'épargne dans le régime croît à l'abri de l'impôt
+                Sélectionner
+            </item>
+            <item>
+                RPDB
+                REG. DE PART. DIFF. AUX BENEFICES
+                Seul l’employeur verse des cotisations
+                Obtenez une part des bénéfices de la compagnie
+                L'épargne dans le régime croît à l'abri de l'impôt
+                L’épargne peut être transférée à un REER si vous changez d’employeur
+                Sélectionner
+            </item>
+            <item>
+                REER
+                FR TESTING THE RRSP
+                Épargnez en vue de la retraite
+                Payez moins d’impôt maintenant
+                Cotisez jusqu’à concurrence de votre plafond personnel
+                L'épargne dans le régime croît à l'abri de l'impôt
+                Payez de l’impôt sur les retraits
+                Sélectionner
+            </item>
+            <item>
+                CELI
+                COMPTE D'EPARGNE LIBRE D'IMPOT
+                Épargnez pour des objectifs à court ou à long terme
+                Retirez de l’argent en franchise d’impôt
+                Cotisez jusqu’à concurrence du plafond annuel
+                Versez des cotisations après impôts
+                Faites croître votre épargne à l’abri de l’impôt
+                Sélectionner
+            </item>
+            <item expected="select">
+                RERN
+                RER NON-ENREGISTRE
+                Épargnez pour des objectifs à court ou à long terme
+                Cotisez sans limite de montant
+                Obtenez une croissance des placements imposable
+                Sélectionner
+            </item>
+            <item>
+                RPEB
+                TESTING CUSTOM SORT ORDER FR
+                L’employeur verse généralement des cotisations
+                Vous versez des cotisations après impôts
+                Obtenez une croissance des placements imposable
+                Sélectionner
+            </item>
+        </planList>
+        <planProgressBarInfo>
+            <item>Régimes auxquels vous pouvez adhérer</item>
+        </planProgressBarInfo>
+        <planProgressBarStep>
+            <item>Étape 2 de 4: Sélectionnez vos régimes</item>
+        </planProgressBarStep>
+        <errorMessage expected="Vous devez sélectionner au moins un régime avant de continuer."/>
+        <canadalifeLogo>&lt;img class="cl-logo" alt="Accueil – Logo de la Canada-Vie" src="https://www.canadalife.com/content/dam/public/logos/CanadaLife_F_MC.svg" data-aura-rendered-by="146:0"&gt;</canadalifeLogo>
+        <canadalifeFooter>
+            <item>© La Compagnie d’Assurance du Canada sur la Vie 2009 - 2021</item>
+        </canadalifeFooter>
+        <canadalifeFooterlinks>
+            <item>Confidentialité
+                – s’ouvre dans un nouvel onglet</item>
+            <item>Renseignements juridiques
+                – s’ouvre dans un nouvel onglet</item>
+            <item>Sécurité
+                – s’ouvre dans un nouvel onglet</item>
+            <item>Accessibilité
+                – s’ouvre dans un nouvel onglet</item>
+        </canadalifeFooterlinks>
+    </planSelectionPO>
+
+</plan-domain-object>

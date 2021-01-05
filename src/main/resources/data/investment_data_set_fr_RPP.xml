@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Fr</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                RRA
+            </item>
+        </planList>
+        <planProgressBarInfo>
+            <item>Établissement de votre RPA</item>
+        </planProgressBarInfo>
+        <planProgressBarStep>
+            <item>Étape 4 of 5: Choisissez votre fonds de placement</item>
+        </planProgressBarStep>
+    </planSelectionPO>
+    <rppAdditionalInfoPO>
+        <spousebuttonNo>no</spousebuttonNo>
+        <connectedPersonbuttonNo>no</connectedPersonbuttonNo>
+    </rppAdditionalInfoPO>
+    <investmentPO>
+        <investmentDescription>
+            <item>Il est temps de décider dans quel fonds vous souhaitez investir vos cotisations. Les fonds à date cible sont l’option de placement stratégique la plus simple. Vous n’avez qu’à décider de l’âge auquel vous souhaitez accéder à votre épargne et choisir le fonds à date cible qui se rapproche le plus de cette date.</item>
+        </investmentDescription>
+        <inputfieldQuestion>
+            <item>À quel âge souhaitez-vous utiliser votre épargne?</item>
+        </inputfieldQuestion>
+        <inputfieldTip>
+            <item>Nous avons présélectionné un âge pour vous. Saisissez un âge différent pour voir le fonds qui s’en rapproche le plus.</item>
+        </inputfieldTip>
+        <ageInput expected ="65">99</ageInput>
+        <investmentCardHeader>FR - Target date fund that matches your goals at age 65</investmentCardHeader>
+        <investmentCardSelected>Choisie</investmentCardSelected>
+    </investmentPO>>
+
+</plan-domain-object>

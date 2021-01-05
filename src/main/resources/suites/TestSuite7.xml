@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Contributions Payroll Input and Investment Validation" verbose="1" parallel="tests">
+
+    <test name="Validate Contribution Payroll Input Details for French Account">
+        <parameter name="data-set" value="data/plan_data_set_edit_contributions_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.PlanContributionsPayrollInputTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Investment Details for English Account">
+        <parameter name="data-set" value="data/investment_data_set_en_RPP.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.InvestmentsFundingTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Investment Details for French Account">
+        <parameter name="data-set" value="data/investment_data_set_fr_RPP.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.InvestmentsFundingTest"/>
+        </classes>
+    </test>
+
+</suite>

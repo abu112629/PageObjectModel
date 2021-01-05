@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_En</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <rppplanSelectionPO>
+        <spousebuttonYes initial="Select if you have a spouse or common-law partner.">yes</spousebuttonYes>
+        <connectedPersonbuttonYes initial ="Select if you are a connected person.">yes</connectedPersonbuttonYes>
+        <spousebuttonNo>no</spousebuttonNo>
+        <connectedPersonbuttonNo>no</connectedPersonbuttonNo>
+        <spouseFirstNameLabel>
+            <item>Your spouse/partner's first name</item>
+        </spouseFirstNameLabel>
+        <spouseSecondNameLabel>
+            <item>Your spouse/partner's last name</item>
+        </spouseSecondNameLabel>
+        <spouseDOBLabel>
+            <item>Your spouse/partner's date of birth</item>
+        </spouseDOBLabel>
+        <spousefirstNameinput initial="Enter your spouse/partner's first name.">Test</spousefirstNameinput>
+        <spouseSecondNameinput initial="Enter your spouse/partner's last name.">TEST</spouseSecondNameinput>
+        <spousefirstNamehintLabel>
+            <item>Max. 20 characters</item>
+        </spousefirstNamehintLabel>
+        <spouseSecondNamehintLabel>
+            <item>Max. 20 characters</item>
+        </spouseSecondNamehintLabel>
+        <birthDate>Enter a valid date of birth. Check that the month, day and year are correct.</birthDate>
+        <slctdrpdownMonth>January</slctdrpdownMonth>
+        <birthDay>07</birthDay>
+        <birthYear>2020</birthYear>
+        <connectedPersonDisclaimer>
+            <item>
+            If you're a connected person, your employer must submit Form T1007 to the Canada Revenue Agency within 60 days of you joining the RPP.
+            </item>
+        </connectedPersonDisclaimer>
+    </rppplanSelectionPO>
+    <planSelectionPO>
+        <planAdditionalInfoQuestions>
+            <item>
+                Do you have a spouse or common-law partner?
+            </item>
+            <item>
+                Are you a connected person?
+            </item>
+        </planAdditionalInfoQuestions>
+        <planList>
+            <item expected="select">
+                RPP
+            </item>
+        </planList>
+        <planHeader>
+            <item>
+                Since you've selected an RPP, we need some additional information from you.
+            </item>
+        </planHeader>
+        <plansubHeader>
+            <item>
+                You'll need to answer all of the questions before continuing. Depending on your answers, more questions may appear.
+            </item>
+        </plansubHeader>
+    </planSelectionPO>
+</plan-domain-object>

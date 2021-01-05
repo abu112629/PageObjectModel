@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Contributions Payroll Input Validation Suite English" verbose="1" parallel="tests">
+
+    <test name="Validate Contribution Payroll Input Details for English Account">
+        <parameter name="data-set" value="data/plan_data_set_edit_contributions_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.PlanContributionsPayrollInputTest"/>
+        </classes>
+    </test>
+
+
+</suite>

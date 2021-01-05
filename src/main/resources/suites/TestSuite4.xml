@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Contributions Accordion Validation Suite English" verbose="1" parallel="tests">
+
+    <test name="Validate Contribution Accordion Details for the Plans for English Account">
+        <parameter name="data-set" value="data/plan_data_set_contributions_en_rpp.xml"/>
+        <parameter name="data-set2" value="data/plan_data_set_contributions_en_nrsp.xml"/>
+        <parameter name="data-set3" value="data/plan_data_set_contributions_en_rrsp.xml"/>
+        <parameter name="data-set4" value="data/plan_data_set_contributions_en_dpsp.xml"/>
+        <parameter name="data-set5" value="data/plan_data_set_contributions_en_tfsa.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.PlanContributionRulesTest"/>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_En</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item>
+                RPP
+                CUSTOM NAME FOR TESTING
+                Employer contributes money
+                Pay less income tax up front
+                Access money when you retire
+                Converts into taxable retirement income
+                Savings grow tax-free in the plan
+                Select
+            </item>
+            <item>
+                DPSP
+                DEFERRED PROFIT SHARING PLAN
+                Only employer contributes money
+                Get a share of the company's profits
+                Savings grow tax-free in the plan
+                Can transfer savings to an RRSP when you change employers
+                Select
+            </item>
+            <item>
+                RRSP
+                TESTING THE RRSP
+                Save for retirement
+                Pay less income tax up front
+                Contribute up to personal limit
+                Savings grow tax-free in the plan
+                Pay tax on withdrawals
+                Select
+            </item>
+            <item>
+                TFSA
+                TAX-FREE SAVINGS ACCOUNT
+                Save for short- or long-term goals
+                Take out money tax-free
+                Contribute up to annual limit
+                Make after-tax contributions
+                Grow savings tax-free
+                Select
+            </item>
+            <item expected="select">
+                NRSP
+                NON REGISTERED RSP
+                Save for short- or long-term goals
+                Make unlimited contributions
+                Get taxable investment growth
+                Select
+            </item>
+            <item>
+                EPSP
+                TESTING CUSTOM SORT ORDER
+                Employer generally contributes
+                You make after-tax contributions
+                Get taxable investment growth
+                Select
+            </item>
+        </planList>
+        <planProgressBarInfo>
+            <item>Your available plans</item>
+        </planProgressBarInfo>
+        <planProgressBarStep>
+            <item>Step 2 of 4: Select your plan(s)</item>
+        </planProgressBarStep>
+        <canadalifeLogo>&lt;img class="cl-logo" alt="Home – Canada Life logo" src="https://www.canadalife.com/content/dam/public/logos/CanadaLife_E_TM.svg" data-aura-rendered-by="146:0"&gt;</canadalifeLogo>
+        <canadalifeFooter>
+            <item>© The Canada Life Assurance Company 2009 - 2021</item>
+        </canadalifeFooter>
+        <canadalifeFooterlinks>
+            <item>Privacy
+                – opens in new tab</item>
+            <item>Legal
+                – opens in new tab</item>
+            <item>Security
+                – opens in new tab</item>
+            <item>Accessibility
+                – opens in new tab</item>
+        </canadalifeFooterlinks>
+        <errorMessage expected="You need to select at least one plan before you can continue."/>
+    </planSelectionPO>
+
+</plan-domain-object>
