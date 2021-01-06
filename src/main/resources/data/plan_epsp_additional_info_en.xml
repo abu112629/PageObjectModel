@@ -30,11 +30,11 @@
         <otherCountryTIN initial ="Enter your TIN for the selected country/region.">1234567</otherCountryTIN>
         <ustaxpayerLabel>
             <item>
-            Enter your U.S. taxpayer identification number (TIN).*
+            Enter your U.S. taxpayer identification number (TIN).
             </item>
         </ustaxpayerLabel>
         <otherCountryTINlabel>
-            <item>Enter your TIN for this country/region.*</item>
+            <item>Enter your TIN for this country/region.</item>
         </otherCountryTINlabel>
         <reasonLabel>
             <item>Let us know why you don't have a TIN for this country.</item>

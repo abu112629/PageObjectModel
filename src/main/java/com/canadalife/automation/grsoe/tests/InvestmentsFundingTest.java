@@ -15,7 +15,7 @@ import static com.canadalife.automation.grsoe.support.GivenWhenThen.Then;
 import static com.canadalife.automation.grsoe.support.GivenWhenThen.And;
 
 public class InvestmentsFundingTest extends TestNGBase {
-    @Features("Sprint8")
+    @Features("Sprint7")
     @Stories("Member is presented the Target Date Fund based on normal retirement age")
     @Parameters("data-set")
     @Issue("GRSOE-80")

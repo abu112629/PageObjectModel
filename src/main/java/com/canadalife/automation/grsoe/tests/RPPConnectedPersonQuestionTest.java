@@ -13,7 +13,7 @@ import static com.canadalife.automation.grsoe.support.GivenWhenThen.*;
 
 public class RPPConnectedPersonQuestionTest extends TestNGBase {
 
-    @Features("Sprint8")
+    @Features("Sprint7")
     @Stories("Connected Person wording change for RPP additional question")
     @Parameters("data-set")
     @Issue("GRSOE-358")

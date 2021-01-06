@@ -30,11 +30,11 @@
         <otherCountryTIN initial ="Entrez votre NIF pour ce pays / cette région.">1234567</otherCountryTIN>
         <ustaxpayerLabel>
             <item>
-                Entrez votre numéro d’identification fiscale (NIF) américain.*
+                Entrez votre numéro d’identification fiscale (NIF) américain.
             </item>
         </ustaxpayerLabel>
         <otherCountryTINlabel>
-            <item>Entrez votre NIF pour ce pays / cette région.*</item>
+            <item>Entrez votre NIF pour ce pays / cette région.</item>
         </otherCountryTINlabel>
         <reasonLabel>
             <item>Indiquez la raison pour laquelle vous n’avez pas de NIF pour ce pays.</item>
