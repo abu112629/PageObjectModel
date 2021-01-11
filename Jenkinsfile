@@ -21,13 +21,11 @@ timestamps {
                 try {
                     if (isUnix()) {
                         sh """
-                    export DRIVER_PROVIDER=com.canadalife.automation.sdfc.support.SFDriverProvider
-                    java -jar target/sfdc-1.0-SNAPSHOT.jar
+                    java -jar target/grsoe-1.0-SNAPSHOT.jar
                     """
                     } else {
                         bat """
-                    set DRIVER_PROVIDER=com.canadalife.automation.sdfc.support.SFDriverProvider
-                    java -jar target/sfdc-1.0-SNAPSHOT.jar
+                    java -jar target/grsoe-1.0-SNAPSHOT.jar
                     """
                     }
                 } finally {
