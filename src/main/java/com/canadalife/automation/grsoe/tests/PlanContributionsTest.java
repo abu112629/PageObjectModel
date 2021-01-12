@@ -17,11 +17,11 @@ public class PlanContributionsTest extends TestNGBase {
     @Parameters({"data-set","data-set2","data-set3","data-set4","data-set5"})
     @Issue("GRSOE-233")
     @Test
-    public void ValidatePlanContributions(@Optional("data/plan_data_set_contributions_fr_rpp.xml")String dataSet,
-                                          @Optional("data/plan_data_set_contributions_fr_nrsp.xml") String dataSet2,
-                                          @Optional("data/plan_data_set_contributions_fr_rrsp.xml") String dataSet3,
-                                          @Optional("data/plan_data_set_contributions_fr_dpsp.xml") String dataSet4,
-                                          @Optional("data/plan_data_set_contributions_fr_dpsp.xml") String dataSet5){
+    public void ValidatePlanContributions(@Optional("data/plan_data_set_contributions_en_rpp.xml")String dataSet,
+                                          @Optional("data/plan_data_set_contributions_en_nrsp.xml") String dataSet2,
+                                          @Optional("data/plan_data_set_contributions_en_rrsp.xml") String dataSet3,
+                                          @Optional("data/plan_data_set_contributions_en_dpsp.xml") String dataSet4,
+                                          @Optional("data/plan_data_set_contributions_en_dpsp.xml") String dataSet5){
 
         ContributionsDO plan=new ContributionsDO(getContext()).fromResource(dataSet);
         Given(plan :: user_on_plan_selection_page);

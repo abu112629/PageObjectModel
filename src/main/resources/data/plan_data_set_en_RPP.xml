@@ -34,7 +34,7 @@
             <item>Your RPP setup</item>
         </planProgressBarInfo>
         <planProgressBarStep>
-            <item>Step 3 of 5: Add a bit more info</item>
+            <item>Step 3 of 6: Add a bit more info</item>
         </planProgressBarStep>
         <errorMessage expected="You need to select at least one plan before you can continue."/>
     </planSelectionPO>

@@ -34,7 +34,7 @@
             <item>Établissement de votre RPA</item>
         </planProgressBarInfo>
         <planProgressBarStep>
-            <item>Étape 3 de 5: Ajoutez un peu plus de renseignements</item>
+            <item>Étape 3 de 6: Ajoutez un peu plus de renseignements</item>
         </planProgressBarStep>
         <errorMessage expected="Vous devez sélectionner au moins un régime avant de continuer."/>
     </planSelectionPO>
