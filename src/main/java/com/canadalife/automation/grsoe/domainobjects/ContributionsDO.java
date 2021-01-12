@@ -150,7 +150,7 @@ public class ContributionsDO extends DomainObjectModel {
     public void user_can_see_error_on_accounts_with_no_values_and_click_continue(String gwt) {
         planSelectionPO.clickContinueButton();
         contributionsPO.validateErrorPercentageEmployer();
-        contributionsPO.validateContributionErrorMember();
+        //contributionsPO.validateContributionErrorMember();
     }
 
     @Step("{0} user can only enter valid values in the range provided for the accounts")
