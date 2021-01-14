@@ -7,6 +7,8 @@
         <prop name="AUTH_GRANT" value="password" />
         <prop name="CLIENT_ID" value="3MVG9BM7anZT_gV42M7c.HnMBQzSfJz..C4qt8rAvE_YkJO.3NzpZMLh7ms.UkOH.CAfkmBDUmffJb1ityh8x" />
         <prop name="CLIENT_SECRET" value="C71ABD28819366A1A1CED84CB5909FA3AFB5083F1072A1CBE46A3A0AB4D5F650" />
+        <prop name="AUTH_USERNAME" value="abubakkarsiddique.farooque@canadalife.com" />
+        <prop name="AUTH_PASSWORD" value="Techm@050789FuWNEd8o4YiOlJliOHyF74NfZ" />
         <prop name="salesforce_params" value= "services/data/v49.0/query/?q=SELECT AccountId,Name,Relationship__c FROM Contact where Name=" />
         <prop name="salesforce_asset_params" value= "services/data/v49.0/sobjects/Asset/" />
         <prop name="salesforce_language_params" value= "services/data/v49.0/sobjects/User/0054g000000Z36cAAC" />

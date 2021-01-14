@@ -19,8 +19,10 @@ public class ClientInfo {
         String clientId = env.getCustom("CLIENT_ID");
         String clientSecret = env.getCustom("CLIENT_SECRET");
 
-        String userName = System.getenv("AUTH_USERNAME");
-        String password = System.getenv("AUTH_PASSWORD");
+        //String userName = System.getenv("AUTH_USERNAME");
+        //String password = System.getenv("AUTH_PASSWORD");
+        String userName = env.getCustom("AUTH_USERNAME");
+        String password = env.getCustom("AUTH_PASSWORD");
         return getAuthToken(baseURI,clientId, clientSecret,
                 userName, password);
     }
