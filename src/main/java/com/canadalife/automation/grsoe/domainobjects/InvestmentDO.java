@@ -55,4 +55,12 @@ public class InvestmentDO extends DomainObjectModel {
         investmentPO.validateInvestmentCardSelected();
 
     }
+
+    @Step("{0} user validates investment Fund Fees and Fund Name")
+    public void user_validates_investment_fund_fess_and_fund_name(String gwt){
+        investmentPO.initPage(getContext());
+       investmentPO.validateInvestmentFundName();
+       investmentPO.validateFundFeeLines();
+
+    }
 }

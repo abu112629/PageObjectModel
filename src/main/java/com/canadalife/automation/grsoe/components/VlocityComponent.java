@@ -69,4 +69,19 @@ public abstract class VlocityComponent extends PageComponent {
         String expected = getData(type);
         Assertions.assertThat(actual).isEqualTo(expected);
     }
+
+    public String getFundFeesDetails() {
+        List<WebElement> els = coreElement.findElements(By.xpath(".//li[contains(text(),'" + getData() + "')]"));
+        if (els.isEmpty()) {
+            return null;
+        } else {
+            return els.get(0).getText();
+        }
+    }
+
+    public void validateFundFees(DataTypes type) {
+        String actual = getFundFeesDetails();
+        String expected = getData(type);
+        Assertions.assertThat(actual).isEqualTo(expected);
+    }
 }

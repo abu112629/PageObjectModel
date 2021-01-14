@@ -23,4 +23,18 @@
         </classes>
     </test>
 
+    <test name="Validate Fund Details for English Account">
+        <parameter name="data-set" value="data/investment_data_set_en_RPP.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.FundInformationTDFTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Fund Details for French Account">
+        <parameter name="data-set" value="data/investment_data_set_fr_RPP.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.FundInformationTDFTest"/>
+        </classes>
+    </test>
+
 </suite>

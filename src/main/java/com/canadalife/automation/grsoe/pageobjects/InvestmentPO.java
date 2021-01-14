@@ -1,7 +1,9 @@
 package com.canadalife.automation.grsoe.pageobjects;
 
 import com.canadalife.automation.grsoe.components.VlocityActionInput;
+import com.canadalife.automation.grsoe.components.VlocityComponent;
 import com.canadalife.automation.grsoe.components.VlocityInput;
+import com.canadalife.automation.grsoe.components.VlocitySelect;
 import com.canadalife.automation.grsoe.support.AppHelper;
 import org.openqa.selenium.support.FindBy;
 import ui.auto.core.components.WebComponent;
@@ -31,6 +33,21 @@ public class InvestmentPO extends PageObjectModel {
     @FindBy(xpath="//*[@class='nds-card-footer-lwc']//span")
     private WebComponent investmentCardSelected;
 
+    @FindBy(xpath="//*[@class='nds-text-title nds-m-top_large']")
+    private WebComponent investmentCardFundName;
+
+    @FindBy(xpath="//*[@data-omni-key='CustomLWCTargetDateCard']")
+    private VlocitySelect investmentCardFundFeesLine;
+
+    @FindBy(xpath="//*[@data-omni-key='CustomLWCTargetDateCard']")
+    private VlocitySelect investmentCardFundRORline1;
+
+    @FindBy(xpath="//*[@data-omni-key='CustomLWCTargetDateCard']")
+    private VlocitySelect investmentCardFundRORline2;
+
+    @FindBy(xpath="//*[@data-omni-key='CustomLWCTargetDateCard']")
+    private VlocitySelect investmentCardFundRORline3;
+
     public void validateInvestmentDescription(){
         investmentDescription.initPage(getContext());
         investmentDescription.validateAll();
@@ -53,12 +70,22 @@ public class InvestmentPO extends PageObjectModel {
 
     }
 
+    public void validateFundFeeLines(){
+        AppHelper.scrollToView(investmentCardFundFeesLine.getCoreElement());
+        investmentCardFundFeesLine.getFundFeesDetails();
+        investmentCardFundFeesLine.validateFundFees(DataTypes.Expected);
+    }
+
     public void validateInvestmentCardHeader(){
         investmentCardHeader.validateData(DataTypes.Data);
     }
 
     public void validateInvestmentCardSelected(){
         investmentCardSelected.validateData(DataTypes.Data);
+    }
+
+    public void validateInvestmentFundName(){
+        investmentCardFundName.validateData(DataTypes.Data);
     }
 }
 
