@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Contributions Validation Suite French" verbose="1" parallel="tests">
+<suite name="Contributions Validation Suite French" verbose="1" parallel="methods">
 
     <test name="Validate Contribution Account Details for the Plans for French Account">
         <parameter name="data-set" value="data/plan_data_set_contributions_fr_rpp.xml"/>

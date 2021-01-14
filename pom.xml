@@ -11,7 +11,7 @@
     <properties>
         <compiler.version>1.8</compiler.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <ui_auto_core_version>2.5.17</ui_auto_core_version>
+        <ui_auto_core_version>2.5.20</ui_auto_core_version>
         <webdrivermanager_version>4.2.0</webdrivermanager_version>
     </properties>
 
