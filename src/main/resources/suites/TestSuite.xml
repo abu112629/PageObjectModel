@@ -72,38 +72,6 @@
         </classes>
     </test>
 
-    <test name="Validate Dynamic Status Labels and Steps for NRSP English Account">
-        <parameter name="data-set" value="data/plan_data_set_en.xml"/>
-        <parameter name="data-set2" value="data/plan_data_set_en_NRSP.xml"/>
-        <classes>
-            <class name="com.canadalife.automation.grsoe.tests.PlanDynamicStatusBarTest"/>
-        </classes>
-    </test>
-
-    <test name="Validate Dynamic Status Labels and Steps for NRSP French Account">
-        <parameter name="data-set" value="data/plan_data_set_fr.xml"/>
-        <parameter name="data-set2" value="data/plan_data_set_fr_NRSP.xml"/>
-        <classes>
-            <class name="com.canadalife.automation.grsoe.tests.PlanDynamicStatusBarTest"/>
-        </classes>
-    </test>
-
-    <test name="Validate Dynamic Status Labels and Steps for RPP English Account">
-        <parameter name="data-set" value="data/plan_data_set_en.xml"/>
-        <parameter name="data-set2" value="data/plan_data_set_en_RPP.xml"/>
-        <classes>
-            <class name="com.canadalife.automation.grsoe.tests.PlanDynamicStatusBarTest"/>
-        </classes>
-    </test>
-
-    <test name="Validate Dynamic Status Labels and Steps for RPP French Account">
-        <parameter name="data-set" value="data/plan_data_set_fr.xml"/>
-        <parameter name="data-set2" value="data/plan_data_set_fr_RPP.xml"/>
-        <classes>
-            <class name="com.canadalife.automation.grsoe.tests.PlanDynamicStatusBarTest"/>
-        </classes>
-    </test>
-
     <test name="Validate NRSP Additional Info Questions and Details for English Account">
         <parameter name="data-set" value="data/plan_nrsp_additional_info_en.xml"/>
         <classes>
