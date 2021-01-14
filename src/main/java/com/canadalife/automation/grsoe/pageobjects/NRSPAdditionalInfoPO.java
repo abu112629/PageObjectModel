@@ -99,9 +99,8 @@ public class NRSPAdditionalInfoPO extends PageObjectModel {
     }
 
     @Step("Enter TIN for the Other Country Tax Payer")
-    public void enterTINforNonUSCitizen() {
+    public void enterTINforNonUSCitizen(){
         otherCountryTIN.click();
-        AppHelper.waitForXHR(2);
         setElementValue(otherCountryTIN);
     }
 

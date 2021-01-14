@@ -110,7 +110,7 @@ public class NRSPPlanDO extends DomainObjectModel {
 
 
     @Step("{0} Member selects yes for the additional TIN question, then they see a field to enter their TIN number")
-    public void user_enters_additional_tin_for_other_country(String gwt) {
+    public void user_enters_additional_tin_for_other_country(String gwt){
         nrspAdditionalInfoPO.enterTINforNonUSCitizen();
     }
 

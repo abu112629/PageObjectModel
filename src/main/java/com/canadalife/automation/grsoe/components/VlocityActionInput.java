@@ -20,8 +20,9 @@ public class VlocityActionInput extends VlocityComponent{
     @Override
     public void setValue() {
         WebElement input = coreElement.findElement(By.xpath(".//input"));
+        input.clear();
+        AppHelper.waitForXHR(1);
         Actions action = new Actions(WebHelper.getWebDriver());
-        action.sendKeys(Keys.BACK_SPACE).build().perform();
         action.sendKeys(input,getData()).build().perform();
     }
 

@@ -19,7 +19,7 @@ public class NRSPPlanAdditionalInfoTest extends TestNGBase {
     @Issue("GRSOE-115")
     @Test
 
-    public void ValidateNRSPPlanAdditionalInfo(@Optional("data/plan_nrsp_additional_info_en.xml")String dataSet){
+    public void ValidateNRSPPlanAdditionalInfo(@Optional("data/plan_nrsp_additional_info_en.xml")String dataSet) {
 
         NRSPPlanDO plan = new NRSPPlanDO(getContext()).fromResource(dataSet);
         Given(plan ::user_on_plan_selection_page);
