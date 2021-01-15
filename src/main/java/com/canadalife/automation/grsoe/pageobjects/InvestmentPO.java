@@ -65,9 +65,13 @@ public class InvestmentPO extends PageObjectModel {
 
     public void validateAgeInput(){
         AppHelper.scrollToView(ageInput.getCoreElement());
-        ageInput.validateData(DataTypes.Expected);
-        setElementValue(ageInput);
+        ageInput.getValue().contains("65");
 
+    }
+
+    public void enterAge(){
+        AppHelper.scrollToView(ageInput.getCoreElement());
+        setElementValue(ageInput);
     }
 
     public void validateFundFeeLines(){

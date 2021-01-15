@@ -44,7 +44,7 @@
         <inputfieldTip>
             <item>Nous avons présélectionné un âge pour vous. Saisissez un âge différent pour voir le fonds qui s’en rapproche le plus.</item>
         </inputfieldTip>
-        <ageInput expected ="65">99</ageInput>
+        <ageInput>99</ageInput>
         <investmentCardHeader>Fonds à date cible correspondant à l’âge de 65 ans</investmentCardHeader>
         <investmentCardSelected>Choisie</investmentCardSelected>
         <investmentCardFundName>BLACKROCK LIFEPATH 2020</investmentCardFundName>

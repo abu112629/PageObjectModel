@@ -44,7 +44,7 @@
         <inputfieldTip>
             <item>We’ve preselected an age for you to start. Enter a different age to see the closest available fund.</item>
         </inputfieldTip>
-        <ageInput expected ="65">99</ageInput>
+        <ageInput>99</ageInput>
         <investmentCardHeader>Target date fund that matches age 65</investmentCardHeader>
         <investmentCardSelected>Selected</investmentCardSelected>
         <investmentCardFundName>BLACKROCK LIFEPATH 2035</investmentCardFundName>

@@ -21,7 +21,7 @@ public class InvestmentsFundingTest extends TestNGBase {
     @Issue("GRSOE-80")
     @Test
 
-    public void ValidateInvestmentFunding(@Optional("data/investment_data_set_fr_RPP.xml")String dataSet){
+    public void ValidateInvestmentFunding(@Optional("data/investment_data_set_en_RPP.xml")String dataSet){
 
         InvestmentDO investment= new InvestmentDO(getContext()).fromResource(dataSet);
         Given(investment :: user_on_plan_selection_page);

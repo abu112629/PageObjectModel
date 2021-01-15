@@ -51,6 +51,7 @@ public class InvestmentDO extends DomainObjectModel {
         investmentPO.validateInputFieldQuestion();
         investmentPO.validateInputFieldTip();
         investmentPO.validateAgeInput();
+        investmentPO.enterAge();
         investmentPO.validateInvestmentCardHeader();
         investmentPO.validateInvestmentCardSelected();
 
