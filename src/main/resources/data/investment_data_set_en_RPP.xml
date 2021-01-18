@@ -49,6 +49,9 @@
         <investmentCardSelected>Selected</investmentCardSelected>
         <investmentCardFundName>BLACKROCK LIFEPATH 2035</investmentCardFundName>
         <investmentCardFundFeesLine expected="Annual fees 0.4%">Annual fees 0.4%</investmentCardFundFeesLine>
-    </investmentPO>>
+        <investmentCardFundRORline1 expected="1 year return 6.68%">1 year return 6.68%</investmentCardFundRORline1>
+        <investmentCardFundRORline2 expected="3 year return 9.72%">3 year return 9.72%</investmentCardFundRORline2>
+        <investmentCardFundRORline3 expected="5 year return 10.8%">5 year return 10.8%</investmentCardFundRORline3>
+    </investmentPO>
 
 </plan-domain-object>

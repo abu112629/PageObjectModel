@@ -78,6 +78,15 @@ public class InvestmentPO extends PageObjectModel {
         AppHelper.scrollToView(investmentCardFundFeesLine.getCoreElement());
         investmentCardFundFeesLine.getFundFeesDetails();
         investmentCardFundFeesLine.validateFundFees(DataTypes.Expected);
+
+        investmentCardFundRORline1.getFundFeesDetails();
+        investmentCardFundRORline1.validateFundFees(DataTypes.Expected);
+
+        investmentCardFundRORline2.getFundFeesDetails();
+        investmentCardFundRORline2.validateFundFees(DataTypes.Expected);
+
+        investmentCardFundRORline3.getFundFeesDetails();
+        investmentCardFundRORline3.validateFundFees(DataTypes.Expected);
     }
 
     public void validateInvestmentCardHeader(){
