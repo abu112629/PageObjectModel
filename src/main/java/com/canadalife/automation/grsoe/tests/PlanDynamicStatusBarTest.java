@@ -17,7 +17,7 @@ public class PlanDynamicStatusBarTest extends TestNGBase {
     @Parameters("data-set")
     @Issue("GRSOE-53")
     @Test
-
+    /*The below validations are also a part of User Story 396 in Sprint 8*/
     public void validateDynamicStatusPlanBar(@Optional("data/plan_data_set_fr.xml") String dataSet1){
         PlanDO plan = new PlanDO(getContext()).fromResource(dataSet1);
         Given(plan::user_on_plan_selection_page);

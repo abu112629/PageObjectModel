@@ -20,6 +20,8 @@ public class PlanSelectionTest extends TestNGBase {
     @Parameters("data-set")
     @Issue("GRSOE-68")
     @Test
+
+    /*The below validations are also a part of User Story 396 in Sprint 8*/
     public void validatePlansContent(@Optional("data/plan_data_set_fr.xml") String dataSet) {
         PlanDO plan = new PlanDO(getContext()).fromResource(dataSet);
 
