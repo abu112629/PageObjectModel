@@ -33,10 +33,10 @@ public class PlanSelectionPO extends PageObjectModel {
     private PlanRadioGroup plansubHeader;
 
     @Data(skip = true)
-    @FindBy(xpath = "//*[starts-with(@data-omni-key,'omniPrevStep')]")
+    @FindBy(xpath = "//*[starts-with(@name,'back')]")
     private WebComponent buttonBack;
     @Data(skip = true)
-    @FindBy(xpath = "//*[starts-with(@data-omni-key,'omniNextStep')]")
+    @FindBy(xpath = "//*[starts-with(@name,'continue')]")
     private WebComponent buttonContinue;
 
     @FindBy(xpath="//h1[contains(@class,'h1')]")
