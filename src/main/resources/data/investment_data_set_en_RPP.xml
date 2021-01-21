@@ -48,7 +48,7 @@
         <investmentCardHeader>Target date fund that matches age 65</investmentCardHeader>
         <investmentCardSelected>Selected</investmentCardSelected>
         <investmentCardFundName>BLACKROCK LIFEPATH 2035</investmentCardFundName>
-        <investmentCardFundFeesLine expected="Annual fees 0.4%">Annual fees 0.4%</investmentCardFundFeesLine>
+        <investmentCardFundFeesLine expected="Annual fees 0.513%">Annual fees 0.513%</investmentCardFundFeesLine>
         <investmentCardFundRORline1 expected="1 year return 6.68%">1 year return 6.68%</investmentCardFundRORline1>
         <investmentCardFundRORline2 expected="3 year return 9.72%">3 year return 9.72%</investmentCardFundRORline2>
         <investmentCardFundRORline3 expected="5 year return 10.8%">5 year return 10.8%</investmentCardFundRORline3>
