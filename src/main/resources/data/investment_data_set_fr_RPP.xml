@@ -48,10 +48,10 @@
         <investmentCardHeader>Fonds à date cible correspondant à l’âge de 65 ans</investmentCardHeader>
         <investmentCardSelected>Choisie</investmentCardSelected>
         <investmentCardFundName>BLACKROCK LIFEPATH 2020</investmentCardFundName>
-        <investmentCardFundFeesLine expected="Frais annuels 0,4 %">Frais annuels 0,4 %</investmentCardFundFeesLine>
-        <investmentCardFundRORline1 expected="Rendement sur un an 6,56 %">Rendement sur un an 6,56 %</investmentCardFundRORline1>
-        <investmentCardFundRORline2 expected="Rendement sur 3 ans 8,18 %">Rendement sur 3 ans 8,18 %</investmentCardFundRORline2>
-        <investmentCardFundRORline3 expected="Rendement sur 5 ans 8,61 %">Rendement sur 5 ans 8,61 %</investmentCardFundRORline3>
+        <investmentCardFundFeesLine expected="Frais annuels 0,4%">Frais annuels 0,4 %</investmentCardFundFeesLine>
+        <investmentCardFundRORline1 expected="Rendement sur un an 6,56%">Rendement sur un an 6,56 %</investmentCardFundRORline1>
+        <investmentCardFundRORline2 expected="Rendement sur 3 ans 8,18%">Rendement sur 3 ans 8,18 %</investmentCardFundRORline2>
+        <investmentCardFundRORline3 expected="Rendement sur 5 ans 8,61%">Rendement sur 5 ans 8,61 %</investmentCardFundRORline3>
     </investmentPO>
 
 </plan-domain-object>
