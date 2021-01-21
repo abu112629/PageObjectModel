@@ -37,4 +37,18 @@
         </classes>
     </test>
 
+    <test name="Validate Beneficiary Skip Details for English Account">
+        <parameter name="data-set" value="data/beneficiaries_skip_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.BeneficiariesSkipTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Beneficiary Skip Details for French Account">
+        <parameter name="data-set" value="data/beneficiaries_skip_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.BeneficiariesSkipTest"/>
+        </classes>
+    </test>
+
 </suite>

@@ -39,6 +39,13 @@ public class PlanSelectionPO extends PageObjectModel {
     @FindBy(xpath = "//*[starts-with(@name,'continue')]")
     private WebComponent buttonContinue;
 
+    @Data(skip = true)
+    @FindBy(xpath = "//*[starts-with(@name,'skip-back')]")
+    private WebComponent buttonSkipBack;
+    @Data(skip = true)
+    @FindBy(xpath = "//*[starts-with(@name,'skip-continue')]")
+    private WebComponent buttonSkipContinue;
+
     @FindBy(xpath="//h1[contains(@class,'h1')]")
     private WebComponentList planProgressBarInfo;
 
@@ -73,6 +80,20 @@ public class PlanSelectionPO extends PageObjectModel {
     public void clickBackButton() {
         AppHelper.scrollToView(buttonBack.getCoreElement());
         buttonBack.click();
+        AppHelper.waitForXHR(2);
+    }
+
+    @Step("Click Skip continue button")
+    public void clickSkipContinueButton() {
+        AppHelper.scrollToView(buttonSkipContinue.getCoreElement());
+        buttonSkipContinue.click();
+        AppHelper.waitForXHR(3);
+    }
+
+    @Step("Click Skip back button")
+    public void clickSkipBackButton() {
+        AppHelper.scrollToView(buttonSkipBack.getCoreElement());
+        buttonSkipBack.click();
         AppHelper.waitForXHR(2);
     }
 

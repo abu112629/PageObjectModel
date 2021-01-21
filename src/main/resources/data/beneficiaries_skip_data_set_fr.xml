@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Fr</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                RERN
+            </item>
+        </planList>
+        <planProgressBarStep>
+            <item>Étape 6 de 7: Choisissez vos bénéficiaires</item>
+        </planProgressBarStep>
+    </planSelectionPO>
+    <nrspAdditionalInfoPO>
+        <usCitizenNo>no</usCitizenNo>
+        <otherCitizenNo>no</otherCitizenNo>
+    </nrspAdditionalInfoPO>
+    <investmentPO>
+        <investmentCardSelected>Choisie</investmentCardSelected>
+    </investmentPO>
+    <beneficiariesPO>
+        <beneficiariesDescription>
+            <item>Choisissez qui recevra votre épargne à votre décès. Si vous ne désignez pas de bénéficiaire ou si aucun de vos bénéficiaires n’est vivant à votre décès, les sommes payables seront versées à votre succession, sauf disposition contraire dans la loi.</item>
+            <item>En règle générale, vous pouvez changer vos bénéficiaires à n’importe quel moment dans votre compte en ligne.</item>
+        </beneficiariesDescription>
+        <beneficiariesSkipQuestion>Êtes-vous certain de vouloir continuer sans ajouter de bénéficiaire?</beneficiariesSkipQuestion>
+        <beneficiariesSkipDetails>Lorsque vous désignez un bénéficiaire, il est plus facile de déterminer à qui votre épargne devrait être transférée à votre décès.</beneficiariesSkipDetails>
+    </beneficiariesPO>
+</plan-domain-object>
