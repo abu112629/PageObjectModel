@@ -23,7 +23,7 @@ public class BeneficiariesSkipTest extends TestNGBase {
     @Issue("GRSOE-103")
     @Test
 
-    public void ValidateBeneficiariesSkipSection(@Optional("data/beneficiaries_skip_data_set_fr.xml")String dataSet){
+    public void ValidateBeneficiariesSkipSection(@Optional("data/beneficiaries_skip_data_set_en.xml")String dataSet){
 
         BeneficiariesDO beneficiariesDO=new BeneficiariesDO(getContext()).fromResource(dataSet);
         Given(beneficiariesDO :: user_on_plan_selection_page);
