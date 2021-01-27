@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Cont_Eng</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                RERN
+            </item>
+        </planList>
+    <plansubHeader>
+        <item>
+            Selon votre régime, vous pouvez choisir la part de votre chèque de paye que vous souhaitez verser. Assurez-vous de ne pas dépasser les limites de cotisation établies par l’Agence du revenu du Canada qui pourraient s’appliquer à vous. Pour en savoir plus, consultez les règles relatives aux cotisations à ce régime.
+        </item>>
+    </plansubHeader>
+    </planSelectionPO>
+    <nrspAdditionalInfoPO>
+        <usCitizenNo>no</usCitizenNo>
+        <otherCitizenNo>no</otherCitizenNo>
+    </nrspAdditionalInfoPO>
+    <contributionsPO>
+        <contributionEmployerPercentageRadioButton>%EMPR</contributionEmployerPercentageRadioButton>
+        <contributionEmployerDollarRadioButton>$EMPR</contributionEmployerDollarRadioButton>
+        <contributionEmployerInput></contributionEmployerInput>
+        <contributionMemberInput>2</contributionMemberInput>
+    </contributionsPO>
+    <investmentPO>
+        <investmentCardSelected>Choisie</investmentCardSelected>
+    </investmentPO>
+
+</plan-domain-object>

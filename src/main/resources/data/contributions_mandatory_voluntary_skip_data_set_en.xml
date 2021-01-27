@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Cont_Eng</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                NRSP
+            </item>
+        </planList>
+    <plansubHeader>
+        <item>
+            Depending on your plan, you can choose how much of your paycheque you'd like to contribute. Make sure you don't go over any contribution limits set by the Canada Revenue Agency that may apply to you. View the plan's contribution rules for more details.
+        </item>
+    </plansubHeader>
+    </planSelectionPO>
+    <nrspAdditionalInfoPO>
+        <usCitizenNo>no</usCitizenNo>
+        <otherCitizenNo>no</otherCitizenNo>
+    </nrspAdditionalInfoPO>
+    <contributionsPO>
+        <contributionEmployerPercentageRadioButton>%EMPR</contributionEmployerPercentageRadioButton>
+        <contributionEmployerDollarRadioButton>$EMPR</contributionEmployerDollarRadioButton>
+        <contributionEmployerInput></contributionEmployerInput>
+        <contributionMemberInput>2</contributionMemberInput>
+    </contributionsPO>
+    <investmentPO>
+        <investmentCardSelected>Selected</investmentCardSelected>
+    </investmentPO>
+
+</plan-domain-object>
