@@ -14,6 +14,8 @@
         <prop name="salesforce_language_params" value= "services/data/v49.0/sobjects/User/0054g000000Z36cAAC" />
         <user role="User_En" fullName="" userName="gwl.apprebuild+178@gmail.com" password="Test@12345"/>
         <user role="User_Fr" fullName="" userName="gwl.apprebuild+179@gmail.com" password="Test@12345"/>
+        <user role="User_Bene_En" fullName="" userName="gwl.apprebuild+202@gmail.com" password="Test@12345"/>
+        <user role="User_Bene_Fr" fullName="" userName="gwl.apprebuild+292@gmail.com" password="Test@12345"/>
         <user role="User_Cont_Eng" fullName="" userName="gwl.apprebuild+201@gmail.com" password="Test@12345"/>
         <user role="User_Cont_Fr" fullName="" userName="gwl.apprebuild+201@gmail.com" password="Test@12345"/>
     </environment>
