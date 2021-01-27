@@ -1,7 +1,5 @@
 package com.canadalife.automation.grsoe.tests;
 
-import com.canadalife.automation.grsoe.domainobjects.BeneficiariesDO;
-import com.canadalife.automation.grsoe.domainobjects.ContributionsDO;
 import com.canadalife.automation.grsoe.domainobjects.ContributionsSkipDO;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -12,7 +10,6 @@ import ru.yandex.qatools.allure.annotations.Stories;
 import ui.auto.core.testng.TestNGBase;
 
 import static com.canadalife.automation.grsoe.support.GivenWhenThen.*;
-import static com.canadalife.automation.grsoe.support.GivenWhenThen.And;
 
 public class VoluntaryContributionTest extends TestNGBase {
 
@@ -33,7 +30,6 @@ public class VoluntaryContributionTest extends TestNGBase {
         And(plan :: user_clicks_continue_and_is_able_to_navigate_to_the_contributions_skip_section);
         And(plan :: user_reaches_the_investment_section_and_is_able_to_navigate_back_to_the_contributions_section_directly);
         And(plan :: user_reaches_the_contribution_section);
-
 
     }
 }

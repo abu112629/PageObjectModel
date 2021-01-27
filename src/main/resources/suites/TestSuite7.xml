@@ -51,4 +51,32 @@
         </classes>
     </test>
 
+    <test name="Validate Mandatory Account English">
+        <parameter name="data-set" value="data/contributions_mandatory_voluntary_skip_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.MandatoryContributionTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Voluntary Account English">
+        <parameter name="data-set" value="data/contributions_all_voluntary_skip_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.VoluntaryContributionTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Mandatory Account French">
+        <parameter name="data-set" value="data/contributions_mandatory_voluntary_skip_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.MandatoryContributionTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Voluntary Account French">
+        <parameter name="data-set" value="data/contributions_all_voluntary_skip_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.VoluntaryContributionTest"/>
+        </classes>
+    </test>
+
 </suite>

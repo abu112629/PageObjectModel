@@ -1,9 +1,6 @@
 package com.canadalife.automation.grsoe.domainobjects;
 
-import com.canadalife.automation.grsoe.pageobjects.ContributionsPO;
-import com.canadalife.automation.grsoe.pageobjects.InvestmentPO;
-import com.canadalife.automation.grsoe.pageobjects.LoginPO;
-import com.canadalife.automation.grsoe.pageobjects.PlanSelectionPO;
+import com.canadalife.automation.grsoe.pageobjects.*;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import ru.yandex.qatools.allure.annotations.Step;
 import ui.auto.core.support.DomainObjectModel;
@@ -14,6 +11,7 @@ public class ContributionsSkipDO extends DomainObjectModel {
 
     private LoginPO loginPO;
     private PlanSelectionPO planSelectionPO;
+    private NRSPAdditionalInfoPO nrspAdditionalInfoPO;
     private ContributionsPO contributionsPO;
     private InvestmentPO investmentPO;
 
@@ -38,6 +36,15 @@ public class ContributionsSkipDO extends DomainObjectModel {
     public void user_can_select_required_plan(String gwt) {
         planSelectionPO.selectRequiredPlan();
         planSelectionPO.clickContinueButton();
+    }
+
+    @Step("{0} user clicks continue and selects no for both questions")
+    public void user_clicks_continue_and_selects_no_for_both_questions(String gwt){
+        nrspAdditionalInfoPO.initPage(getContext());
+        nrspAdditionalInfoPO.clickNoforUSCitizen();
+        nrspAdditionalInfoPO.clickNoforOtherCitizen();
+        planSelectionPO.clickContinueButton();
+
     }
 
     @Step("{0} user enters no value or enters zero in the contributions account percentage input")
@@ -71,6 +78,21 @@ public class ContributionsSkipDO extends DomainObjectModel {
     @Step("{0} user reaches the contribution section")
     public void user_reaches_the_contribution_section(String gwt) {
         planSelectionPO.validatePlanssubHeader();
+    }
+
+    @Step("{0} user enters no value for voluntary percentage and enters valid input in the mandatory account")
+    public void user_enters_no_value_for_voluntary_percentage_and_enters_valid_input_in_the_mandatory_account(String gwt) {
+        contributionsPO.initPage(getContext());
+        contributionsPO.clickEmployerPercentageEnterInput();
+        contributionsPO.enterMemberValidInput();
+        planSelectionPO.clickContinueButton();
+    }
+
+    @Step("{0} user enters no value for voluntary dollar and enters valid input in the mandatory account")
+    public void user_enters_no_value_for_voluntary_dollar_and_enters_valid_input_in_the_mandatory_account(String gwt) {
+        contributionsPO.clickEmployerDollarEnterInput();
+        contributionsPO.enterMemberValidInput();
+        planSelectionPO.clickContinueButton();
     }
 
 
