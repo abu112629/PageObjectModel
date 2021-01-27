@@ -6,6 +6,7 @@ import com.canadalife.automation.grsoe.components.VlocityInput;
 import com.canadalife.automation.grsoe.support.AppHelper;
 import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.allure.annotations.Step;
+import ui.auto.core.components.WebComponent;
 import ui.auto.core.components.WebComponentList;
 import ui.auto.core.data.DataTypes;
 import ui.auto.core.support.PageObjectModel;
@@ -23,6 +24,9 @@ public class ContributionsPO extends PageObjectModel {
 
     @FindBy(xpath = "//*[@data-omni-key='NRSPContributionsLWC']")
     private RadioGroup contributionEmployerDollarRadioButton;
+
+    @FindBy(xpath = "//*[@data-omni-key='NRSPContributionsLWC']")
+    private RadioGroup contributionVoluntaryRadioButton;
 
     @FindBy(xpath = "//*[@data-omni-key='EMPR']")
     private VlocityInput contributionEmployerInput;
@@ -42,9 +46,17 @@ public class ContributionsPO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='MEM']")
     private VlocityInput contributionMemberError;
 
+    @FindBy(xpath = "//*[@data-omni-key='MVOL']")
+    private VlocityInput contributionMemberVoluntaryInput;
+
     @FindBy(xpath = "//span[contains(@class,'text-body')]")
     private WebComponentList contributionExplanation;
 
+    @FindBy(xpath="//div[contains(@class,'nds-col nds-m-bottom_xx-large nds-size_1-of-1')]")
+    private WebComponentList contributionSkipStepDescription;
+
+    @FindBy(xpath="//*[@data-omni-key='GeneralContributionsStep']//h2")
+    private WebComponent contributionsSkipQuestion;
 
     @Step("Validate contribution account details")
     public void validateContributionAccount() {
@@ -121,9 +133,29 @@ public class ContributionsPO extends PageObjectModel {
         setElementValue(contributionMemberInput);
     }
 
+    @Step("Enter valid value in range for Member Voluntary Account")
+    public void enterMemberVoluntaryValidInput() {
+        setElementValue(contributionMemberVoluntaryInput);
+    }
+
     @Step("Validate Plan account text with no Contribution available")
     public void validatePlanNoContributionsText() {
         contributionExplanation.initPage(getContext());
         contributionExplanation.validateAll();
+    }
+
+    public void validateContributionSkipDescription(){
+        contributionSkipStepDescription.initPage(getContext());
+        contributionSkipStepDescription.validateAll();
+    }
+
+    public void validateContributionSkipQuestionandDetails(){
+        contributionsSkipQuestion.validateData(DataTypes.Data);
+    }
+
+    @Step("Click Member Voluntary Account dollar input radio button and enter value")
+    public void clickMemberVoluntaryDollarEnterInput() {
+        setElementValue(contributionVoluntaryRadioButton);
+        setElementValue(contributionMemberVoluntaryInput);
     }
 }

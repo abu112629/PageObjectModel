@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Cont_Fr</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                REER
+            </item>
+        </planList>
+    <plansubHeader>
+        <item>
+            Selon votre régime, vous pouvez choisir la part de votre chèque de paye que vous souhaitez verser. Assurez-vous de ne pas dépasser les limites de cotisation établies par l’Agence du revenu du Canada qui pourraient s’appliquer à vous. Pour en savoir plus, consultez les règles relatives aux cotisations à ce régime.
+        </item>
+    </plansubHeader>
+    </planSelectionPO>
+    <contributionsPO>
+        <contributionVoluntaryRadioButton>$MVOL</contributionVoluntaryRadioButton>
+        <contributionMemberVoluntaryInput>0</contributionMemberVoluntaryInput>
+        <contributionMemberInput>0</contributionMemberInput>
+        <contributionSkipStepDescription>
+            <item>Si vous êtes admissible aux cotisations patronales de contrepartie, vous laissez peut-être filer entre vos doigts des sommes additionnelles. Vous pouvez sauter cette étape pour le moment et établir le montant de vos cotisations en ligne après avoir adhéré au régime.</item>
+        </contributionSkipStepDescription>
+        <contributionsSkipQuestion>Êtes-vous certain de vouloir continuer sans choisir le montant de votre cotisation?</contributionsSkipQuestion>
+    </contributionsPO>
+    <investmentPO>
+        <investmentCardSelected>Choisie</investmentCardSelected>
+    </investmentPO>
+
+</plan-domain-object>

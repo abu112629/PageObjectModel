@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Cont_Eng</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                RRSP
+            </item>
+        </planList>
+    <plansubHeader>
+        <item>
+            Depending on your plan, you can choose how much of your paycheque you'd like to contribute. Make sure you don't go over any contribution limits set by the Canada Revenue Agency that may apply to you. View the plan's contribution rules for more details.
+        </item>
+    </plansubHeader>
+    </planSelectionPO>
+    <contributionsPO>
+        <contributionVoluntaryRadioButton>$MVOL</contributionVoluntaryRadioButton>
+        <contributionMemberVoluntaryInput>0</contributionMemberVoluntaryInput>
+        <contributionMemberInput>0</contributionMemberInput>
+        <contributionSkipStepDescription>
+            <item>You may be missing out on additional money from your employer, if you're eligible for contribution matching. If you want to skip this step for now, you can set up your contribution amounts online once you're enrolled in your plan.</item>
+        </contributionSkipStepDescription>
+        <contributionsSkipQuestion>Are you sure you want to continue without choosing your contribution amount?</contributionsSkipQuestion>
+    </contributionsPO>
+    <investmentPO>
+        <investmentCardSelected>Selected</investmentCardSelected>
+    </investmentPO>
+
+</plan-domain-object>
