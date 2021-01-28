@@ -1,7 +1,6 @@
 package com.canadalife.automation.grsoe.tests;
 
 import com.canadalife.automation.grsoe.domainobjects.BeneficiariesDO;
-import com.canadalife.automation.grsoe.domainobjects.PlanDO;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -10,10 +9,7 @@ import ru.yandex.qatools.allure.annotations.Issue;
 import ru.yandex.qatools.allure.annotations.Stories;
 import ui.auto.core.testng.TestNGBase;
 
-import static com.canadalife.automation.grsoe.support.GivenWhenThen.Given;
-import static com.canadalife.automation.grsoe.support.GivenWhenThen.When;
-import static com.canadalife.automation.grsoe.support.GivenWhenThen.Then;
-import static com.canadalife.automation.grsoe.support.GivenWhenThen.And;
+import static com.canadalife.automation.grsoe.support.GivenWhenThen.*;
 
 public class BeneficiariesSkipTest extends TestNGBase {
 
