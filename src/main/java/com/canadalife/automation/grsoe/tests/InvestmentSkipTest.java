@@ -23,14 +23,14 @@ public class InvestmentSkipTest extends TestNGBase {
 
     public void ValidateInvestmentSkipSection(@Optional("data/investment_skip_data_set_fr.xml")String dataSet){
 
-        InvestmentDO plan=new InvestmentDO(getContext()).fromResource(dataSet);
-        Given(plan :: user_on_plan_selection_page);
-        When(plan :: user_can_select_required_plan);
-        Then(plan :: user_clicks_continue_and_selects_no_for_both_questions);
-        And(plan :: user_validates_investment_skip_details_and_questionnaire);
-        And(plan :: user_reaches_investment_page_when_clicks_back_from_investment_skip_page);
-        And(plan :: user_validates_investment_skip_details_and_questionnaire);
-        And(plan :: user_reaches_beneficiaries_section_when_clicks_skip_continue_from_investment_skip_page);
+        InvestmentDO invest=new InvestmentDO(getContext()).fromResource(dataSet);
+        Given(invest :: user_on_plan_selection_page);
+        When(invest :: user_can_select_required_plan);
+        Then(invest :: user_clicks_continue_and_selects_no_for_both_questions);
+        And(invest :: user_validates_investment_skip_details_and_questionnaire);
+        And(invest :: user_reaches_investment_page_when_clicks_back_from_investment_skip_page);
+        And(invest :: user_validates_investment_skip_details_and_questionnaire);
+        And(invest :: user_reaches_beneficiaries_section_when_clicks_skip_continue_from_investment_skip_page);
 
     }
 }

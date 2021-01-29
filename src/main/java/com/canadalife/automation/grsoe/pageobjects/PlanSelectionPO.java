@@ -101,7 +101,7 @@ public class PlanSelectionPO extends PageObjectModel {
         AppHelper.waitForXHR(2);
     }
 
-    @Step("Click Skip Step button")
+    @Step("Click the Skip Step button")
     public void clickSkipStepButton() {
         AppHelper.scrollToView(buttonSkipThisStep.getCoreElement());
         buttonSkipThisStep.click();

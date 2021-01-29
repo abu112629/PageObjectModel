@@ -107,7 +107,7 @@ public class InvestmentPO extends PageObjectModel {
         investmentCardFundName.validateData(DataTypes.Data);
     }
 
-    public void validateInvestmentSkipQuestionandDetails(){
+    public void validateTheInvestmentSkipQuestionandDetails(){
         investmentSkipQuestion.validateData(DataTypes.Data);
         investmentSkipDetails.validateData(DataTypes.Data);
     }

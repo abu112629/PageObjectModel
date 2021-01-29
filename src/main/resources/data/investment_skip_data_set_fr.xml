@@ -30,8 +30,8 @@
     </rppAdditionalInfoPO>
     <investmentPO>
         <investmentCardSelected>Choisie</investmentCardSelected>
-        <investmentSkipQuestion>Êtes-vous certain de vouloir sauter l’étape de sélection d’un fonds de placement?</investmentSkipQuestion>
         <investmentSkipDetails>Si vous sautez cette étape, vos cotisations seront versées par défaut dans un fonds choisi par votre employeur. Vous aurez la possibilité de changer ce fonds après avoir adhéré au régime.</investmentSkipDetails>
+        <investmentSkipQuestion>Êtes-vous certain de vouloir sauter l’étape de sélection d’un fonds de placement?</investmentSkipQuestion>
     </investmentPO>
     <beneficiariesPO>
         <beneficiariesDescription>

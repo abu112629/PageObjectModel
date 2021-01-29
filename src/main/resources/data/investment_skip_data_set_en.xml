@@ -30,8 +30,8 @@
     </rppAdditionalInfoPO>
     <investmentPO>
         <investmentCardSelected>Selected</investmentCardSelected>
-        <investmentSkipQuestion>Are you sure you want to skip selecting an investment fund?</investmentSkipQuestion>
         <investmentSkipDetails>If you skip this step your contributions will go into a default fund chosen by your employer. You'll have the option to change this fund once you're enrolled.</investmentSkipDetails>
+        <investmentSkipQuestion>Are you sure you want to skip selecting an investment fund?</investmentSkipQuestion>
     </investmentPO>
     <beneficiariesPO>
         <beneficiariesDescription>

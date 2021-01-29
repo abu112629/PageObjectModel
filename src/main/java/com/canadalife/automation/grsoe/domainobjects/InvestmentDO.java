@@ -63,22 +63,22 @@ public class InvestmentDO extends DomainObjectModel {
 
     }
 
-    @Step("{0} user reaches investment page when clicks back from investment Skip Page")
+    @Step("{0} user reaches investment Page when clicks back from investment Skip Page")
     public void user_reaches_investment_page_when_clicks_back_from_investment_skip_page(String gwt){
         planSelectionPO.clickSkipBackButton();
         investmentPO.validateInvestmentCardSelected();
 
     }
 
-    @Step("{0} user clicks Skip button and validates investment Skip Details and Questionnaire")
+    @Step("{0} user clicks Skip Button and validates investment Skip Details and Questionnaire")
     public void user_validates_investment_skip_details_and_questionnaire(String gwt){
        planSelectionPO.clickSkipStepButton();
        investmentPO.initPage(getContext());
-       investmentPO.validateInvestmentSkipQuestionandDetails();
+       investmentPO.validateTheInvestmentSkipQuestionandDetails();
 
     }
 
-    @Step("{0} user reaches beneficiaries section when clicks skip continue from Investment skip Page")
+    @Step("{0} user reaches Beneficiaries section when clicks skip continue from Investment skip Page")
     public void user_reaches_beneficiaries_section_when_clicks_skip_continue_from_investment_skip_page(String gwt){
        planSelectionPO.clickSkipContinueButton();
        beneficiariesPO.initPage(getContext());
