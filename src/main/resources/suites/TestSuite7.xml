@@ -79,4 +79,18 @@
         </classes>
     </test>
 
+    <test name="Validate Investment Skip Account English">
+        <parameter name="data-set" value="data/investment_skip_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.InvestmentSkipTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate Investment Skip Account French">
+        <parameter name="data-set" value="data/investment_skip_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.InvestmentSkipTest"/>
+        </classes>
+    </test>
+
 </suite>

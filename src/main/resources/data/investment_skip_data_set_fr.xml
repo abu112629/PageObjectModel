@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Fr</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                RRA
+            </item>
+        </planList>
+    </planSelectionPO>
+    <rppAdditionalInfoPO>
+        <spousebuttonNo>no</spousebuttonNo>
+        <connectedPersonbuttonNo>no</connectedPersonbuttonNo>
+    </rppAdditionalInfoPO>
+    <investmentPO>
+        <investmentCardSelected>Choisie</investmentCardSelected>
+        <investmentSkipQuestion>Êtes-vous certain de vouloir sauter l’étape de sélection d’un fonds de placement?</investmentSkipQuestion>
+        <investmentSkipDetails>Si vous sautez cette étape, vos cotisations seront versées par défaut dans un fonds choisi par votre employeur. Vous aurez la possibilité de changer ce fonds après avoir adhéré au régime.</investmentSkipDetails>
+    </investmentPO>
+    <beneficiariesPO>
+        <beneficiariesDescription>
+            <item>Choisissez qui recevra votre épargne à votre décès. Si vous ne désignez pas de bénéficiaire ou si aucun de vos bénéficiaires n’est vivant à votre décès, les sommes payables seront versées à votre succession, sauf disposition contraire dans la loi.</item>
+            <item>En règle générale, vous pouvez changer vos bénéficiaires à n’importe quel moment dans votre compte en ligne.</item>
+        </beneficiariesDescription>
+    </beneficiariesPO>
+
+</plan-domain-object>

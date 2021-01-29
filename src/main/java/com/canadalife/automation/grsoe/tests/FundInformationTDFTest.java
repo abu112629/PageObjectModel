@@ -24,6 +24,6 @@ public class FundInformationTDFTest extends TestNGBase {
         Given(investment :: user_on_plan_selection_page);
         When(investment :: user_can_select_required_plan);
         Then(investment :: user_clicks_continue_and_selects_no_for_both_questions);
-        And(investment ::  user_validates_investment_fund_fess_and_fund_name);
+        And(investment ::  user_validates_investment_fund_fees_and_fund_name);
     }
 }

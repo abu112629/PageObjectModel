@@ -48,6 +48,12 @@ public class InvestmentPO extends PageObjectModel {
     @FindBy(xpath="//*[@data-omni-key='CustomLWCTargetDateCard']")
     private VlocitySelect investmentCardFundRORline3;
 
+    @FindBy(xpath="//*[@data-omni-key='TargetDateFundStep']//h2")
+    private WebComponent investmentSkipQuestion;
+
+    @FindBy(xpath="//*[starts-with(@class,'nds-col nds-m-bottom_xx-large nds-size_1-of-1')]")
+    private WebComponent investmentSkipDetails;
+
     public void validateInvestmentDescription(){
         investmentDescription.initPage(getContext());
         investmentDescription.validateAll();
@@ -99,6 +105,11 @@ public class InvestmentPO extends PageObjectModel {
 
     public void validateInvestmentFundName(){
         investmentCardFundName.validateData(DataTypes.Data);
+    }
+
+    public void validateInvestmentSkipQuestionandDetails(){
+        investmentSkipQuestion.validateData(DataTypes.Data);
+        investmentSkipDetails.validateData(DataTypes.Data);
     }
 }
 

@@ -1,9 +1,6 @@
 package com.canadalife.automation.grsoe.domainobjects;
 
-import com.canadalife.automation.grsoe.pageobjects.InvestmentPO;
-import com.canadalife.automation.grsoe.pageobjects.LoginPO;
-import com.canadalife.automation.grsoe.pageobjects.PlanSelectionPO;
-import com.canadalife.automation.grsoe.pageobjects.RPPAdditionalInfoPO;
+import com.canadalife.automation.grsoe.pageobjects.*;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import ru.yandex.qatools.allure.annotations.Step;
 import ui.auto.core.support.DomainObjectModel;
@@ -15,6 +12,7 @@ public class InvestmentDO extends DomainObjectModel {
     private PlanSelectionPO planSelectionPO;
     private RPPAdditionalInfoPO rppAdditionalInfoPO;
     private InvestmentPO investmentPO;
+    private BeneficiariesPO beneficiariesPO;
 
     private InvestmentDO(){}
     public InvestmentDO(TestContext context){this.context = context;}
@@ -58,10 +56,33 @@ public class InvestmentDO extends DomainObjectModel {
     }
 
     @Step("{0} user validates investment Fund Fees and Fund Name")
-    public void user_validates_investment_fund_fess_and_fund_name(String gwt){
+    public void user_validates_investment_fund_fees_and_fund_name(String gwt){
         investmentPO.initPage(getContext());
         investmentPO.validateInvestmentFundName();
         investmentPO.validateFundFeeLines();
+
+    }
+
+    @Step("{0} user reaches investment page when clicks back from investment Skip Page")
+    public void user_reaches_investment_page_when_clicks_back_from_investment_skip_page(String gwt){
+        planSelectionPO.clickSkipBackButton();
+        investmentPO.validateInvestmentCardSelected();
+
+    }
+
+    @Step("{0} user clicks Skip button and validates investment Skip Details and Questionnaire")
+    public void user_validates_investment_skip_details_and_questionnaire(String gwt){
+       planSelectionPO.clickSkipStepButton();
+       investmentPO.initPage(getContext());
+       investmentPO.validateInvestmentSkipQuestionandDetails();
+
+    }
+
+    @Step("{0} user reaches beneficiaries section when clicks skip continue from Investment skip Page")
+    public void user_reaches_beneficiaries_section_when_clicks_skip_continue_from_investment_skip_page(String gwt){
+       planSelectionPO.clickSkipContinueButton();
+       beneficiariesPO.initPage(getContext());
+       beneficiariesPO.validateBeneficiariesDescription();
 
     }
 }
