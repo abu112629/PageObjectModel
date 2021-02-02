@@ -79,7 +79,7 @@
             <item>Régimes auxquels vous pouvez adhérer</item>
         </planProgressBarInfo>
         <planProgressBarStep>
-            <item>Étape 2 de 6: Sélectionnez vos régimes</item>
+            <item>Étape 2 de 5: Sélectionnez vos régimes</item>
         </planProgressBarStep>
         <errorMessage expected="Vous devez sélectionner au moins un régime avant de continuer."/>
         <canadalifeLogo>&lt;img class="cl-logo" alt="Accueil – Logo de la Canada-Vie" src="https://www.canadalife.com/content/dam/public/logos/CanadaLife_F_MC.svg" data-aura-rendered-by="146:0"&gt;</canadalifeLogo>
