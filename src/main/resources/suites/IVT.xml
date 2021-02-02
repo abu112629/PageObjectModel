@@ -1,0 +1,63 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="IVT Tests" verbose="1" parallel="tests">
+
+    <test name="Validate all NRSP Plan corresponding Pages for English account">
+        <parameter name="data-set" value="data/plan_nrsp_additional_info_en.xml"/>
+        <parameter name="data-set2" value="data/contributions_mandatory_voluntary_skip_data_set_en.xml"/>
+        <parameter name="data-set3" value="data/investment_skip_data_set_en.xml"/>
+        <parameter name="data-set4" value="data/beneficiaries_skip_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.NRSPIVTTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate all NRSP Plan corresponding Pages for French account">
+        <parameter name="data-set" value="data/plan_nrsp_additional_info_fr.xml"/>
+        <parameter name="data-set2" value="data/contributions_mandatory_voluntary_skip_data_set_fr.xml"/>
+        <parameter name="data-set3" value="data/investment_skip_data_set_fr.xml"/>
+        <parameter name="data-set4" value="data/beneficiaries_skip_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.NRSPIVTTest"/>
+        </classes>
+    </test>
+
+
+    <test name="Validate all RPP Plan corresponding Pages for English account">
+        <parameter name="data-set" value="data/plan_rpp_salesforce_save_en.xml"/>
+        <parameter name="data-set2" value="data/investment_skip_data_set_en.xml"/>
+        <parameter name="data-set3" value="data/beneficiaries_skip_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.RPPIVTTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate all RPP Plan corresponding Pages for French account">
+        <parameter name="data-set" value="data/plan_rpp_salesforce_save_fr.xml"/>
+        <parameter name="data-set2" value="data/investment_skip_data_set_fr.xml"/>
+        <parameter name="data-set3" value="data/beneficiaries_skip_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.RPPIVTTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate all RRSP Plan corresponding Pages for English account">
+        <parameter name="data-set" value="data/contributions_all_voluntary_skip_data_set_en.xml"/>
+        <parameter name="data-set2" value="data/investment_skip_data_set_en.xml"/>
+        <parameter name="data-set3" value="data/beneficiaries_skip_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.RRSPIVTTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate all RRSP Plan corresponding Pages for French account">
+        <parameter name="data-set" value="data/contributions_all_voluntary_skip_data_set_fr.xml"/>
+        <parameter name="data-set2" value="data/investment_skip_data_set_fr.xml"/>
+        <parameter name="data-set3" value="data/beneficiaries_skip_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.tests.RRSPIVTTest"/>
+        </classes>
+    </test>
+
+
+</suite>

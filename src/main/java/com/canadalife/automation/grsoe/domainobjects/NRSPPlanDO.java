@@ -1,8 +1,6 @@
 package com.canadalife.automation.grsoe.domainobjects;
 
-import com.canadalife.automation.grsoe.pageobjects.LoginPO;
-import com.canadalife.automation.grsoe.pageobjects.NRSPAdditionalInfoPO;
-import com.canadalife.automation.grsoe.pageobjects.PlanSelectionPO;
+import com.canadalife.automation.grsoe.pageobjects.*;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import ru.yandex.qatools.allure.annotations.Step;
 import ui.auto.core.support.DomainObjectModel;
@@ -27,6 +25,7 @@ public class NRSPPlanDO extends DomainObjectModel {
 
         planSelectionPO.initPage(getContext());
         planSelectionPO.clickContinueButton();
+        nrspAdditionalInfoPO.initPage(getContext());
     }
 
     @Step("{0} Member can select required Plan")
@@ -48,7 +47,6 @@ public class NRSPPlanDO extends DomainObjectModel {
 
     @Step("{0} Member has not answered a question and selects continue, then the member will see an in-line error message")
     public void user_can_see_inline_error_messages_for_no_selection(String gwt) {
-        nrspAdditionalInfoPO.initPage(getContext());
         planSelectionPO.clickContinueButton();
         nrspAdditionalInfoPO.errorMessageNoselection();
     }
@@ -134,6 +132,7 @@ public class NRSPPlanDO extends DomainObjectModel {
         nrspAdditionalInfoPO.validateReasonforAdditionalTINLabel();
         nrspAdditionalInfoPO.errorMessageNoAdditionalDetailsProvided();
         nrspAdditionalInfoPO.enterAdditionalDetailsforNoTIN();
+        planSelectionPO.clickContinueButton();
 
     }
 }

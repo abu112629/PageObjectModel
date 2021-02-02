@@ -4,7 +4,7 @@
 
     <aliases>
         <url>${env.getUrl()}</url>
-        <userRole>User_Fr</userRole>
+        <userRole>User_Bene_Fr</userRole>
         <user>${env.getUser(userRole)}</user>
         <userName>${user.getUserName()}</userName>
         <password>${user.getPassword()}</password>

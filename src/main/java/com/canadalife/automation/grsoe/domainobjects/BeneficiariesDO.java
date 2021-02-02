@@ -47,6 +47,7 @@ public class BeneficiariesDO extends DomainObjectModel {
 
     @Step("{0} user validates beneficiaries section")
     public void user_validates_beneficiaries_section(String gwt){
+        planSelectionPO.initPage(getContext());
         planSelectionPO.clickContinueButton();
         planSelectionPO.validatePlanProgressBarStep();
         beneficiariesPO.initPage(getContext());
@@ -62,15 +63,10 @@ public class BeneficiariesDO extends DomainObjectModel {
 
     }
 
-    @Step("{0} user clicks back and reach beneficiaries Skip section")
-    public void user_clicks_back_and_reach_beneficiaries_skip_section(String gwt){
-        planSelectionPO.clickBackButton();
-        beneficiariesPO.validateBeneficiariesSkipQuestionandDetails();
-
-    }
-
     @Step("{0} user clicks Skip back and reach add beneficiaries page and clicks back to reach investments")
     public void user_clicks_back_and_reach_add_beneficiaries_page_and_back_to_investments(String gwt){
+        planSelectionPO.clickBackButton();
+        planSelectionPO.clickContinueButton();
         planSelectionPO.clickSkipBackButton();
         beneficiariesPO.validateBeneficiariesDescription();
         planSelectionPO.clickBackButton();

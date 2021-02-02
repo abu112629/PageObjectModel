@@ -83,6 +83,7 @@ public class ContributionsSkipDO extends DomainObjectModel {
     @Step("{0} user enters no value for voluntary percentage and enters valid input in the mandatory account")
     public void user_enters_no_value_for_voluntary_percentage_and_enters_valid_input_in_the_mandatory_account(String gwt) {
         contributionsPO.initPage(getContext());
+        planSelectionPO.initPage(getContext());
         contributionsPO.clickEmployerPercentageEnterInput();
         contributionsPO.enterMemberValidInput();
         planSelectionPO.clickContinueButton();

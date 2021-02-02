@@ -27,7 +27,6 @@ public class BeneficiariesSkipTest extends TestNGBase {
         Then(beneficiariesDO :: user_clicks_continue_and_selects_no_for_both_questions);
         And(beneficiariesDO :: user_validates_beneficiaries_section);
         And(beneficiariesDO :: user_validates_beneficiaries_skip_section);
-        And(beneficiariesDO :: user_clicks_back_and_reach_beneficiaries_skip_section);
         And(beneficiariesDO :: user_clicks_back_and_reach_add_beneficiaries_page_and_back_to_investments);
 
 
