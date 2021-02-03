@@ -8,7 +8,7 @@
         <parameter name="data-set4" value="data/plan_data_set_contributions_en_dpsp.xml"/>
         <parameter name="data-set5" value="data/plan_data_set_contributions_en_tfsa.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.PlanContributionRulesTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.PlanContributionRulesTest"/>
         </classes>
     </test>
 

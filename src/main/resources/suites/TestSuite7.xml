@@ -5,91 +5,91 @@
     <test name="Validate Contribution Payroll Input Details for French Account">
         <parameter name="data-set" value="data/plan_data_set_edit_contributions_fr.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.PlanContributionsPayrollInputTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.PlanContributionsPayrollInputTest"/>
         </classes>
     </test>
 
     <test name="Validate Investment Details for English Account">
         <parameter name="data-set" value="data/investment_data_set_en_RPP.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.InvestmentsFundingTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.InvestmentsFundingTest"/>
         </classes>
     </test>
 
     <test name="Validate Investment Details for French Account">
         <parameter name="data-set" value="data/investment_data_set_fr_RPP.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.InvestmentsFundingTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.InvestmentsFundingTest"/>
         </classes>
     </test>
 
     <test name="Validate Fund Details for English Account">
         <parameter name="data-set" value="data/investment_data_set_en_RPP.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.FundInformationTDFTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.FundInformationTDFTest"/>
         </classes>
     </test>
 
     <test name="Validate Fund Details for French Account">
         <parameter name="data-set" value="data/investment_data_set_fr_RPP.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.FundInformationTDFTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.FundInformationTDFTest"/>
         </classes>
     </test>
 
     <test name="Validate Beneficiary Skip Details for English Account">
         <parameter name="data-set" value="data/beneficiaries_skip_data_set_en.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.BeneficiariesSkipTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesSkipTest"/>
         </classes>
     </test>
 
     <test name="Validate Beneficiary Skip Details for French Account">
         <parameter name="data-set" value="data/beneficiaries_skip_data_set_fr.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.BeneficiariesSkipTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesSkipTest"/>
         </classes>
     </test>
 
     <test name="Validate Mandatory Account English">
         <parameter name="data-set" value="data/contributions_mandatory_voluntary_skip_data_set_en.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.MandatoryContributionTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.MandatoryContributionTest"/>
         </classes>
     </test>
 
     <test name="Validate Voluntary Account English">
         <parameter name="data-set" value="data/contributions_all_voluntary_skip_data_set_en.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.VoluntaryContributionTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.VoluntaryContributionTest"/>
         </classes>
     </test>
 
     <test name="Validate Mandatory Account French">
         <parameter name="data-set" value="data/contributions_mandatory_voluntary_skip_data_set_fr.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.MandatoryContributionTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.MandatoryContributionTest"/>
         </classes>
     </test>
 
     <test name="Validate Voluntary Account French">
         <parameter name="data-set" value="data/contributions_all_voluntary_skip_data_set_fr.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.VoluntaryContributionTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.VoluntaryContributionTest"/>
         </classes>
     </test>
 
     <test name="Validate the Investment Skip Account English">
         <parameter name="data-set" value="data/investment_skip_data_set_en.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.InvestmentSkipTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.InvestmentSkipTest"/>
         </classes>
     </test>
 
     <test name="Validate the Investment Skip Account French">
         <parameter name="data-set" value="data/investment_skip_data_set_fr.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.InvestmentSkipTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.InvestmentSkipTest"/>
         </classes>
     </test>
 

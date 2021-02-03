@@ -8,7 +8,7 @@
         <parameter name="data-set3" value="data/investment_skip_data_set_en.xml"/>
         <parameter name="data-set4" value="data/beneficiaries_skip_data_set_en.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.NRSPIVTTest"/>
+            <class name="com.canadalife.automation.grsoe.ivttests.NRSPIVTTest"/>
         </classes>
     </test>
 
@@ -18,7 +18,7 @@
         <parameter name="data-set3" value="data/investment_skip_data_set_fr.xml"/>
         <parameter name="data-set4" value="data/beneficiaries_skip_data_set_fr.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.NRSPIVTTest"/>
+            <class name="com.canadalife.automation.grsoe.ivttests.NRSPIVTTest"/>
         </classes>
     </test>
 
@@ -28,7 +28,7 @@
         <parameter name="data-set2" value="data/investment_skip_data_set_en.xml"/>
         <parameter name="data-set3" value="data/beneficiaries_skip_data_set_en.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.RPPIVTTest"/>
+            <class name="com.canadalife.automation.grsoe.ivttests.RPPIVTTest"/>
         </classes>
     </test>
 
@@ -37,7 +37,7 @@
         <parameter name="data-set2" value="data/investment_skip_data_set_fr.xml"/>
         <parameter name="data-set3" value="data/beneficiaries_skip_data_set_fr.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.RPPIVTTest"/>
+            <class name="com.canadalife.automation.grsoe.ivttests.RPPIVTTest"/>
         </classes>
     </test>
 
@@ -46,7 +46,7 @@
         <parameter name="data-set2" value="data/investment_skip_data_set_en.xml"/>
         <parameter name="data-set3" value="data/beneficiaries_skip_data_set_en.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.RRSPIVTTest"/>
+            <class name="com.canadalife.automation.grsoe.ivttests.RRSPIVTTest"/>
         </classes>
     </test>
 
@@ -55,7 +55,7 @@
         <parameter name="data-set2" value="data/investment_skip_data_set_fr.xml"/>
         <parameter name="data-set3" value="data/beneficiaries_skip_data_set_fr.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.RRSPIVTTest"/>
+            <class name="com.canadalife.automation.grsoe.ivttests.RRSPIVTTest"/>
         </classes>
     </test>
 

@@ -1,4 +1,4 @@
-package com.canadalife.automation.grsoe.tests;
+package com.canadalife.automation.grsoe.ivttests;
 
 import com.canadalife.automation.grsoe.domainobjects.BeneficiariesDO;
 import com.canadalife.automation.grsoe.domainobjects.ContributionsSkipDO;

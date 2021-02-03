@@ -1,6 +1,5 @@
-package com.canadalife.automation.grsoe.tests;
+package com.canadalife.automation.grsoe.sprinttests;
 
-import com.canadalife.automation.grsoe.domainobjects.BeneficiariesDO;
 import com.canadalife.automation.grsoe.domainobjects.InvestmentDO;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;

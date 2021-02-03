@@ -6,7 +6,7 @@
         <parameter name="data-set" value="data/plan_data_set_en.xml"/>
         <parameter name="data-set2" value="data/plan_data_set_en_NRSP.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.PlanDynamicStatusBarTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.PlanDynamicStatusBarTest"/>
         </classes>
     </test>
 
@@ -14,7 +14,7 @@
         <parameter name="data-set" value="data/plan_data_set_fr.xml"/>
         <parameter name="data-set2" value="data/plan_data_set_fr_NRSP.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.PlanDynamicStatusBarTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.PlanDynamicStatusBarTest"/>
         </classes>
     </test>
 
@@ -22,7 +22,7 @@
         <parameter name="data-set" value="data/plan_data_set_en.xml"/>
         <parameter name="data-set2" value="data/plan_data_set_en_RPP.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.PlanDynamicStatusBarTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.PlanDynamicStatusBarTest"/>
         </classes>
     </test>
 
@@ -30,7 +30,7 @@
         <parameter name="data-set" value="data/plan_data_set_fr.xml"/>
         <parameter name="data-set2" value="data/plan_data_set_fr_RPP.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.PlanDynamicStatusBarTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.PlanDynamicStatusBarTest"/>
         </classes>
     </test>
     <test name="Validate Contribution Account Details for the Plans for English Account">
@@ -40,7 +40,7 @@
         <parameter name="data-set4" value="data/plan_data_set_contributions_en_dpsp.xml"/>
         <parameter name="data-set5" value="data/plan_data_set_contributions_en_tfsa.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.tests.PlanContributionsTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.PlanContributionsTest"/>
         </classes>
     </test>
 

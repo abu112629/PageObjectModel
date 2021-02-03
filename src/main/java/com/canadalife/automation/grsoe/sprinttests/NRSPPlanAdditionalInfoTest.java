@@ -1,4 +1,4 @@
-package com.canadalife.automation.grsoe.tests;
+package com.canadalife.automation.grsoe.sprinttests;
 
 import com.canadalife.automation.grsoe.domainobjects.NRSPPlanDO;
 import org.testng.annotations.Optional;
