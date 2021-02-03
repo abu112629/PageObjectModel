@@ -32,7 +32,7 @@
             <item>Date de naissance de votre conjoint / conjoint de fait</item>
         </spouseDOBLabel>
         <spousefirstNameinput>TestFrench</spousefirstNameinput>
-        <spouseSecondNameinput>TESTXYZ</spouseSecondNameinput>
+        <spouseSecondNameinput>TEST2021</spouseSecondNameinput>
         <birthDate>Entrez une date de naissance valide. Vérifiez que le jour, le mois et l’année sont exacts.</birthDate>
         <slctdrpdownMonth>février</slctdrpdownMonth>
         <birthDay>07</birthDay>

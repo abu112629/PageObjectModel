@@ -32,7 +32,7 @@
             <item>Your spouse/partner's date of birth</item>
         </spouseDOBLabel>
         <spousefirstNameinput>TestEnglish</spousefirstNameinput>
-        <spouseSecondNameinput>TESTXYZ</spouseSecondNameinput>
+        <spouseSecondNameinput>TEST2021</spouseSecondNameinput>
         <birthDate>Enter a valid date of birth. Check that the month, day and year are correct.</birthDate>
         <slctdrpdownMonth>January</slctdrpdownMonth>
         <birthDay>07</birthDay>
