@@ -29,6 +29,8 @@ public class RPPIVTTest extends TestNGBase {
         And(plan :: user_answers_both_questions_and_enters_spouse_details);
         And(plan :: user_enters_dob);
         And(plan ::user_is_able_to_see_salesforce_records_updated);
+        And(plan::user_clicks_back_and_selects_no_for_spouse);
+        And(plan :: user_is_able_to_see_salesforce_records_deleted);
 
         InvestmentDO investmentDO=new InvestmentDO(getContext()).fromResource(dataSet2);
         And(investmentDO:: user_validates_investment_skip_details_and_questionnaire);
