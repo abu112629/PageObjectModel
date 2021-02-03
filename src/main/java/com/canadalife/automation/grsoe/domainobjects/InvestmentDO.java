@@ -84,6 +84,7 @@ public class InvestmentDO extends DomainObjectModel {
        planSelectionPO.clickSkipContinueButton();
        beneficiariesPO.initPage(getContext());
        beneficiariesPO.validateBeneficiariesDescription();
+       planSelectionPO.clickContinueButton();
 
     }
 }

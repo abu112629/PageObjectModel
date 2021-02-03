@@ -58,6 +58,8 @@ public class BeneficiariesDO extends DomainObjectModel {
 
     @Step("{0} user validates beneficiaries Skip section and clicks continue")
     public void user_validates_beneficiaries_skip_section(String gwt){
+        beneficiariesPO.initPage(getContext());
+        planSelectionPO.initPage(getContext());
         beneficiariesPO.validateBeneficiariesSkipQuestionandDetails();
         planSelectionPO.clickSkipContinueButton();
 

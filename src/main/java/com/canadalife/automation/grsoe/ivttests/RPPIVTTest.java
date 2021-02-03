@@ -35,7 +35,6 @@ public class RPPIVTTest extends TestNGBase {
         And(investmentDO ::user_reaches_beneficiaries_section_when_clicks_skip_continue_from_investment_skip_page);
 
         BeneficiariesDO beneficiariesDO=new BeneficiariesDO(getContext()).fromResource(dataSet3);
-        And(beneficiariesDO :: user_validates_beneficiaries_section);
         And(beneficiariesDO :: user_validates_beneficiaries_skip_section);
         And(beneficiariesDO ::user_clicks_back_and_reach_add_beneficiaries_page_and_back_to_investments);
 

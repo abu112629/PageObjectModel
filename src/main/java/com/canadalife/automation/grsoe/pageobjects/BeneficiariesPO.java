@@ -8,7 +8,7 @@ import ui.auto.core.support.PageObjectModel;
 
 public class BeneficiariesPO extends PageObjectModel {
 
-    @FindBy(xpath="//*[@data-omni-key='YourBeneficiaries']//p")
+    @FindBy(xpath="//*[@data-omni-key='stepperHeaderTextBlock']//p")
     private WebComponentList beneficiariesDescription;
 
     @FindBy(xpath="//*[@data-omni-key='YourBeneficiaries']//h2")
