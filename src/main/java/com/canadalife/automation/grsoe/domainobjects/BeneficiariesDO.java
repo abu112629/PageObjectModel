@@ -99,8 +99,15 @@ public class BeneficiariesDO extends DomainObjectModel {
 
     }
 
+    @Step("{0} user enters invalid person beneficiary details")
+    public void user_enters_invalid_person_beneficiary(String gwt){
+        beneficiariesPO.selectPersonRelationBeneficiary();
+        beneficiariesPO.validateInvalidPersonBeneficiaryDetails();
+
+    }
+
     @Step("{0} user enters person beneficiary details")
-    public void user_enters_person_beneficiary(String gwt){
+    public void user_enters_person_beneficiary_details(String gwt){
         beneficiariesPO.selectPersonRelationBeneficiary();
         beneficiariesPO.validateAndEnterDetailsPrimaryBeneficiary();
         rppAdditionalInfoPO.initPage(getContext());

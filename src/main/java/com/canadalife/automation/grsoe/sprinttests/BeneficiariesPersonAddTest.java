@@ -13,7 +13,7 @@ import static com.canadalife.automation.grsoe.support.GivenWhenThen.*;
 
 public class BeneficiariesPersonAddTest extends TestNGBase {
 
-    @Features("Sprint9")
+    @Features("Sprint10")
     @Stories("Member can add a person as a Primary beneficiary")
     @Parameters("data-set")
     @Issue("GRSOE-65")
@@ -28,7 +28,7 @@ public class BeneficiariesPersonAddTest extends TestNGBase {
         And(beneficiariesDO :: user_clicks_add_primary_beneficiary);
         And(beneficiariesDO :: user_selects_and_validates_person_beneficiary);
         And(beneficiariesDO :: user_clicks_continue_and_is_able_to_validate_all_errors);
-        And(beneficiariesDO :: user_enters_person_beneficiary);
+        And(beneficiariesDO :: user_enters_person_beneficiary_details);
         And(beneficiariesDO :: user_clicks_save_beneficiary);
 
 

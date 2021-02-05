@@ -1,9 +1,11 @@
 package com.canadalife.automation.grsoe.pageobjects;
 
-import com.canadalife.automation.grsoe.components.*;
+import com.canadalife.automation.grsoe.components.RadioGroup;
+import com.canadalife.automation.grsoe.components.VlocityInput;
+import com.canadalife.automation.grsoe.components.VlocitySelect;
+import com.canadalife.automation.grsoe.components.VlocitySelectRadioButton;
 import com.canadalife.automation.grsoe.support.AppHelper;
 import org.openqa.selenium.support.FindBy;
-import ui.auto.core.components.SelectComponent;
 import ui.auto.core.components.WebComponent;
 import ui.auto.core.components.WebComponentList;
 import ui.auto.core.data.DataTypes;
@@ -45,10 +47,16 @@ public class BeneficiariesPO extends PageObjectModel {
     private VlocityInput primaryFirstName;
 
     @FindBy(xpath = "//*[@data-omni-key='primaryFirstName']")
+    private VlocityInput primaryFirstNameInvalid;
+
+    @FindBy(xpath = "//*[@data-omni-key='primaryFirstName']")
     private VlocityInput primaryFirstNameError;
 
     @FindBy(xpath = "//*[@data-omni-key='primaryLastName']")
     private VlocityInput primaryLastName;
+
+    @FindBy(xpath = "//*[@data-omni-key='primaryLastName']")
+    private VlocityInput primaryLastNameInvalid;
 
     @FindBy(xpath = "//*[@data-omni-key='primaryLastName']")
     private VlocityInput primaryLastNameError;
@@ -67,6 +75,9 @@ public class BeneficiariesPO extends PageObjectModel {
 
     @FindBy(xpath = "//*[@data-omni-key='primaryAllocation']")
     private VlocityInput primaryAllocation;
+
+    @FindBy(xpath = "//*[@data-omni-key='primaryAllocation']")
+    private VlocityInput primaryAllocationInvalid;
 
     @FindBy(xpath = "//*[@data-omni-key='primaryAllocation']")
     private VlocityInput primaryAllocationError;
@@ -118,6 +129,18 @@ public class BeneficiariesPO extends PageObjectModel {
         setElementValue(personBeneficiaryRelation);
     }
 
+
+    public void validateInvalidPersonBeneficiaryDetails() {
+        setElementValue(primaryFirstNameInvalid);
+        primaryFirstNameInvalid.validateError(DataTypes.Expected);
+
+        setElementValue(primaryLastNameInvalid);
+        primaryLastNameInvalid.validateError(DataTypes.Expected);
+
+        setElementValue(primaryAllocationInvalid);
+        primaryAllocationInvalid.validateError(DataTypes.Expected);
+
+    }
     public void validateAndEnterDetailsPrimaryBeneficiary(){
         setElementValue(primaryFirstName);
         setElementValue(primaryLastName);

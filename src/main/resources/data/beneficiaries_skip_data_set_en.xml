@@ -52,14 +52,17 @@
         <personDropDownQuestion>What’s this person’s relationship to you?</personDropDownQuestion>
         <personBeneficiaryRelation>Aunt</personBeneficiaryRelation>
         <primaryFirstName initial="First name">Test</primaryFirstName>
+        <primaryFirstNameInvalid expected="Enter this beneficiary's first name.">&amp;</primaryFirstNameInvalid>
         <primaryFirstNameError>Enter this beneficiary's first name.</primaryFirstNameError>
         <primaryLastName initial="Last name">TestEnglish</primaryLastName>
+        <primaryLastNameInvalid expected="Enter this beneficiary's last name.">&amp;</primaryLastNameInvalid>
         <primaryLastNameError>Enter this beneficiary's last name.</primaryLastNameError>
         <primaryDateOfBirth expected ="Date of Birth (optional)">Date of Birth</primaryDateOfBirth>
         <primaryMonthLabel expected ="Month">Month</primaryMonthLabel>
         <primaryDateLabel expected ="Day (DD)">Day (DD)</primaryDateLabel>
         <primaryYearLabel expected ="Year (YYYY)">Year (YYYY)</primaryYearLabel>
         <primaryAllocation initial="What percentage do you want to allocate to this beneficiary?">4</primaryAllocation>
+        <primaryAllocationInvalid expected="Enter a valid percentage between 1 and 100.">100.22</primaryAllocationInvalid>
         <primaryAllocationError>Enter the percentage you'd like to allocate to this beneficiary.</primaryAllocationError>
     </beneficiariesPO>
     <rppAdditionalInfoPO>
