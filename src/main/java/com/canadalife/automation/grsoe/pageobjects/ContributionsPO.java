@@ -77,14 +77,14 @@ public class ContributionsPO extends PageObjectModel {
 
     @Step("Validate contribution heading when both options available on account")
     public void validateContributionHeadingDollarPercentage() {
-        contributionEmployerPercentageRadioButton.validateContributionHeader(DataTypes.Initial);
+        contributionEmployerPercentageRadioButton.validateLabelHeader(DataTypes.Initial);
 
     }
 
     @Step("Validate contribution label on account")
     public void validateContributionLabel() {
-        contributionEmployerInput.validateContributionInputLabel(DataTypes.Initial);
-        contributionMemberInput.validateContributionInputLabel(DataTypes.Initial);
+        contributionEmployerInput.validateInputLabel(DataTypes.Initial);
+        contributionMemberInput.validateInputLabel(DataTypes.Initial);
     }
 
     @Step("Validate contribution error on Employer Account for Percentage")
@@ -101,6 +101,7 @@ public class ContributionsPO extends PageObjectModel {
 
     @Step("Click Employer Account percentage input radio button and enter value")
     public void clickEmployerPercentageEnterInput() {
+        AppHelper.scrollToView(contributionEmployerPercentageRadioButton.getCoreElement());
         setElementValue(contributionEmployerPercentageRadioButton);
         setElementValue(contributionEmployerInput);
 

@@ -12,6 +12,7 @@ public class BeneficiariesDO extends DomainObjectModel {
     private LoginPO loginPO;
     private PlanSelectionPO planSelectionPO;
     private NRSPAdditionalInfoPO nrspAdditionalInfoPO;
+    private RPPAdditionalInfoPO rppAdditionalInfoPO;
     private InvestmentPO investmentPO;
     private BeneficiariesPO beneficiariesPO;
 
@@ -76,5 +77,40 @@ public class BeneficiariesDO extends DomainObjectModel {
         investmentPO.validateInvestmentCardSelected();
 
     }
+
+    @Step("{0} user clicks add Primary Beneficiary")
+    public void user_clicks_add_primary_beneficiary(String gwt){
+        planSelectionPO.clickContinueButton();
+        beneficiariesPO.initPage(getContext());
+        beneficiariesPO.addPrimaryBeneficiary();
+    }
+
+    @Step("{0} user clicks continue and is able to validate all errors")
+    public void user_clicks_continue_and_is_able_to_validate_all_errors(String gwt){
+        planSelectionPO.clickSaveButton();
+        beneficiariesPO.validateErrors();
+    }
+
+    @Step("{0} user selects and validates person beneficiary details")
+    public void user_selects_and_validates_person_beneficiary(String gwt){
+        beneficiariesPO.addPersonBeneficiary();
+        beneficiariesPO.validateBeneficiaryFormLabels();
+        planSelectionPO.validateHinttextLabels();
+
+    }
+
+    @Step("{0} user enters person beneficiary details")
+    public void user_enters_person_beneficiary(String gwt){
+        beneficiariesPO.selectPersonRelationBeneficiary();
+        beneficiariesPO.validateAndEnterDetailsPrimaryBeneficiary();
+        rppAdditionalInfoPO.initPage(getContext());
+        rppAdditionalInfoPO.enterDOBDetails();
+
+    }
+    @Step("{0} user clicks on Save Beneficiary Form")
+    public void user_clicks_save_beneficiary(String gwt){
+        planSelectionPO.clickSaveButton();
+    }
+
 
 }

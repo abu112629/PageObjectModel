@@ -43,7 +43,7 @@ public abstract class VlocityComponent extends PageComponent {
         Assertions.assertThat(actual).isEqualTo(expected);
     }
 
-    public String getContributionHeader() {
+    public String getSpecialHeader() {
         WebElement els=coreElement.findElement(By.xpath(".//span[contains(@class,'nds-m-right_x-small')]"));
         if (!els.isDisplayed()) {
             return null;
@@ -52,13 +52,13 @@ public abstract class VlocityComponent extends PageComponent {
         }
     }
 
-    public void validateContributionHeader(DataTypes type) {
-        String actual = getContributionHeader();
+    public void validateLabelHeader(DataTypes type) {
+        String actual = getSpecialHeader();
         String expected = getData(type);
         Assertions.assertThat(actual).isEqualTo(expected);
     }
 
-    public String getContributionInputLabel() {
+    public String getInputLabel() {
         WebElement els=coreElement.findElement(By.xpath(".//label"));
         if (!els.isDisplayed()) {
             return null;
@@ -67,8 +67,8 @@ public abstract class VlocityComponent extends PageComponent {
         }
     }
 
-    public void validateContributionInputLabel(DataTypes type) {
-        String actual = getContributionInputLabel();
+    public void validateInputLabel(DataTypes type) {
+        String actual = getInputLabel();
         String expected = getData(type);
         Assertions.assertThat(actual).isEqualTo(expected);
     }
@@ -84,6 +84,37 @@ public abstract class VlocityComponent extends PageComponent {
 
     public void validateFundFees(DataTypes type) {
         String actual = getFundFeesDetails();
+        String expected = getData(type);
+        Assertions.assertThat(actual).isEqualTo(expected);
+    }
+
+
+    public String getSelectionLabel() {
+        List<WebElement> els = coreElement.findElements(By.xpath(".//*[@class='nds-form-element__control nds-form-element__control-animated-label']"));
+        if (els.isEmpty()) {
+            return null;
+        } else {
+            return els.get(0).getText();
+        }
+    }
+
+    public void validateSelectionLabel(DataTypes type) {
+        String actual = getSelectionLabel();
+        String expected = getData(type);
+        Assertions.assertThat(actual).isEqualTo(expected);
+    }
+
+    public String getInputTextLabel() {
+        WebElement els=coreElement.findElement(By.xpath(".//label[contains(text(),'"+ getData() + "')]"));
+        if (!els.isDisplayed()) {
+            return null;
+        } else {
+            return els.getText();
+        }
+    }
+
+    public void validateInputTextLabel(DataTypes type) {
+        String actual = getInputTextLabel();
         String expected = getData(type);
         Assertions.assertThat(actual).isEqualTo(expected);
     }

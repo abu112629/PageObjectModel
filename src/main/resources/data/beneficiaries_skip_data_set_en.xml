@@ -24,6 +24,11 @@
         <planProgressBarStep>
             <item>Step 5 of 7: Choose your beneficiaries</item>
         </planProgressBarStep>
+        <hintText>
+            <item>Max. 20 characters</item>
+            <item>(optional)</item>
+            <item>If you’re adding more beneficiaries, make sure the total adds up to 100%.</item>
+        </hintText>
     </planSelectionPO>
     <nrspAdditionalInfoPO>
         <usCitizenNo>no</usCitizenNo>
@@ -39,5 +44,27 @@
         </beneficiariesDescription>
         <beneficiariesSkipQuestion>Are you sure you want to continue without adding beneficiaries?</beneficiariesSkipQuestion>
         <beneficiariesSkipDetails>Naming a beneficiary can help determine where your savings might go in the event of your death.</beneficiariesSkipDetails>
+        <beneficiariesAdd>Add a primary beneficiary</beneficiariesAdd>
+        <addBeneficiaryLabel>Add a primary beneficiary</addBeneficiaryLabel>
+        <addBeneficiaryHintLabel>All fields are required unless labelled as optional.</addBeneficiaryHintLabel>
+        <primaryTypeLabel>What type of beneficiary do you want to add?</primaryTypeLabel>
+        <personBeneRadioButton>Person</personBeneRadioButton>
+        <personDropDownQuestion>What’s this person’s relationship to you?</personDropDownQuestion>
+        <personBeneficiaryRelation>Aunt</personBeneficiaryRelation>
+        <primaryFirstName initial="First name">Test</primaryFirstName>
+        <primaryFirstNameError>Enter this beneficiary's first name.</primaryFirstNameError>
+        <primaryLastName initial="Last name">TestEnglish</primaryLastName>
+        <primaryLastNameError>Enter this beneficiary's last name.</primaryLastNameError>
+        <primaryDateOfBirth expected ="Date of Birth (optional)">Date of Birth</primaryDateOfBirth>
+        <primaryMonthLabel expected ="Month">Month</primaryMonthLabel>
+        <primaryDateLabel expected ="Day (DD)">Day (DD)</primaryDateLabel>
+        <primaryYearLabel expected ="Year (YYYY)">Year (YYYY)</primaryYearLabel>
+        <primaryAllocation initial="What percentage do you want to allocate to this beneficiary?">4</primaryAllocation>
+        <primaryAllocationError>Enter the percentage you'd like to allocate to this beneficiary.</primaryAllocationError>
     </beneficiariesPO>
+    <rppAdditionalInfoPO>
+        <slctdrpdownMonth>January</slctdrpdownMonth>
+        <birthDay>07</birthDay>
+        <birthYear>1989</birthYear>
+    </rppAdditionalInfoPO>
 </plan-domain-object>
