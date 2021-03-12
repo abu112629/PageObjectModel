@@ -22,66 +22,77 @@ public class BeneficiariesPO extends PageObjectModel {
     @FindBy(xpath = "//*[starts-with(@class,'nds-col nds-m-bottom_xx-large nds-size_1-of-1')]")
     private WebComponent beneficiariesSkipDetails;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryBeneficiaries']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
     private VlocitySelectRadioButton beneficiariesAdd;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryBeneficiaries']//h4")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']//h3")
     private WebComponent addBeneficiaryLabel;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryBeneficiaries']//p")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']//p")
     private WebComponent addBeneficiaryHintLabel;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryType']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaryType']")
     private RadioGroup primaryTypeLabel;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryType']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaryType']")
     private VlocitySelectRadioButton personBeneRadioButton;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryRelationship']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryRelationship']")
     private VlocitySelectRadioButton personDropDownQuestion;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryRelationship']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryRelationship']")
     private VlocitySelect personBeneficiaryRelation;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryFirstName']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryFirstName']")
     private VlocityInput primaryFirstName;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryFirstName']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryFirstName']")
     private VlocityInput primaryFirstNameInvalid;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryFirstName']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryFirstName']")
     private VlocityInput primaryFirstNameError;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryLastName']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryLastName']")
     private VlocityInput primaryLastName;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryLastName']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryLastName']")
     private VlocityInput primaryLastNameInvalid;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryLastName']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryLastName']")
     private VlocityInput primaryLastNameError;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryDateOfBirth']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryDateOfBirth']")
     private VlocityInput primaryDateOfBirth;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryDateOfBirth']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryDateOfBirth']")
     private VlocityInput primaryMonthLabel;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryDateOfBirth']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryDateOfBirth']")
     private VlocityInput primaryDateLabel;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryDateOfBirth']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryDateOfBirth']")
     private VlocityInput primaryYearLabel;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryAllocation']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationPerson']")
     private VlocityInput primaryAllocation;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryAllocation']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationPerson']")
     private VlocityInput primaryAllocationInvalid;
 
-    @FindBy(xpath = "//*[@data-omni-key='primaryAllocation']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationPerson']")
     private VlocityInput primaryAllocationError;
 
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryIstrusteeYesNo']")
+    private RadioGroup primaryTrusteeQuestion;
+
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryIstrusteeYesNo']")
+    private RadioGroup primaryTrusteeSelection;
+
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
+    private VlocitySelect beneficiaryType;
+
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
+    private VlocitySelect beneficiaryAllocationPercentage;
 
     public void validateBeneficiariesDescription(){
         beneficiariesDescription.initPage(getContext());
@@ -98,10 +109,13 @@ public class BeneficiariesPO extends PageObjectModel {
     }
 
     public void validateBeneficiaryFormLabels(){
+        AppHelper.scrollToView(addBeneficiaryLabel.getCoreElement());
         addBeneficiaryLabel.validateData(DataTypes.Data);
         addBeneficiaryHintLabel.validateData(DataTypes.Data);
         primaryTypeLabel.validateLabelHeader(DataTypes.Data);
         personDropDownQuestion.validateSelectionLabel(DataTypes.Data);
+
+        AppHelper.scrollToView(primaryFirstName.getCoreElement());
         primaryFirstName.validateInputLabel(DataTypes.Initial);
         primaryLastName.validateInputLabel(DataTypes.Initial);
 
@@ -117,10 +131,12 @@ public class BeneficiariesPO extends PageObjectModel {
         primaryYearLabel.getInputTextLabel();
         primaryYearLabel.validateInputTextLabel(DataTypes.Expected);
 
+        AppHelper.scrollToView(primaryAllocation.getCoreElement());
         primaryAllocation.validateInputLabel(DataTypes.Initial);
     }
 
     public void addPersonBeneficiary(){
+        AppHelper.scrollToView(personBeneRadioButton.getCoreElement());
         setElementValue(personBeneRadioButton,false);
     }
 
@@ -152,5 +168,19 @@ public class BeneficiariesPO extends PageObjectModel {
         primaryLastNameError.validateError(DataTypes.Data);
         primaryAllocationError.validateError(DataTypes.Data);
 
+    }
+
+    public void validateBeneficaryTrusteeQuestion(){
+        primaryTrusteeQuestion.validateLabelHeader(DataTypes.Data);
+    }
+
+    public void selectPrimaryTrusteeYesorNo(){
+        setElementValue(primaryTrusteeSelection);
+    }
+
+    public void validatePillInformation(){
+        beneficiaryType.validateBeneficiaryType(DataTypes.Data);
+        beneficiaryType.validateBeneficiaryName(DataTypes.Expected);
+        beneficiaryAllocationPercentage.validateAllocationPercentage(DataTypes.Data);
     }
 }

@@ -28,8 +28,11 @@ public class BeneficiariesPersonAddTest extends TestNGBase {
         And(beneficiariesDO :: user_clicks_add_primary_beneficiary);
         And(beneficiariesDO :: user_selects_and_validates_person_beneficiary);
         And(beneficiariesDO :: user_clicks_continue_and_is_able_to_validate_all_errors);
+        And(beneficiariesDO :: user_enters_invalid_person_beneficiary);
         And(beneficiariesDO :: user_enters_person_beneficiary_details);
+        And(beneficiariesDO ::user_selects_and_validates_primary_trustee);
         And(beneficiariesDO :: user_clicks_save_beneficiary);
+        And(beneficiariesDO ::user_validates_pill_information_after_saving_the_details);
 
 
 

@@ -1,6 +1,7 @@
 package com.canadalife.automation.grsoe.domainobjects;
 
 import com.canadalife.automation.grsoe.pageobjects.*;
+import com.canadalife.automation.grsoe.support.AppHelper;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import ru.yandex.qatools.allure.annotations.Step;
 import ui.auto.core.support.DomainObjectModel;
@@ -114,10 +115,21 @@ public class BeneficiariesDO extends DomainObjectModel {
         rppAdditionalInfoPO.enterDOBDetails();
 
     }
+
+    @Step("{0} user selects and validates primary Trustee")
+    public void user_selects_and_validates_primary_trustee(String gwt){
+       beneficiariesPO.validateBeneficaryTrusteeQuestion();
+       beneficiariesPO.selectPrimaryTrusteeYesorNo();
+
+    }
     @Step("{0} user clicks on Save Beneficiary Form")
     public void user_clicks_save_beneficiary(String gwt){
         planSelectionPO.clickSaveButton();
     }
 
+    @Step("{0} user validates Pill information after saving the details")
+    public void user_validates_pill_information_after_saving_the_details(String gwt){
+        planSelectionPO.clickSaveButton();
+    }
 
 }

@@ -118,4 +118,49 @@ public abstract class VlocityComponent extends PageComponent {
         String expected = getData(type);
         Assertions.assertThat(actual).isEqualTo(expected);
     }
+
+    public String getBeneficiaryType() {
+        WebElement els=coreElement.findElement(By.xpath(".//*[contains(@class,'pill-icon')]"));
+        if (!els.isDisplayed()) {
+            return null;
+        } else {
+            return els.getText();
+        }
+    }
+
+    public void validateBeneficiaryType(DataTypes type) {
+        String actual = getBeneficiaryType();
+        String expected = getData(type);
+        Assertions.assertThat(actual).isEqualTo(expected);
+    }
+
+    public String getBeneficiaryName() {
+        WebElement els=coreElement.findElement(By.xpath(".//*[contains(@class,'overflow-break')]"));
+        if (!els.isDisplayed()) {
+            return null;
+        } else {
+            return els.getText();
+        }
+    }
+
+    public void validateBeneficiaryName(DataTypes type) {
+        String actual = getBeneficiaryName();
+        String expected = getData(type);
+        Assertions.assertThat(actual).isEqualTo(expected);
+    }
+
+    public String getAllocationPercentage() {
+        WebElement els=coreElement.findElement(By.xpath(".//div[contains(text(),'"+ getData() + "')]"));
+        if (!els.isDisplayed()) {
+            return null;
+        } else {
+            return els.getText();
+        }
+    }
+
+    public void validateAllocationPercentage(DataTypes type) {
+        String actual = getAllocationPercentage();
+        String expected = getData(type);
+        Assertions.assertThat(actual).isEqualTo(expected);
+    }
 }
