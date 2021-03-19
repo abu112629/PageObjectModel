@@ -124,12 +124,21 @@ public class BeneficiariesDO extends DomainObjectModel {
     }
     @Step("{0} user clicks on Save Beneficiary Form")
     public void user_clicks_save_beneficiary(String gwt){
+        AppHelper.waitForXHR(2);
+        beneficiariesPO.validateAndEnterPrimaryallocation();
         planSelectionPO.clickSaveButton();
     }
 
     @Step("{0} user validates Pill information after saving the details")
     public void user_validates_pill_information_after_saving_the_details(String gwt){
-        planSelectionPO.clickSaveButton();
+        AppHelper.waitForXHR(1);
+        beneficiariesPO.validatePillInformation();
+    }
+
+    @Step("{0} user validates Salesforce Information is saved for member")
+    public void user_validates_salesforce_information_is_saved_for_member(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiariesPO.validateSalesforceBeneficiaryRecord();
     }
 
 }

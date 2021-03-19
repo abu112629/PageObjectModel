@@ -33,6 +33,7 @@ public class BeneficiariesPersonAddTest extends TestNGBase {
         And(beneficiariesDO ::user_selects_and_validates_primary_trustee);
         And(beneficiariesDO :: user_clicks_save_beneficiary);
         And(beneficiariesDO ::user_validates_pill_information_after_saving_the_details);
+        And(beneficiariesDO ::user_validates_salesforce_information_is_saved_for_member);
 
 
 

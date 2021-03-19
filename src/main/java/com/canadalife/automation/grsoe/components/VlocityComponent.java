@@ -44,7 +44,7 @@ public abstract class VlocityComponent extends PageComponent {
     }
 
     public String getSpecialHeader() {
-        WebElement els=coreElement.findElement(By.xpath(".//span[contains(@class,'nds-m-right_x-small')]"));
+            WebElement els=coreElement.findElement(By.xpath(".//span[contains(@class,'nds-m-right_x-small')]"));
         if (!els.isDisplayed()) {
             return null;
         } else {
@@ -90,7 +90,7 @@ public abstract class VlocityComponent extends PageComponent {
 
 
     public String getSelectionLabel() {
-        List<WebElement> els = coreElement.findElements(By.xpath(".//*[@class='nds-form-element__control nds-form-element__control-animated-label']"));
+        List<WebElement> els = coreElement.findElements(By.xpath(".//*[contains(@class,'nds-form-element__control nds-form-element__control-animated-label')]"));
         if (els.isEmpty()) {
             return null;
         } else {
@@ -119,8 +119,8 @@ public abstract class VlocityComponent extends PageComponent {
         Assertions.assertThat(actual).isEqualTo(expected);
     }
 
-    public String getBeneficiaryType() {
-        WebElement els=coreElement.findElement(By.xpath(".//*[contains(@class,'pill-icon')]"));
+    public String getBeneficiaryTypePerson() {
+        WebElement els=coreElement.findElement(By.xpath(".//*[contains(@class,'person-badge')]"));
         if (!els.isDisplayed()) {
             return null;
         } else {
@@ -128,8 +128,8 @@ public abstract class VlocityComponent extends PageComponent {
         }
     }
 
-    public void validateBeneficiaryType(DataTypes type) {
-        String actual = getBeneficiaryType();
+    public void validateBeneficiaryTypePerson(DataTypes type) {
+        String actual = getBeneficiaryTypePerson();
         String expected = getData(type);
         Assertions.assertThat(actual).isEqualTo(expected);
     }

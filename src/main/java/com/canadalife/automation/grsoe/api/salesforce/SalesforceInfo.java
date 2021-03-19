@@ -1,11 +1,12 @@
 package com.canadalife.automation.grsoe.api.salesforce;
 
+import com.canadalife.automation.grsoe.api.salesforcebenepayload.Record_bene;
+import com.canadalife.automation.grsoe.api.salesforcebenepayload.SalesforceBenePayload;
 import com.canadalife.automation.grsoe.api.salesforcecontactpayload.Record;
 import com.canadalife.automation.grsoe.api.salesforcecontactpayload.SalesforceRecordPayload;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
-import org.checkerframework.checker.units.qual.C;
 import org.testng.Assert;
 import ui.auto.core.support.EnvironmentsSetup;
 import ui.auto.core.support.TestContext;
@@ -28,6 +29,14 @@ public class SalesforceInfo {
         return getUserSpouseDetail(baseURI, salesforce_params, FirstName, LastName);
     }
 
+    public String getUserBeneficiaryDetails(String EID) {
+
+        EnvironmentsSetup.Environment env = TestContext.getTestProperties().getTestEnvironment();
+        String baseURI = env.getCustom("baseURI");
+        String salesforce_params = env.getCustom("salesforce_params_bene");
+        return getUserBeneficiaryDetails(baseURI, salesforce_params,EID);
+    }
+
     public String getUserSpouseDetail(String baseURI, String salesforce_params,
                                       String FirstName, String LastName) {
         clientInfo=new ClientInfo();
@@ -44,6 +53,57 @@ public class SalesforceInfo {
 
     }
 
+    public String getUserBeneficiaryDetails(String baseURI, String salesforce_params,
+                                      String EID) {
+        clientInfo=new ClientInfo();
+        Map<String, Object> header = new HashMap<String, Object>();
+        // Get auth token
+        header.put("Authorization", "Bearer " + clientInfo.getAuthToken());
+        Response response = RequestInfo.sendGetRequest(baseURI,
+                salesforce_params + "'" + EID + "'", header);
+
+        assertEquals("No details found. Error : " + response.asString(), HttpStatus.SC_OK,
+                response.getStatusCode());
+
+        return response.asString();
+
+    }
+
+    public void checkBeneficiaryDetails(String firstname,String lastname,String Allocation) {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+
+            SalesforceRecordPayload salepayload = objectMapper.readValue(
+                    getUserSpouseDetail(firstname, lastname), SalesforceRecordPayload.class);
+
+            if (!salepayload.getTotalSize().equals(0)) {
+                List<Record> data = salepayload.getRecords();
+                for (Record record : data) {
+                    String EID = record.getEIDC();
+
+                    SalesforceBenePayload payload = objectMapper.readValue(
+                            getUserBeneficiaryDetails(EID), SalesforceBenePayload.class);
+                    if (!payload.getTotalSize().equals(0)) {
+                        List<Record_bene> data2 = payload.getRecords();
+                        for (Record_bene record2 : data2) {
+                            assertEquals(record2.getAllocationC(), Allocation);
+                            assertEquals(record2.getAssetRoleC(), "Primary beneficiary");
+                            assertEquals(record2.getRevocableC().booleanValue(), true);
+                        }
+                    }
+                }
+
+            }
+        }
+
+        catch (Exception e) {
+            System.out.println(e);
+        }
+
+
+    }
     public void checkSpouseRecordDetails(String firstname, String lastname) {
 
         ObjectMapper objectMapper = new ObjectMapper();

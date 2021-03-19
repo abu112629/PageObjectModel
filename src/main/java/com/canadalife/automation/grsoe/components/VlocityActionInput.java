@@ -10,7 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 import ui.auto.core.data.DataTypes;
 import ui.auto.core.utils.WebHelper;
 
-public class VlocityActionInput extends VlocityComponent{
+public class    VlocityActionInput extends VlocityComponent{
 
     @Override
     protected void init() {

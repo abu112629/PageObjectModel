@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "attributes",
+        "EID__c",
         "AccountId",
         "Name",
         "Relationship__c"
@@ -14,6 +15,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class Record {
     @JsonProperty("attributes")
     private Attributes attributes;
+    @JsonProperty("EID__c")
+    private String eIDC;
     @JsonProperty("AccountId")
     private String accountId;
     @JsonProperty("Name")
@@ -30,6 +33,12 @@ public class Record {
     public void setAttributes(Attributes attributes) {
         this.attributes = attributes;
     }
+
+    @JsonProperty("EID__c")
+    public String getEIDC() { return eIDC; }
+
+    @JsonProperty("EID__c")
+    public void setEIDC(String eIDC) { this.eIDC = eIDC; }
 
     @JsonProperty("AccountId")
     public String getAccountId() {

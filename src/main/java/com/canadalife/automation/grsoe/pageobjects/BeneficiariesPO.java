@@ -1,10 +1,11 @@
 package com.canadalife.automation.grsoe.pageobjects;
 
-import com.canadalife.automation.grsoe.components.RadioGroup;
-import com.canadalife.automation.grsoe.components.VlocityInput;
-import com.canadalife.automation.grsoe.components.VlocitySelect;
-import com.canadalife.automation.grsoe.components.VlocitySelectRadioButton;
+import com.canadalife.automation.grsoe.api.salesforce.SalesforceInfo;
+import com.canadalife.automation.grsoe.components.*;
 import com.canadalife.automation.grsoe.support.AppHelper;
+import datainstiller.data.Data;
+import io.appium.java_client.ScreenshotState;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.FindBy;
 import ui.auto.core.components.WebComponent;
 import ui.auto.core.components.WebComponentList;
@@ -25,7 +26,7 @@ public class BeneficiariesPO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
     private VlocitySelectRadioButton beneficiariesAdd;
 
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']//h3")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']//h4")
     private WebComponent addBeneficiaryLabel;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']//p")
@@ -47,7 +48,7 @@ public class BeneficiariesPO extends PageObjectModel {
     private VlocityInput primaryFirstName;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryFirstName']")
-    private VlocityInput primaryFirstNameInvalid;
+    private VlocityActionInput primaryFirstNameInvalid;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryFirstName']")
     private VlocityInput primaryFirstNameError;
@@ -56,7 +57,7 @@ public class BeneficiariesPO extends PageObjectModel {
     private VlocityInput primaryLastName;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryLastName']")
-    private VlocityInput primaryLastNameInvalid;
+    private VlocityActionInput primaryLastNameInvalid;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryLastName']")
     private VlocityInput primaryLastNameError;
@@ -74,7 +75,7 @@ public class BeneficiariesPO extends PageObjectModel {
     private VlocityInput primaryYearLabel;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationPerson']")
-    private VlocityInput primaryAllocation;
+    private VlocityActionInput primaryAllocation;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationPerson']")
     private VlocityInput primaryAllocationInvalid;
@@ -93,6 +94,9 @@ public class BeneficiariesPO extends PageObjectModel {
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
     private VlocitySelect beneficiaryAllocationPercentage;
+
+    @Data(skip = true)
+    SalesforceInfo salesforceInfo;
 
     public void validateBeneficiariesDescription(){
         beneficiariesDescription.initPage(getContext());
@@ -147,20 +151,33 @@ public class BeneficiariesPO extends PageObjectModel {
 
 
     public void validateInvalidPersonBeneficiaryDetails() {
+        primaryFirstNameInvalid.click();
         setElementValue(primaryFirstNameInvalid);
-        primaryFirstNameInvalid.validateError(DataTypes.Expected);
+        AppHelper.waitForXHR(2);
+        primaryFirstNameInvalid.validateError(DataTypes.Initial);
 
+        primaryLastNameInvalid.click();
         setElementValue(primaryLastNameInvalid);
-        primaryLastNameInvalid.validateError(DataTypes.Expected);
+        AppHelper.waitForXHR(2);
+        primaryLastNameInvalid.validateError(DataTypes.Initial);
 
+        AppHelper.scrollToView(primaryAllocation.getCoreElement());
+        primaryAllocationInvalid.click();
         setElementValue(primaryAllocationInvalid);
-        primaryAllocationInvalid.validateError(DataTypes.Expected);
+        AppHelper.waitForXHR(2);
+        primaryAllocationInvalid.validateError(DataTypes.Initial);
 
     }
     public void validateAndEnterDetailsPrimaryBeneficiary(){
         setElementValue(primaryFirstName);
         setElementValue(primaryLastName);
         setElementValue(primaryAllocation);
+
+
+    }
+    public void validateAndEnterPrimaryallocation(){
+        setElementValue(primaryAllocation);
+
 
     }
     public void validateErrors(){
@@ -175,12 +192,21 @@ public class BeneficiariesPO extends PageObjectModel {
     }
 
     public void selectPrimaryTrusteeYesorNo(){
+        AppHelper.scrollToView(primaryTrusteeSelection.getCoreElement());
         setElementValue(primaryTrusteeSelection);
+
     }
 
     public void validatePillInformation(){
-        beneficiaryType.validateBeneficiaryType(DataTypes.Data);
+        beneficiaryType.validateBeneficiaryTypePerson(DataTypes.Data);
         beneficiaryType.validateBeneficiaryName(DataTypes.Expected);
         beneficiaryAllocationPercentage.validateAllocationPercentage(DataTypes.Data);
+    }
+
+    public void validateSalesforceBeneficiaryRecord() {
+        AppHelper.waitForXHR(1);
+        salesforceInfo = new SalesforceInfo();
+        salesforceInfo.checkBeneficiaryDetails(primaryFirstName.getData(),primaryLastName.getData(),
+                primaryAllocation.getData());
     }
 }
