@@ -5,6 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import ru.yandex.qatools.allure.annotations.Step;
 import ui.auto.core.support.DomainObjectModel;
 import ui.auto.core.support.TestContext;
+import ui.auto.core.testng.TestNGBase;
 
 @XStreamAlias("plan-domain-object")
 public class ContributionsSkipDO extends DomainObjectModel {
@@ -28,6 +29,7 @@ public class ContributionsSkipDO extends DomainObjectModel {
         loginPO.login();
         loginPO.navigate("s/grs-plan-selection");
 
+        TestNGBase.takeScreenshot("");
         planSelectionPO.initPage(getContext());
         planSelectionPO.clickContinueButton();
     }
@@ -35,6 +37,7 @@ public class ContributionsSkipDO extends DomainObjectModel {
     @Step("{0} user can select required Plan")
     public void user_can_select_required_plan(String gwt) {
         planSelectionPO.selectRequiredPlan();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
     }
 
@@ -43,6 +46,7 @@ public class ContributionsSkipDO extends DomainObjectModel {
         nrspAdditionalInfoPO.initPage(getContext());
         nrspAdditionalInfoPO.clickNoforUSCitizen();
         nrspAdditionalInfoPO.clickNoforOtherCitizen();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
 
     }
@@ -52,6 +56,7 @@ public class ContributionsSkipDO extends DomainObjectModel {
         contributionsPO.initPage(getContext());
         contributionsPO.enterMemberVoluntaryValidInput();
         contributionsPO.enterMemberValidInput();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user clicks continue and is able to navigate to the contributions skip section")
@@ -60,19 +65,23 @@ public class ContributionsSkipDO extends DomainObjectModel {
         contributionsPO.validateContributionSkipQuestionandDetails();
         contributionsPO.validateContributionSkipDescription();
         planSelectionPO.clickSkipContinueButton();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user reaches the investment section and is able to navigate back to the contributions section directly")
     public void user_reaches_the_investment_section_and_is_able_to_navigate_back_to_the_contributions_section_directly(String gwt) {
        investmentPO.initPage(getContext());
        investmentPO.validateInvestmentCardSelected();
+        TestNGBase.takeScreenshot("");
        planSelectionPO.clickBackButton();
     }
 
     @Step("{0} user reaches the contribution section and enters zero dollar input for voluntary account")
     public void user_reaches_the_contribution_section_and_enters_zero_dollar_input_for_voluntary_account(String gwt) {
         contributionsPO.clickMemberVoluntaryDollarEnterInput();
+        TestNGBase.takeScreenshot("");
         contributionsPO.enterMemberValidInput();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user reaches the contribution section")
@@ -85,7 +94,9 @@ public class ContributionsSkipDO extends DomainObjectModel {
         contributionsPO.initPage(getContext());
         planSelectionPO.initPage(getContext());
         contributionsPO.clickEmployerPercentageEnterInput();
+        TestNGBase.takeScreenshot("");
         contributionsPO.enterMemberValidInput();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
     }
 
@@ -93,6 +104,7 @@ public class ContributionsSkipDO extends DomainObjectModel {
     public void user_enters_no_value_for_voluntary_dollar_and_enters_valid_input_in_the_mandatory_account(String gwt) {
         contributionsPO.clickEmployerDollarEnterInput();
         contributionsPO.enterMemberValidInput();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
     }
 

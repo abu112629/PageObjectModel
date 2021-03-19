@@ -7,6 +7,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import ru.yandex.qatools.allure.annotations.Step;
 import ui.auto.core.support.DomainObjectModel;
 import ui.auto.core.support.TestContext;
+import ui.auto.core.testng.TestNGBase;
 
 @XStreamAlias("plan-domain-object")
 public class RPPPlanDO extends DomainObjectModel {
@@ -25,6 +26,7 @@ public class RPPPlanDO extends DomainObjectModel {
         loginPO.initPage(getContext());
         loginPO.login();
         loginPO.navigate("s/grs-plan-selection");
+        TestNGBase.takeScreenshot("");
 
         planSelectionPO.initPage(getContext());
         planSelectionPO.clickContinueButton();
@@ -33,6 +35,7 @@ public class RPPPlanDO extends DomainObjectModel {
     @Step("{0} user can select required Plan")
     public void user_can_select_required_plan(String gwt) {
         planSelectionPO.selectRequiredPlan();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
     }
 
@@ -40,12 +43,14 @@ public class RPPPlanDO extends DomainObjectModel {
     public void user_can_see_plan_headers_and_subheaders(String gwt) {
         planSelectionPO.validatePlansHeader();
         planSelectionPO.validatePlanssubHeader();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user can see Plan Questions in Additional Info")
     public void user_can_see_plan_questions_in_additional_info(String gwt) {
         rppplanSelectionPO.initPage(getContext());
         planSelectionPO.validateAdditionalQuestions();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -53,6 +58,7 @@ public class RPPPlanDO extends DomainObjectModel {
     public void user_can_see_error_messages_on_no_questions_answered(String gwt) {
         planSelectionPO.clickContinueButton();
         rppplanSelectionPO.errorMessageNoselection();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user answers all questions and enters Spouse First Name and LastName")
@@ -63,12 +69,14 @@ public class RPPPlanDO extends DomainObjectModel {
         rppplanSelectionPO.enterFirstNameSpouse();
         rppplanSelectionPO.enterLastNameSpouse();
         rppplanSelectionPO.validateConnectedPersonDetailsLabel();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user can see the updated Connected Person Additional Info Question")
     public void user_can_see_the_updated_connected_person_additional_info_question(String gwt) {
         rppplanSelectionPO.initPage(getContext());
         rppplanSelectionPO.validateConnectedPersonDetailsLabel();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user can see error message for Future Date of Birth")
@@ -76,11 +84,13 @@ public class RPPPlanDO extends DomainObjectModel {
         rppplanSelectionPO.enterDOBDetails();
         planSelectionPO.clickContinueButton();
         rppplanSelectionPO.validateFutureDOBError();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user enters valid Date of Birth")
     public void user_enters_dob(String gwt) {
         rppplanSelectionPO.enterDOBDetails();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user can see error message for No Spouse First,last Name and no connected person selection")
@@ -89,6 +99,7 @@ public class RPPPlanDO extends DomainObjectModel {
         planSelectionPO.clickContinueButton();
         rppplanSelectionPO.errorMessageNospousedetails();
         rppplanSelectionPO.errorMessageNoselectionconnectedperson();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user can see error message for No Spouse last name and no connected person selection")
@@ -96,12 +107,14 @@ public class RPPPlanDO extends DomainObjectModel {
         rppplanSelectionPO.enterFirstNameSpouse();
         planSelectionPO.clickContinueButton();
         rppplanSelectionPO.errorMessageNospouselastname();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} Member can see the Hint Text Labels for all required fields")
     public void user_can_see_hint_text_labels(String gwt) {
         rppplanSelectionPO.validateHintTextSpouseFirstName();
         rppplanSelectionPO.validateHintTextSpouseLastName();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user can see instructions for Connected Person in Additional Info when selecting Yes")
@@ -109,12 +122,14 @@ public class RPPPlanDO extends DomainObjectModel {
             rppplanSelectionPO.initPage(getContext());
             rppplanSelectionPO.clickYesforconnectedperson();
             rppplanSelectionPO.validateConnectedPersonDisclaimer();
+            TestNGBase.takeScreenshot("");
 
     }
 
     @Step("{0} user cannot see instructions for Connected Person in Additional Info when selecting No")
     public void user_cannot_see_instructions_for_connected_person_in_additional_info(String gwt){
         rppplanSelectionPO.validateConnectedPersonDisclaimernotVisible();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -122,6 +137,7 @@ public class RPPPlanDO extends DomainObjectModel {
     public void user_clicks_back_and_selects_no_for_spouse(String gwt){
         planSelectionPO.clickBackButton();
         rppplanSelectionPO.clickNoforspouse();
+        TestNGBase.takeScreenshot("");
 
     }
 

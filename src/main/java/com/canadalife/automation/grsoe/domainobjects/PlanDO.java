@@ -7,6 +7,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import ru.yandex.qatools.allure.annotations.Step;
 import ui.auto.core.support.DomainObjectModel;
 import ui.auto.core.support.TestContext;
+import ui.auto.core.testng.TestNGBase;
 
 @XStreamAlias("plan-domain-object")
 public class PlanDO extends DomainObjectModel {
@@ -24,13 +25,16 @@ public class PlanDO extends DomainObjectModel {
         loginPO.login();
         loginPO.navigate("s/grs-plan-selection");
 
+        TestNGBase.takeScreenshot("");
         planSelectionPO.initPage(getContext());
         planSelectionPO.clickContinueButton();
+
     }
 
     @Step("{0} user presented with all available plans and with specific description")
     public void user_presented_with_all_available_plans_and_with_specific_description(String gwt) {
         planSelectionPO.validatePlansDescription();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user can select each plan")
@@ -41,6 +45,7 @@ public class PlanDO extends DomainObjectModel {
     @Step("{0} selected plan is retained when user clicks back button")
     public void selected_plan_is_retained_when_user_clicks_back_button(String gwt) {
         planSelectionPO.validatePlanRetention();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user clicks continue button")
@@ -52,6 +57,7 @@ public class PlanDO extends DomainObjectModel {
     @Step("{0} user can select required Plan")
     public void user_select_required_plan(String gwt) {
         planSelectionPO.selectRequiredPlan();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -64,6 +70,7 @@ public class PlanDO extends DomainObjectModel {
     public void user_select_plan_and_error_message_vanishes(String gwt) {
         planSelectionPO.selectRequiredPlan();
         planSelectionPO.validateErrorMessageVanishes();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -72,6 +79,7 @@ public class PlanDO extends DomainObjectModel {
         AppHelper.waitForXHR(2);
         planSelectionPO.validatePlanProgressBarInfo();
         planSelectionPO.validatePlanProgressBarStep();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user can view the Canada Life Logo and Footer Links")
@@ -79,6 +87,7 @@ public class PlanDO extends DomainObjectModel {
         planSelectionPO.validateCanadaLifeLogo();
         planSelectionPO.validateCanadaLifeFooter();
         planSelectionPO.validateCanadaLifeFooterlinks();
+        TestNGBase.takeScreenshot("");
     }
 
 }

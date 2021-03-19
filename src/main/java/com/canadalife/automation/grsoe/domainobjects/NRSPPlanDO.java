@@ -5,6 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import ru.yandex.qatools.allure.annotations.Step;
 import ui.auto.core.support.DomainObjectModel;
 import ui.auto.core.support.TestContext;
+import ui.auto.core.testng.TestNGBase;
 
 @XStreamAlias("plan-domain-object")
 public class NRSPPlanDO extends DomainObjectModel {
@@ -22,6 +23,7 @@ public class NRSPPlanDO extends DomainObjectModel {
         loginPO.initPage(getContext());
         loginPO.login();
         loginPO.navigate("s/grs-plan-selection");
+        TestNGBase.takeScreenshot("");
 
         planSelectionPO.initPage(getContext());
         planSelectionPO.clickContinueButton();
@@ -31,6 +33,7 @@ public class NRSPPlanDO extends DomainObjectModel {
     @Step("{0} Member can select required Plan")
     public void user_can_select_required_plan(String gwt) {
         planSelectionPO.selectRequiredPlan();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
     }
 
@@ -38,6 +41,7 @@ public class NRSPPlanDO extends DomainObjectModel {
     public void user_can_see_plan_headers_and_subheaders(String gwt) {
         planSelectionPO.validatePlansHeader();
         planSelectionPO.validatePlanssubHeader();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} Member is able to see the first two FACTA with yes/no answers")
@@ -49,6 +53,7 @@ public class NRSPPlanDO extends DomainObjectModel {
     public void user_can_see_inline_error_messages_for_no_selection(String gwt) {
         planSelectionPO.clickContinueButton();
         nrspAdditionalInfoPO.errorMessageNoselection();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} Member selects yes for first question and did not enter US TIN and selects continue, then they see an error message")
@@ -56,12 +61,14 @@ public class NRSPPlanDO extends DomainObjectModel {
         nrspAdditionalInfoPO.clickYesforUSCitizen();
         planSelectionPO.clickContinueButton();
         nrspAdditionalInfoPO.errorMessageNoUSTIN();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} Member enters US TIN for first question")
     public void user_enters_us_tin(String gwt) {
         nrspAdditionalInfoPO.validateUStaxPayerLabel();
         nrspAdditionalInfoPO.enterTINforUSCitizen();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} Member selects yes for the second question and does not select country, then they see an error message")
@@ -69,6 +76,7 @@ public class NRSPPlanDO extends DomainObjectModel {
         nrspAdditionalInfoPO.clickYesforOtherCitizen();
         planSelectionPO.clickContinueButton();
         nrspAdditionalInfoPO.errorMessageNoCountrySelection();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} Member selects yes for the second question, then they will see a drop down field to select their Country of residency")
@@ -85,12 +93,14 @@ public class NRSPPlanDO extends DomainObjectModel {
     public void user_can_see_error_messages_for_no_additional_tin_selection(String gwt) {
         planSelectionPO.clickContinueButton();
         nrspAdditionalInfoPO.errorMessageNoSelectionsecondaryTIN();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} Member selects country, they will see another question asking if they have additional TIN number and yes/no button")
     public void user_can_see_additional_tin_question(String gwt) {
         nrspAdditionalInfoPO.clickYesforOtherTIN();
         nrspAdditionalInfoPO.validateAdditionalTINinputlabel();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -99,10 +109,12 @@ public class NRSPPlanDO extends DomainObjectModel {
 
         planSelectionPO.clickContinueButton();
         nrspAdditionalInfoPO.errorMessageNoOtherCountryTIN();
+        TestNGBase.takeScreenshot("");
 
         nrspAdditionalInfoPO.enterInvalidTINforNonUSCitizen();
         planSelectionPO.clickContinueButton();
         nrspAdditionalInfoPO.errorMessageInvalidOtherCountryTIN();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -110,6 +122,7 @@ public class NRSPPlanDO extends DomainObjectModel {
     @Step("{0} Member selects yes for the additional TIN question, then they see a field to enter their TIN number")
     public void user_enters_additional_tin_for_other_country(String gwt){
         nrspAdditionalInfoPO.enterTINforNonUSCitizen();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} Member can see an error when they no reason for the additional TIN question after selecting No")
@@ -117,6 +130,7 @@ public class NRSPPlanDO extends DomainObjectModel {
         nrspAdditionalInfoPO.clickNoforOtherTIN();
         planSelectionPO.clickContinueButton();
         nrspAdditionalInfoPO.errorMessageNoRadioSelectionAdditionalTIN();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -124,6 +138,7 @@ public class NRSPPlanDO extends DomainObjectModel {
     public void user_selects_radio_button_for_additional_reasons(String gwt) {
 
         nrspAdditionalInfoPO.selectRadioButtonforNoAdditionalTIN();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
     }
 
@@ -132,6 +147,7 @@ public class NRSPPlanDO extends DomainObjectModel {
         nrspAdditionalInfoPO.validateReasonforAdditionalTINLabel();
         nrspAdditionalInfoPO.errorMessageNoAdditionalDetailsProvided();
         nrspAdditionalInfoPO.enterAdditionalDetailsforNoTIN();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
 
     }

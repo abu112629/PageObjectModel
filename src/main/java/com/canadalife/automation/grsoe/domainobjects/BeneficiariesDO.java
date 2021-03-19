@@ -6,6 +6,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import ru.yandex.qatools.allure.annotations.Step;
 import ui.auto.core.support.DomainObjectModel;
 import ui.auto.core.support.TestContext;
+import ui.auto.core.testng.TestNGBase;
 
 @XStreamAlias("plan-domain-object")
 public class BeneficiariesDO extends DomainObjectModel {
@@ -27,14 +28,15 @@ public class BeneficiariesDO extends DomainObjectModel {
         loginPO.initPage(getContext());
         loginPO.login();
         loginPO.navigate("s/grs-plan-selection");
-
         planSelectionPO.initPage(getContext());
         planSelectionPO.clickContinueButton();
+        TestNGBase.takeScreenshot("Plan Selection Page");
     }
 
     @Step("{0} Member can select required Plan")
     public void user_can_select_required_plan(String gwt) {
         planSelectionPO.selectRequiredPlan();
+        TestNGBase.takeScreenshot("Select Plan");
         planSelectionPO.clickContinueButton();
     }
 
@@ -43,6 +45,7 @@ public class BeneficiariesDO extends DomainObjectModel {
         nrspAdditionalInfoPO.initPage(getContext());
         nrspAdditionalInfoPO.clickNoforUSCitizen();
         nrspAdditionalInfoPO.clickNoforOtherCitizen();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
 
     }
@@ -54,6 +57,7 @@ public class BeneficiariesDO extends DomainObjectModel {
         planSelectionPO.validatePlanProgressBarStep();
         beneficiariesPO.initPage(getContext());
         beneficiariesPO.validateBeneficiariesDescription();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
 
     }
@@ -63,6 +67,7 @@ public class BeneficiariesDO extends DomainObjectModel {
         beneficiariesPO.initPage(getContext());
         planSelectionPO.initPage(getContext());
         beneficiariesPO.validateBeneficiariesSkipQuestionandDetails();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickSkipContinueButton();
 
     }
@@ -73,9 +78,11 @@ public class BeneficiariesDO extends DomainObjectModel {
         planSelectionPO.clickContinueButton();
         planSelectionPO.clickSkipBackButton();
         beneficiariesPO.validateBeneficiariesDescription();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickBackButton();
         investmentPO.initPage(getContext());
         investmentPO.validateInvestmentCardSelected();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -84,11 +91,13 @@ public class BeneficiariesDO extends DomainObjectModel {
         planSelectionPO.clickContinueButton();
         beneficiariesPO.initPage(getContext());
         beneficiariesPO.addPrimaryBeneficiary();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user clicks continue and is able to validate all errors")
     public void user_clicks_continue_and_is_able_to_validate_all_errors(String gwt){
         planSelectionPO.clickSaveButton();
+        TestNGBase.takeScreenshot("");
         beneficiariesPO.validateErrors();
     }
 
@@ -96,6 +105,7 @@ public class BeneficiariesDO extends DomainObjectModel {
     public void user_selects_and_validates_person_beneficiary(String gwt){
         beneficiariesPO.addPersonBeneficiary();
         beneficiariesPO.validateBeneficiaryFormLabels();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.validateHinttextLabels();
 
     }
@@ -103,7 +113,9 @@ public class BeneficiariesDO extends DomainObjectModel {
     @Step("{0} user enters invalid person beneficiary details")
     public void user_enters_invalid_person_beneficiary(String gwt){
         beneficiariesPO.selectPersonRelationBeneficiary();
+        TestNGBase.takeScreenshot("");
         beneficiariesPO.validateInvalidPersonBeneficiaryDetails();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -111,8 +123,10 @@ public class BeneficiariesDO extends DomainObjectModel {
     public void user_enters_person_beneficiary_details(String gwt){
         beneficiariesPO.selectPersonRelationBeneficiary();
         beneficiariesPO.validateAndEnterDetailsPrimaryBeneficiary();
+        TestNGBase.takeScreenshot("");
         rppAdditionalInfoPO.initPage(getContext());
         rppAdditionalInfoPO.enterDOBDetails();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -120,12 +134,14 @@ public class BeneficiariesDO extends DomainObjectModel {
     public void user_selects_and_validates_primary_trustee(String gwt){
        beneficiariesPO.validateBeneficaryTrusteeQuestion();
        beneficiariesPO.selectPrimaryTrusteeYesorNo();
+        TestNGBase.takeScreenshot("");
 
     }
     @Step("{0} user clicks on Save Beneficiary Form")
     public void user_clicks_save_beneficiary(String gwt){
         AppHelper.waitForXHR(2);
         beneficiariesPO.validateAndEnterPrimaryallocation();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickSaveButton();
     }
 
@@ -133,6 +149,7 @@ public class BeneficiariesDO extends DomainObjectModel {
     public void user_validates_pill_information_after_saving_the_details(String gwt){
         AppHelper.waitForXHR(1);
         beneficiariesPO.validatePillInformation();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user validates Salesforce Information is saved for member")

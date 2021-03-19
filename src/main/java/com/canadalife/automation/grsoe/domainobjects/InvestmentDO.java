@@ -5,6 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import ru.yandex.qatools.allure.annotations.Step;
 import ui.auto.core.support.DomainObjectModel;
 import ui.auto.core.support.TestContext;
+import ui.auto.core.testng.TestNGBase;
 
 @XStreamAlias("plan-domain-object")
 public class InvestmentDO extends DomainObjectModel {
@@ -23,6 +24,7 @@ public class InvestmentDO extends DomainObjectModel {
         loginPO.login();
         loginPO.navigate("s/grs-plan-selection");
 
+        TestNGBase.takeScreenshot("");
         planSelectionPO.initPage(getContext());
         planSelectionPO.clickContinueButton();
     }
@@ -30,6 +32,7 @@ public class InvestmentDO extends DomainObjectModel {
     @Step("{0} Member can select required Plan")
     public void user_can_select_required_plan(String gwt) {
         planSelectionPO.selectRequiredPlan();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
     }
 
@@ -38,6 +41,7 @@ public class InvestmentDO extends DomainObjectModel {
         rppAdditionalInfoPO.initPage(getContext());
         rppAdditionalInfoPO.clickNoforspouse();
         rppAdditionalInfoPO.clickNoforconnectedperson();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
 
     }
@@ -52,6 +56,7 @@ public class InvestmentDO extends DomainObjectModel {
         investmentPO.enterAge();
         investmentPO.validateInvestmentCardHeader();
         investmentPO.validateInvestmentCardSelected();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -60,6 +65,7 @@ public class InvestmentDO extends DomainObjectModel {
         investmentPO.initPage(getContext());
         investmentPO.validateInvestmentFundName();
         investmentPO.validateFundFeeLines();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -67,6 +73,7 @@ public class InvestmentDO extends DomainObjectModel {
     public void user_reaches_investment_page_when_clicks_back_from_investment_skip_page(String gwt){
         planSelectionPO.clickSkipBackButton();
         investmentPO.validateInvestmentCardSelected();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -76,6 +83,7 @@ public class InvestmentDO extends DomainObjectModel {
        planSelectionPO.clickSkipStepButton();
        investmentPO.initPage(getContext());
        investmentPO.validateTheInvestmentSkipQuestionandDetails();
+       TestNGBase.takeScreenshot("");
 
     }
 
@@ -84,6 +92,7 @@ public class InvestmentDO extends DomainObjectModel {
        planSelectionPO.clickSkipContinueButton();
        beneficiariesPO.initPage(getContext());
        beneficiariesPO.validateBeneficiariesDescription();
+       TestNGBase.takeScreenshot("");
        planSelectionPO.clickContinueButton();
 
     }

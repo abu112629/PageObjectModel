@@ -5,6 +5,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import ru.yandex.qatools.allure.annotations.Step;
 import ui.auto.core.support.DomainObjectModel;
 import ui.auto.core.support.TestContext;
+import ui.auto.core.testng.TestNGBase;
 
 @XStreamAlias("plan-domain-object")
 public class ContributionsDO extends DomainObjectModel {
@@ -27,14 +28,16 @@ public class ContributionsDO extends DomainObjectModel {
         loginPO.update_asset();
         loginPO.login();
         loginPO.navigate("s/grs-plan-selection");
-
+        TestNGBase.takeScreenshot("");
         planSelectionPO.initPage(getContext());
         planSelectionPO.clickContinueButton();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user can select required Plan")
     public void user_can_select_required_plan(String gwt) {
         planSelectionPO.selectRequiredPlan();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
     }
 
@@ -44,8 +47,10 @@ public class ContributionsDO extends DomainObjectModel {
         contributionsPO.initPage(getContext());
         rppAdditionalInfoPO.clickNoforspouse();
         rppAdditionalInfoPO.clickNoforconnectedperson();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
         contributionsPO.validateContributionAccount();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -55,9 +60,11 @@ public class ContributionsDO extends DomainObjectModel {
         contributionsPO.initPage(getContext());
         rppAdditionalInfoPO.clickNoforspouse();
         rppAdditionalInfoPO.clickNoforconnectedperson();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
         contributionsPO.validateClickforAccordionDropdown();
         contributionsPO.validateContributionAccordionContent();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -68,8 +75,10 @@ public class ContributionsDO extends DomainObjectModel {
         contributionsPO.initPage(getContext());
         nrspAdditionalInfoPO.clickNoforUSCitizen();
         nrspAdditionalInfoPO.clickNoforOtherCitizen();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
         contributionsPO.validateContributionAccount();
+        TestNGBase.takeScreenshot("");
 
     }
     @Step("{0} user can see contribution rules in accordion for NRSP plan")
@@ -78,9 +87,11 @@ public class ContributionsDO extends DomainObjectModel {
         contributionsPO.initPage(getContext());
         nrspAdditionalInfoPO.clickNoforUSCitizen();
         nrspAdditionalInfoPO.clickNoforOtherCitizen();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
         contributionsPO.validateClickforAccordionDropdown();
         contributionsPO.validateContributionAccordionContent();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -89,6 +100,7 @@ public class ContributionsDO extends DomainObjectModel {
     public void user_can_see_contribution_page_for_other_plans(String gwt) {
         contributionsPO.initPage(getContext());
         contributionsPO.validateContributionAccount();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user can see contribution rules in accordion for RRSP,DPSP or TFSA plan")
@@ -96,6 +108,7 @@ public class ContributionsDO extends DomainObjectModel {
         contributionsPO.initPage(getContext());
         contributionsPO.validateClickforAccordionDropdown();
         contributionsPO.validateContributionAccordionContent();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -104,6 +117,7 @@ public class ContributionsDO extends DomainObjectModel {
         planSelectionPO.validatePlanProgressBarInfo();
         planSelectionPO.validatePlanProgressBarStep();
         planSelectionPO.validatePlanssubHeader();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user can see Additional Info Page for RPP when they click back from Contributions Page")
@@ -111,6 +125,7 @@ public class ContributionsDO extends DomainObjectModel {
         planSelectionPO.clickBackButton();
         rppAdditionalInfoPO.clickYesforspouse();
         rppAdditionalInfoPO.clickNoforspouse();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -119,6 +134,7 @@ public class ContributionsDO extends DomainObjectModel {
         planSelectionPO.clickBackButton();
         nrspAdditionalInfoPO.clickYesforUSCitizen();
         nrspAdditionalInfoPO.clickNoforUSCitizen();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -127,6 +143,7 @@ public class ContributionsDO extends DomainObjectModel {
         planSelectionPO.clickBackButton();
         planSelectionPO.selectRequiredPlan();
         planSelectionPO.clickContinueButton();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user can see Contribution Heading and Label on the Accounts")
@@ -135,9 +152,11 @@ public class ContributionsDO extends DomainObjectModel {
         contributionsPO.initPage(getContext());
         nrspAdditionalInfoPO.clickNoforUSCitizen();
         nrspAdditionalInfoPO.clickNoforOtherCitizen();
+        TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
         contributionsPO.validateContributionHeadingDollarPercentage();
         contributionsPO.validateContributionLabel();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -151,6 +170,7 @@ public class ContributionsDO extends DomainObjectModel {
         planSelectionPO.clickContinueButton();
         //contributionsPO.validateErrorPercentageEmployer();
         contributionsPO.validateContributionErrorMember();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user can only enter valid values in the range provided for the accounts")
@@ -158,17 +178,20 @@ public class ContributionsDO extends DomainObjectModel {
         contributionsPO.clickEmployerPercentageEnterInput();
         contributionsPO.clickEmployerDollarEnterInput();
         contributionsPO.enterMemberValidInput();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user can see error on the accounts when click on continue if we enter any invalid amount")
     public void user_can_see_error_on_accounts_with_invalid_amounts(String gwt) {
         contributionsPO.enterMemberInvalidInput();
         contributionsPO.validateContributionErrorMember();
+        TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user can see Contribution details for Account with no input available")
     public void user_can_see_contribution_details_for_account_with_no_input(String gwt) {
         contributionsPO.validatePlanNoContributionsText();
+        TestNGBase.takeScreenshot("");
 
     }
 
@@ -177,6 +200,7 @@ public class ContributionsDO extends DomainObjectModel {
         planSelectionPO.clickContinueButton();
         planSelectionPO.clickBackButton();
         contributionsPO.validateContributionAmountRetained();
+        TestNGBase.takeScreenshot("");
     }
 
 
