@@ -74,6 +74,7 @@ public class NRSPAdditionalInfoPO extends PageObjectModel {
 
     @Step("Select radio button for Another Reason for No Additional TIN")
     public void selectRadioButtonforNoAdditionalTIN() {
+        AppHelper.scrollToView(radiobuttonNoOtherTIN.getCoreElement());
         setElementValue(radiobuttonNoOtherTIN);
     }
 
@@ -94,24 +95,28 @@ public class NRSPAdditionalInfoPO extends PageObjectModel {
 
     @Step("Enter TIN for the US Tax Payer")
     public void enterTINforUSCitizen() {
+        AppHelper.scrollToView(usTinNumber.getCoreElement());
         usTinNumber.click();
         setElementValue(usTinNumber);
     }
 
     @Step("Enter TIN for the Other Country Tax Payer")
     public void enterTINforNonUSCitizen(){
+        AppHelper.scrollToView(otherCountryTIN.getCoreElement());
         otherCountryTIN.click();
         setElementValue(otherCountryTIN);
     }
 
     @Step("Enter invalid TIN for the Other Country Tax Payer")
     public void enterInvalidTINforNonUSCitizen() {
+        AppHelper.scrollToView(otherCountryinvalidTIN.getCoreElement());
         otherCountryinvalidTIN.click();
         setElementValue(otherCountryinvalidTIN);
     }
 
     @Step("Enter Additional Input Details for no Other TIN Explanation")
     public void enterAdditionalDetailsforNoTIN() {
+        AppHelper.scrollToView(reasonExplanationDetails.getCoreElement());
         reasonExplanationDetails.click();
         setElementValue(reasonExplanationDetails);
     }

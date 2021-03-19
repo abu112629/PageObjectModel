@@ -81,6 +81,7 @@ public class NRSPPlanDO extends DomainObjectModel {
 
     @Step("{0} Member selects yes for the second question, then they will see a drop down field to select their Country of residency")
     public void user_can_select_country_from_dropdown(String gwt) {
+        nrspAdditionalInfoPO.enterTINforUSCitizen();
         nrspAdditionalInfoPO.selectCountry();
     }
 
@@ -137,6 +138,7 @@ public class NRSPPlanDO extends DomainObjectModel {
     @Step("{0} Member selects a reason for the additional TIN question")
     public void user_selects_radio_button_for_additional_reasons(String gwt) {
 
+        nrspAdditionalInfoPO.enterTINforUSCitizen();
         nrspAdditionalInfoPO.selectRadioButtonforNoAdditionalTIN();
         TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
@@ -146,6 +148,7 @@ public class NRSPPlanDO extends DomainObjectModel {
     public void user_can_see_error_when_no_details_provided_in_reason(String gwt) {
         nrspAdditionalInfoPO.validateReasonforAdditionalTINLabel();
         nrspAdditionalInfoPO.errorMessageNoAdditionalDetailsProvided();
+        nrspAdditionalInfoPO.enterTINforUSCitizen();
         nrspAdditionalInfoPO.enterAdditionalDetailsforNoTIN();
         TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
