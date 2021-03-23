@@ -50,30 +50,12 @@
         <addBeneficiaryLabel>Add a primary beneficiary</addBeneficiaryLabel>
         <addBeneficiaryHintLabel>All fields are required unless labelled as optional.</addBeneficiaryHintLabel>
         <primaryTypeLabel>What type of beneficiary do you want to add?</primaryTypeLabel>
-        <BeneRadioButton>Person</BeneRadioButton>
-        <personDropDownQuestion>What’s this person’s relationship to you?</personDropDownQuestion>
-        <personBeneficiaryRelation>Aunt</personBeneficiaryRelation>
-        <primaryFirstName initial="First name">Test</primaryFirstName>
-        <primaryFirstNameInvalid initial="Enter a valid first name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</primaryFirstNameInvalid>
-        <primaryFirstNameError>Enter this beneficiary's first name.</primaryFirstNameError>
-        <primaryLastName initial="Last name">Testsample</primaryLastName>
-        <primaryLastNameInvalid initial="Enter a valid last name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</primaryLastNameInvalid>
-        <primaryLastNameError>Enter this beneficiary's last name.</primaryLastNameError>
-        <primaryDateOfBirth expected ="Date of birth (optional)">Date of birth</primaryDateOfBirth>
-        <primaryMonthLabel expected ="Month">Month</primaryMonthLabel>
-        <primaryDateLabel expected ="Day (DD)">Day (DD)</primaryDateLabel>
-        <primaryYearLabel expected ="Year (YYYY)">Year (YYYY)</primaryYearLabel>
-        <primaryAllocation initial="What percentage do you want to allocate to this beneficiary?">4.00</primaryAllocation>
-        <primaryAllocationInvalid initial="Enter a valid percentage between 1 and 100.">100.22</primaryAllocationInvalid>
-        <primaryAllocationError>Enter the percentage you'd like to allocate to this beneficiary.</primaryAllocationError>
-        <primaryTrusteeQuestion>Does this beneficiary require a trustee?</primaryTrusteeQuestion>
-        <primaryTrusteeSelection>no</primaryTrusteeSelection>
-        <beneficiaryType expected="Test Testsample (Aunt)">Person</beneficiaryType>
+        <BeneRadioButton>Estate</BeneRadioButton>
+        <beneficiaryEstateMessage>Your estate is everything you own at the time of your death. Some property may not be included in your estate, for example some jointly held property or property for which you have named a beneficiary. You may have a will that says what you want to be done with your estate when you die. If you don't have a will, provincial laws set out what will happen to your estate. If you add your estate as a beneficiary, speak to a legal advisor.</beneficiaryEstateMessage>
+        <primaryAllocationEstate initial="What percentage do you want to allocate to this beneficiary?">4.00</primaryAllocationEstate>
+        <primaryEstateAllocationInvalid initial="Enter a valid percentage between 1 and 100.">100.22</primaryEstateAllocationInvalid>
+        <primaryEstateAllocationError>Enter the percentage you'd like to allocate to this beneficiary.</primaryEstateAllocationError>
+        <beneficiaryType expected="Your estate">Estate</beneficiaryType>
         <beneficiaryAllocationPercentage>4%</beneficiaryAllocationPercentage>
     </beneficiariesPO>
-    <rppAdditionalInfoPO>
-        <slctdrpdownMonth>January</slctdrpdownMonth>
-        <birthDay>07</birthDay>
-        <birthYear>1989</birthYear>
-    </rppAdditionalInfoPO>
 </plan-domain-object>

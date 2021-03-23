@@ -90,6 +90,7 @@ public class BeneficiariesDO extends DomainObjectModel {
     public void user_clicks_add_primary_beneficiary(String gwt){
         planSelectionPO.clickContinueButton();
         beneficiariesPO.initPage(getContext());
+        AppHelper.waitForXHR(2);
         beneficiariesPO.addPrimaryBeneficiary();
         TestNGBase.takeScreenshot("");
     }
@@ -103,11 +104,27 @@ public class BeneficiariesDO extends DomainObjectModel {
 
     @Step("{0} user selects and validates person beneficiary details")
     public void user_selects_and_validates_person_beneficiary(String gwt){
-        beneficiariesPO.addPersonBeneficiary();
+        beneficiariesPO.addBeneficiary();
         beneficiariesPO.validateBeneficiaryFormLabels();
         TestNGBase.takeScreenshot("");
         planSelectionPO.validateHinttextLabels();
 
+    }
+
+    @Step("{0} user selects and validates estate beneficiary details")
+    public void user_selects_and_validates_estate_beneficiary(String gwt){
+        beneficiariesPO.addBeneficiary();
+        beneficiariesPO.validateEstateBeneFormLabels();
+        TestNGBase.takeScreenshot("");
+        planSelectionPO.validateHinttextLabels();
+
+    }
+
+    @Step("{0} user clicks continue and is able to validate all estate errors")
+    public void user_clicks_continue_and_is_able_to_validate_all_estate_errors(String gwt){
+        planSelectionPO.clickSaveButton();
+        TestNGBase.takeScreenshot("");
+        beneficiariesPO.validateEstateError();
     }
 
     @Step("{0} user enters invalid person beneficiary details")
@@ -115,6 +132,13 @@ public class BeneficiariesDO extends DomainObjectModel {
         beneficiariesPO.selectPersonRelationBeneficiary();
         TestNGBase.takeScreenshot("");
         beneficiariesPO.validateInvalidPersonBeneficiaryDetails();
+        TestNGBase.takeScreenshot("");
+
+    }
+
+    @Step("{0} user enters invalid estate beneficiary details")
+    public void user_enters_invalid_estate_beneficiary(String gwt){
+        beneficiariesPO.validateInvalidEstateBeneficiaryDetails();
         TestNGBase.takeScreenshot("");
 
     }
@@ -145,6 +169,14 @@ public class BeneficiariesDO extends DomainObjectModel {
         planSelectionPO.clickSaveButton();
     }
 
+    @Step("{0} user clicks on Save Beneficiary Form for Estate")
+    public void user_clicks_save_beneficiary_for_estate(String gwt){
+        AppHelper.waitForXHR(2);
+        beneficiariesPO.validateAndEnterDetailsEstateBeneficiary();
+        TestNGBase.takeScreenshot("");
+        planSelectionPO.clickSaveButton();
+    }
+
     @Step("{0} user validates Pill information after saving the details")
     public void user_validates_pill_information_after_saving_the_details(String gwt){
         AppHelper.waitForXHR(1);
@@ -152,10 +184,23 @@ public class BeneficiariesDO extends DomainObjectModel {
         TestNGBase.takeScreenshot("");
     }
 
+    @Step("{0} user validates Pill information for Estate after saving the details")
+    public void user_validates_pill_information_for_estate_after_saving_the_details(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiariesPO.validatePillInformationEstate();
+        TestNGBase.takeScreenshot("");
+    }
+
     @Step("{0} user validates Salesforce Information is saved for member")
     public void user_validates_salesforce_information_is_saved_for_member(String gwt){
         AppHelper.waitForXHR(1);
         beneficiariesPO.validateSalesforceBeneficiaryRecord();
+    }
+
+    @Step("{0} user validates Salesforce Information is saved for Estate")
+    public void user_validates_salesforce_information_is_saved_for_estate(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiariesPO.validateSalesforceEstateRecord();
     }
 
 }

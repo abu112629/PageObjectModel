@@ -4,8 +4,6 @@ import com.canadalife.automation.grsoe.api.salesforce.SalesforceInfo;
 import com.canadalife.automation.grsoe.components.*;
 import com.canadalife.automation.grsoe.support.AppHelper;
 import datainstiller.data.Data;
-import io.appium.java_client.ScreenshotState;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.FindBy;
 import ui.auto.core.components.WebComponent;
 import ui.auto.core.components.WebComponentList;
@@ -36,7 +34,7 @@ public class BeneficiariesPO extends PageObjectModel {
     private RadioGroup primaryTypeLabel;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaryType']")
-    private VlocitySelectRadioButton personBeneRadioButton;
+    private VlocitySelectRadioButton BeneRadioButton;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryRelationship']")
     private VlocitySelectRadioButton personDropDownQuestion;
@@ -95,6 +93,18 @@ public class BeneficiariesPO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
     private VlocitySelect beneficiaryAllocationPercentage;
 
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryEstateFeedbackMessage']//p")
+    private WebComponent beneficiaryEstateMessage;
+
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationEstate']")
+    private VlocityActionInput primaryAllocationEstate;
+
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationEstate']")
+    private VlocityInput primaryEstateAllocationInvalid;
+
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationEstate']")
+    private VlocityInput primaryEstateAllocationError;
+
     @Data(skip = true)
     SalesforceInfo salesforceInfo;
 
@@ -139,9 +149,19 @@ public class BeneficiariesPO extends PageObjectModel {
         primaryAllocation.validateInputLabel(DataTypes.Initial);
     }
 
-    public void addPersonBeneficiary(){
-        AppHelper.scrollToView(personBeneRadioButton.getCoreElement());
-        setElementValue(personBeneRadioButton,false);
+    public void validateEstateBeneFormLabels(){
+        AppHelper.scrollToView(addBeneficiaryLabel.getCoreElement());
+        addBeneficiaryLabel.validateData(DataTypes.Data);
+        addBeneficiaryHintLabel.validateData(DataTypes.Data);
+        primaryTypeLabel.validateLabelHeader(DataTypes.Data);
+
+        beneficiaryEstateMessage.validateData(DataTypes.Data);
+
+    }
+
+    public void addBeneficiary(){
+        AppHelper.scrollToView(BeneRadioButton.getCoreElement());
+        setElementValue(BeneRadioButton,false);
     }
 
     public void selectPersonRelationBeneficiary(){
@@ -173,17 +193,32 @@ public class BeneficiariesPO extends PageObjectModel {
         setElementValue(primaryLastName);
         setElementValue(primaryAllocation);
 
+    }
+    public void validateAndEnterDetailsEstateBeneficiary(){
+        setElementValue(primaryAllocationEstate);
+
+    }
+    public void validateInvalidEstateBeneficiaryDetails() {
+        AppHelper.scrollToView(primaryEstateAllocationInvalid.getCoreElement());
+        primaryEstateAllocationInvalid.click();
+        setElementValue(primaryEstateAllocationInvalid);
+        AppHelper.waitForXHR(2);
+        primaryEstateAllocationInvalid.validateError(DataTypes.Initial);
 
     }
     public void validateAndEnterPrimaryallocation(){
         setElementValue(primaryAllocation);
-
 
     }
     public void validateErrors(){
         primaryFirstNameError.validateError(DataTypes.Data);
         primaryLastNameError.validateError(DataTypes.Data);
         primaryAllocationError.validateError(DataTypes.Data);
+
+    }
+
+    public void validateEstateError(){
+        primaryEstateAllocationError.validateError(DataTypes.Data);
 
     }
 
@@ -203,10 +238,23 @@ public class BeneficiariesPO extends PageObjectModel {
         beneficiaryAllocationPercentage.validateAllocationPercentage(DataTypes.Data);
     }
 
+    public void validatePillInformationEstate(){
+        beneficiaryType.validateBeneficiaryTypeEstate(DataTypes.Data);
+        beneficiaryType.validateBeneficiaryName(DataTypes.Expected);
+        beneficiaryAllocationPercentage.validateAllocationPercentage(DataTypes.Data);
+    }
+
     public void validateSalesforceBeneficiaryRecord() {
         AppHelper.waitForXHR(1);
         salesforceInfo = new SalesforceInfo();
         salesforceInfo.checkBeneficiaryDetails(primaryFirstName.getData(),primaryLastName.getData(),
                 primaryAllocation.getData());
+    }
+
+    public void validateSalesforceEstateRecord() {
+        AppHelper.waitForXHR(1);
+        salesforceInfo = new SalesforceInfo();
+        salesforceInfo.checkBeneficiaryDetails(BeneRadioButton.getData(),"",
+                primaryAllocationEstate.getData());
     }
 }

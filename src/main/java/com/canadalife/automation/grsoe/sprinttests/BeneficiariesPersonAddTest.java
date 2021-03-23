@@ -19,7 +19,7 @@ public class BeneficiariesPersonAddTest extends TestNGBase {
     @Issue("GRSOE-65")
     @Test
 
-    public void ValidateBeneficiariesPersonAddition(@Optional("data/beneficiaries_skip_data_set_en.xml")String dataSet) {
+    public void ValidateBeneficiariesPersonAddition(@Optional("data/beneficiaries_skip_data_set_fr.xml")String dataSet) {
 
         BeneficiariesDO beneficiariesDO=new BeneficiariesDO(getContext()).fromResource(dataSet);
         Given(beneficiariesDO :: user_on_plan_selection_page);
