@@ -149,6 +149,21 @@ public abstract class VlocityComponent extends PageComponent {
         Assertions.assertThat(actual).isEqualTo(expected);
     }
 
+    public String getBeneficiaryTypeOrganization() {
+        WebElement els=coreElement.findElement(By.xpath(".//*[contains(@class,'organization-badge')]"));
+        if (!els.isDisplayed()) {
+            return null;
+        } else {
+            return els.getText();
+        }
+    }
+
+    public void validateBeneficiaryTypeOrganization(DataTypes type) {
+        String actual = getBeneficiaryTypeOrganization();
+        String expected = getData(type);
+        Assertions.assertThat(actual).isEqualTo(expected);
+    }
+
     public String getBeneficiaryName() {
         WebElement els=coreElement.findElement(By.xpath(".//*[contains(@class,'overflow-break')]"));
         if (!els.isDisplayed()) {

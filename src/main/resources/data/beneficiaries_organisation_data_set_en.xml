@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_En</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                NRSP
+            </item>
+        </planList>
+        <planProgressBarStep>
+            <item>Step 5 of 7: Choose your beneficiaries</item>
+        </planProgressBarStep>
+        <hintText>
+            <item>Max. 20 characters</item>
+            <item>Appoint a trustee if your beneficiary is a minor or lacks legal capacity and doesn't live in Quebec. If your beneficiary is a minor who lives in Quebec, death benefits will be paid to your beneficiary’s tutor (generally the parents) unless a trust for the minor exists. If a formal trust exists, don't complete this section. Consider getting legal advice before appointing a trustee.</item>
+            <item>In Quebec, if your spouse (married or civil union) is a beneficiary, you can't remove them without their permission unless you select the revocable checkbox below.</item>
+            <item>If you’re adding more beneficiaries, make sure the total adds up to 100%.</item>
+            <item>Max. 60 characters</item>>
+        </hintText>
+    </planSelectionPO>
+    <nrspAdditionalInfoPO>
+        <usCitizenNo>no</usCitizenNo>
+        <otherCitizenNo>no</otherCitizenNo>
+    </nrspAdditionalInfoPO>
+    <investmentPO>
+        <investmentCardSelected>Selected</investmentCardSelected>
+    </investmentPO>
+    <beneficiariesPO>
+        <beneficiariesDescription>
+            <item>Choose who should receive your savings when you pass away. If you don't designate a beneficiary or none of them survive you, the money will go to your estate unless the law requires otherwise.</item>
+            <item>Generally, you can change your beneficiaries at any time using your online account.</item>
+        </beneficiariesDescription>
+        <beneficiariesSkipQuestion>Are you sure you want to continue without adding beneficiaries?</beneficiariesSkipQuestion>
+        <beneficiariesSkipDetails>Naming a beneficiary can help determine where your savings might go in the event of your death.</beneficiariesSkipDetails>
+        <beneficiariesAdd>Add a primary beneficiary</beneficiariesAdd>
+        <addBeneficiaryLabel>Add a primary beneficiary</addBeneficiaryLabel>
+        <addBeneficiaryHintLabel>All fields are required unless labelled as optional.</addBeneficiaryHintLabel>
+        <primaryTypeLabel>What type of beneficiary do you want to add?</primaryTypeLabel>
+        <BeneRadioButton>Organization</BeneRadioButton>
+        <primaryAllocationEstate initial="What percentage do you want to allocate to this beneficiary?">4.00</primaryAllocationEstate>
+        <primaryEstateAllocationInvalid initial="Enter a valid percentage between 1 and 100.">100.22</primaryEstateAllocationInvalid>
+        <primaryEstateAllocationError>Enter the percentage you'd like to allocate to this beneficiary.</primaryEstateAllocationError>
+        <beneficiaryType expected="Org Test">Organization</beneficiaryType>
+        <beneficiaryAllocationPercentage>7%</beneficiaryAllocationPercentage>
+        <beneficiaryOrganizationMessage>You can choose an organization, such as a charity, society, association or corporation, to receive your savings when you die.</beneficiaryOrganizationMessage>
+        <beneficiaryOrganizationName initial="What's the organization's name?">Org Test</beneficiaryOrganizationName>
+        <beneficiaryOrganizationAllocation initial="What percentage do you want to allocate to this beneficiary?">7.00</beneficiaryOrganizationAllocation>
+        <beneficiaryOrganizationNameError>Enter a valid organization name.</beneficiaryOrganizationNameError>
+        <beneficiaryOrganizationAllocationError>Enter the percentage you'd like to allocate to this beneficiary.</beneficiaryOrganizationAllocationError>
+        <beneficiaryOrganizationNameInvalid initial="Enter a valid organization name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</beneficiaryOrganizationNameInvalid>
+        <beneficiaryOrganizationAllocationInvalid initial="Enter a valid percentage between 1 and 100.">100.22</beneficiaryOrganizationAllocationInvalid>
+    </beneficiariesPO>
+</plan-domain-object>

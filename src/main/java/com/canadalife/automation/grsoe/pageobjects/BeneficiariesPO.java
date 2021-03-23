@@ -105,6 +105,27 @@ public class BeneficiariesPO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationEstate']")
     private VlocityInput primaryEstateAllocationError;
 
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryOrganizationHelpTextBlock']//div")
+    private WebComponent beneficiaryOrganizationMessage;
+
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryOrganizationNameText']")
+    private VlocityActionInput beneficiaryOrganizationName;
+
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationOrganization']")
+    private VlocityActionInput beneficiaryOrganizationAllocation;
+
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryOrganizationNameText']")
+    private VlocityActionInput beneficiaryOrganizationNameError;
+
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationOrganization']")
+    private VlocityActionInput beneficiaryOrganizationAllocationError;
+
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryOrganizationNameText']")
+    private VlocityActionInput beneficiaryOrganizationNameInvalid;
+
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationOrganization']")
+    private VlocityActionInput beneficiaryOrganizationAllocationInvalid;
+
     @Data(skip = true)
     SalesforceInfo salesforceInfo;
 
@@ -159,6 +180,18 @@ public class BeneficiariesPO extends PageObjectModel {
 
     }
 
+    public void validateOrganisationBeneFormLabels(){
+        AppHelper.scrollToView(addBeneficiaryLabel.getCoreElement());
+        addBeneficiaryLabel.validateData(DataTypes.Data);
+        addBeneficiaryHintLabel.validateData(DataTypes.Data);
+        primaryTypeLabel.validateLabelHeader(DataTypes.Data);
+
+        beneficiaryOrganizationMessage.validateData(DataTypes.Data);
+        beneficiaryOrganizationName.validateInputLabel(DataTypes.Initial);
+        beneficiaryOrganizationAllocation.validateInputLabel(DataTypes.Initial);
+
+    }
+
     public void addBeneficiary(){
         AppHelper.scrollToView(BeneRadioButton.getCoreElement());
         setElementValue(BeneRadioButton,false);
@@ -198,12 +231,31 @@ public class BeneficiariesPO extends PageObjectModel {
         setElementValue(primaryAllocationEstate);
 
     }
+
+    public void validateAndEnterDetailsOrganizationBeneficiary(){
+        setElementValue(beneficiaryOrganizationName);
+        setElementValue(beneficiaryOrganizationAllocation);
+
+    }
     public void validateInvalidEstateBeneficiaryDetails() {
         AppHelper.scrollToView(primaryEstateAllocationInvalid.getCoreElement());
         primaryEstateAllocationInvalid.click();
         setElementValue(primaryEstateAllocationInvalid);
         AppHelper.waitForXHR(2);
         primaryEstateAllocationInvalid.validateError(DataTypes.Initial);
+
+    }
+    public void validateInvalidOrganizationBeneficiaryDetails() {
+        AppHelper.scrollToView(beneficiaryOrganizationNameInvalid.getCoreElement());
+        beneficiaryOrganizationNameInvalid.click();
+        setElementValue(beneficiaryOrganizationNameInvalid);
+        AppHelper.waitForXHR(2);
+        beneficiaryOrganizationNameInvalid.validateError(DataTypes.Initial);
+
+        beneficiaryOrganizationAllocationInvalid.click();
+        setElementValue(beneficiaryOrganizationAllocationInvalid);
+        AppHelper.waitForXHR(2);
+        beneficiaryOrganizationAllocationInvalid.validateError(DataTypes.Initial);
 
     }
     public void validateAndEnterPrimaryallocation(){
@@ -220,6 +272,11 @@ public class BeneficiariesPO extends PageObjectModel {
     public void validateEstateError(){
         primaryEstateAllocationError.validateError(DataTypes.Data);
 
+    }
+
+    public void validateOrganizationError(){
+        beneficiaryOrganizationNameError.validateError(DataTypes.Data);
+        beneficiaryOrganizationAllocationError.validateError(DataTypes.Data);
     }
 
     public void validateBeneficaryTrusteeQuestion(){
@@ -244,6 +301,12 @@ public class BeneficiariesPO extends PageObjectModel {
         beneficiaryAllocationPercentage.validateAllocationPercentage(DataTypes.Data);
     }
 
+    public void validatePillInformationOrganization(){
+        beneficiaryType.validateBeneficiaryTypeOrganization(DataTypes.Data);
+        beneficiaryType.validateBeneficiaryName(DataTypes.Expected);
+        beneficiaryAllocationPercentage.validateAllocationPercentage(DataTypes.Data);
+    }
+
     public void validateSalesforceBeneficiaryRecord() {
         AppHelper.waitForXHR(1);
         salesforceInfo = new SalesforceInfo();
@@ -256,5 +319,12 @@ public class BeneficiariesPO extends PageObjectModel {
         salesforceInfo = new SalesforceInfo();
         salesforceInfo.checkBeneficiaryDetails(BeneRadioButton.getData(),"",
                 primaryAllocationEstate.getData());
+    }
+
+    public void validateSalesforceOrganizationRecord() {
+        AppHelper.waitForXHR(1);
+        salesforceInfo = new SalesforceInfo();
+        salesforceInfo.checkBeneficiaryDetails(beneficiaryOrganizationName.getData(),"",
+                beneficiaryOrganizationAllocation.getData());
     }
 }

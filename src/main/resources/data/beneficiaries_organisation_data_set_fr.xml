@@ -46,34 +46,19 @@
         </beneficiariesDescription>
         <beneficiariesSkipQuestion>Êtes-vous certain de vouloir continuer sans ajouter de bénéficiaire?</beneficiariesSkipQuestion>
         <beneficiariesSkipDetails>Lorsque vous désignez un bénéficiaire, il est plus facile de déterminer à qui votre épargne devrait être transférée à votre décès.</beneficiariesSkipDetails>
-    <beneficiariesAdd>Ajouter un premier bénéficiaire</beneficiariesAdd>
-    <addBeneficiaryLabel>Ajouter un premier bénéficiaire</addBeneficiaryLabel>
-    <addBeneficiaryHintLabel>Sauf indication contraire, tous les champs doivent être remplis.</addBeneficiaryHintLabel>
-    <primaryTypeLabel>Quel type de bénéficiaire voulez-vous ajouter?</primaryTypeLabel>
-    <BeneRadioButton>Personne</BeneRadioButton>
-    <personDropDownQuestion>Quel est son lien avec vous?</personDropDownQuestion>
-    <personBeneficiaryRelation>Tante</personBeneficiaryRelation>
-    <primaryFirstName initial="Prénom">TestFrench</primaryFirstName>
-    <primaryFirstNameInvalid initial="Entrez un prénom valide. Seuls les lettres, les traits d’union, les espaces, les apostrophes, les crochets et les points sont acceptés.">&lt;</primaryFirstNameInvalid>
-    <primaryFirstNameError>Entrez le prénom de ce bénéficiaire.</primaryFirstNameError>
-    <primaryLastName initial="Nom de famille">Testsample</primaryLastName>
-    <primaryLastNameInvalid initial="Entrez un nom de famille valide. Seuls les lettres, les traits d’union, les espaces, les apostrophes, les crochets et les points sont acceptés.">&lt;</primaryLastNameInvalid>
-    <primaryLastNameError>Entrez le nom de famille de ce bénéficiaire.</primaryLastNameError>
-    <primaryDateOfBirth expected ="Date de naissance (facultatif)">Date de naissance</primaryDateOfBirth>
-    <primaryMonthLabel expected ="Mois">Mois</primaryMonthLabel>
-    <primaryDateLabel expected ="Jour (JJ)">Jour (JJ)</primaryDateLabel>
-    <primaryYearLabel expected ="Année (YYYY)">Année (YYYY)</primaryYearLabel>
-    <primaryAllocation initial="Quel pourcentage voulez-vous attribuer à ce bénéficiaire?">4,00</primaryAllocation>
-    <primaryAllocationInvalid initial="Entrez un pourcentage entre 1 et 100.">100,22</primaryAllocationInvalid>
-    <primaryAllocationError>Entrez le pourcentage que vous voulez accorder à ce bénéficiaire</primaryAllocationError>
-    <primaryTrusteeQuestion>Un fiduciaire doit-il être désigné pour ce bénéficiaire?</primaryTrusteeQuestion>
-    <primaryTrusteeSelection>no</primaryTrusteeSelection>
-    <beneficiaryType expected="TestFrench Testsample (Tante)">Personne</beneficiaryType>
-    <beneficiaryAllocationPercentage>4 %</beneficiaryAllocationPercentage>
-</beneficiariesPO>
-<rppAdditionalInfoPO>
-<slctdrpdownMonth>janvier</slctdrpdownMonth>
-<birthDay>07</birthDay>
-<birthYear>1989</birthYear>
-</rppAdditionalInfoPO>
+        <beneficiariesAdd>Ajouter un premier bénéficiaire</beneficiariesAdd>
+        <addBeneficiaryLabel>Ajouter un premier bénéficiaire</addBeneficiaryLabel>
+        <addBeneficiaryHintLabel>Sauf indication contraire, tous les champs doivent être remplis.</addBeneficiaryHintLabel>
+        <primaryTypeLabel>Quel type de bénéficiaire voulez-vous ajouter?</primaryTypeLabel>
+        <BeneRadioButton>Organisation</BeneRadioButton>
+        <beneficiaryType expected="Org TestFrench">Organisation</beneficiaryType>
+        <beneficiaryAllocationPercentage>7 %</beneficiaryAllocationPercentage>
+        <beneficiaryOrganizationMessage>Vous pouvez choisir une organisation, comme un organisme de bienfaisance, une société, une association ou une entreprise, comme bénéficiaire de votre épargne à votre décès.</beneficiaryOrganizationMessage>
+        <beneficiaryOrganizationName initial="Quel est le nom de l’organisation?">Org TestFrench</beneficiaryOrganizationName>
+        <beneficiaryOrganizationAllocation initial="Quel pourcentage voulez-vous attribuer à ce bénéficiaire?">7,00</beneficiaryOrganizationAllocation>
+        <beneficiaryOrganizationNameError>Entrez un nom d’organisation valide.</beneficiaryOrganizationNameError>
+        <beneficiaryOrganizationAllocationError>Entrez le pourcentage que vous voulez accorder à ce bénéficiaire.</beneficiaryOrganizationAllocationError>
+        <beneficiaryOrganizationNameInvalid initial="Entrez un nom d’organisation valide. Seuls les lettres, les traits d’union, les espaces, les apostrophes, les crochets et les points sont acceptés.">&lt;</beneficiaryOrganizationNameInvalid>
+        <beneficiaryOrganizationAllocationInvalid initial="Entrez un pourcentage entre 1 et 100.">100,22</beneficiaryOrganizationAllocationInvalid>
+    </beneficiariesPO>
 </plan-domain-object>
