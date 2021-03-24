@@ -46,7 +46,7 @@
         </beneficiariesDescription>
         <beneficiariesSkipQuestion>Are you sure you want to continue without adding beneficiaries?</beneficiariesSkipQuestion>
         <beneficiariesSkipDetails>Naming a beneficiary can help determine where your savings might go in the event of your death.</beneficiariesSkipDetails>
-        <beneficiariesAdd>Add a primary beneficiary</beneficiariesAdd>
+        <beneficiariesAdd expected="The trustee and the beneficiary can't be the same person.">Add a primary beneficiary</beneficiariesAdd>
         <addBeneficiaryLabel>Add a primary beneficiary</addBeneficiaryLabel>
         <addBeneficiaryHintLabel>All fields are required unless labelled as optional.</addBeneficiaryHintLabel>
         <primaryTypeLabel>What type of beneficiary do you want to add?</primaryTypeLabel>
@@ -67,9 +67,21 @@
         <primaryAllocationInvalid initial="Enter a valid percentage between 1 and 100.">100.22</primaryAllocationInvalid>
         <primaryAllocationError>Enter the percentage you'd like to allocate to this beneficiary.</primaryAllocationError>
         <primaryTrusteeQuestion>Does this beneficiary require a trustee?</primaryTrusteeQuestion>
-        <primaryTrusteeSelection>no</primaryTrusteeSelection>
+        <primaryTrusteeSelectionNo initial="Select if this beneficiary requires a trustee.">no</primaryTrusteeSelectionNo>
         <beneficiaryType expected="Test Testsample (Aunt)">Person</beneficiaryType>
         <beneficiaryAllocationPercentage>4%</beneficiaryAllocationPercentage>
+        <primaryTrusteeSelectionYes>yes</primaryTrusteeSelectionYes>
+        <primaryTrusteeRelationship initial="What's the trustee's relationship to you?">Aunt</primaryTrusteeRelationship>
+        <primaryTrusteeFirstName initial="First name">Trustee</primaryTrusteeFirstName>
+        <primaryTrusteeLastName initial="Last name">TestEnglish</primaryTrusteeLastName>
+        <primaryTrusteeFirstNameDuplicate>Test</primaryTrusteeFirstNameDuplicate>
+        <primaryTrusteeLastNameDuplicate>Testsample</primaryTrusteeLastNameDuplicate>
+        <primaryTrusteeRelationshipError>Select the trustee's relationship to you.</primaryTrusteeRelationshipError>
+        <primaryTrusteeFirstNameError>Enter the trustee's first name.</primaryTrusteeFirstNameError>
+        <primaryTrusteeLastNameError>Enter the trustee's last name.</primaryTrusteeLastNameError>
+        <primaryTrusteeFirstNameInvalid initial="Enter a valid first name that contains only letters, hyphens, spaces, apostrophes and brackets.">&lt;</primaryTrusteeFirstNameInvalid>
+        <primaryTrusteeLastNameInvalid initial="Enter a valid last name that contains only letters, hyphens, spaces, apostrophes and brackets.">&lt;</primaryTrusteeLastNameInvalid>
+        <beneficiaryTrusteeType>Trustee: Trustee TestEnglish</beneficiaryTrusteeType>
     </beneficiariesPO>
     <rppAdditionalInfoPO>
         <slctdrpdownMonth>January</slctdrpdownMonth>

@@ -180,7 +180,7 @@ public class BeneficiariesDO extends DomainObjectModel {
     @Step("{0} user selects and validates primary Trustee")
     public void user_selects_and_validates_primary_trustee(String gwt){
        beneficiariesPO.validateBeneficaryTrusteeQuestion();
-       beneficiariesPO.selectPrimaryTrusteeYesorNo();
+       beneficiariesPO.selectPrimaryTrusteeNo();
         TestNGBase.takeScreenshot("");
 
     }
@@ -245,6 +245,59 @@ public class BeneficiariesDO extends DomainObjectModel {
     public void user_validates_salesforce_information_is_saved_for_organization(String gwt){
         AppHelper.waitForXHR(1);
         beneficiariesPO.validateSalesforceOrganizationRecord();
+    }
+
+    @Step("{0} user clicks continue and is able to validate no selection Trustee error")
+    public void user_clicks_continue_and_is_able_to_validate_no_selection_trustee_error(String gwt){
+        planSelectionPO.clickSaveButton();
+        TestNGBase.takeScreenshot("");
+        beneficiariesPO.validatePrimaryTrusteeError();
+    }
+
+    @Step("{0} user selects yes for Trustee and is able to validate all Trustee errors when left empty")
+    public void user_selects_yes_and_is_able_to_validate_all_trustee_errors_when_empty(String gwt){
+        planSelectionPO.clickSaveButton();
+        TestNGBase.takeScreenshot("");
+        beneficiariesPO.validatePrimaryTrusteeEmptyErrors();
+    }
+
+    @Step("{0} user is able to validate all Trustee form labels")
+    public void user_is_able_to_validate_all_trustee_form_labels(String gwt){
+        beneficiariesPO.validateBeneficaryTrusteeQuestion();
+        beneficiariesPO.selectPrimaryTrusteeYes();
+        planSelectionPO.clickSaveButton();
+        TestNGBase.takeScreenshot("");
+        beneficiariesPO.validateTrusteeFormLabels();
+    }
+
+    @Step("{0} user enters invalid trustee details")
+    public void user_enters_invalid_trustee_details(String gwt){
+        beneficiariesPO.validateInvalidTrusteeDetails();
+        TestNGBase.takeScreenshot("");
+
+    }
+
+    @Step("{0} user enters duplicate trustee details and beneficiary details")
+    public void user_enters_duplicate_trustee_and_beneficiary_details(String gwt){
+        beneficiariesPO.validateDuplicateBeneTrusteeDetails();
+        planSelectionPO.clickSaveButton();
+        beneficiariesPO.validateDuplicateBeneTrusteeDetailsError();
+        TestNGBase.takeScreenshot("");
+
+    }
+
+    @Step("{0} user enters trustee details and clicks save")
+    public void user_enters_trustee_details_and_clicks_save(String gwt){
+       beneficiariesPO.validateAndEnterDetailsTrusteeBeneficiary();
+       planSelectionPO.clickSaveButton();
+       TestNGBase.takeScreenshot("");
+
+    }
+    @Step("{0} user validates Pill information after saving the details for Trustee")
+    public void user_validates_pill_information_after_saving_the_details_for_trustee(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiariesPO.validatePillInformationTrustee();
+        TestNGBase.takeScreenshot("");
     }
 
 }

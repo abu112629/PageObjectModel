@@ -46,7 +46,7 @@
         </beneficiariesDescription>
         <beneficiariesSkipQuestion>Êtes-vous certain de vouloir continuer sans ajouter de bénéficiaire?</beneficiariesSkipQuestion>
         <beneficiariesSkipDetails>Lorsque vous désignez un bénéficiaire, il est plus facile de déterminer à qui votre épargne devrait être transférée à votre décès.</beneficiariesSkipDetails>
-    <beneficiariesAdd>Ajouter un premier bénéficiaire</beneficiariesAdd>
+    <beneficiariesAdd expected="Le fiduciaire et le bénéficiaire ne peuvent pas être la même personne.">Ajouter un premier bénéficiaire</beneficiariesAdd>
     <addBeneficiaryLabel>Ajouter un premier bénéficiaire</addBeneficiaryLabel>
     <addBeneficiaryHintLabel>Sauf indication contraire, tous les champs doivent être remplis.</addBeneficiaryHintLabel>
     <primaryTypeLabel>Quel type de bénéficiaire voulez-vous ajouter?</primaryTypeLabel>
@@ -67,9 +67,21 @@
     <primaryAllocationInvalid initial="Entrez un pourcentage entre 1 et 100.">100,22</primaryAllocationInvalid>
     <primaryAllocationError>Entrez le pourcentage que vous voulez accorder à ce bénéficiaire</primaryAllocationError>
     <primaryTrusteeQuestion>Un fiduciaire doit-il être désigné pour ce bénéficiaire?</primaryTrusteeQuestion>
-    <primaryTrusteeSelection>no</primaryTrusteeSelection>
+    <primaryTrusteeSelectionNo initial="Indiquez si un fiduciaire doit être nommé pour ce bénéficiaire.">no</primaryTrusteeSelectionNo>
     <beneficiaryType expected="TestFrench Testsample (Tante)">Personne</beneficiaryType>
     <beneficiaryAllocationPercentage>4 %</beneficiaryAllocationPercentage>
+        <primaryTrusteeSelectionYes>yes</primaryTrusteeSelectionYes>
+        <primaryTrusteeRelationship initial="Quel est votre lien avec le fiduciaire?">Tante</primaryTrusteeRelationship>
+        <primaryTrusteeFirstName initial="Prénom">Trustee</primaryTrusteeFirstName>
+        <primaryTrusteeLastName initial="Nom de famille">TestFrench</primaryTrusteeLastName>
+        <primaryTrusteeFirstNameDuplicate>TestFrench</primaryTrusteeFirstNameDuplicate>
+        <primaryTrusteeLastNameDuplicate>Testsample</primaryTrusteeLastNameDuplicate>
+        <primaryTrusteeRelationshipError>Indiquez le lien du fiduciaire avec vous.</primaryTrusteeRelationshipError>
+        <primaryTrusteeFirstNameError>Entrez le prénom du fiduciaire.</primaryTrusteeFirstNameError>
+        <primaryTrusteeLastNameError>Entrez le nom de famille du fiduciaire.</primaryTrusteeLastNameError>
+        <primaryTrusteeFirstNameInvalid initial="Entrez un prénom valide. Seuls les lettres, les traits d’union, les espaces, les apostrophes et les crochets sont acceptés.">&lt;</primaryTrusteeFirstNameInvalid>
+        <primaryTrusteeLastNameInvalid initial="Entrez un nom de famille valide. Seuls les lettres, les traits d’union, les espaces, les apostrophes et les crochets sont acceptés.">&lt;</primaryTrusteeLastNameInvalid>
+        <beneficiaryTrusteeType>Fiduciaire : Trustee TestFrench</beneficiaryTrusteeType>
 </beneficiariesPO>
 <rppAdditionalInfoPO>
 <slctdrpdownMonth>janvier</slctdrpdownMonth>

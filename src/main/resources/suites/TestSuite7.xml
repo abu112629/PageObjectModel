@@ -93,4 +93,60 @@
         </classes>
     </test>
 
+    <test name="Validate the Beneficiaries Person Add Test English">
+        <parameter name="data-set" value="data/beneficiaries_skip_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesPersonAddTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Beneficiaries Person Add Test French">
+        <parameter name="data-set" value="data/beneficiaries_skip_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesPersonAddTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Beneficiaries Estate Add Test English">
+        <parameter name="data-set" value="data/beneficiaries_estate_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesEstateAddTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Beneficiaries Estate Add Test French">
+        <parameter name="data-set" value="data/beneficiaries_estate_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesEstateAddTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Beneficiaries Organization Add Test English">
+        <parameter name="data-set" value="data/beneficiaries_organisation_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesOrganisationAddTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Beneficiaries Organization Add Test French">
+        <parameter name="data-set" value="data/beneficiaries_organisation_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesOrganisationAddTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Beneficiaries Trustee Add Test English">
+        <parameter name="data-set" value="data/beneficiaries_skip_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesTrusteeAddTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Beneficiaries Trustee Add Test French">
+        <parameter name="data-set" value="data/beneficiaries_skip_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesTrusteeAddTest"/>
+        </classes>
+    </test>
+
 </suite>

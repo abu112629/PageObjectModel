@@ -28,6 +28,21 @@ public abstract class VlocityComponent extends PageComponent {
         Assertions.assertThat(actual).isEqualTo(expected);
     }
 
+    public String getBannerErrorMsg() {
+        List<WebElement> els = coreElement.findElements(By.xpath(".//slot/p"));
+        if (els.isEmpty()) {
+            return null;
+        } else {
+            return els.get(0).getText();
+        }
+    }
+
+    public void validateBannerError(DataTypes type) {
+        String actual = getBannerErrorMsg();
+        String expected = getData(type);
+        Assertions.assertThat(actual).isEqualTo(expected);
+    }
+
     public String getAccordionContent() {
         List<WebElement> els = coreElement.findElements(By.xpath(".//*[@class='nds-accordion__content']"));
         if (els.isEmpty()) {
@@ -179,6 +194,20 @@ public abstract class VlocityComponent extends PageComponent {
         Assertions.assertThat(actual).isEqualTo(expected);
     }
 
+    public String getTrusteeName() {
+        WebElement els=coreElement.findElement(By.xpath(".//*[contains(@class,'trustee')]"));
+        if (!els.isDisplayed()) {
+            return null;
+        } else {
+            return els.getText();
+        }
+    }
+
+    public void validateTrusteeName(DataTypes type) {
+        String actual = getTrusteeName();
+        String expected = getData(type);
+        Assertions.assertThat(actual).isEqualTo(expected);
+    }
     public String getAllocationPercentage() {
         WebElement els=coreElement.findElement(By.xpath(".//div[contains(text(),'"+ getData() + "')]"));
         if (!els.isDisplayed()) {
