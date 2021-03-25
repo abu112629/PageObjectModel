@@ -10,6 +10,7 @@
         <prop name="AUTH_USERNAME" value="abubakkarsiddique.farooque@canadalife.com" />
         <prop name="AUTH_PASSWORD" value="Techm@202020w6q8eBzybqRe2KS57cfG7Xnk" />
         <prop name="salesforce_params" value= "services/data/v49.0/query/?q=SELECT AccountId,Name,Relationship__c,EID__c FROM Contact where Name=" />
+        <prop name="salesforce_params_trustee" value= "services/data/v49.0/query/?q=SELECT Trustee_First_Name__c,Trustee_Last_Name__c ,Trustee_Relationship__c FROM Contact where EID__c=" />
         <prop name="salesforce_params_bene" value= "services/data/v49.0/query/?q=SELECT allocation__c,Asset_Role__c,Revocable__c FROM Asset_Contact__c where Asset_Contact__c=" />
         <prop name="salesforce_asset_params" value= "services/data/v49.0/sobjects/Asset/" />
         <prop name="salesforce_language_params" value= "services/data/v49.0/sobjects/User/0054g000000Z36cAAC" />

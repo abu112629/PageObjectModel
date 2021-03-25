@@ -4,6 +4,8 @@ import com.canadalife.automation.grsoe.api.salesforcebenepayload.Record_bene;
 import com.canadalife.automation.grsoe.api.salesforcebenepayload.SalesforceBenePayload;
 import com.canadalife.automation.grsoe.api.salesforcecontactpayload.Record;
 import com.canadalife.automation.grsoe.api.salesforcecontactpayload.SalesforceRecordPayload;
+import com.canadalife.automation.grsoe.api.salesforcetrusteepayload.Record_trustee;
+import com.canadalife.automation.grsoe.api.salesforcetrusteepayload.SalesforceTrusteePayload;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
@@ -34,6 +36,14 @@ public class SalesforceInfo {
         EnvironmentsSetup.Environment env = TestContext.getTestProperties().getTestEnvironment();
         String baseURI = env.getCustom("baseURI");
         String salesforce_params = env.getCustom("salesforce_params_bene");
+        return getUserBeneficiaryDetails(baseURI, salesforce_params,EID);
+    }
+
+    public String getUserTrusteeDetails(String EID) {
+
+        EnvironmentsSetup.Environment env = TestContext.getTestProperties().getTestEnvironment();
+        String baseURI = env.getCustom("baseURI");
+        String salesforce_params = env.getCustom("salesforce_params_trustee");
         return getUserBeneficiaryDetails(baseURI, salesforce_params,EID);
     }
 
@@ -91,6 +101,45 @@ public class SalesforceInfo {
                             assertEquals(record2.getAllocationC(), Allocation);
                             assertEquals(record2.getAssetRoleC(), "Primary beneficiary");
                             assertEquals(record2.getRevocableC().booleanValue(), true);
+                        }
+                    }
+                }
+
+            }
+        }
+
+        catch (Exception e) {
+            System.out.println(e);
+        }
+
+
+    }
+    public void checkTrusteeDetails(String firstname,String lastname,String trusteeFirstname,
+    String trusteeLastname,String trusteeRelation) {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            SalesforceRecordPayload salepayload = objectMapper.readValue(
+                    getUserSpouseDetail(firstname, lastname), SalesforceRecordPayload.class);
+            if (!salepayload.getTotalSize().equals(0)) {
+                List<Record> data = salepayload.getRecords();
+                int i=0;
+                for (Record record : data) {
+                    String EID = record.getEIDC();
+                    SalesforceTrusteePayload payload = objectMapper.readValue(
+                            getUserTrusteeDetails(EID), SalesforceTrusteePayload.class);
+                    if (!payload.getTotalSize().equals(0)) {
+                        List<Record_trustee> data2 = payload.getRecords();
+                        for (Record_trustee record2 : data2) {
+                            if(trusteeFirstname.equals(record2.getTrusteeFirstNameC())){
+                                assertEquals(record2.getTrusteeFirstNameC(), trusteeFirstname);
+                                assertEquals(record2.getTrusteeLastNameC(),trusteeLastname);
+                                assertEquals(record2.getTrusteeRelationshipC(),trusteeRelation);
+                                break;
+                            }
+                            else{
+                                i++;
+                            }
                         }
                     }
                 }

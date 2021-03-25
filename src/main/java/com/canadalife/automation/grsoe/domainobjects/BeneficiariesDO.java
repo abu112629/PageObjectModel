@@ -299,5 +299,10 @@ public class BeneficiariesDO extends DomainObjectModel {
         beneficiariesPO.validatePillInformationTrustee();
         TestNGBase.takeScreenshot("");
     }
+    @Step("{0} user validates Salesforce Information is saved for Trustee")
+    public void user_validates_salesforce_information_is_saved_for_trustee(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiariesPO.validateSalesforceTrusteeRecord();
+    }
 
 }

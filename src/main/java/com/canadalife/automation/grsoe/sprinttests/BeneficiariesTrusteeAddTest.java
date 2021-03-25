@@ -19,7 +19,7 @@ public class BeneficiariesTrusteeAddTest extends TestNGBase {
     @Issue("GRSOE-415")
     @Test
 
-    public void ValidateBeneficiariesTrusteeAddition(@Optional("data/beneficiaries_skip_data_set_fr.xml")String dataSet) {
+    public void ValidateBeneficiariesTrusteeAddition(@Optional("data/beneficiaries_skip_data_set_en.xml")String dataSet) {
 
         BeneficiariesDO beneficiariesDO=new BeneficiariesDO(getContext()).fromResource(dataSet);
         Given(beneficiariesDO :: user_on_plan_selection_page);
@@ -34,7 +34,7 @@ public class BeneficiariesTrusteeAddTest extends TestNGBase {
         And(beneficiariesDO :: user_enters_duplicate_trustee_and_beneficiary_details);
         And(beneficiariesDO :: user_enters_trustee_details_and_clicks_save);
         And(beneficiariesDO :: user_validates_pill_information_after_saving_the_details_for_trustee);
-
+        And(beneficiariesDO :: user_validates_salesforce_information_is_saved_for_trustee);
 
 
 

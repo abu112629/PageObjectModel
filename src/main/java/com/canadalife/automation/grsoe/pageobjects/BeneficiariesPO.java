@@ -355,6 +355,12 @@ public class BeneficiariesPO extends PageObjectModel {
                 beneficiaryOrganizationAllocation.getData());
     }
 
+    public void validateSalesforceTrusteeRecord() {
+        AppHelper.waitForXHR(1);
+        salesforceInfo = new SalesforceInfo();
+        salesforceInfo.checkTrusteeDetails(primaryFirstName.getData(),primaryLastName.getData(),
+                primaryTrusteeFirstName.getData(),primaryTrusteeLastName.getData(),primaryTrusteeRelationship.getData());
+    }
     public void validateBeneficaryTrusteeQuestion(){
         primaryTrusteeQuestion.validateLabelHeader(DataTypes.Data);
     }
