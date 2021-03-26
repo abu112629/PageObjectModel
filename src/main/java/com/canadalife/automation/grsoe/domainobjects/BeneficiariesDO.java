@@ -305,4 +305,16 @@ public class BeneficiariesDO extends DomainObjectModel {
         beneficiariesPO.validateSalesforceTrusteeRecord();
     }
 
+    @Step("{0} user validates Quebec Question and Checks Revocable Option")
+    public void user_validates_quebec_question_and_checks_revocable_option(String gwt){
+        beneficiariesPO.validateQuebecQuestionAndLabels();
+        beneficiariesPO.validateRevocableCheckBox();
+        TestNGBase.takeScreenshot("");
+
+    }
+    @Step("{0} user validates Salesforce Information is true for Revocable when selected")
+    public void user_validates_salesforce_information_is_true_for_revocable(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiariesPO.validateSalesforceRevocableBox("true");
+    }
 }

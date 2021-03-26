@@ -162,6 +162,9 @@ public class BeneficiariesPO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationOrganization']")
     private VlocityActionInput beneficiaryOrganizationAllocationInvalid;
 
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryIsRevocableCheckbox']")
+    private VlocityCheckBox beneficiaryRevocableQuestion;
+
     @Data(skip = true)
     SalesforceInfo salesforceInfo;
 
@@ -359,7 +362,7 @@ public class BeneficiariesPO extends PageObjectModel {
         AppHelper.waitForXHR(1);
         salesforceInfo = new SalesforceInfo();
         salesforceInfo.checkTrusteeDetails(primaryFirstName.getData(),primaryLastName.getData(),
-                primaryTrusteeFirstName.getData(),primaryTrusteeLastName.getData(),primaryTrusteeRelationship.getData());
+                primaryTrusteeFirstName.getData(),primaryTrusteeLastName.getData(),"Aunt");
     }
     public void validateBeneficaryTrusteeQuestion(){
         primaryTrusteeQuestion.validateLabelHeader(DataTypes.Data);
@@ -429,5 +432,33 @@ public class BeneficiariesPO extends PageObjectModel {
     }
     public void validatePillInformationTrustee(){
         beneficiaryTrusteeType.validateTrusteeName(DataTypes.Data);
+    }
+
+    public void validateQuebecQuestionAndLabels() {
+        AppHelper.scrollToView(beneficiaryRevocableQuestion.getCoreElement());
+        beneficiaryRevocableQuestion.validateLabelHeader(DataTypes.Data);
+        beneficiaryRevocableQuestion.validateCheckboxLabel(DataTypes.Initial);
+    }
+
+    public void validateRevocableCheckBox() {
+        AppHelper.scrollToView(beneficiaryRevocableQuestion.getCoreElement());
+        setElementValue(beneficiaryRevocableQuestion,false);
+    }
+
+    public void validateSalesforceRevocableBox(String value) {
+        AppHelper.waitForXHR(1);
+        salesforceInfo = new SalesforceInfo();
+        switch(value){
+            case "true":
+                salesforceInfo.checkRevocableDetails(primaryFirstName.getData(),primaryLastName.getData(),
+                        "true");
+                break;
+
+            case "false":
+                salesforceInfo.checkRevocableDetails(primaryFirstName.getData(),primaryLastName.getData(),
+                        "false");
+                break;
+
+        }
     }
 }

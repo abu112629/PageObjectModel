@@ -114,6 +114,39 @@ public class SalesforceInfo {
 
 
     }
+    public void checkRevocableDetails(String firstname,String lastname,String value) {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+
+            SalesforceRecordPayload salepayload = objectMapper.readValue(
+                    getUserSpouseDetail(firstname, lastname), SalesforceRecordPayload.class);
+
+            if (!salepayload.getTotalSize().equals(0)) {
+                List<Record> data = salepayload.getRecords();
+                for (Record record : data) {
+                    String EID = record.getEIDC();
+
+                    SalesforceBenePayload payload = objectMapper.readValue(
+                            getUserBeneficiaryDetails(EID), SalesforceBenePayload.class);
+                    if (!payload.getTotalSize().equals(0)) {
+                        List<Record_bene> data2 = payload.getRecords();
+                        for (Record_bene record2 : data2) {
+                            Assert.assertTrue(record2.getRevocableC().booleanValue(),value);
+                        }
+                    }
+                }
+
+            }
+        }
+
+        catch (Exception e) {
+            System.out.println(e);
+        }
+
+
+    }
     public void checkTrusteeDetails(String firstname,String lastname,String trusteeFirstname,
     String trusteeLastname,String trusteeRelation) {
 

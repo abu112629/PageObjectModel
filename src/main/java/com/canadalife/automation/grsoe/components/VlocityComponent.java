@@ -222,4 +222,19 @@ public abstract class VlocityComponent extends PageComponent {
         String expected = getData(type);
         Assertions.assertThat(actual).isEqualTo(expected);
     }
+
+    public String getCheckboxLabel() {
+        WebElement els=coreElement.findElement(By.xpath(".//*[contains(@class,'nds-checkbox-span')]"));
+        if (!els.isDisplayed()) {
+            return null;
+        } else {
+            return els.getText();
+        }
+    }
+
+    public void validateCheckboxLabel(DataTypes type) {
+        String actual = getCheckboxLabel();
+        String expected = getData(type);
+        Assertions.assertThat(actual).isEqualTo(expected);
+    }
 }

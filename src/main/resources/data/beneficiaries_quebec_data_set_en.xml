@@ -52,7 +52,7 @@
         <primaryTypeLabel>What type of beneficiary do you want to add?</primaryTypeLabel>
         <BeneRadioButton>Person</BeneRadioButton>
         <personDropDownQuestion>What’s this person’s relationship to you?</personDropDownQuestion>
-        <personBeneficiaryRelation>Aunt</personBeneficiaryRelation>
+        <personBeneficiaryRelation>Spouse-Married</personBeneficiaryRelation>
         <primaryFirstName initial="First name">Test</primaryFirstName>
         <primaryFirstNameInvalid initial="Enter a valid first name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</primaryFirstNameInvalid>
         <primaryFirstNameError>Enter this beneficiary's first name.</primaryFirstNameError>
