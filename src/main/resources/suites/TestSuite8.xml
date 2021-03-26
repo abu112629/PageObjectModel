@@ -16,4 +16,18 @@
         </classes>
     </test>
 
+    <test name="Validate the Accordion Investment Test English">
+        <parameter name="data-set" value="data/investment_data_set_en_RPP.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.InvestmentsAccordionTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Accordion Investment Test French">
+        <parameter name="data-set" value="data/investment_data_set_fr_RPP.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.InvestmentsAccordionTest"/>
+        </classes>
+    </test>
+
 </suite>

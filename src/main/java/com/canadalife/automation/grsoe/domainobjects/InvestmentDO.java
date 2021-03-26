@@ -96,4 +96,12 @@ public class InvestmentDO extends DomainObjectModel {
        planSelectionPO.clickContinueButton();
 
     }
+
+    @Step("{0} user validates investment Accordion content")
+    public void user_validates_investment_accordion_content(String gwt){
+        investmentPO.initPage(getContext());
+        investmentPO.validateTheInvestmentAccordionDetails();
+        TestNGBase.takeScreenshot("");
+
+    }
 }

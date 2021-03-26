@@ -52,6 +52,12 @@
         <investmentCardFundRORline1 expected="1 year return 6.68%">1 year return 6.68%</investmentCardFundRORline1>
         <investmentCardFundRORline2 expected="3 year return 9.72%">3 year return 9.72%</investmentCardFundRORline2>
         <investmentCardFundRORline3 expected="5 year return 10.8%">5 year return 10.8%</investmentCardFundRORline3>
+        <investmentTargetDateFundsAccordion>What are target date funds?</investmentTargetDateFundsAccordion>
+        <investmentTargetDateFundsAccordionContent initial="Target date funds let you leave your investment management to the pros. The investment mix in these funds focuses on growth in early years and gradually becomes more conservative as you approach the date you've chosen to start using your money.">Target date funds let you leave</investmentTargetDateFundsAccordionContent>
+        <investmentFeesAccordion>What are the fees?</investmentFeesAccordion>
+        <investmentFeesAccordionContent initial="Fees cover the cost of operating the fund and a professional managing the fund for you. These fees lower your annual rate of return, but you won't see them on your statements or need to pay them out-of-pocket.">Fees cover the cost of operating</investmentFeesAccordionContent>
+        <investmentRORAccordion>What are the rates of return?</investmentRORAccordion>
+        <investmentRORAccordionContent initial="Rates of return show how the fund has historically performed over time and don't indicate future performance.">Rates of return show how the</investmentRORAccordionContent>
     </investmentPO>
 
 </plan-domain-object>

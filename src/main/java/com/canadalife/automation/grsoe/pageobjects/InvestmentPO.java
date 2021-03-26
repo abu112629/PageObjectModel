@@ -1,9 +1,6 @@
 package com.canadalife.automation.grsoe.pageobjects;
 
-import com.canadalife.automation.grsoe.components.VlocityActionInput;
-import com.canadalife.automation.grsoe.components.VlocityComponent;
-import com.canadalife.automation.grsoe.components.VlocityInput;
-import com.canadalife.automation.grsoe.components.VlocitySelect;
+import com.canadalife.automation.grsoe.components.*;
 import com.canadalife.automation.grsoe.support.AppHelper;
 import org.openqa.selenium.support.FindBy;
 import ui.auto.core.components.WebComponent;
@@ -53,6 +50,24 @@ public class InvestmentPO extends PageObjectModel {
 
     @FindBy(xpath="//*[starts-with(@class,'nds-col nds-m-bottom_xx-large nds-size_1-of-1')]")
     private WebComponent investmentSkipDetails;
+
+    @FindBy(xpath="//*[@data-omni-key='InvestmentsAccordion']")
+    private VlocityAccordion investmentTargetDateFundsAccordion;
+
+    @FindBy(xpath="//*[@data-omni-key='InvestmentsAccordion']")
+    private VlocityAccordion investmentTargetDateFundsAccordionContent;
+
+    @FindBy(xpath="//*[@data-omni-key='InvestmentsAccordion']")
+    private VlocityAccordion investmentFeesAccordion;
+
+    @FindBy(xpath="//*[@data-omni-key='InvestmentsAccordion']")
+    private VlocityAccordion investmentFeesAccordionContent;
+
+    @FindBy(xpath="//*[@data-omni-key='InvestmentsAccordion']")
+    private VlocityAccordion investmentRORAccordion;
+
+    @FindBy(xpath="//*[@data-omni-key='InvestmentsAccordion']")
+    private VlocityAccordion investmentRORAccordionContent;
 
     public void validateInvestmentDescription(){
         investmentDescription.initPage(getContext());
@@ -110,6 +125,24 @@ public class InvestmentPO extends PageObjectModel {
     public void validateTheInvestmentSkipQuestionandDetails(){
         investmentSkipQuestion.validateData(DataTypes.Data);
         investmentSkipDetails.validateData(DataTypes.Data);
+    }
+
+    public void validateTheInvestmentAccordionDetails(){
+        setElementValue(investmentTargetDateFundsAccordion);/*Click on Accordion*/
+        investmentTargetDateFundsAccordionContent.validateAccordionContent(DataTypes.Initial);
+        setElementValue(investmentTargetDateFundsAccordion);/*UnClick on Accordion*/
+
+        AppHelper.waitForXHR(2);
+        AppHelper.scrollToView(investmentFeesAccordion.getCoreElement());
+        setElementValue(investmentFeesAccordion,false);/*Click on Accordion*/
+        investmentFeesAccordionContent.validateDetailsText(DataTypes.Initial);
+        setElementValue(investmentFeesAccordion,false);/*UnClick on Accordion*/
+
+        AppHelper.waitForXHR(2);
+        AppHelper.scrollToView(investmentRORAccordion.getCoreElement());
+        setElementValue(investmentRORAccordion,false);/*Click on Accordion*/
+        investmentRORAccordionContent.validateDetailsText(DataTypes.Initial);
+        setElementValue(investmentRORAccordion,false);/*UnClick on Accordion*/
     }
 }
 

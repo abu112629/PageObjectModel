@@ -52,6 +52,12 @@
         <investmentCardFundRORline1 expected="Rendement sur un an 6,56%">Rendement sur un an 6,56%</investmentCardFundRORline1>
         <investmentCardFundRORline2 expected="Rendement sur 3 ans 8,18%">Rendement sur 3 ans 8,18%</investmentCardFundRORline2>
         <investmentCardFundRORline3 expected="Rendement sur 5 ans 8,61%">Rendement sur 5 ans 8,61%</investmentCardFundRORline3>
+        <investmentTargetDateFundsAccordion>Qu’est-ce que les fonds à date cible?</investmentTargetDateFundsAccordion>
+        <investmentTargetDateFundsAccordionContent initial="Les fonds à date cible vous permettent de laisser la gestion de vos placements à des professionnels. La composition de ces fonds est axée sur la croissance au cours des premières années pour progressivement devenir plus prudente à mesure qu’approche la date que vous avez choisie comme celle où vous désirez commencer à utiliser votre argent.">Les fonds à date cible vous permettent</investmentTargetDateFundsAccordionContent>
+        <investmentFeesAccordion>Quels sont les frais?</investmentFeesAccordion>
+        <investmentFeesAccordionContent initial="Les frais couvrent les coûts associés à l’exploitation du fonds et à sa gestion professionnelle en votre nom. Ces frais viennent réduire votre taux de rendement annuel, mais vous ne les verrez pas sur vos relevés ni ne devrez les payer en espèces.">Les frais couvrent les coûts</investmentFeesAccordionContent>
+        <investmentRORAccordion>Quels sont les taux de rendement?</investmentRORAccordion>
+        <investmentRORAccordionContent initial="Les taux de rendement montrent les résultats obtenus par le fonds au fil du temps et ne sont pas garants du rendement futur.">Les taux de rendement</investmentRORAccordionContent>
     </investmentPO>
 
 </plan-domain-object>
