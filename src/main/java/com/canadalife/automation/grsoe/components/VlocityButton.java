@@ -14,13 +14,13 @@ public class VlocityButton extends VlocityComponent{
 
     @Override
     public void setValue() {
-        WebElement button = coreElement.findElement(By.xpath(".//button[contains(@class,'" + getData() + "')]"));
+        WebElement button = coreElement.findElement(By.xpath(".//button[contains(text(),'" + getData() + "')]"));
         button.click();
     }
 
     @Override
     public String getValue() {
-        return coreElement.findElement(By.xpath(".//button")).getAttribute("class");
+        return coreElement.findElement(By.xpath(".//button")).getAttribute("value");
     }
 
     @Override

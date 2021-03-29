@@ -60,6 +60,24 @@ public class InvestmentDO extends DomainObjectModel {
 
     }
 
+    @Step("{0} user validates investment age input error when invalid age entered")
+    public void user_validates_investment_age_input_error_when_invalid_age_entered(String gwt){
+        investmentPO.initPage(getContext());
+        investmentPO.enterInvalidAge();
+        planSelectionPO.clickContinueButton();
+        investmentPO.validateAgeInputError();
+        TestNGBase.takeScreenshot("");
+
+    }
+
+    @Step("{0} user validates investment age input and clicks show funds button")
+    public void user_validates_investment_age_input_and_clicks_show_funds_button(String gwt){
+        investmentPO.enterAge();
+        investmentPO.clickShowFundsButton();
+        TestNGBase.takeScreenshot("");
+
+    }
+
     @Step("{0} user validates investment Fund Fees and Fund Name")
     public void user_validates_investment_fund_fees_and_fund_name(String gwt){
         investmentPO.initPage(getContext());
@@ -69,6 +87,25 @@ public class InvestmentDO extends DomainObjectModel {
 
     }
 
+    @Step("{0} user validates updated investment Fund Fees and Fund Name")
+    public void user_validates_updated_investment_fund_fees_and_fund_name(String gwt){
+        investmentPO.validateInvestmentFundNameUpdated();
+        investmentPO.validateInvestmentCardHeaderUpdated();
+        investmentPO.validateUpdatedFundFeeLines();
+        planSelectionPO.clickContinueButton();
+        TestNGBase.takeScreenshot("");
+
+    }
+    @Step("{0} user validates updated age input and investment Fund details when clicks back")
+    public void user_validates_updated_age_input_and_investment_fund_details_when_clicks_back(String gwt){
+        planSelectionPO.clickBackButton();
+        investmentPO.validateUpdatedAgeInput();
+        investmentPO.validateInvestmentFundNameUpdated();
+        investmentPO.validateInvestmentCardHeaderUpdated();
+        investmentPO.validateUpdatedFundFeeLines();
+        TestNGBase.takeScreenshot("");
+
+    }
     @Step("{0} user reaches investment Page when clicks back from investment Skip Page")
     public void user_reaches_investment_page_when_clicks_back_from_investment_skip_page(String gwt){
         planSelectionPO.clickSkipBackButton();

@@ -30,4 +30,18 @@
         </classes>
     </test>
 
+    <test name="Validate the Show Funds Investment Test English">
+        <parameter name="data-set" value="data/investment_data_set_en_RPP.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.ShowFundInformationTDFAgeTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Show Funds Investment Test French">
+        <parameter name="data-set" value="data/investment_data_set_fr_RPP.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.ShowFundInformationTDFAgeTest"/>
+        </classes>
+    </test>
+
 </suite>

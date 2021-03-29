@@ -24,6 +24,9 @@ public class InvestmentPO extends PageObjectModel {
     @FindBy(xpath="//*[@data-omni-key='TargetDateAgeInput']")
     private VlocityActionInput ageInput;
 
+    @FindBy(xpath="//*[@data-omni-key='TargetDateAgeInput']")
+    private VlocityActionInput ageInputError;
+
     @FindBy(xpath="//*[@class='nds-card-header-lwc']//h3")
     private WebComponent investmentCardHeader;
 
@@ -37,7 +40,13 @@ public class InvestmentPO extends PageObjectModel {
     private VlocitySelect investmentCardFundFeesLine;
 
     @FindBy(xpath="//*[@data-omni-key='CustomLWCTargetDateCard']")
+    private VlocitySelect investmentCardUpdatedFundFeesLine;
+
+    @FindBy(xpath="//*[@data-omni-key='CustomLWCTargetDateCard']")
     private VlocitySelect investmentCardFundRORline1;
+
+    @FindBy(xpath="//*[@data-omni-key='CustomLWCTargetDateCard']")
+    private VlocitySelect investmentCardUpdatedFundRORline1;
 
     @FindBy(xpath="//*[@data-omni-key='CustomLWCTargetDateCard']")
     private VlocitySelect investmentCardFundRORline2;
@@ -69,6 +78,9 @@ public class InvestmentPO extends PageObjectModel {
     @FindBy(xpath="//*[@data-omni-key='InvestmentsAccordion']")
     private VlocityAccordion investmentRORAccordionContent;
 
+    @FindBy(xpath="//*[@data-omni-key='showFundCardButton']")
+    private VlocityButton showFundsButton;
+
     public void validateInvestmentDescription(){
         investmentDescription.initPage(getContext());
         investmentDescription.validateAll();
@@ -90,11 +102,30 @@ public class InvestmentPO extends PageObjectModel {
 
     }
 
+    public void validateUpdatedAgeInput(){
+        AppHelper.scrollToView(ageInput.getCoreElement());
+        ageInput.getValue().contains("99");
+
+    }
+
+    public void enterInvalidAge(){
+        AppHelper.scrollToView(ageInputError.getCoreElement());
+        setElementValue(ageInputError);
+    }
+    public void validateAgeInputError(){
+        AppHelper.scrollToView(ageInputError.getCoreElement());
+        ageInputError.validateError(DataTypes.Initial);
+
+    }
     public void enterAge(){
         AppHelper.scrollToView(ageInput.getCoreElement());
         setElementValue(ageInput);
     }
 
+    public void clickShowFundsButton(){
+        AppHelper.scrollToView(showFundsButton.getCoreElement());
+        setElementValue(showFundsButton,false);
+    }
     public void validateFundFeeLines(){
         AppHelper.scrollToView(investmentCardFundFeesLine.getCoreElement());
         investmentCardFundFeesLine.getFundFeesDetails();
@@ -110,8 +141,21 @@ public class InvestmentPO extends PageObjectModel {
         investmentCardFundRORline3.validateFundFees(DataTypes.Expected);
     }
 
+    public void validateUpdatedFundFeeLines(){
+        AppHelper.scrollToView(investmentCardUpdatedFundFeesLine.getCoreElement());
+        investmentCardUpdatedFundFeesLine.getFundFeesDetails();
+        investmentCardUpdatedFundFeesLine.validateFundFees(DataTypes.Expected);
+
+        investmentCardUpdatedFundRORline1.getFundFeesDetails();
+        investmentCardUpdatedFundRORline1.validateFundFees(DataTypes.Expected);
+    }
+
     public void validateInvestmentCardHeader(){
         investmentCardHeader.validateData(DataTypes.Data);
+    }
+
+    public void validateInvestmentCardHeaderUpdated(){
+        investmentCardHeader.validateData(DataTypes.Expected);
     }
 
     public void validateInvestmentCardSelected(){
@@ -120,6 +164,10 @@ public class InvestmentPO extends PageObjectModel {
 
     public void validateInvestmentFundName(){
         investmentCardFundName.validateData(DataTypes.Data);
+    }
+
+    public void validateInvestmentFundNameUpdated(){
+        investmentCardFundName.validateData(DataTypes.Expected);
     }
 
     public void validateTheInvestmentSkipQuestionandDetails(){
