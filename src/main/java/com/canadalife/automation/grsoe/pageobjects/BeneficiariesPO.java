@@ -82,91 +82,31 @@ public class BeneficiariesPO extends PageObjectModel {
     private VlocityInput primaryAllocationError;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
-    private VlocitySelect beneficiaryTrusteeType;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryIstrusteeYesNo']")
-    private RadioGroup primaryTrusteeQuestion;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryIstrusteeYesNo']")
-    private RadioGroup primaryTrusteeSelectionYes;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryIstrusteeYesNo']")
-    private RadioGroup primaryTrusteeSelectionNo;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryTrusteeRelationship']")
-    private VlocitySelect primaryTrusteeRelationship;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryTrusteeFirstName']")
-    private VlocityActionInput primaryTrusteeFirstName;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryTrusteeLastName']")
-    private VlocityActionInput primaryTrusteeLastName;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryTrusteeFirstName']")
-    private VlocityActionInput primaryTrusteeFirstNameDuplicate;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryTrusteeLastName']")
-    private VlocityActionInput primaryTrusteeLastNameDuplicate;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryTrusteeRelationship']")
-    private RadioGroup primaryTrusteeRelationshipError;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryTrusteeFirstName']")
-    private VlocityActionInput primaryTrusteeFirstNameError;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryTrusteeLastName']")
-    private VlocityActionInput primaryTrusteeLastNameError;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryTrusteeFirstName']")
-    private VlocityActionInput primaryTrusteeFirstNameInvalid;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryTrusteeLastName']")
-    private VlocityActionInput primaryTrusteeLastNameInvalid;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
     private VlocitySelect beneficiaryType;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
     private VlocitySelect beneficiaryAllocationPercentage;
 
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryEstateFeedbackMessage']//p")
-    private WebComponent beneficiaryEstateMessage;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationEstate']")
-    private VlocityActionInput primaryAllocationEstate;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationEstate']")
-    private VlocityInput primaryEstateAllocationInvalid;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationEstate']")
-    private VlocityInput primaryEstateAllocationError;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryOrganizationHelpTextBlock']//div")
-    private WebComponent beneficiaryOrganizationMessage;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryOrganizationNameText']")
-    private VlocityActionInput beneficiaryOrganizationName;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationOrganization']")
-    private VlocityActionInput beneficiaryOrganizationAllocation;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryOrganizationNameText']")
-    private VlocityActionInput beneficiaryOrganizationNameError;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationOrganization']")
-    private VlocityActionInput beneficiaryOrganizationAllocationError;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryOrganizationNameText']")
-    private VlocityActionInput beneficiaryOrganizationNameInvalid;
-
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationOrganization']")
-    private VlocityActionInput beneficiaryOrganizationAllocationInvalid;
-
     @FindBy(xpath = "//*[@data-omni-key='PrimaryIsRevocableCheckbox']")
     private VlocityCheckBox beneficiaryRevocableQuestion;
 
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
+    private VlocitySelectRadioButton primaryBeneEdit;
+
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
+    private VlocitySelectRadioButton primaryBeneDelete;
+
     @Data(skip = true)
     SalesforceInfo salesforceInfo;
+
+    public void editPrimaryBeneficiary(){
+        setElementValue(primaryBeneEdit,false);
+    }
+
+    public void deletePrimaryBeneficiary(){
+        setElementValue(primaryBeneDelete,false);
+
+    }
 
     public void validateBeneficiariesDescription(){
         beneficiariesDescription.initPage(getContext());
@@ -209,28 +149,6 @@ public class BeneficiariesPO extends PageObjectModel {
         primaryAllocation.validateInputLabel(DataTypes.Initial);
     }
 
-    public void validateEstateBeneFormLabels(){
-        AppHelper.scrollToView(addBeneficiaryLabel.getCoreElement());
-        addBeneficiaryLabel.validateData(DataTypes.Data);
-        addBeneficiaryHintLabel.validateData(DataTypes.Data);
-        primaryTypeLabel.validateLabelHeader(DataTypes.Data);
-
-        beneficiaryEstateMessage.validateData(DataTypes.Data);
-
-    }
-
-    public void validateOrganisationBeneFormLabels(){
-        AppHelper.scrollToView(addBeneficiaryLabel.getCoreElement());
-        addBeneficiaryLabel.validateData(DataTypes.Data);
-        addBeneficiaryHintLabel.validateData(DataTypes.Data);
-        primaryTypeLabel.validateLabelHeader(DataTypes.Data);
-
-        beneficiaryOrganizationMessage.validateData(DataTypes.Data);
-        beneficiaryOrganizationName.validateInputLabel(DataTypes.Initial);
-        beneficiaryOrganizationAllocation.validateInputLabel(DataTypes.Initial);
-
-    }
-
     public void addBeneficiary(){
         AppHelper.scrollToView(BeneRadioButton.getCoreElement());
         setElementValue(BeneRadioButton,false);
@@ -240,7 +158,6 @@ public class BeneficiariesPO extends PageObjectModel {
         AppHelper.scrollToView(personBeneficiaryRelation.getCoreElement());
         setElementValue(personBeneficiaryRelation);
     }
-
 
     public void validateInvalidPersonBeneficiaryDetails() {
         primaryFirstNameInvalid.click();
@@ -267,35 +184,11 @@ public class BeneficiariesPO extends PageObjectModel {
         setElementValue(primaryAllocation);
 
     }
-    public void validateAndEnterDetailsEstateBeneficiary(){
-        setElementValue(primaryAllocationEstate);
-
-    }
-
-    public void validateAndEnterDetailsOrganizationBeneficiary(){
-        setElementValue(beneficiaryOrganizationName);
-        setElementValue(beneficiaryOrganizationAllocation);
-
-    }
-    public void validateInvalidEstateBeneficiaryDetails() {
-        AppHelper.scrollToView(primaryEstateAllocationInvalid.getCoreElement());
-        primaryEstateAllocationInvalid.click();
-        setElementValue(primaryEstateAllocationInvalid);
-        AppHelper.waitForXHR(2);
-        primaryEstateAllocationInvalid.validateError(DataTypes.Initial);
-
-    }
-    public void validateInvalidOrganizationBeneficiaryDetails() {
-        AppHelper.scrollToView(beneficiaryOrganizationNameInvalid.getCoreElement());
-        beneficiaryOrganizationNameInvalid.click();
-        setElementValue(beneficiaryOrganizationNameInvalid);
-        AppHelper.waitForXHR(2);
-        beneficiaryOrganizationNameInvalid.validateError(DataTypes.Initial);
-
-        beneficiaryOrganizationAllocationInvalid.click();
-        setElementValue(beneficiaryOrganizationAllocationInvalid);
-        AppHelper.waitForXHR(2);
-        beneficiaryOrganizationAllocationInvalid.validateError(DataTypes.Initial);
+    public void validatePrimaryBeneficiaryOnEdit(){
+        primaryFirstName.getValue().contains(primaryFirstName.getData());
+        primaryLastName.getValue().contains(primaryLastName.getData());
+        AppHelper.scrollToView(primaryAllocation.getCoreElement());
+        primaryAllocation.getValue().contains(primaryAllocation.getData());
 
     }
     public void validateAndEnterPrimaryallocation(){
@@ -309,131 +202,19 @@ public class BeneficiariesPO extends PageObjectModel {
 
     }
 
-    public void validateEstateError(){
-        primaryEstateAllocationError.validateError(DataTypes.Data);
-
-    }
-
-    public void validateOrganizationError(){
-        beneficiaryOrganizationNameError.validateError(DataTypes.Data);
-        beneficiaryOrganizationAllocationError.validateError(DataTypes.Data);
-    }
-
     public void validatePillInformation(){
         beneficiaryType.validateBeneficiaryTypePerson(DataTypes.Data);
         beneficiaryType.validateBeneficiaryName(DataTypes.Expected);
         beneficiaryAllocationPercentage.validateAllocationPercentage(DataTypes.Data);
     }
 
-    public void validatePillInformationEstate(){
-        beneficiaryType.validateBeneficiaryTypeEstate(DataTypes.Data);
-        beneficiaryType.validateBeneficiaryName(DataTypes.Expected);
-        beneficiaryAllocationPercentage.validateAllocationPercentage(DataTypes.Data);
-    }
-
-    public void validatePillInformationOrganization(){
-        beneficiaryType.validateBeneficiaryTypeOrganization(DataTypes.Data);
-        beneficiaryType.validateBeneficiaryName(DataTypes.Expected);
-        beneficiaryAllocationPercentage.validateAllocationPercentage(DataTypes.Data);
-    }
-
     public void validateSalesforceBeneficiaryRecord() {
         AppHelper.waitForXHR(1);
+
         salesforceInfo = new SalesforceInfo();
         salesforceInfo.checkBeneficiaryDetails(primaryFirstName.getData(),primaryLastName.getData(),
-                primaryAllocation.getData());
+              Float.valueOf(beneficiaryAllocationPercentage.getData(DataTypes.Initial)));
     }
-
-    public void validateSalesforceEstateRecord() {
-        AppHelper.waitForXHR(1);
-        salesforceInfo = new SalesforceInfo();
-        salesforceInfo.checkBeneficiaryDetails(BeneRadioButton.getData(),"",
-                primaryAllocationEstate.getData());
-    }
-
-    public void validateSalesforceOrganizationRecord() {
-        AppHelper.waitForXHR(1);
-        salesforceInfo = new SalesforceInfo();
-        salesforceInfo.checkBeneficiaryDetails(beneficiaryOrganizationName.getData(),"",
-                beneficiaryOrganizationAllocation.getData());
-    }
-
-    public void validateSalesforceTrusteeRecord() {
-        AppHelper.waitForXHR(1);
-        salesforceInfo = new SalesforceInfo();
-        salesforceInfo.checkTrusteeDetails(primaryFirstName.getData(),primaryLastName.getData(),
-                primaryTrusteeFirstName.getData(),primaryTrusteeLastName.getData(),"Aunt");
-    }
-    public void validateBeneficaryTrusteeQuestion(){
-        primaryTrusteeQuestion.validateLabelHeader(DataTypes.Data);
-    }
-
-    public void selectPrimaryTrusteeNo(){
-        AppHelper.scrollToView(primaryTrusteeSelectionNo.getCoreElement());
-        setElementValue(primaryTrusteeSelectionNo);
-
-    }
-    public void selectPrimaryTrusteeYes(){
-        AppHelper.scrollToView(primaryTrusteeSelectionYes.getCoreElement());
-        setElementValue(primaryTrusteeSelectionYes);
-    }
-    public void validatePrimaryTrusteeError(){
-        AppHelper.scrollToView(primaryTrusteeSelectionNo.getCoreElement());
-        primaryTrusteeSelectionNo.validateError(DataTypes.Initial);
-
-    }
-    public void validateTrusteeFormLabels(){
-        AppHelper.scrollToView(primaryTrusteeRelationship.getCoreElement());
-        primaryTrusteeRelationship.validateSelectionLabel(DataTypes.Initial);
-
-        AppHelper.scrollToView(primaryTrusteeFirstName.getCoreElement());
-        primaryTrusteeFirstName.validateInputLabel(DataTypes.Initial);
-        primaryTrusteeLastName.validateInputLabel(DataTypes.Initial);
-    }
-    public void validatePrimaryTrusteeEmptyErrors(){
-        AppHelper.scrollToView(primaryTrusteeRelationshipError.getCoreElement());
-        primaryTrusteeRelationshipError.validateError(DataTypes.Data);
-        primaryTrusteeFirstNameError.validateError(DataTypes.Data);
-        primaryTrusteeLastNameError.validateError(DataTypes.Data);
-
-    }
-    public void validateInvalidTrusteeDetails() {
-        AppHelper.scrollToView(primaryTrusteeRelationship.getCoreElement());
-        setElementValue(primaryTrusteeRelationship);
-
-        primaryTrusteeFirstNameInvalid.click();
-        setElementValue(primaryTrusteeFirstNameInvalid);
-        AppHelper.waitForXHR(2);
-        primaryTrusteeFirstNameInvalid.validateError(DataTypes.Initial);
-
-        primaryTrusteeLastNameInvalid.click();
-        setElementValue(primaryTrusteeLastNameInvalid);
-        AppHelper.waitForXHR(2);
-        primaryTrusteeLastNameInvalid.validateError(DataTypes.Initial);
-    }
-
-    public void validateDuplicateBeneTrusteeDetails() {
-        AppHelper.scrollToView(primaryTrusteeFirstName.getCoreElement());
-        setElementValue(primaryTrusteeFirstNameDuplicate);
-        setElementValue(primaryTrusteeLastNameDuplicate);
-    }
-
-    public void validateDuplicateBeneTrusteeDetailsError() {
-        AppHelper.scrollToView(beneficiariesAdd.getCoreElement());
-        beneficiariesAdd.validateBannerError(DataTypes.Expected);
-    }
-
-    public void validateAndEnterDetailsTrusteeBeneficiary(){
-        AppHelper.scrollToView(primaryTrusteeRelationship.getCoreElement());
-        setElementValue(primaryTrusteeRelationship);
-        setElementValue(primaryTrusteeFirstName);
-        setElementValue(primaryTrusteeLastName);
-
-    }
-    public void validatePillInformationTrustee(){
-        beneficiaryTrusteeType.validateTrusteeName(DataTypes.Data);
-    }
-
     public void validateQuebecQuestionAndLabels() {
         AppHelper.scrollToView(beneficiaryRevocableQuestion.getCoreElement());
         beneficiaryRevocableQuestion.validateLabelHeader(DataTypes.Data);
@@ -441,6 +222,11 @@ public class BeneficiariesPO extends PageObjectModel {
     }
 
     public void validateRevocableCheckBox() {
+        AppHelper.scrollToView(beneficiaryRevocableQuestion.getCoreElement());
+        setElementValue(beneficiaryRevocableQuestion,false);
+    }
+
+    public void unCheckRevocableCheckBox() {
         AppHelper.scrollToView(beneficiaryRevocableQuestion.getCoreElement());
         setElementValue(beneficiaryRevocableQuestion,false);
     }

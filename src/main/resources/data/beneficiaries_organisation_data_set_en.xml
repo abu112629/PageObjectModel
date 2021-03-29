@@ -47,15 +47,14 @@
         <beneficiariesSkipQuestion>Are you sure you want to continue without adding beneficiaries?</beneficiariesSkipQuestion>
         <beneficiariesSkipDetails>Naming a beneficiary can help determine where your savings might go in the event of your death.</beneficiariesSkipDetails>
         <beneficiariesAdd>Add a primary beneficiary</beneficiariesAdd>
-        <addBeneficiaryLabel>Add a primary beneficiary</addBeneficiaryLabel>
-        <addBeneficiaryHintLabel>All fields are required unless labelled as optional.</addBeneficiaryHintLabel>
-        <primaryTypeLabel>What type of beneficiary do you want to add?</primaryTypeLabel>
         <BeneRadioButton>Organization</BeneRadioButton>
-        <primaryAllocationEstate initial="What percentage do you want to allocate to this beneficiary?">4.00</primaryAllocationEstate>
-        <primaryEstateAllocationInvalid initial="Enter a valid percentage between 1 and 100.">100.22</primaryEstateAllocationInvalid>
-        <primaryEstateAllocationError>Enter the percentage you'd like to allocate to this beneficiary.</primaryEstateAllocationError>
         <beneficiaryType expected="Org Test">Organization</beneficiaryType>
         <beneficiaryAllocationPercentage>7%</beneficiaryAllocationPercentage>
+    </beneficiariesPO>
+    <beneficiaryOrganisationPO>
+        <addBeneficiaryOrgLabel>Add a primary beneficiary</addBeneficiaryOrgLabel>
+        <addBeneficiaryOrgHintLabel>All fields are required unless labelled as optional.</addBeneficiaryOrgHintLabel>
+        <primaryTypeOrgLabel>What type of beneficiary do you want to add?</primaryTypeOrgLabel>
         <beneficiaryOrganizationMessage>You can choose an organization, such as a charity, society, association or corporation, to receive your savings when you die.</beneficiaryOrganizationMessage>
         <beneficiaryOrganizationName initial="What's the organization's name?">Org Test</beneficiaryOrganizationName>
         <beneficiaryOrganizationAllocation initial="What percentage do you want to allocate to this beneficiary?">7.00</beneficiaryOrganizationAllocation>
@@ -63,5 +62,7 @@
         <beneficiaryOrganizationAllocationError>Enter the percentage you'd like to allocate to this beneficiary.</beneficiaryOrganizationAllocationError>
         <beneficiaryOrganizationNameInvalid initial="Enter a valid organization name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</beneficiaryOrganizationNameInvalid>
         <beneficiaryOrganizationAllocationInvalid initial="Enter a valid percentage between 1 and 100.">100.22</beneficiaryOrganizationAllocationInvalid>
-    </beneficiariesPO>
+        <beneficiaryOrgType expected="Org Test">Organization</beneficiaryOrgType>
+        <beneficiaryOrgAllocationPercentage>7%</beneficiaryOrgAllocationPercentage>
+    </beneficiaryOrganisationPO>
 </plan-domain-object>

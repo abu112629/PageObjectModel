@@ -19,7 +19,7 @@ public class BeneficiariesEstateAddTest extends TestNGBase {
     @Issue("GRSOE-66")
     @Test
 
-    public void ValidateBeneficiariesEstateAddition(@Optional("data/beneficiaries_estate_data_set_fr.xml")String dataSet) {
+    public void ValidateBeneficiariesEstateAddition(@Optional("data/beneficiaries_estate_data_set_en.xml")String dataSet) {
 
         BeneficiariesDO beneficiariesDO = new BeneficiariesDO(getContext()).fromResource(dataSet);
         Given(beneficiariesDO::user_on_plan_selection_page);

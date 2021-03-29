@@ -17,6 +17,9 @@ public class BeneficiariesDO extends DomainObjectModel {
     private RPPAdditionalInfoPO rppAdditionalInfoPO;
     private InvestmentPO investmentPO;
     private BeneficiariesPO beneficiariesPO;
+    private BeneficiaryEstatePO beneficiaryEstatePO;
+    private BeneficiaryOrganisationPO beneficiaryOrganisationPO;
+    private BeneficiaryTrusteePO beneficiaryTrusteePO;
 
     private BeneficiariesDO() {}
     public BeneficiariesDO(TestContext context){
@@ -114,7 +117,8 @@ public class BeneficiariesDO extends DomainObjectModel {
     @Step("{0} user selects and validates estate beneficiary details")
     public void user_selects_and_validates_estate_beneficiary(String gwt){
         beneficiariesPO.addBeneficiary();
-        beneficiariesPO.validateEstateBeneFormLabels();
+        beneficiaryEstatePO.initPage(getContext());
+        beneficiaryEstatePO.validateEstateBeneFormLabels();
         TestNGBase.takeScreenshot("");
         planSelectionPO.validateHinttextLabels();
 
@@ -123,7 +127,8 @@ public class BeneficiariesDO extends DomainObjectModel {
     @Step("{0} user selects and validates organization beneficiary details")
     public void user_selects_and_validates_organization_beneficiary(String gwt){
         beneficiariesPO.addBeneficiary();
-        beneficiariesPO.validateOrganisationBeneFormLabels();
+        beneficiaryOrganisationPO.initPage(getContext());
+        beneficiaryOrganisationPO.validateOrganisationBeneFormLabels();
         TestNGBase.takeScreenshot("");
         planSelectionPO.validateHinttextLabels();
 
@@ -133,14 +138,14 @@ public class BeneficiariesDO extends DomainObjectModel {
     public void user_clicks_continue_and_is_able_to_validate_all_estate_errors(String gwt){
         planSelectionPO.clickSaveButton();
         TestNGBase.takeScreenshot("");
-        beneficiariesPO.validateEstateError();
+        beneficiaryEstatePO.validateEstateError();
     }
 
     @Step("{0} user clicks continue and is able to validate all organization errors")
     public void user_clicks_continue_and_is_able_to_validate_all_organization_errors(String gwt){
         planSelectionPO.clickSaveButton();
         TestNGBase.takeScreenshot("");
-        beneficiariesPO.validateOrganizationError();
+        beneficiaryOrganisationPO.validateOrganizationError();
     }
 
     @Step("{0} user enters invalid person beneficiary details")
@@ -154,14 +159,14 @@ public class BeneficiariesDO extends DomainObjectModel {
 
     @Step("{0} user enters invalid estate beneficiary details")
     public void user_enters_invalid_estate_beneficiary(String gwt){
-        beneficiariesPO.validateInvalidEstateBeneficiaryDetails();
+        beneficiaryEstatePO.validateInvalidEstateBeneficiaryDetails();
         TestNGBase.takeScreenshot("");
 
     }
 
     @Step("{0} user enters invalid organization beneficiary details")
     public void user_enters_invalid_organization_beneficiary(String gwt){
-        beneficiariesPO.validateInvalidOrganizationBeneficiaryDetails();
+        beneficiaryOrganisationPO.validateInvalidOrganizationBeneficiaryDetails();
         TestNGBase.takeScreenshot("");
 
     }
@@ -179,8 +184,9 @@ public class BeneficiariesDO extends DomainObjectModel {
 
     @Step("{0} user selects and validates primary Trustee")
     public void user_selects_and_validates_primary_trustee(String gwt){
-       beneficiariesPO.validateBeneficaryTrusteeQuestion();
-       beneficiariesPO.selectPrimaryTrusteeNo();
+        beneficiaryTrusteePO.initPage(getContext());
+        beneficiaryTrusteePO.validateBeneficaryTrusteeQuestion();
+        beneficiaryTrusteePO.selectPrimaryTrusteeNo();
         TestNGBase.takeScreenshot("");
 
     }
@@ -195,7 +201,7 @@ public class BeneficiariesDO extends DomainObjectModel {
     @Step("{0} user clicks on Save Beneficiary Form for Estate")
     public void user_clicks_save_beneficiary_for_estate(String gwt){
         AppHelper.waitForXHR(2);
-        beneficiariesPO.validateAndEnterDetailsEstateBeneficiary();
+        beneficiaryEstatePO.validateAndEnterDetailsEstateBeneficiary();
         TestNGBase.takeScreenshot("");
         planSelectionPO.clickSaveButton();
     }
@@ -203,7 +209,7 @@ public class BeneficiariesDO extends DomainObjectModel {
     @Step("{0} user clicks on Save Beneficiary Form for Organization")
     public void user_clicks_save_beneficiary_for_organization(String gwt){
         AppHelper.waitForXHR(2);
-        beneficiariesPO.validateAndEnterDetailsOrganizationBeneficiary();
+        beneficiaryOrganisationPO.validateAndEnterDetailsOrganizationBeneficiary();
         TestNGBase.takeScreenshot("");
         planSelectionPO.clickSaveButton();
     }
@@ -218,14 +224,14 @@ public class BeneficiariesDO extends DomainObjectModel {
     @Step("{0} user validates Pill information for Estate after saving the details")
     public void user_validates_pill_information_for_estate_after_saving_the_details(String gwt){
         AppHelper.waitForXHR(1);
-        beneficiariesPO.validatePillInformationEstate();
+        beneficiaryEstatePO.validatePillInformationEstate();
         TestNGBase.takeScreenshot("");
     }
 
     @Step("{0} user validates Pill information for Organization after saving the details")
     public void user_validates_pill_information_for_organization_after_saving_the_details(String gwt){
         AppHelper.waitForXHR(1);
-        beneficiariesPO.validatePillInformationOrganization();
+        beneficiaryOrganisationPO.validatePillInformationOrganization();
         TestNGBase.takeScreenshot("");
     }
 
@@ -238,57 +244,59 @@ public class BeneficiariesDO extends DomainObjectModel {
     @Step("{0} user validates Salesforce Information is saved for Estate")
     public void user_validates_salesforce_information_is_saved_for_estate(String gwt){
         AppHelper.waitForXHR(1);
-        beneficiariesPO.validateSalesforceEstateRecord();
+        beneficiaryEstatePO.validateSalesforceEstateRecord();
     }
 
     @Step("{0} user validates Salesforce Information is saved for Organization")
     public void user_validates_salesforce_information_is_saved_for_organization(String gwt){
         AppHelper.waitForXHR(1);
-        beneficiariesPO.validateSalesforceOrganizationRecord();
+        beneficiaryOrganisationPO.validateSalesforceOrganizationRecord();
     }
 
     @Step("{0} user clicks continue and is able to validate no selection Trustee error")
     public void user_clicks_continue_and_is_able_to_validate_no_selection_trustee_error(String gwt){
         planSelectionPO.clickSaveButton();
+        beneficiaryTrusteePO.initPage(getContext());
+        beneficiaryTrusteePO.validatePrimaryTrusteeError();
         TestNGBase.takeScreenshot("");
-        beneficiariesPO.validatePrimaryTrusteeError();
     }
 
     @Step("{0} user selects yes for Trustee and is able to validate all Trustee errors when left empty")
     public void user_selects_yes_and_is_able_to_validate_all_trustee_errors_when_empty(String gwt){
         planSelectionPO.clickSaveButton();
         TestNGBase.takeScreenshot("");
-        beneficiariesPO.validatePrimaryTrusteeEmptyErrors();
+        beneficiaryTrusteePO.validatePrimaryTrusteeEmptyErrors();
     }
 
     @Step("{0} user is able to validate all Trustee form labels")
     public void user_is_able_to_validate_all_trustee_form_labels(String gwt){
-        beneficiariesPO.validateBeneficaryTrusteeQuestion();
-        beneficiariesPO.selectPrimaryTrusteeYes();
+        beneficiaryTrusteePO.initPage(getContext());
+        beneficiaryTrusteePO.validateBeneficaryTrusteeQuestion();
+        beneficiaryTrusteePO.selectPrimaryTrusteeYes();
         planSelectionPO.clickSaveButton();
         TestNGBase.takeScreenshot("");
-        beneficiariesPO.validateTrusteeFormLabels();
+        beneficiaryTrusteePO.validateTrusteeFormLabels();
     }
 
     @Step("{0} user enters invalid trustee details")
     public void user_enters_invalid_trustee_details(String gwt){
-        beneficiariesPO.validateInvalidTrusteeDetails();
+        beneficiaryTrusteePO.validateInvalidTrusteeDetails();
         TestNGBase.takeScreenshot("");
 
     }
 
     @Step("{0} user enters duplicate trustee details and beneficiary details")
     public void user_enters_duplicate_trustee_and_beneficiary_details(String gwt){
-        beneficiariesPO.validateDuplicateBeneTrusteeDetails();
+        beneficiaryTrusteePO.validateDuplicateBeneTrusteeDetails();
         planSelectionPO.clickSaveButton();
-        beneficiariesPO.validateDuplicateBeneTrusteeDetailsError();
+        beneficiaryTrusteePO.validateDuplicateBeneTrusteeDetailsError();
         TestNGBase.takeScreenshot("");
 
     }
 
     @Step("{0} user enters trustee details and clicks save")
     public void user_enters_trustee_details_and_clicks_save(String gwt){
-       beneficiariesPO.validateAndEnterDetailsTrusteeBeneficiary();
+        beneficiaryTrusteePO.validateAndEnterDetailsTrusteeBeneficiary();
        planSelectionPO.clickSaveButton();
        TestNGBase.takeScreenshot("");
 
@@ -296,13 +304,13 @@ public class BeneficiariesDO extends DomainObjectModel {
     @Step("{0} user validates Pill information after saving the details for Trustee")
     public void user_validates_pill_information_after_saving_the_details_for_trustee(String gwt){
         AppHelper.waitForXHR(1);
-        beneficiariesPO.validatePillInformationTrustee();
+        beneficiaryTrusteePO.validatePillInformationTrustee();
         TestNGBase.takeScreenshot("");
     }
     @Step("{0} user validates Salesforce Information is saved for Trustee")
     public void user_validates_salesforce_information_is_saved_for_trustee(String gwt){
         AppHelper.waitForXHR(1);
-        beneficiariesPO.validateSalesforceTrusteeRecord();
+        beneficiaryTrusteePO.validateSalesforceTrusteeRecord();
     }
 
     @Step("{0} user validates Quebec Question and Checks Revocable Option")

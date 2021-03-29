@@ -79,7 +79,7 @@ public class SalesforceInfo {
 
     }
 
-    public void checkBeneficiaryDetails(String firstname,String lastname,String Allocation) {
+    public void checkBeneficiaryDetails(String firstname,String lastname,float Allocation) {
 
         ObjectMapper objectMapper = new ObjectMapper();
 

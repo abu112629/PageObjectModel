@@ -19,7 +19,7 @@ public class BeneficiariesTrusteeAddTest extends TestNGBase {
     @Issue("GRSOE-415")
     @Test
 
-    public void ValidateBeneficiariesTrusteeAddition(@Optional("data/beneficiaries_skip_data_set_fr.xml")String dataSet) {
+    public void ValidateBeneficiariesTrusteeAddition(@Optional("data/beneficiaries_trustee_data_set_en.xml")String dataSet) {
 
         BeneficiariesDO beneficiariesDO=new BeneficiariesDO(getContext()).fromResource(dataSet);
         Given(beneficiariesDO :: user_on_plan_selection_page);
