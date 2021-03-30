@@ -98,9 +98,17 @@ public class SalesforceInfo {
                     if (!payload.getTotalSize().equals(0)) {
                         List<Record_bene> data2 = payload.getRecords();
                         for (Record_bene record2 : data2) {
-                            assertEquals(record2.getAllocationC(), Allocation);
-                            assertEquals(record2.getAssetRoleC(), "Primary beneficiary");
-                            assertEquals(record2.getRevocableC().booleanValue(), true);
+                            if(record2.getAssetRoleC().contains("Primary beneficiary")){
+                                assertEquals(record2.getAllocationC(), Allocation);
+                                assertEquals(record2.getAssetRoleC(), "Primary beneficiary");
+                                assertEquals(record2.getRevocableC().booleanValue(), true);
+                            }
+                            else{
+                                assertEquals(record2.getAllocationC(), Allocation);
+                                assertEquals(record2.getAssetRoleC(), "Successor holder");
+                                assertEquals(record2.getRevocableC().booleanValue(), true);
+                            }
+
                         }
                     }
                 }
@@ -133,7 +141,10 @@ public class SalesforceInfo {
                     if (!payload.getTotalSize().equals(0)) {
                         List<Record_bene> data2 = payload.getRecords();
                         for (Record_bene record2 : data2) {
-                            Assert.assertTrue(record2.getRevocableC().booleanValue(),value);
+                            if(value.equals(record2.getRevocableC().booleanValue())){
+                                Assert.assertTrue(record2.getRevocableC().booleanValue(),value);
+                            }
+
                         }
                     }
                 }

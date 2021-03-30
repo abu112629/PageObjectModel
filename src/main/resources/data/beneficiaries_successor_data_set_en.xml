@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_En</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                TFSA
+            </item>
+        </planList>
+        <planProgressBarStep>
+            <item>Step 5 of 7: Choose your beneficiaries</item>
+        </planProgressBarStep>
+        <hintText>
+            <item>Max. 20 characters</item>
+            <item>A social insurance number (SIN) is a 9-digit number.</item>>
+        </hintText>
+    </planSelectionPO>
+    <beneficiariesPO>
+        <beneficiariesDescription>
+            <item>Choose who should receive your savings when you pass away. If you don't designate a beneficiary or none of them survive you, the money will go to your estate unless the law requires otherwise.</item>
+            <item>Generally, you can change your beneficiaries at any time using your online account.</item>
+        </beneficiariesDescription>
+    </beneficiariesPO>
+    <beneficiarySuccessorPO>
+        <beneficiariesSuccessorAdd>Add a successor holder</beneficiariesSuccessorAdd>
+        <addSuccessorBeneficiaryLabel>Add a successor holder</addSuccessorBeneficiaryLabel>
+        <addSuccessorBeneficiaryHintLabel>All fields are required unless labelled as optional.</addSuccessorBeneficiaryHintLabel>
+        <primarySuccessorFirstName initial="First name">TestSuccessor</primarySuccessorFirstName>
+        <primarySuccessorInvalidFirstName initial="Enter a valid first name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</primarySuccessorInvalidFirstName>
+        <primarySuccessorFirstNameError>Enter your successor holder's first name.</primarySuccessorFirstNameError>
+        <primarySuccessorLastName initial="Last name">Testsample0329</primarySuccessorLastName>
+        <primarySuccessorInvalidLastName initial="Enter a valid last name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</primarySuccessorInvalidLastName>
+        <primarySuccessorLastNameError>Enter your successor holder's last name.</primarySuccessorLastNameError>
+        <primarySuccessorDateOfBirth expected ="Date of birth (optional)">Date of birth</primarySuccessorDateOfBirth>
+        <primarySuccessorMonthLabel expected ="Month">Month</primarySuccessorMonthLabel>
+        <primarySuccessorDateLabel expected ="Day (DD)">Day (DD)</primarySuccessorDateLabel>
+        <primarySuccessorYearLabel expected ="Year (YYYY)">Year (YYYY)</primarySuccessorYearLabel>
+        <primarySuccessorSIN initial="Social insurance number">678890899</primarySuccessorSIN>
+        <primarySuccessorInvalidSIN initial="Enter a valid 9-digit social insurance number.">6788</primarySuccessorInvalidSIN>
+        <primarySuccessorSINError>Enter a valid 9-digit social insurance number.</primarySuccessorSINError>
+        <beneficiarySuccessorType expected="TestSuccessor Testsample0329">Person</beneficiarySuccessorType>
+        <primarySuccessorDateOfBirthHint>Your successor holder must be at least 18 years old.</primarySuccessorDateOfBirthHint>
+        <primarySuccessorDateOfBirthError expected="Enter a valid date of birth.">Enter your successor holder's full date of birth.</primarySuccessorDateOfBirthError>
+    </beneficiarySuccessorPO>
+    <rppAdditionalInfoPO>
+        <slctdrpdownMonth>January</slctdrpdownMonth>
+        <birthDay>07</birthDay>
+        <birthYear>1989</birthYear>
+        <invalidBirthYear>2010</invalidBirthYear>
+    </rppAdditionalInfoPO>
+</plan-domain-object>

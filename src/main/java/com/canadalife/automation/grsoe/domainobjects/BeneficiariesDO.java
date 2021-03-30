@@ -86,7 +86,6 @@ public class BeneficiariesDO extends DomainObjectModel {
         investmentPO.initPage(getContext());
         investmentPO.validateInvestmentCardSelected();
         TestNGBase.takeScreenshot("");
-
     }
 
     @Step("{0} user clicks add Primary Beneficiary")
@@ -297,8 +296,8 @@ public class BeneficiariesDO extends DomainObjectModel {
     @Step("{0} user enters trustee details and clicks save")
     public void user_enters_trustee_details_and_clicks_save(String gwt){
         beneficiaryTrusteePO.validateAndEnterDetailsTrusteeBeneficiary();
-       planSelectionPO.clickSaveButton();
-       TestNGBase.takeScreenshot("");
+        planSelectionPO.clickSaveButton();
+        TestNGBase.takeScreenshot("");
 
     }
     @Step("{0} user validates Pill information after saving the details for Trustee")
@@ -324,5 +323,20 @@ public class BeneficiariesDO extends DomainObjectModel {
     public void user_validates_salesforce_information_is_true_for_revocable(String gwt){
         AppHelper.waitForXHR(1);
         beneficiariesPO.validateSalesforceRevocableBox("true");
+    }
+
+    @Step("{0} user validates Salesforce Information is false for Revocable when selected")
+    public void user_validates_salesforce_information_is_false_for_revocable(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiariesPO.validateSalesforceRevocableBox("false");
+    }
+
+    @Step("{0} user edits Beneficiary Person Information and updates revocable checkbox")
+    public void user_edits_beneficiary_person_information(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiariesPO.editPrimaryBeneficiary();
+        beneficiariesPO.validatePrimaryBeneficiaryOnEdit();
+        beneficiariesPO.unCheckRevocableCheckBox();
+        planSelectionPO.clickSaveButton();
     }
 }

@@ -210,7 +210,6 @@ public class BeneficiariesPO extends PageObjectModel {
 
     public void validateSalesforceBeneficiaryRecord() {
         AppHelper.waitForXHR(1);
-
         salesforceInfo = new SalesforceInfo();
         salesforceInfo.checkBeneficiaryDetails(primaryFirstName.getData(),primaryLastName.getData(),
               Float.valueOf(beneficiaryAllocationPercentage.getData(DataTypes.Initial)));

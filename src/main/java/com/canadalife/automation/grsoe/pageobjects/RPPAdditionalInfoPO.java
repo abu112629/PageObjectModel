@@ -61,6 +61,9 @@ public class RPPAdditionalInfoPO extends PageObjectModel {
     @FindBy(xpath = "//input[@type='number'][starts-with(@id, 'year')]")
     private WebComponent birthYear;
 
+    @FindBy(xpath = "//input[@type='number'][starts-with(@id, 'year')]")
+    private WebComponent invalidBirthYear;
+
     @FindBy(xpath = "//*[(@data-omni-key='ConnectedPerson')]//*[contains(@class,'nds-form-element__static')]")
     private WebComponentList connectedPersonDetailedText;
 
@@ -169,6 +172,18 @@ public class RPPAdditionalInfoPO extends PageObjectModel {
         setElementValue(birthDay);
         setElementValue(birthYear);
 
+    }
+
+    @Step("Enter incomplete Date Of Birth Details")
+    public void enterIncompleteDOBDetails() {
+        setElementValue(slctdrpdownMonth, false);
+    }
+
+    @Step("Enter invalid Date Of Birth Details")
+    public void enterInvalidDOBDetails() {
+        setElementValue(slctdrpdownMonth, false);
+        setElementValue(birthDay);
+        setElementValue(invalidBirthYear);
     }
 
     @Step("Future Day Of Birth error Message")

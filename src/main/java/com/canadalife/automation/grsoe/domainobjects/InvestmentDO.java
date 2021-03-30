@@ -117,10 +117,10 @@ public class InvestmentDO extends DomainObjectModel {
     @Step("{0} user clicks Skip Button and validates investment Skip Details and Questionnaire")
     public void user_validates_investment_skip_details_and_questionnaire(String gwt){
         planSelectionPO.initPage(getContext());
-       planSelectionPO.clickSkipStepButton();
-       investmentPO.initPage(getContext());
-       investmentPO.validateTheInvestmentSkipQuestionandDetails();
-       TestNGBase.takeScreenshot("");
+        planSelectionPO.clickSkipStepButton();
+        investmentPO.initPage(getContext());
+        investmentPO.validateTheInvestmentSkipQuestionandDetails();
+        TestNGBase.takeScreenshot("");
 
     }
 
