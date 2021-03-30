@@ -48,7 +48,7 @@
         <beneficiariesSkipDetails>Naming a beneficiary can help determine where your savings might go in the event of your death.</beneficiariesSkipDetails>
         <beneficiariesAdd>Add a primary beneficiary</beneficiariesAdd>
         <BeneRadioButton>Organization</BeneRadioButton>
-        <beneficiaryType expected="Org Test">Organization</beneficiaryType>
+        <beneficiaryType expected="OrgTest">Organization</beneficiaryType>
         <beneficiaryAllocationPercentage>7%</beneficiaryAllocationPercentage>
     </beneficiariesPO>
     <beneficiaryOrganisationPO>
@@ -56,13 +56,13 @@
         <addBeneficiaryOrgHintLabel>All fields are required unless labelled as optional.</addBeneficiaryOrgHintLabel>
         <primaryTypeOrgLabel>What type of beneficiary do you want to add?</primaryTypeOrgLabel>
         <beneficiaryOrganizationMessage>You can choose an organization, such as a charity, society, association or corporation, to receive your savings when you die.</beneficiaryOrganizationMessage>
-        <beneficiaryOrganizationName initial="What's the organization's name?">Org Test</beneficiaryOrganizationName>
+        <beneficiaryOrganizationName initial="What's the organization's name?">OrgTest</beneficiaryOrganizationName>
         <beneficiaryOrganizationAllocation initial="What percentage do you want to allocate to this beneficiary?">7.00</beneficiaryOrganizationAllocation>
         <beneficiaryOrganizationNameError>Enter a valid organization name.</beneficiaryOrganizationNameError>
         <beneficiaryOrganizationAllocationError>Enter the percentage you'd like to allocate to this beneficiary.</beneficiaryOrganizationAllocationError>
         <beneficiaryOrganizationNameInvalid initial="Enter a valid organization name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</beneficiaryOrganizationNameInvalid>
         <beneficiaryOrganizationAllocationInvalid initial="Enter a valid percentage between 1 and 100.">100.22</beneficiaryOrganizationAllocationInvalid>
-        <beneficiaryOrgType expected="Org Test">Organization</beneficiaryOrgType>
-        <beneficiaryOrgAllocationPercentage>7%</beneficiaryOrgAllocationPercentage>
+        <beneficiaryOrgType expected="OrgTest">Organization</beneficiaryOrgType>
+        <beneficiaryOrgAllocationPercentage initial="7.0">7%</beneficiaryOrgAllocationPercentage>
     </beneficiaryOrganisationPO>
 </plan-domain-object>

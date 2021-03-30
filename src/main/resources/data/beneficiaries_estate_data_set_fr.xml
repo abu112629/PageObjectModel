@@ -50,7 +50,6 @@
         <addBeneficiaryLabel>Ajouter un premier bénéficiaire</addBeneficiaryLabel>
         <addBeneficiaryHintLabel>Sauf indication contraire, tous les champs doivent être remplis.</addBeneficiaryHintLabel>
         <primaryTypeLabel>Quel type de bénéficiaire voulez-vous ajouter?</primaryTypeLabel>
-        <beneficiaryAllocationPercentage>4 %</beneficiaryAllocationPercentage>
         <BeneRadioButton>Succession</BeneRadioButton>
     </beneficiariesPO>
     <beneficiaryEstatePO>
@@ -62,7 +61,7 @@
         <primaryEstateAllocationInvalid initial="Entrez un pourcentage entre 1 et 100.">100,22</primaryEstateAllocationInvalid>
         <primaryEstateAllocationError>Entrez le pourcentage que vous voulez accorder à ce bénéficiaire.</primaryEstateAllocationError>
         <beneficiaryEstateType  expected="Votre succession">Succession</beneficiaryEstateType>
-        <beneficiaryAllocationEstatePercentage>4 %</beneficiaryAllocationEstatePercentage>
+        <beneficiaryAllocationEstatePercentage initial="4.0">4 %</beneficiaryAllocationEstatePercentage>
         <BeneEstateRadioButton>Succession</BeneEstateRadioButton>
     </beneficiaryEstatePO>
 </plan-domain-object>

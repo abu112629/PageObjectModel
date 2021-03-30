@@ -61,7 +61,7 @@
         <primaryEstateAllocationInvalid initial="Enter a valid percentage between 1 and 100.">100.22</primaryEstateAllocationInvalid>
         <primaryEstateAllocationError>Enter the percentage you'd like to allocate to this beneficiary.</primaryEstateAllocationError>
         <beneficiaryEstateType expected="Your estate">Estate</beneficiaryEstateType>
-        <beneficiaryAllocationEstatePercentage>4%</beneficiaryAllocationEstatePercentage>
+        <beneficiaryAllocationEstatePercentage initial="4.0">4%</beneficiaryAllocationEstatePercentage>
         <BeneEstateRadioButton>Estate</BeneEstateRadioButton>
     </beneficiaryEstatePO>
 </plan-domain-object>

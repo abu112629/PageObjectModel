@@ -56,4 +56,23 @@ public class RequestInfo {
         return response;
 
     }
+
+    public static Response sendDeleteRequest(String baseURI, String pathParams, Map<String, Object> header) {
+
+        Response response = null;
+
+        try {
+            RestAssured.baseURI = baseURI.toString();
+            RequestSpecification request = RestAssured.given();
+            request.headers(header).when().relaxedHTTPSValidation("TLS");
+
+            response = request.delete(pathParams);
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        return response;
+
+    }
 }

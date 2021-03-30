@@ -31,12 +31,28 @@ public class SalesforceInfo {
         return getUserSpouseDetail(baseURI, salesforce_params, FirstName, LastName);
     }
 
+    public String getUserContactDetail(String FirstName) {
+
+        EnvironmentsSetup.Environment env = TestContext.getTestProperties().getTestEnvironment();
+        String baseURI = env.getCustom("baseURI");
+        String salesforce_params = env.getCustom("salesforce_params");
+        return getUserContactDetail(baseURI, salesforce_params, FirstName);
+    }
+
     public String getUserBeneficiaryDetails(String EID) {
 
         EnvironmentsSetup.Environment env = TestContext.getTestProperties().getTestEnvironment();
         String baseURI = env.getCustom("baseURI");
         String salesforce_params = env.getCustom("salesforce_params_bene");
         return getUserBeneficiaryDetails(baseURI, salesforce_params,EID);
+    }
+
+    public String DeleteBeneficiaryDetails(String EID) {
+
+        EnvironmentsSetup.Environment env = TestContext.getTestProperties().getTestEnvironment();
+        String baseURI = env.getCustom("baseURI");
+        String salesforce_params = env.getCustom("salesforce_delete_params");
+        return DeleteBeneficiaryDetails(baseURI, salesforce_params,EID);
     }
 
     public String getUserTrusteeDetails(String EID) {
@@ -63,6 +79,22 @@ public class SalesforceInfo {
 
     }
 
+    public String getUserContactDetail(String baseURI, String salesforce_params,
+                                      String FirstName) {
+        clientInfo=new ClientInfo();
+        Map<String, Object> header = new HashMap<String, Object>();
+        // Get auth token
+        header.put("Authorization", "Bearer " + clientInfo.getAuthToken());
+        Response response = RequestInfo.sendGetRequest(baseURI,
+                salesforce_params + "'" + FirstName +"'", header);
+
+        assertEquals("No details found. Error : " + response.asString(), HttpStatus.SC_OK,
+                response.getStatusCode());
+
+        return response.asString();
+
+    }
+
     public String getUserBeneficiaryDetails(String baseURI, String salesforce_params,
                                       String EID) {
         clientInfo=new ClientInfo();
@@ -77,6 +109,80 @@ public class SalesforceInfo {
 
         return response.asString();
 
+    }
+
+    public String DeleteBeneficiaryDetails(String baseURI, String salesforce_params,
+                                            String EID) {
+        clientInfo=new ClientInfo();
+        Map<String, Object> header = new HashMap<String, Object>();
+        // Get auth token
+        header.put("Authorization", "Bearer " + clientInfo.getAuthToken());
+        Response response = RequestInfo.sendDeleteRequest(baseURI,
+                salesforce_params+EID, header);
+
+        assertEquals("No details found. Error : " + response.asString(), HttpStatus.SC_NO_CONTENT,
+                response.getStatusCode());
+
+        return response.asString();
+
+    }
+    public void deleteAllBeneficiaryDetails(String firstname,String lastname,float Allocation) {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+
+            SalesforceRecordPayload salepayload = objectMapper.readValue(
+                    getUserSpouseDetail(firstname, lastname), SalesforceRecordPayload.class);
+
+            if (!salepayload.getTotalSize().equals(0)) {
+                List<Record> data = salepayload.getRecords();
+                for (Record record : data) {
+                    String EID = record.getEIDC();
+                    DeleteBeneficiaryDetails(EID);
+                }
+
+            }
+            else {
+                Assert.assertTrue(salepayload.getTotalSize().equals(0));
+            }
+        }
+
+        catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void deleteAllEstateOrgDetails(String firstname,float Allocation) {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+
+            SalesforceRecordPayload salepayload = objectMapper.readValue(
+                    getUserContactDetail(firstname), SalesforceRecordPayload.class);
+
+            if (!salepayload.getTotalSize().equals(0)) {
+                List<Record> data = salepayload.getRecords();
+                int i=salepayload.getTotalSize();
+                for (Record record : data) {
+                    if(record.getAccountId().contains("0014g000003oHCeAAM") ||
+                            record.getAccountId().contains("0014g000003oHHDAA2")){
+                        String EID = record.getEIDC();
+                        DeleteBeneficiaryDetails(EID);
+                        i=i--;
+                    }
+                }
+
+            }
+            else {
+                Assert.assertTrue(salepayload.getTotalSize().equals(0));
+            }
+        }
+
+        catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     public void checkBeneficiaryDetails(String firstname,String lastname,float Allocation) {
@@ -107,6 +213,84 @@ public class SalesforceInfo {
                                 assertEquals(record2.getAllocationC(), Allocation);
                                 assertEquals(record2.getAssetRoleC(), "Successor holder");
                                 assertEquals(record2.getRevocableC().booleanValue(), true);
+                            }
+
+                        }
+                    }
+                }
+
+            }
+        }
+
+        catch (Exception e) {
+            System.out.println(e);
+        }
+
+
+    }
+    public void checkBeneficiaryEstateOrgDetails(String firstname,float Allocation) {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+
+            SalesforceRecordPayload salepayload = objectMapper.readValue(
+                    getUserContactDetail(firstname), SalesforceRecordPayload.class);
+
+            if (!salepayload.getTotalSize().equals(0)) {
+                List<Record> data = salepayload.getRecords();
+                for (Record record : data) {
+                    String EID = record.getEIDC();
+
+                    SalesforceBenePayload payload = objectMapper.readValue(
+                            getUserBeneficiaryDetails(EID), SalesforceBenePayload.class);
+                    if (!payload.getTotalSize().equals(0)) {
+                        List<Record_bene> data2 = payload.getRecords();
+                        for (Record_bene record2 : data2) {
+                            if(record2.getAssetRoleC().contains("Primary beneficiary")){
+                                assertEquals(record2.getAllocationC(), Allocation);
+                                assertEquals(record2.getAssetRoleC(), "Primary beneficiary");
+                                assertEquals(record2.getRevocableC().booleanValue(), true);
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        catch (Exception e) {
+            System.out.println(e);
+        }
+
+
+    }
+    public void checkBeneficiaryDetailsDeleted(String firstname,String lastname,float Allocation) {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+
+            SalesforceRecordPayload salepayload = objectMapper.readValue(
+                    getUserSpouseDetail(firstname, lastname), SalesforceRecordPayload.class);
+
+            if (!salepayload.getTotalSize().equals(0)) {
+                List<Record> data = salepayload.getRecords();
+                for (Record record : data) {
+                    String EID = record.getEIDC();
+
+                    SalesforceBenePayload payload = objectMapper.readValue(
+                            getUserBeneficiaryDetails(EID), SalesforceBenePayload.class);
+                    if (!payload.getTotalSize().equals(0)) {
+                        List<Record_bene> data2 = payload.getRecords();
+                        for (Record_bene record2 : data2) {
+                            if(record2.getAssetRoleC().contains("Primary beneficiary")||
+                                    record2.getAssetRoleC().contains("Successor holder")){
+                                Assert.assertFalse(record.getAccountId().contains("0014g000003oHCeAAM") ||
+                                        record.getAccountId().contains("0014g000003oHHDAA2"));
+                            }
+                            else{
+                                Assert.assertTrue(payload.getRecords().size() == 0);
                             }
 
                         }

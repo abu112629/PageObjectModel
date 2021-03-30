@@ -79,10 +79,16 @@ public class BeneficiaryEstatePO extends PageObjectModel {
         beneficiaryAllocationEstatePercentage.validateAllocationPercentage(DataTypes.Data);
     }
 
+    public void deleteAllTestRecords() {
+        AppHelper.waitForXHR(1);
+        salesforceInfo = new SalesforceInfo();
+        salesforceInfo.deleteAllEstateOrgDetails("Estate",
+                Float.valueOf(beneficiaryAllocationEstatePercentage.getData(DataTypes.Initial)));
+    }
     public void validateSalesforceEstateRecord() {
         AppHelper.waitForXHR(1);
         salesforceInfo = new SalesforceInfo();
-        salesforceInfo.checkBeneficiaryDetails(BeneEstateRadioButton.getData(),"",
-                Float.valueOf(primaryAllocationEstate.getData()));
+        salesforceInfo.checkBeneficiaryEstateOrgDetails(BeneEstateRadioButton.getData(),
+                Float.valueOf(beneficiaryAllocationEstatePercentage.getData(DataTypes.Initial)));
     }
 }
