@@ -240,6 +240,12 @@ public class BeneficiariesDO extends DomainObjectModel {
         beneficiariesPO.validateSalesforceBeneficiaryRecord();
     }
 
+    @Step("{0} user validates Salesforce Information is deleted for member")
+    public void user_validates_salesforce_information_is_deleted_for_member(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiariesPO.validateSalesforceBeneficiaryRecordDeleted();
+    }
+
     @Step("{0} user validates Salesforce Information is saved for Estate")
     public void user_validates_salesforce_information_is_saved_for_estate(String gwt){
         AppHelper.waitForXHR(1);
@@ -338,5 +344,37 @@ public class BeneficiariesDO extends DomainObjectModel {
         beneficiariesPO.validatePrimaryBeneficiaryOnEdit();
         beneficiariesPO.unCheckRevocableCheckBox();
         planSelectionPO.clickSaveButton();
+    }
+
+    @Step("{0} user clicks delete Beneficiary Information and clicks back")
+    public void user_clicks_delete_beneficiary_information_and_clicks_back(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiariesPO.deletePrimaryBeneficiary();
+        beneficiariesPO.validateBeneficiariesDeleteQuestion();
+        planSelectionPO.clickSkipBackButton();
+    }
+    @Step("{0} user deletes Beneficiary Person Information")
+    public void user_deletes_beneficiary_person_information(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiariesPO.deletePrimaryBeneficiary();
+        beneficiariesPO.validateBeneficiariesDeleteQuestion();
+        planSelectionPO.clickSkipContinueButton();
+    }
+    @Step("{0} Delete all salesforce Test records")
+    public void delete_all_salesforce_test_records(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiariesPO.deleteAllTestRecords();
+    }
+
+    @Step("{0} Delete all salesforce Estate Test records")
+    public void delete_all_salesforce_estate_test_records(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiaryEstatePO.deleteAllTestRecords();
+    }
+
+    @Step("{0} Delete all salesforce Organization Test records")
+    public void delete_all_salesforce_organization_test_records(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiaryOrganisationPO.deleteAllTestRecords();
     }
 }

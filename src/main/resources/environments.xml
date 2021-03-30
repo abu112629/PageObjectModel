@@ -13,6 +13,7 @@
         <prop name="salesforce_params_trustee" value= "services/data/v49.0/query/?q=SELECT Trustee_First_Name__c,Trustee_Last_Name__c ,Trustee_Relationship__c FROM Contact where EID__c=" />
         <prop name="salesforce_params_bene" value= "services/data/v49.0/query/?q=SELECT allocation__c,Asset_Role__c,Revocable__c FROM Asset_Contact__c where Asset_Contact__c=" />
         <prop name="salesforce_asset_params" value= "services/data/v49.0/sobjects/Asset/" />
+        <prop name="salesforce_delete_params" value= "services/data/v49.0/sobjects/Contact/" />
         <prop name="salesforce_language_params" value= "services/data/v49.0/sobjects/User/0054g000000Z36cAAC" />
         <user role="User_En" fullName="" userName="gwl.apprebuild+178@gmail.com" password="Test@12345"/>
         <user role="User_Fr" fullName="" userName="gwl.apprebuild+179@gmail.com" password="Test@12345"/>

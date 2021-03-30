@@ -51,20 +51,20 @@
         <addBeneficiaryHintLabel>Sauf indication contraire, tous les champs doivent être remplis.</addBeneficiaryHintLabel>
         <primaryTypeLabel>Quel type de bénéficiaire voulez-vous ajouter?</primaryTypeLabel>
         <BeneRadioButton>Organisation</BeneRadioButton>
-        <beneficiaryType expected="Org TestFrench">Organisation</beneficiaryType>
+        <beneficiaryType expected="OrgTestFrench">Organisation</beneficiaryType>
     </beneficiariesPO>
     <beneficiaryOrganisationPO>
         <addBeneficiaryOrgLabel>Ajouter un premier bénéficiaire</addBeneficiaryOrgLabel>
         <addBeneficiaryOrgHintLabel>Sauf indication contraire, tous les champs doivent être remplis.</addBeneficiaryOrgHintLabel>
         <primaryTypeOrgLabel>Quel type de bénéficiaire voulez-vous ajouter?</primaryTypeOrgLabel>
-        <beneficiaryOrgAllocationPercentage>7 %</beneficiaryOrgAllocationPercentage>
+        <beneficiaryOrgAllocationPercentage initial="7.0">7 %</beneficiaryOrgAllocationPercentage>
         <beneficiaryOrganizationMessage>Vous pouvez choisir une organisation, comme un organisme de bienfaisance, une société, une association ou une entreprise, comme bénéficiaire de votre épargne à votre décès.</beneficiaryOrganizationMessage>
-        <beneficiaryOrganizationName initial="Quel est le nom de l’organisation?">Org TestFrench</beneficiaryOrganizationName>
+        <beneficiaryOrganizationName initial="Quel est le nom de l’organisation?">OrgTestFrench</beneficiaryOrganizationName>
         <beneficiaryOrganizationAllocation initial="Quel pourcentage voulez-vous attribuer à ce bénéficiaire?">7,00</beneficiaryOrganizationAllocation>
         <beneficiaryOrganizationNameError>Entrez un nom d’organisation valide.</beneficiaryOrganizationNameError>
         <beneficiaryOrganizationAllocationError>Entrez le pourcentage que vous voulez accorder à ce bénéficiaire.</beneficiaryOrganizationAllocationError>
         <beneficiaryOrganizationNameInvalid initial="Entrez un nom d’organisation valide. Seuls les lettres, les traits d’union, les espaces, les apostrophes, les crochets et les points sont acceptés.">&lt;</beneficiaryOrganizationNameInvalid>
         <beneficiaryOrganizationAllocationInvalid initial="Entrez un pourcentage entre 1 et 100.">100,22</beneficiaryOrganizationAllocationInvalid>
-        <beneficiaryOrgType expected="Org TestFrench">Organisation</beneficiaryOrgType>
+        <beneficiaryOrgType expected="OrgTestFrench">Organisation</beneficiaryOrgType>
     </beneficiaryOrganisationPO>
 </plan-domain-object>

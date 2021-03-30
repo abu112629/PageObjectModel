@@ -96,6 +96,9 @@ public class BeneficiariesPO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
     private VlocitySelectRadioButton primaryBeneDelete;
 
+    @FindBy(xpath="//*[@data-omni-key='YourBeneficiaries']//h2")
+    private WebComponent beneficiariesDeleteQuestion;
+
     @Data(skip = true)
     SalesforceInfo salesforceInfo;
 
@@ -106,6 +109,10 @@ public class BeneficiariesPO extends PageObjectModel {
     public void deletePrimaryBeneficiary(){
         setElementValue(primaryBeneDelete,false);
 
+    }
+
+    public void validateBeneficiariesDeleteQuestion(){
+        beneficiariesDeleteQuestion.validateData(DataTypes.Data);
     }
 
     public void validateBeneficiariesDescription(){
@@ -208,11 +215,24 @@ public class BeneficiariesPO extends PageObjectModel {
         beneficiaryAllocationPercentage.validateAllocationPercentage(DataTypes.Data);
     }
 
+    public void deleteAllTestRecords() {
+        AppHelper.waitForXHR(1);
+        salesforceInfo = new SalesforceInfo();
+        salesforceInfo.deleteAllBeneficiaryDetails(primaryFirstName.getData(),primaryLastName.getData(),
+                Float.valueOf(beneficiaryAllocationPercentage.getData(DataTypes.Initial)));
+    }
+
     public void validateSalesforceBeneficiaryRecord() {
         AppHelper.waitForXHR(1);
         salesforceInfo = new SalesforceInfo();
         salesforceInfo.checkBeneficiaryDetails(primaryFirstName.getData(),primaryLastName.getData(),
               Float.valueOf(beneficiaryAllocationPercentage.getData(DataTypes.Initial)));
+    }
+    public void validateSalesforceBeneficiaryRecordDeleted() {
+        AppHelper.waitForXHR(1);
+        salesforceInfo = new SalesforceInfo();
+        salesforceInfo.checkBeneficiaryDetailsDeleted(primaryFirstName.getData(),primaryLastName.getData(),
+                Float.valueOf(beneficiaryAllocationPercentage.getData(DataTypes.Initial)));
     }
     public void validateQuebecQuestionAndLabels() {
         AppHelper.scrollToView(beneficiaryRevocableQuestion.getCoreElement());

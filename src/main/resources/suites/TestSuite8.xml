@@ -44,4 +44,87 @@
         </classes>
     </test>
 
+    <test name="Validate the Successor Add Test English">
+        <parameter name="data-set" value="data/beneficiaries_successor_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesSuccessorAddTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Successor Add Test French">
+        <parameter name="data-set" value="data/beneficiaries_successor_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesSuccessorAddTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Successor Edit Test English">
+        <parameter name="data-set" value="data/beneficiaries_successor_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesSuccessorEditTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Successor Edit Test French">
+        <parameter name="data-set" value="data/beneficiaries_successor_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesSuccessorEditTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Person Edit Test English">
+        <parameter name="data-set" value="data/beneficiaries_quebec_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesPersonEditTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Person Edit Test French">
+        <parameter name="data-set" value="data/beneficiaries_quebec_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesPersonEditTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Beneficiaries Delete Test English">
+        <parameter name="data-set" value="data/beneficiaries_delete_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesDeleteTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Beneficiaries Delete Test French">
+        <parameter name="data-set" value="data/beneficiaries_delete_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesDeleteTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Successor Delete Test English">
+        <parameter name="data-set" value="data/beneficiaries_successor_delete_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesSuccessorDeleteTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Successor Delete Test French">
+        <parameter name="data-set" value="data/beneficiaries_successor_delete_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesSuccessorDeleteTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the DPSP Additional Info Test English">
+        <parameter name="data-set" value="data/plan_dpsp_additional_info_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.DPSPPlanAdditionalInfoTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the DPSP Additional Info Test French">
+        <parameter name="data-set" value="data/plan_dpsp_additional_info_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.DPSPPlanAdditionalInfoTest"/>
+        </classes>
+    </test>
 </suite>

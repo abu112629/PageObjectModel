@@ -47,6 +47,7 @@ public class BeneficiariesSuccessorDO extends DomainObjectModel {
 
         beneficiarySuccessorPO.initPage(getContext());
         AppHelper.waitForXHR(2);
+        beneficiarySuccessorPO.validateBeneficiariesSuccessorDescription();
         beneficiarySuccessorPO.addSuccessorBeneficiary();
         TestNGBase.takeScreenshot("");
     }
@@ -118,5 +119,41 @@ public class BeneficiariesSuccessorDO extends DomainObjectModel {
     public void user_validates_salesforce_information_is_saved_for_member(String gwt){
         AppHelper.waitForXHR(1);
         beneficiarySuccessorPO.validateSalesforceBeneficiarySuccessorRecord();
+    }
+
+    @Step("{0} user edits Beneficiary Successor Information and updates SIN Number")
+    public void user_edits_beneficiary_successor_information(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiarySuccessorPO.editPrimarySuccessorBeneficiary();
+        beneficiarySuccessorPO.validatePrimarySuccessorBeneficiaryOnEdit();
+        beneficiarySuccessorPO.enterSINSuccessorBeneficiary();
+        planSelectionPO.clickSaveButton();
+    }
+
+    @Step("{0} Delete all salesforce Test records")
+    public void delete_all_salesforce_test_records(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiarySuccessorPO.deleteAllTestRecords();
+    }
+
+    @Step("{0} user validates Salesforce Information is deleted for Successor")
+    public void user_validates_salesforce_information_is_deleted_for_successor(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiariesPO.validateSalesforceBeneficiaryRecordDeleted();
+    }
+
+    @Step("{0} user clicks delete Beneficiary Information and clicks back")
+    public void user_clicks_delete_beneficiary_information_and_clicks_back(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiarySuccessorPO.deletePrimarySuccessorBeneficiary();
+        beneficiarySuccessorPO.validateBeneficiariesDeleteQuestion();
+        planSelectionPO.clickSkipBackButton();
+    }
+    @Step("{0} user deletes Beneficiary Person Information")
+    public void user_deletes_beneficiary_person_information(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiarySuccessorPO.deletePrimarySuccessorBeneficiary();
+        beneficiarySuccessorPO.validateBeneficiariesDeleteQuestion();
+        planSelectionPO.clickSkipContinueButton();
     }
 }

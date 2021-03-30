@@ -95,10 +95,17 @@ public class BeneficiaryOrganisationPO extends PageObjectModel {
         beneficiaryOrgAllocationPercentage.validateAllocationPercentage(DataTypes.Data);
     }
 
+    public void deleteAllTestRecords() {
+        AppHelper.waitForXHR(1);
+        salesforceInfo = new SalesforceInfo();
+        salesforceInfo.deleteAllEstateOrgDetails(beneficiaryOrganizationName.getData(),
+                Float.valueOf(beneficiaryOrgAllocationPercentage.getData(DataTypes.Initial)));
+    }
+
     public void validateSalesforceOrganizationRecord() {
         AppHelper.waitForXHR(1);
         salesforceInfo = new SalesforceInfo();
-        salesforceInfo.checkBeneficiaryDetails(beneficiaryOrganizationName.getData(),"",
-                Float.valueOf(beneficiaryOrganizationAllocation.getData()));
+        salesforceInfo.checkBeneficiaryEstateOrgDetails(beneficiaryOrganizationName.getData(),
+                Float.valueOf(beneficiaryOrgAllocationPercentage.getData(DataTypes.Initial)));
     }
 }

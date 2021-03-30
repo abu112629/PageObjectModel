@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_En</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <dpspAdditionalInfoPO>
+        <connectedPersonbuttonYes initial ="Select if you are a connected person.">yes</connectedPersonbuttonYes>
+        <connectedPersonbuttonNo>no</connectedPersonbuttonNo>
+        <connectedPersonDetailedText>
+            <item>
+                You're a connected person if you're not independent of your employer. For example, if you're a relative of the company’s owners, including by marriage or adoption. You're also a connected person if you're a specified shareholder as defined in Canada's Income Tax Act; or if you directly or indirectly own 10% or more of your employer's stock, or stock of a company related to your employer.
+            </item>
+        </connectedPersonDetailedText>
+        <connectedPersonDisclaimer>
+            <item>
+                Due to Canadian tax laws, you can't enrol in a DPSP if you're a connected person. Please go back and select a different plan.
+            </item>
+        </connectedPersonDisclaimer>
+    </dpspAdditionalInfoPO>
+    <planSelectionPO>
+        <planAdditionalInfoQuestions>
+            <item>
+                Are you a connected person?
+            </item>
+        </planAdditionalInfoQuestions>
+        <planList>
+            <item expected="select">
+                DPSP
+            </item>
+        </planList>
+        <planHeader>
+            <item>
+                Since you've selected a DPSP, we need some additional information from you.
+            </item>
+        </planHeader>
+        <plansubHeader>
+            <item>
+                You'll need to answer this question before continuing.
+            </item>
+        </plansubHeader>
+        <planProgressBarInfo>
+            <item>Your DPSP setup</item>
+        </planProgressBarInfo>
+        <planProgressBarStep>
+            <item>Step 3 of 7: Add a bit more info</item>
+        </planProgressBarStep>
+    </planSelectionPO>
+</plan-domain-object>

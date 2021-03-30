@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Fr</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <dpspAdditionalInfoPO>
+        <connectedPersonbuttonYes initial ="Indiquez si vous êtes une personne rattachée.">yes</connectedPersonbuttonYes>
+        <connectedPersonbuttonNo>no</connectedPersonbuttonNo>
+        <connectedPersonDetailedText>
+            <item>
+                Vous êtes une personne rattachée si vous n’êtes pas indépendant de votre employeur, par exemple, si vous êtes un membre de la famille d’un propriétaire de l’entreprise, y compris par les liens du mariage ou de l’adoption. Vous êtes également une personne rattachée si vous êtes un actionnaire déterminé au sens de la Loi de l’impôt sur le revenu (Canada), ou si vous possédez, directement ou indirectement, 10 % ou plus des actions de votre employeur, ou des actions d’une société liée à votre employeur.
+            </item>
+        </connectedPersonDetailedText>
+        <connectedPersonDisclaimer>
+            <item>
+                En raison des lois fiscales canadiennes, vous ne pouvez pas adhérer à un RPDB si vous êtes une personne rattachée. Veuillez revenir en arrière et sélectionner un autre régime.
+            </item>
+        </connectedPersonDisclaimer>
+    </dpspAdditionalInfoPO>
+    <planSelectionPO>
+        <planAdditionalInfoQuestions>
+            <item>
+                Êtes-vous une personne rattachée?
+            </item>
+        </planAdditionalInfoQuestions>
+        <planList>
+            <item expected="select">
+                RPDB
+            </item>
+        </planList>
+        <planHeader>
+            <item>
+                Puisque vous avez sélectionné un RPDB, nous avons besoin de renseignements supplémentaires.
+            </item>
+        </planHeader>
+        <plansubHeader>
+            <item>
+                Vous devez répondre à cette question avant de poursuivre.
+            </item>
+        </plansubHeader>
+        <planProgressBarInfo>
+            <item>Établissement de votre RPDB</item>
+        </planProgressBarInfo>
+        <planProgressBarStep>
+            <item>Étape 3 de 7: Ajoutez un peu plus de renseignements</item>
+        </planProgressBarStep>
+    </planSelectionPO>
+</plan-domain-object>

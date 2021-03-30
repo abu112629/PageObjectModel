@@ -9,10 +9,23 @@ import com.canadalife.automation.grsoe.support.AppHelper;
 import datainstiller.data.Data;
 import org.openqa.selenium.support.FindBy;
 import ui.auto.core.components.WebComponent;
+import ui.auto.core.components.WebComponentList;
 import ui.auto.core.data.DataTypes;
 import ui.auto.core.support.PageObjectModel;
 
 public class BeneficiarySuccessorPO extends PageObjectModel {
+
+    @FindBy(xpath="//*[@data-omni-key='successorHolderHeadingTextBlock']//h3")
+    private WebComponent beneficiariesSuccessorHeader;
+
+    @FindBy(xpath="//*[@data-omni-key='successorHolderHeadingTextBlock']//p")
+    private WebComponent beneficiariesSuccessorSubHeader;
+
+    @FindBy(xpath="//*[@data-omni-key='PrimaryBeneHeadingTextBlock']//h3")
+    private WebComponent beneficiariesPrimaryHeader;
+
+    @FindBy(xpath="//*[@data-omni-key='PrimaryBeneHeadingTextBlock']//p")
+    private WebComponent beneficiariesPrimarySubHeader;
 
     @FindBy(xpath = "//*[@data-omni-key='SuccessorBeneficiaries']")
     private VlocitySelectRadioButton beneficiariesSuccessorAdd;
@@ -63,6 +76,9 @@ public class BeneficiarySuccessorPO extends PageObjectModel {
     private VlocityActionInput primarySuccessorSIN;
 
     @FindBy(xpath = "//*[@data-omni-key='SuccessorSIN']")
+    private VlocityActionInput primarySuccessorUpdatedSIN;
+
+    @FindBy(xpath = "//*[@data-omni-key='SuccessorSIN']")
     private VlocityActionInput primarySuccessorInvalidSIN;
 
     @FindBy(xpath = "//*[@data-omni-key='SuccessorSIN']")
@@ -71,8 +87,37 @@ public class BeneficiarySuccessorPO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='SuccessorBeneficiaries']")
     private VlocitySelect beneficiarySuccessorType;
 
+    @FindBy(xpath = "//*[@data-omni-key='SuccessorBeneficiaries']")
+    private VlocitySelectRadioButton primaryBeneSuccessorEdit;
+
+    @FindBy(xpath = "//*[@data-omni-key='SuccessorBeneficiaries']")
+    private VlocitySelectRadioButton primaryBeneSuccessorDelete;
+
+    @FindBy(xpath="//*[@data-omni-key='YourBeneficiaries']//h2")
+    private WebComponent primarySuccessorDeleteQuestion;
+
     @Data(skip = true)
     SalesforceInfo salesforceInfo;
+
+    public void editPrimarySuccessorBeneficiary(){
+        setElementValue(primaryBeneSuccessorEdit,false);
+    }
+
+    public void deletePrimarySuccessorBeneficiary(){
+        setElementValue(primaryBeneSuccessorDelete,false);
+
+    }
+
+    public void validateBeneficiariesDeleteQuestion(){
+        primarySuccessorDeleteQuestion.validateData(DataTypes.Data);
+    }
+
+    public void validateBeneficiariesSuccessorDescription(){
+        beneficiariesSuccessorHeader.validateData(DataTypes.Data);
+        beneficiariesSuccessorSubHeader.validateData(DataTypes.Data);
+        beneficiariesPrimaryHeader.validateData(DataTypes.Data);
+        beneficiariesPrimarySubHeader.validateData(DataTypes.Data);
+    }
 
     public void addSuccessorBeneficiary(){
         setElementValue(beneficiariesSuccessorAdd,false);
@@ -148,6 +193,13 @@ public class BeneficiarySuccessorPO extends PageObjectModel {
 
     }
 
+    public void enterSINSuccessorBeneficiary(){
+        primarySuccessorUpdatedSIN.click();
+        AppHelper.waitForXHR(3);
+        setElementValue(primarySuccessorUpdatedSIN,false);
+
+    }
+
     public void validateErrors(){
         primarySuccessorFirstNameError.validateError(DataTypes.Data);
         primarySuccessorLastNameError.validateError(DataTypes.Data);
@@ -165,6 +217,28 @@ public class BeneficiarySuccessorPO extends PageObjectModel {
         salesforceInfo = new SalesforceInfo();
         salesforceInfo.checkBeneficiaryDetails(primarySuccessorFirstName.getData(),
                 primarySuccessorLastName.getData(),
+                Float.valueOf("0.0"));
+    }
+
+    public void validatePrimarySuccessorBeneficiaryOnEdit(){
+        primarySuccessorFirstName.getValue().contains(primarySuccessorFirstName.getData());
+        primarySuccessorLastName.getValue().contains(primarySuccessorLastName.getData());
+        AppHelper.scrollToView(primarySuccessorSIN.getCoreElement());
+        primarySuccessorSIN.getValue().contains(primarySuccessorSIN.getData());
+
+    }
+
+    public void deleteAllTestRecords() {
+        AppHelper.waitForXHR(1);
+        salesforceInfo = new SalesforceInfo();
+        salesforceInfo.deleteAllBeneficiaryDetails(primarySuccessorFirstName.getData(),primarySuccessorLastName.getData(),
+                Float.valueOf("0.0"));
+    }
+
+    public void validateSalesforceBeneficiaryRecordDeleted() {
+        AppHelper.waitForXHR(1);
+        salesforceInfo = new SalesforceInfo();
+        salesforceInfo.checkBeneficiaryDetailsDeleted(primarySuccessorFirstName.getData(),primarySuccessorLastName.getData(),
                 Float.valueOf("0.0"));
     }
 
