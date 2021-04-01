@@ -114,14 +114,14 @@
         </classes>
     </test>
 
-    <test name="Validate the DPSP Additional Info Test English">
+    <test name="Validate the DPSP Additional Information Test English">
         <parameter name="data-set" value="data/plan_dpsp_additional_info_en.xml"/>
         <classes>
             <class name="com.canadalife.automation.grsoe.sprinttests.DPSPPlanAdditionalInfoTest"/>
         </classes>
     </test>
 
-    <test name="Validate the DPSP Additional Info Test French">
+    <test name="Validate the DPSP Additional Information Test French">
         <parameter name="data-set" value="data/plan_dpsp_additional_info_fr.xml"/>
         <classes>
             <class name="com.canadalife.automation.grsoe.sprinttests.DPSPPlanAdditionalInfoTest"/>
