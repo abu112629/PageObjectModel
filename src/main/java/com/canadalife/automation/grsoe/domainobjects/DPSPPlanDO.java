@@ -79,7 +79,7 @@ public class DPSPPlanDO extends DomainObjectModel {
     }
 
     @Step("{0} user selects no for connected person and is able to continue with DPSP Plan")
-    public void user_selects_no_for_connected_person_and_is_not_able_to_continue(String gwt) {
+    public void user_selects_no_for_connected_person_and_is_able_to_continue(String gwt) {
         dpspAdditionalInfoPO.clickNoforconnectedperson();
         planSelectionPO.clickContinueButton();
         TestNGBase.takeScreenshot("");

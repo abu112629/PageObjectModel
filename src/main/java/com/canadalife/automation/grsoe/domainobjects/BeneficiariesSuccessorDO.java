@@ -145,6 +145,8 @@ public class BeneficiariesSuccessorDO extends DomainObjectModel {
     @Step("{0} user clicks delete Beneficiary Information and clicks back")
     public void user_clicks_delete_beneficiary_information_and_clicks_back(String gwt){
         AppHelper.waitForXHR(1);
+        beneficiarySuccessorPO.initPage(getContext());
+        planSelectionPO.initPage(getContext());
         beneficiarySuccessorPO.deletePrimarySuccessorBeneficiary();
         beneficiarySuccessorPO.validateBeneficiariesDeleteQuestion();
         planSelectionPO.clickSkipBackButton();

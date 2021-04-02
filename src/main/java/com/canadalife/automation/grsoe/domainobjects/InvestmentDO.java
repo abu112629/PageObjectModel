@@ -72,6 +72,7 @@ public class InvestmentDO extends DomainObjectModel {
 
     @Step("{0} user validates investment age input and clicks show funds button")
     public void user_validates_investment_age_input_and_clicks_show_funds_button(String gwt){
+        investmentPO.initPage(getContext());
         investmentPO.enterAge();
         investmentPO.clickShowFundsButton();
         TestNGBase.takeScreenshot("");
@@ -89,6 +90,7 @@ public class InvestmentDO extends DomainObjectModel {
 
     @Step("{0} user validates updated investment Fund Fees and Fund Name")
     public void user_validates_updated_investment_fund_fees_and_fund_name(String gwt){
+        planSelectionPO.initPage(getContext());
         investmentPO.validateInvestmentFundNameUpdated();
         investmentPO.validateInvestmentCardHeaderUpdated();
         investmentPO.validateUpdatedFundFeeLines();

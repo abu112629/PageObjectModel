@@ -39,12 +39,12 @@
         <beneficiariesSuccessorHeader>Titulaire successeur</beneficiariesSuccessorHeader>
         <beneficiariesSuccessorSubHeader>Désignez votre conjoint ou conjoint de fait afin qu’il devienne le propriétaire de votre CELI à votre décès.</beneficiariesSuccessorSubHeader>
         <beneficiariesPrimaryHeader>Premier bénéficiaires</beneficiariesPrimaryHeader>
-        <primarySuccessorDeleteQuestion>Êtes-vous sûr de vouloir supprimer DeleteTestSuccessor TestFrench0329?</primarySuccessorDeleteQuestion>
+        <primarySuccessorDeleteQuestion>Êtes-vous sûr de vouloir supprimer TestSuccessor TestFrench0329?</primarySuccessorDeleteQuestion>
         <beneficiariesPrimarySubHeader>Choisissez qui recevra votre épargne à votre décès. Précisez ensuite le pourcentage de l’épargne qui lui reviendra. Assurez-vous que les pourcentages totalisent 100 % pour chaque régime.</beneficiariesPrimarySubHeader>
         <beneficiariesSuccessorAdd>Ajouter un titulaire successeur</beneficiariesSuccessorAdd>
         <addSuccessorBeneficiaryLabel>Ajouter un titulaire successeur</addSuccessorBeneficiaryLabel>
         <addSuccessorBeneficiaryHintLabel>Sauf indication contraire, tous les champs doivent être remplis.</addSuccessorBeneficiaryHintLabel>
-        <primarySuccessorFirstName initial="Prénom">DeleteTestSuccessor</primarySuccessorFirstName>
+        <primarySuccessorFirstName initial="Prénom">TestSuccessor</primarySuccessorFirstName>
         <primarySuccessorInvalidFirstName initial="Entrez un prénom valide. Seuls les lettres, les traits d’union, les espaces, les apostrophes, les crochets et les points sont acceptés.">&lt;</primarySuccessorInvalidFirstName>
         <primarySuccessorFirstNameError>Entrez le prénom de votre titulaire successeur.</primarySuccessorFirstNameError>
         <primarySuccessorLastName initial="Nom de famille">TestFrench0329</primarySuccessorLastName>
@@ -57,7 +57,7 @@
         <primarySuccessorSIN initial="Numéro d'assurance sociale">678890899</primarySuccessorSIN>
         <primarySuccessorInvalidSIN initial="Entrez un numéro d’assurance sociale à 9 chiffres valide.">6788</primarySuccessorInvalidSIN>
         <primarySuccessorSINError>Entrez un numéro d’assurance sociale à 9 chiffres valide.</primarySuccessorSINError>
-        <beneficiarySuccessorType expected="DeleteTestSuccessor TestFrench0329">Personne</beneficiarySuccessorType>
+        <beneficiarySuccessorType expected="TestSuccessor TestFrench0329">Personne</beneficiarySuccessorType>
         <primarySuccessorDateOfBirthHint>Votre titulaire successeur doit être âgé d’au moins 18 ans.</primarySuccessorDateOfBirthHint>
         <primarySuccessorDateOfBirthError expected="Entrez une date de naissance valide.">Entrez la date de naissance de votre titulaire successeur.</primarySuccessorDateOfBirthError>
         <primaryBeneSuccessorEdit>Modifier</primaryBeneSuccessorEdit>

@@ -26,6 +26,7 @@ public class BeneficiariesSuccessorAddTest extends TestNGBase {
         When(beneficiariesDO :: user_is_able_select_required_plan);
         Then(beneficiariesDO :: user_clicks_add_successor_beneficiary);
         And(beneficiariesDO :: user_selects_and_validates_successor_beneficiary);
+        And(beneficiariesDO :: delete_all_salesforce_test_records);
         And(beneficiariesDO :: user_clicks_continue_and_is_able_to_validate_all_errors);
         And(beneficiariesDO :: user_enters_invalid_successor_beneficiary);
         And(beneficiariesDO :: user_enters_incomplete_DOB);
