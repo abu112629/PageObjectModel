@@ -7,6 +7,7 @@
         <parameter name="data-set2" value="data/contributions_mandatory_voluntary_skip_data_set_en.xml"/>
         <parameter name="data-set3" value="data/investment_skip_data_set_en.xml"/>
         <parameter name="data-set4" value="data/beneficiaries_skip_data_set_en.xml"/>
+        <parameter name="data-set5" value="data/beneficiaries_delete_data_set_en.xml"/>
         <classes>
             <class name="com.canadalife.automation.grsoe.ivttests.NRSPIVTTest"/>
         </classes>
@@ -17,6 +18,7 @@
         <parameter name="data-set2" value="data/contributions_mandatory_voluntary_skip_data_set_fr.xml"/>
         <parameter name="data-set3" value="data/investment_skip_data_set_fr.xml"/>
         <parameter name="data-set4" value="data/beneficiaries_skip_data_set_fr.xml"/>
+        <parameter name="data-set5" value="data/beneficiaries_delete_data_set_fr.xml"/>
         <classes>
             <class name="com.canadalife.automation.grsoe.ivttests.NRSPIVTTest"/>
         </classes>
@@ -27,6 +29,7 @@
         <parameter name="data-set" value="data/plan_rpp_salesforce_save_en.xml"/>
         <parameter name="data-set2" value="data/investment_skip_data_set_en.xml"/>
         <parameter name="data-set3" value="data/beneficiaries_skip_data_set_en.xml"/>
+        <parameter name="data-set4" value="data/beneficiaries_organisation_data_set_en.xml"/>
         <classes>
             <class name="com.canadalife.automation.grsoe.ivttests.RPPIVTTest"/>
         </classes>
@@ -36,6 +39,7 @@
         <parameter name="data-set" value="data/plan_rpp_salesforce_save_fr.xml"/>
         <parameter name="data-set2" value="data/investment_skip_data_set_fr.xml"/>
         <parameter name="data-set3" value="data/beneficiaries_skip_data_set_fr.xml"/>
+        <parameter name="data-set4" value="data/beneficiaries_organisation_data_set_fr.xml"/>
         <classes>
             <class name="com.canadalife.automation.grsoe.ivttests.RPPIVTTest"/>
         </classes>
@@ -45,6 +49,7 @@
         <parameter name="data-set" value="data/contributions_all_voluntary_skip_data_set_en.xml"/>
         <parameter name="data-set2" value="data/investment_skip_data_set_en.xml"/>
         <parameter name="data-set3" value="data/beneficiaries_skip_data_set_en.xml"/>
+        <parameter name="data-set4" value="data/beneficiaries_estate_data_set_en.xml"/>
         <classes>
             <class name="com.canadalife.automation.grsoe.ivttests.RRSPIVTTest"/>
         </classes>
@@ -54,10 +59,42 @@
         <parameter name="data-set" value="data/contributions_all_voluntary_skip_data_set_fr.xml"/>
         <parameter name="data-set2" value="data/investment_skip_data_set_fr.xml"/>
         <parameter name="data-set3" value="data/beneficiaries_skip_data_set_fr.xml"/>
+        <parameter name="data-set4" value="data/beneficiaries_estate_data_set_fr.xml"/>
         <classes>
             <class name="com.canadalife.automation.grsoe.ivttests.RRSPIVTTest"/>
         </classes>
     </test>
 
+    <test name="Validate all DPSP Plan corresponding Pages for English account">
+        <parameter name="data-set" value="data/plan_dpsp_additional_info_en.xml"/>
+        <parameter name="data-set2" value="data/investment_data_set_en_RPP.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.ivttests.DPSPIVTTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate all DPSP Plan corresponding Pages for French account">
+        <parameter name="data-set" value="data/plan_dpsp_additional_info_fr.xml"/>
+        <parameter name="data-set2" value="data/investment_data_set_fr_RPP.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.ivttests.DPSPIVTTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate all TFSA Plan corresponding Pages for English account">
+        <parameter name="data-set" value="data/beneficiaries_successor_data_set_en.xml"/>
+        <parameter name="data-set2" value="data/beneficiaries_successor_delete_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.ivttests.TFSAIVTTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate all TFSA Plan corresponding Pages for French account">
+        <parameter name="data-set" value="data/beneficiaries_successor_data_set_fr.xml"/>
+        <parameter name="data-set2" value="data/beneficiaries_successor_delete_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.ivttests.TFSAIVTTest"/>
+        </classes>
+    </test>
 
 </suite>
