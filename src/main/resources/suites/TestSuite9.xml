@@ -15,4 +15,18 @@
             <class name="com.canadalife.automation.grsoe.sprinttests.ProfileInformationTest"/>
         </classes>
     </test>
+
+    <test name="Validate the Plan Change Warning Message Information Test English">
+        <parameter name="data-set" value="data/plan_change_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.PlanSwitchTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Plan Change Warning Message Information Test French">
+        <parameter name="data-set" value="data/plan_change_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.PlanSwitchTest"/>
+        </classes>
+    </test>
 </suite>

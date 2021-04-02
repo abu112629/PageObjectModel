@@ -79,7 +79,6 @@ public class ContributionsDO extends DomainObjectModel {
         planSelectionPO.clickContinueButton();
         contributionsPO.validateContributionAccount();
         TestNGBase.takeScreenshot("");
-
     }
     @Step("{0} user can see contribution rules in accordion for NRSP plan")
     public void user_can_see_contribution_rules_accordion_for_nrsp_plan(String gwt) {

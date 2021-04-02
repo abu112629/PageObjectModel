@@ -53,6 +53,16 @@ public class PlanRadioGroup extends WebComponentList {
         return null;
     }
 
+    public String getToSelectNew() {
+        for (WebComponent comp : this.getData()) {
+            String value = comp.getData(DataTypes.Initial);
+            if (value != null && value.equals("select")) {
+                return comp.getData().trim().split("\n")[0];
+            }
+        }
+        return null;
+    }
+
     @Step("Select \"{0}\" plan")
     public void select(String value) {
         init();

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Fr</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                RRA
+            </item>
+            <item initial="select">
+                RERN
+            </item>
+        </planList>
+        <PlanChangeHeader>Êtes-vous certain de vouloir passer à un autre régime?</PlanChangeHeader>
+        <PlanChangeConfirmationQuestion>Vous perdrez tous les renseignements entrés pour votre RRA.</PlanChangeConfirmationQuestion>
+    </planSelectionPO>
+    <nrspAdditionalInfoPO>
+        <otherCitizenNo>no</otherCitizenNo>
+    </nrspAdditionalInfoPO>
+    <rppAdditionalInfoPO>
+        <spousebuttonNo>no</spousebuttonNo>
+        <connectedPersonbuttonNo>no</connectedPersonbuttonNo>
+    </rppAdditionalInfoPO>
+</plan-domain-object>

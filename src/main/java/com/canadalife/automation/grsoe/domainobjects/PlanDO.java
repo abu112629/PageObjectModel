@@ -1,7 +1,9 @@
 package com.canadalife.automation.grsoe.domainobjects;
 
 import com.canadalife.automation.grsoe.pageobjects.LoginPO;
+import com.canadalife.automation.grsoe.pageobjects.NRSPAdditionalInfoPO;
 import com.canadalife.automation.grsoe.pageobjects.PlanSelectionPO;
+import com.canadalife.automation.grsoe.pageobjects.RPPAdditionalInfoPO;
 import com.canadalife.automation.grsoe.support.AppHelper;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import ru.yandex.qatools.allure.annotations.Step;
@@ -13,6 +15,8 @@ import ui.auto.core.testng.TestNGBase;
 public class PlanDO extends DomainObjectModel {
     private LoginPO loginPO;
     private PlanSelectionPO planSelectionPO;
+    private NRSPAdditionalInfoPO nrspAdditionalInfoPO;
+    private RPPAdditionalInfoPO rppAdditionalInfoPO;
 
     private PlanDO() {}
     public PlanDO(TestContext context){
@@ -54,11 +58,55 @@ public class PlanDO extends DomainObjectModel {
         AppHelper.waitForXHR(2);
     }
 
+    @Step("{0} user clicks Skip continue button")
+    public void user_clicks_skip_continue_button(String gwt) {
+        planSelectionPO.clickSkipContinueButton();
+        AppHelper.waitForXHR(2);
+    }
+
+    @Step("{0} user clicks back button")
+    public void user_clicks_back_button(String gwt) {
+        planSelectionPO.clickBackButton();
+        AppHelper.waitForXHR(2);
+    }
+
     @Step("{0} user can select required Plan")
     public void user_select_required_plan(String gwt) {
         planSelectionPO.selectRequiredPlan();
         TestNGBase.takeScreenshot("");
 
+    }
+    @Step("{0} user can select new Plan")
+    public void user_select_new_plan(String gwt) {
+        planSelectionPO.selectNewPlan();
+        TestNGBase.takeScreenshot("");
+
+    }
+
+    @Step("{0} user enters information for RPP plan")
+    public void user_enters_information_for_rpp_plan(String gwt) {
+        rppAdditionalInfoPO.initPage(getContext());
+        rppAdditionalInfoPO.clickNoforspouse();
+        rppAdditionalInfoPO.clickNoforconnectedperson();
+        TestNGBase.takeScreenshot("");
+    }
+
+    @Step("{0} user enters information for NRSP plan")
+    public void user_enters_information_for_nrsp_plan(String gwt) {
+        nrspAdditionalInfoPO.initPage(getContext());
+        nrspAdditionalInfoPO.clickNoforUSCitizen();
+        nrspAdditionalInfoPO.clickNoforOtherCitizen();
+        TestNGBase.takeScreenshot("");
+    }
+    @Step("{0} user selects a different plan and is able to see warning message")
+    public void user_selects_different_plan_and_is_able_to_see_warning_message(String gwt) {
+        planSelectionPO.validatePlanChangeHeader();
+        planSelectionPO.validatePlanChangeQuestion();
+    }
+
+    @Step("{0} user selects no go back and previous plan selection is retained")
+    public void user_selects_no_go_back_and_previous_plan_selection_retained(String gwt) {
+        planSelectionPO.validatePlanRetentionAfterSkipBack();
     }
 
     @Step("{0} the correct error message is presented to user when user proceeds without selecting Plan")

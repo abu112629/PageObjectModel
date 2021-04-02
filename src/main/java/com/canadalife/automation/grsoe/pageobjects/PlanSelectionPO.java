@@ -1,6 +1,7 @@
 package com.canadalife.automation.grsoe.pageobjects;
 
 import com.canadalife.automation.grsoe.components.PlanRadioGroup;
+import com.canadalife.automation.grsoe.components.VlocitySelect;
 import com.canadalife.automation.grsoe.support.AppHelper;
 import com.canadalife.automation.grsoe.support.LocatorAndValue;
 import datainstiller.data.Data;
@@ -78,6 +79,12 @@ public class PlanSelectionPO extends PageObjectModel {
 
     @FindBy(xpath="//*[contains(@class,'footer')]//a")
     private WebComponentList canadalifeFooterlinks;
+
+    @FindBy(xpath="//*[@data-omni-key='PlanSelect']//h2")
+    private WebComponent PlanChangeHeader;
+
+    @FindBy(xpath="//*[@data-omni-key='PlanSelect']")
+    private VlocitySelect PlanChangeConfirmationQuestion;
 
     private List<LocatorAndValue> errors;
 
@@ -175,11 +182,21 @@ public class PlanSelectionPO extends PageObjectModel {
         planList.isSelected(plan);
     }
 
+    public void validatePlanRetentionAfterSkipBack() {
+        String plan = planList.getToSelect();
+        clickSkipBackButton();
+        planList.isSelected(plan);
+    }
+
     public void selectRequiredPlan() {
         String plan = planList.getToSelect();
         planList.select(plan);
     }
 
+    public void selectNewPlan() {
+        String plan = planList.getToSelectNew();
+        planList.select(plan);
+    }
 
     public void validateErrorMessage() {
         AppHelper.scrollToView(errorMessage.getCoreElement());
@@ -211,5 +228,13 @@ public class PlanSelectionPO extends PageObjectModel {
     public void validateCanadaLifeFooterlinks(){
         canadalifeFooterlinks.initPage(getContext());
         canadalifeFooterlinks.validateAll();
+    }
+
+    public void validatePlanChangeHeader(){
+        PlanChangeHeader.validateData(DataTypes.Data);
+    }
+
+    public void validatePlanChangeQuestion(){
+        PlanChangeConfirmationQuestion.validateQuestionLabel(DataTypes.Data);
     }
 }
