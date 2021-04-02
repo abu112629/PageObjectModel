@@ -3,16 +3,16 @@
 <suite name="Personal Information Validations" verbose="1" parallel="tests">
 
     <test name="Validate the Personal Information Test English">
-        <parameter name="data-set" value="data/beneficiaries_quebec_data_set_en.xml"/>
+        <parameter name="data-set" value="data/profile_information_data_set_en.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesQuebecRevocableTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.ProfileInformationTest"/>
         </classes>
     </test>
 
-    <test name="Validate the Beneficiaries Quebec Add Test French">
-        <parameter name="data-set" value="data/beneficiaries_quebec_data_set_fr.xml"/>
+    <test name="Validate the Personal Information Test French">
+        <parameter name="data-set" value="data/profile_information_data_set_fr.xml"/>
         <classes>
-            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesQuebecRevocableTest"/>
+            <class name="com.canadalife.automation.grsoe.sprinttests.ProfileInformationTest"/>
         </classes>
     </test>
 </suite>
