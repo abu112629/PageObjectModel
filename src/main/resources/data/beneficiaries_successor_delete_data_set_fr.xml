@@ -53,7 +53,7 @@
         <primarySuccessorDateOfBirth expected ="Date de naissance (facultatif)">Date de naissance</primarySuccessorDateOfBirth>
         <primarySuccessorMonthLabel expected ="Mois">Mois</primarySuccessorMonthLabel>
         <primarySuccessorDateLabel expected ="Jour (JJ)">Jour (JJ)</primarySuccessorDateLabel>
-        <primarySuccessorYearLabel expected ="Année (YYYY)">Année (AAAA)</primarySuccessorYearLabel>
+        <primarySuccessorYearLabel expected ="Année (AAAA)">Année (AAAA)</primarySuccessorYearLabel>
         <primarySuccessorSIN initial="Numéro d'assurance sociale">678890899</primarySuccessorSIN>
         <primarySuccessorInvalidSIN initial="Entrez un numéro d’assurance sociale à 9 chiffres valide.">6788</primarySuccessorInvalidSIN>
         <primarySuccessorSINError>Entrez un numéro d’assurance sociale à 9 chiffres valide.</primarySuccessorSINError>

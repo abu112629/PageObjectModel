@@ -139,7 +139,7 @@ public class BeneficiariesSuccessorDO extends DomainObjectModel {
     @Step("{0} user validates Salesforce Information is deleted for Successor")
     public void user_validates_salesforce_information_is_deleted_for_successor(String gwt){
         AppHelper.waitForXHR(1);
-        beneficiariesPO.validateSalesforceBeneficiaryRecordDeleted();
+        beneficiarySuccessorPO.validateSalesforceBeneficiaryRecordDeleted();
     }
 
     @Step("{0} user clicks delete Beneficiary Information and clicks back")

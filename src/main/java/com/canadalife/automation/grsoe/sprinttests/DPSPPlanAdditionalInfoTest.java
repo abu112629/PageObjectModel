@@ -18,7 +18,7 @@ public class DPSPPlanAdditionalInfoTest extends TestNGBase {
     @Parameters("data-set")
     @Issue("GRSOE-125")
     @Test
-    public void ValidateRPPPlanAdditionalInfo(@Optional("data/plan_dpsp_additional_info_fr.xml")String dataSet) {
+    public void ValidateRPPPlanAdditionalInfo(@Optional("data/plan_dpsp_additional_info_en.xml")String dataSet) {
 
         DPSPPlanDO plan = new DPSPPlanDO(getContext()).fromResource(dataSet);
 
