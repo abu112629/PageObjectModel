@@ -115,6 +115,7 @@ public class BeneficiariesDO extends DomainObjectModel {
 
     @Step("{0} user selects and validates estate beneficiary details")
     public void user_selects_and_validates_estate_beneficiary(String gwt){
+        beneficiariesPO.initPage(getContext());
         beneficiariesPO.addBeneficiary();
         beneficiaryEstatePO.initPage(getContext());
         beneficiaryEstatePO.validateEstateBeneFormLabels();
@@ -125,6 +126,8 @@ public class BeneficiariesDO extends DomainObjectModel {
 
     @Step("{0} user selects and validates organization beneficiary details")
     public void user_selects_and_validates_organization_beneficiary(String gwt){
+        beneficiariesPO.initPage(getContext());
+        planSelectionPO.initPage(getContext());
         beneficiariesPO.addBeneficiary();
         beneficiaryOrganisationPO.initPage(getContext());
         beneficiaryOrganisationPO.validateOrganisationBeneFormLabels();

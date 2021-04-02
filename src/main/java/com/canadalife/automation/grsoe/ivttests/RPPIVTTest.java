@@ -14,12 +14,13 @@ import static com.canadalife.automation.grsoe.support.GivenWhenThen.*;
 public class RPPIVTTest extends TestNGBase {
     @Features("RPPIVTTest")
     @Stories("Members able to select RPP Plan and navigate through all the pages")
-    @Parameters({"data-set","data-set2","data-set3"})
+    @Parameters({"data-set","data-set2","data-set3","data-set4"})
     @Test
 
-    public void ValidateRPPIVT(@Optional("data/plan_rpp_salesforce_save_en.xml")String dataSet,
-                                @Optional("data/investment_skip_data_set_en.xml")String dataSet2,
-                                @Optional("data/beneficiaries_skip_data_set_en.xml")String dataSet3){
+    public void ValidateRPPIVT(@Optional("data/plan_rpp_salesforce_save_fr.xml")String dataSet,
+                                @Optional("data/investment_skip_data_set_fr.xml")String dataSet2,
+                                @Optional("data/beneficiaries_skip_data_set_fr.xml")String dataSet3,
+                               @Optional("data/beneficiaries_organisation_data_set_fr.xml")String dataSet4){
 
         RPPPlanDO plan=new RPPPlanDO(getContext()).fromResource(dataSet);
         Given(plan :: user_on_plan_selection_page);
@@ -38,9 +39,15 @@ public class RPPIVTTest extends TestNGBase {
 
         BeneficiariesDO beneficiariesDO=new BeneficiariesDO(getContext()).fromResource(dataSet3);
         And(beneficiariesDO :: user_validates_beneficiaries_skip_section);
-        And(beneficiariesDO ::user_clicks_back_and_reach_add_beneficiaries_page_and_back_to_investments);
+        And(beneficiariesDO :: user_clicks_back_and_reach_add_beneficiaries_page_and_back_to_investments);
+        And(beneficiariesDO :: user_clicks_add_primary_beneficiary);
 
-
+        BeneficiariesDO beneficiariesDO2=new BeneficiariesDO(getContext()).fromResource(dataSet4);
+        And(beneficiariesDO2 :: user_selects_and_validates_organization_beneficiary);
+        And(beneficiariesDO2 :: delete_all_salesforce_organization_test_records);
+        And(beneficiariesDO2 :: user_clicks_save_beneficiary_for_organization);
+        And(beneficiariesDO2 :: user_validates_pill_information_for_organization_after_saving_the_details);
+        And(beneficiariesDO2 :: user_validates_salesforce_information_is_saved_for_organization);
 
 
         }
