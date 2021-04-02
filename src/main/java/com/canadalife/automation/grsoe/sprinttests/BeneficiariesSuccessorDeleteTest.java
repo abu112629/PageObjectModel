@@ -19,7 +19,7 @@ public class BeneficiariesSuccessorDeleteTest extends TestNGBase {
     @Issue("GRSOE-656")
     @Test
 
-    public void ValidateBeneficiariesSuccessorDelete(@Optional("data/beneficiaries_successor_delete_data_set_en.xml")String dataSet) {
+    public void ValidateBeneficiariesSuccessorDelete(@Optional("data/beneficiaries_successor_delete_data_set_fr.xml")String dataSet) {
 
         BeneficiariesSuccessorDO beneficiariesDO=new BeneficiariesSuccessorDO(getContext()).fromResource(dataSet);
         Given(beneficiariesDO :: user_is_on_plan_selection_page);

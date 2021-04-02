@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_En</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+    <planSelectionPO>
+        <planProgressBarInfo>
+            <item>Your profile</item>
+        </planProgressBarInfo>
+        <planProgressBarStep>
+            <item>Step 1 of 6: Confirm your personal info</item>
+        </planProgressBarStep>
+    </planSelectionPO>
+    <profileInformationPO>
+        <profileDescription>Here's what your plan sponsor has told us about you. Make sure it's all correct and nothing is missing. If anything here is incorrect, please call us at 1-800-724-3402 to change it.</profileDescription>
+        <profileHeader>Personal info</profileHeader>
+        <profileNameLabel>Name</profileNameLabel>
+        <profileDOBLabel>Date of birth</profileDOBLabel>
+        <profileSINLabel>Social insurance number</profileSINLabel>
+        <profileEmailLabel>Email</profileEmailLabel>
+        <profileMailingAddressLabel>Mailing address</profileMailingAddressLabel>
+        <profileNameData initial="JAKE MUZZIN">JAKE MUZZIN</profileNameData>
+        <profileDOBData initial="April 2, 1983">April 2, 1983</profileDOBData>
+        <profileSINData initial="*** *** 889">*** *** 889</profileSINData>
+        <profileEmailData initial="muzzin@klm.com">muzzin@klm.com</profileEmailData>
+        <profileMailingAddressData initial="4979 ROSS STREET, 4979 BLAKE STREET, SMITHS FALLS, ON K7A 1C2">4979 ROSS STREET, 4979 BLAKE STREET, SMITHS FALLS, ON K7A 1C2</profileMailingAddressData>
+    </profileInformationPO>
+</plan-domain-object>

@@ -252,4 +252,18 @@ public abstract class VlocityComponent extends PageComponent {
         String expected = getData(type);
         Assertions.assertThat(actual).isEqualTo(expected);
     }
+
+    public String getInformationLabel() {
+        WebElement els=coreElement.findElement(By.xpath(".//strong"));
+        if (!els.isDisplayed()) {
+            return null;
+        } else {
+            return els.getText();
+        }
+    }
+    public void validateInformationText(DataTypes type) {
+        String actual = getInformationLabel();
+        String expected = getData(type);
+        Assertions.assertThat(actual).isEqualTo(expected);
+    }
 }
