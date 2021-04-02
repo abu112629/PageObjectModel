@@ -137,9 +137,11 @@ public class SalesforceInfo {
 
             if (!salepayload.getTotalSize().equals(0)) {
                 List<Record> data = salepayload.getRecords();
+                int i=salepayload.getTotalSize();
                 for (Record record : data) {
                     String EID = record.getEIDC();
                     DeleteBeneficiaryDetails(EID);
+                    i=i--;
                 }
 
             }

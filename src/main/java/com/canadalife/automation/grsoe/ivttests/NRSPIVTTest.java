@@ -17,13 +17,14 @@ public class NRSPIVTTest extends TestNGBase {
 
     @Features("NRSPIVTTest")
     @Stories("Members able to select NRSP Plan and navigate through all the pages")
-    @Parameters({"data-set","data-set2","data-set3","data-set4"})
+    @Parameters({"data-set","data-set2","data-set3","data-set4","data-set5"})
     @Test
 
-    public void ValidateNRSPIVT(@Optional("data/plan_nrsp_additional_info_en.xml")String dataSet,
-                                @Optional("data/contributions_mandatory_voluntary_skip_data_set_en.xml")String dataSet2,
-                                @Optional("data/investment_skip_data_set_en.xml")String dataSet3,
-                                @Optional("data/beneficiaries_skip_data_set_en.xml")String dataSet4){
+    public void ValidateNRSPIVT(@Optional("data/plan_nrsp_additional_info_fr.xml")String dataSet,
+                                @Optional("data/contributions_mandatory_voluntary_skip_data_set_fr.xml")String dataSet2,
+                                @Optional("data/investment_skip_data_set_fr.xml")String dataSet3,
+                                @Optional("data/beneficiaries_skip_data_set_fr.xml")String dataSet4,
+                                @Optional("data/beneficiaries_delete_data_set_fr.xml")String dataSet5){
         NRSPPlanDO plan = new NRSPPlanDO(getContext()).fromResource(dataSet);
         Given(plan ::user_on_plan_selection_page);
         When(plan :: user_can_select_required_plan);
@@ -48,6 +49,19 @@ public class NRSPIVTTest extends TestNGBase {
 
         BeneficiariesDO beneficiariesDO=new BeneficiariesDO(getContext()).fromResource(dataSet4);
         And(beneficiariesDO :: user_validates_beneficiaries_skip_section);
-        And(beneficiariesDO ::user_clicks_back_and_reach_add_beneficiaries_page_and_back_to_investments);
+        And(beneficiariesDO :: user_clicks_back_and_reach_add_beneficiaries_page_and_back_to_investments);
+        And(beneficiariesDO :: user_clicks_add_primary_beneficiary);
+        And(beneficiariesDO :: delete_all_salesforce_test_records);
+        And(beneficiariesDO :: user_enters_person_beneficiary_details);
+        And(beneficiariesDO :: user_selects_and_validates_primary_trustee);
+        And(beneficiariesDO :: user_clicks_save_beneficiary);
+        And(beneficiariesDO :: user_validates_pill_information_after_saving_the_details);
+        And(beneficiariesDO :: user_validates_salesforce_information_is_saved_for_member);
+
+        BeneficiariesDO beneficiariesDO2=new BeneficiariesDO(getContext()).fromResource(dataSet5);
+        And(beneficiariesDO2 :: user_clicks_delete_beneficiary_information_and_clicks_back);
+        And(beneficiariesDO2 :: user_validates_pill_information_after_saving_the_details);
+        And(beneficiariesDO2 :: user_deletes_beneficiary_person_information);
+        And(beneficiariesDO2 :: user_validates_salesforce_information_is_deleted_for_member);
     }
 }

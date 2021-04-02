@@ -44,7 +44,7 @@
             <item>Choose who should receive your savings when you pass away. If you don't designate a beneficiary or none of them survive you, the money will go to your estate unless the law requires otherwise.</item>
             <item>Generally, you can change your beneficiaries at any time using your online account.</item>
         </beneficiariesDescription>
-        <beneficiariesDeleteQuestion>Are you sure you want to delete DeleteTest03 TestSampleDelete?</beneficiariesDeleteQuestion>
+        <beneficiariesDeleteQuestion>Are you sure you want to delete Test Testsample?</beneficiariesDeleteQuestion>
         <beneficiariesSkipQuestion>Are you sure you want to continue without adding beneficiaries?</beneficiariesSkipQuestion>
         <beneficiariesSkipDetails>Naming a beneficiary can help determine where your savings might go in the event of your death.</beneficiariesSkipDetails>
         <beneficiariesAdd expected="The trustee and the beneficiary can't be the same person.">Add a primary beneficiary</beneficiariesAdd>
@@ -54,10 +54,10 @@
         <BeneRadioButton>Person</BeneRadioButton>
         <personDropDownQuestion>What’s this person’s relationship to you?</personDropDownQuestion>
         <personBeneficiaryRelation>Aunt</personBeneficiaryRelation>
-        <primaryFirstName initial="First name">DeleteTest03</primaryFirstName>
+        <primaryFirstName initial="First name">Test</primaryFirstName>
         <primaryFirstNameInvalid initial="Enter a valid first name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</primaryFirstNameInvalid>
         <primaryFirstNameError>Enter this beneficiary's first name.</primaryFirstNameError>
-        <primaryLastName initial="Last name">TestSampleDelete</primaryLastName>
+        <primaryLastName initial="Last name">Testsample</primaryLastName>
         <primaryLastNameInvalid initial="Enter a valid last name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</primaryLastNameInvalid>
         <primaryLastNameError>Enter this beneficiary's last name.</primaryLastNameError>
         <primaryDateOfBirth expected ="Date of birth (optional)">Date of birth</primaryDateOfBirth>
@@ -67,7 +67,7 @@
         <primaryAllocation initial="What percentage do you want to allocate to this beneficiary?">4.00</primaryAllocation>
         <primaryAllocationInvalid initial="Enter a valid percentage between 1 and 100.">100.22</primaryAllocationInvalid>
         <primaryAllocationError>Enter the percentage you'd like to allocate to this beneficiary.</primaryAllocationError>
-        <beneficiaryType expected="DeleteTest03 TestSampleDelete (Aunt)">Person</beneficiaryType>
+        <beneficiaryType expected="Test Testsample (Aunt)">Person</beneficiaryType>
         <beneficiaryAllocationPercentage initial="4.0">4%</beneficiaryAllocationPercentage>
         <beneficiaryRevocableQuestion initial="Make this beneficiary revocable">Do you want this beneficiary to be revocable? (optional)</beneficiaryRevocableQuestion>
         <primaryBeneDelete>Delete</primaryBeneDelete>

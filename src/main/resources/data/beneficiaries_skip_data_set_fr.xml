@@ -66,7 +66,7 @@
     <primaryAllocation initial="Quel pourcentage voulez-vous attribuer à ce bénéficiaire?">4,00</primaryAllocation>
     <primaryAllocationInvalid initial="Entrez un pourcentage entre 1 et 100.">100,22</primaryAllocationInvalid>
     <primaryAllocationError>Entrez le pourcentage que vous voulez accorder à ce bénéficiaire.</primaryAllocationError>
-    <beneficiaryType expected="TestFrench Testsample0329 (Tante)">Personne</beneficiaryType>
+    <beneficiaryType expected="TestFrench Testsample (Tante)">Personne</beneficiaryType>
     <beneficiaryAllocationPercentage initial="4.0">4 %</beneficiaryAllocationPercentage>
 </beneficiariesPO>
     <beneficiaryTrusteePO>
