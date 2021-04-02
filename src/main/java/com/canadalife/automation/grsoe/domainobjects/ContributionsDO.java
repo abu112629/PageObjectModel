@@ -13,6 +13,7 @@ public class ContributionsDO extends DomainObjectModel {
     private PlanSelectionPO planSelectionPO;
     private NRSPAdditionalInfoPO nrspAdditionalInfoPO;
     private RPPAdditionalInfoPO rppAdditionalInfoPO;
+    private DPSPAdditionalInfoPO dpspAdditionalInfoPO;
     private ContributionsPO contributionsPO;
 
     private ContributionsDO() {}
@@ -95,14 +96,39 @@ public class ContributionsDO extends DomainObjectModel {
     }
 
 
-    @Step("{0} user can see contribution page for RRSP,DPSP or TFSA plan")
+    @Step("{0} user can see contribution page for RRSP or TFSA plan")
     public void user_can_see_contribution_page_for_other_plans(String gwt) {
         contributionsPO.initPage(getContext());
         contributionsPO.validateContributionAccount();
         TestNGBase.takeScreenshot("");
     }
 
-    @Step("{0} user can see contribution rules in accordion for RRSP,DPSP or TFSA plan")
+    @Step("{0} user can see contribution page for DPSP plan")
+    public void user_can_see_contribution_page_for_dpsp_plan(String gwt) {
+        contributionsPO.initPage(getContext());
+        dpspAdditionalInfoPO.initPage(getContext());
+        dpspAdditionalInfoPO.clickNoforconnectedperson();
+        TestNGBase.takeScreenshot("");
+        planSelectionPO.clickContinueButton();
+        contributionsPO.initPage(getContext());
+        contributionsPO.validateContributionAccount();
+        TestNGBase.takeScreenshot("");
+
+    }
+
+    @Step("{0} user can see contribution rules in accordion for DPSP plan")
+    public void user_can_see_contribution_rules_accordion_for_dpsp_plan(String gwt) {
+        contributionsPO.initPage(getContext());
+        dpspAdditionalInfoPO.initPage(getContext());
+        dpspAdditionalInfoPO.clickNoforconnectedperson();
+        TestNGBase.takeScreenshot("");
+        planSelectionPO.clickContinueButton();
+        contributionsPO.validateClickforAccordionDropdown();
+        contributionsPO.validateContributionAccordionContent();
+        TestNGBase.takeScreenshot("");
+
+    }
+    @Step("{0} user can see contribution rules in accordion for RRSP or TFSA plan")
     public void user_can_see_contribution_rules_accordion_for_other_plans(String gwt) {
         contributionsPO.initPage(getContext());
         contributionsPO.validateClickforAccordionDropdown();

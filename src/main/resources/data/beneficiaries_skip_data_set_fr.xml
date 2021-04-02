@@ -62,7 +62,7 @@
     <primaryDateOfBirth expected ="Date de naissance (facultatif)">Date de naissance</primaryDateOfBirth>
     <primaryMonthLabel expected ="Mois">Mois</primaryMonthLabel>
     <primaryDateLabel expected ="Jour (JJ)">Jour (JJ)</primaryDateLabel>
-    <primaryYearLabel expected ="Année (YYYY)">Année (AAAA)</primaryYearLabel>
+    <primaryYearLabel expected ="Année (AAAA)">Année (AAAA)</primaryYearLabel>
     <primaryAllocation initial="Quel pourcentage voulez-vous attribuer à ce bénéficiaire?">4,00</primaryAllocation>
     <primaryAllocationInvalid initial="Entrez un pourcentage entre 1 et 100.">100,22</primaryAllocationInvalid>
     <primaryAllocationError>Entrez le pourcentage que vous voulez accorder à ce bénéficiaire.</primaryAllocationError>

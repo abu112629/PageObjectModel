@@ -21,6 +21,9 @@
         <password>${password}</password>
     </loginPO>
 
+    <dpspAdditionalInfoPO>
+        <connectedPersonbuttonNo>no</connectedPersonbuttonNo>
+    </dpspAdditionalInfoPO>
     <planSelectionPO>
         <planList>
             <item expected="select">

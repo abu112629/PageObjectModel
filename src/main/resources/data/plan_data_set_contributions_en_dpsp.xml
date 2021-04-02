@@ -39,6 +39,9 @@
             <item>Step 3 of 7: Choose your contribution amount</item>
         </planProgressBarStep>
     </planSelectionPO>
+    <dpspAdditionalInfoPO>
+        <connectedPersonbuttonNo>no</connectedPersonbuttonNo>
+    </dpspAdditionalInfoPO>
     <contributionsPO>
         <contributionAccountDetails>
             <item>EMPLOYER</item>
