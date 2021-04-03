@@ -169,7 +169,9 @@ public class SalesforceInfo {
                 int i=salepayload.getTotalSize();
                 for (Record record : data) {
                     if(record.getAccountId().contains("0014g000003oHCeAAM") ||
-                            record.getAccountId().contains("0014g000003oHHDAA2")){
+                            record.getAccountId().contains("0014g000003oHHDAA2")||
+                    record.getAccountId().contains("0014g000003oGmtAAE")||
+                    record.getAccountId().contains("0014g00000426AnAAI")){
                         String EID = record.getEIDC();
                         DeleteBeneficiaryDetails(EID);
                         i=i--;
@@ -199,28 +201,31 @@ public class SalesforceInfo {
             if (!salepayload.getTotalSize().equals(0)) {
                 List<Record> data = salepayload.getRecords();
                 for (Record record : data) {
-                    String EID = record.getEIDC();
+                    if (record.getAccountId().contains("0014g000003oHCeAAM") ||
+                            record.getAccountId().contains("0014g000003oHHDAA2") ||
+                            record.getAccountId().contains("0014g000003oGmtAAE") ||
+                            record.getAccountId().contains("0014g00000426AnAAI")) {
+                        String EID = record.getEIDC();
 
-                    SalesforceBenePayload payload = objectMapper.readValue(
-                            getUserBeneficiaryDetails(EID), SalesforceBenePayload.class);
-                    if (!payload.getTotalSize().equals(0)) {
-                        List<Record_bene> data2 = payload.getRecords();
-                        for (Record_bene record2 : data2) {
-                            if(record2.getAssetRoleC().contains("Primary beneficiary")){
-                                assertEquals(record2.getAllocationC(), Allocation);
-                                assertEquals(record2.getAssetRoleC(), "Primary beneficiary");
-                                assertEquals(record2.getRevocableC().booleanValue(), true);
-                            }
-                            else{
-                                assertEquals(record2.getAllocationC(), Allocation);
-                                assertEquals(record2.getAssetRoleC(), "Successor holder");
-                                assertEquals(record2.getRevocableC().booleanValue(), true);
-                            }
+                        SalesforceBenePayload payload = objectMapper.readValue(
+                                getUserBeneficiaryDetails(EID), SalesforceBenePayload.class);
+                        if (!payload.getTotalSize().equals(0)) {
+                            List<Record_bene> data2 = payload.getRecords();
+                            for (Record_bene record2 : data2) {
+                                if (record2.getAssetRoleC().contains("Primary beneficiary")) {
+                                    assertEquals(record2.getAllocationC(), Allocation);
+                                    assertEquals(record2.getAssetRoleC(), "Primary beneficiary");
+                                    assertEquals(record2.getRevocableC().booleanValue(), true);
+                                } else {
+                                    assertEquals(record2.getAllocationC(), Allocation);
+                                    assertEquals(record2.getAssetRoleC(), "Successor holder");
+                                    assertEquals(record2.getRevocableC().booleanValue(), true);
+                                }
 
+                            }
                         }
                     }
                 }
-
             }
         }
 
@@ -242,22 +247,26 @@ public class SalesforceInfo {
             if (!salepayload.getTotalSize().equals(0)) {
                 List<Record> data = salepayload.getRecords();
                 for (Record record : data) {
-                    String EID = record.getEIDC();
+                    if (record.getAccountId().contains("0014g000003oHCeAAM") ||
+                            record.getAccountId().contains("0014g000003oHHDAA2") ||
+                            record.getAccountId().contains("0014g000003oGmtAAE") ||
+                            record.getAccountId().contains("0014g00000426AnAAI")) {
+                        String EID = record.getEIDC();
 
-                    SalesforceBenePayload payload = objectMapper.readValue(
-                            getUserBeneficiaryDetails(EID), SalesforceBenePayload.class);
-                    if (!payload.getTotalSize().equals(0)) {
-                        List<Record_bene> data2 = payload.getRecords();
-                        for (Record_bene record2 : data2) {
-                            if(record2.getAssetRoleC().contains("Primary beneficiary")){
-                                assertEquals(record2.getAllocationC(), Allocation);
-                                assertEquals(record2.getAssetRoleC(), "Primary beneficiary");
-                                assertEquals(record2.getRevocableC().booleanValue(), true);
+                        SalesforceBenePayload payload = objectMapper.readValue(
+                                getUserBeneficiaryDetails(EID), SalesforceBenePayload.class);
+                        if (!payload.getTotalSize().equals(0)) {
+                            List<Record_bene> data2 = payload.getRecords();
+                            for (Record_bene record2 : data2) {
+                                if (record2.getAssetRoleC().contains("Primary beneficiary")) {
+                                    assertEquals(record2.getAllocationC(), Allocation);
+                                    assertEquals(record2.getAssetRoleC(), "Primary beneficiary");
+                                    assertEquals(record2.getRevocableC().booleanValue(), true);
+                                }
                             }
                         }
                     }
                 }
-
             }
         }
 

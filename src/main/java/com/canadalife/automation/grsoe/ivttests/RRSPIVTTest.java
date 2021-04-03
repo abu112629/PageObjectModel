@@ -19,10 +19,10 @@ public class RRSPIVTTest extends TestNGBase {
     @Parameters({"data-set","data-set2","data-set3","data-set4"})
     @Test
 
-    public void ValidateRRSPIVT(@Optional("data/contributions_all_voluntary_skip_data_set_fr.xml")String dataSet,
-                               @Optional("data/investment_skip_data_set_fr.xml")String dataSet2,
-                               @Optional("data/beneficiaries_skip_data_set_fr.xml")String dataSet3,
-                                @Optional("data/beneficiaries_estate_data_set_fr.xml")String dataSet4){
+    public void ValidateRRSPIVT(@Optional("data/contributions_all_voluntary_skip_data_set_en.xml")String dataSet,
+                               @Optional("data/investment_skip_data_set_en.xml")String dataSet2,
+                               @Optional("data/beneficiaries_skip_data_set_en.xml")String dataSet3,
+                                @Optional("data/beneficiaries_estate_data_set_en.xml")String dataSet4){
 
         ContributionsSkipDO plan=new ContributionsSkipDO(getContext()).fromResource(dataSet);
         Given(plan :: user_on_plan_selection_page);
