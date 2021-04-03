@@ -26,6 +26,7 @@ public class BeneficiariesSuccessorDeleteTest extends TestNGBase {
         When(beneficiariesDO :: user_is_able_select_required_plan);
         Then(beneficiariesDO :: user_clicks_add_successor_beneficiary);
         And(beneficiariesDO :: user_selects_and_validates_successor_beneficiary);
+        And(beneficiariesDO :: delete_all_salesforce_test_records);
         And(beneficiariesDO :: user_enters_successor_beneficiary_details);
         And(beneficiariesDO :: user_clicks_save_beneficiary);
         And(beneficiariesDO ::user_validates_salesforce_information_is_saved_for_member);

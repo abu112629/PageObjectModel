@@ -298,7 +298,9 @@ public class SalesforceInfo {
                             if(record2.getAssetRoleC().contains("Primary beneficiary")||
                                     record2.getAssetRoleC().contains("Successor holder")){
                                 Assert.assertFalse(record.getAccountId().contains("0014g000003oHCeAAM") ||
-                                        record.getAccountId().contains("0014g000003oHHDAA2"));
+                                        record.getAccountId().contains("0014g000003oHHDAA2") ||
+                                        record.getAccountId().contains("0014g000003oGmtAAE") ||
+                                        record.getAccountId().contains("0014g00000426AnAAI"));
                             }
                             else{
                                 Assert.assertTrue(payload.getRecords().size() == 0);
