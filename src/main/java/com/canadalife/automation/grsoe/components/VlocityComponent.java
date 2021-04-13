@@ -254,7 +254,7 @@ public abstract class VlocityComponent extends PageComponent {
     }
 
     public String getInformationLabel() {
-        WebElement els=coreElement.findElement(By.xpath(".//strong"));
+        WebElement els=coreElement.findElement(By.xpath(".//strong[contains(text(),'"+ getData()+ "')]"));
         if (!els.isDisplayed()) {
             return null;
         } else {

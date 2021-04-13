@@ -14,34 +14,34 @@ public class ProfileInformationPO extends PageObjectModel {
     @FindBy(xpath="//*[@data-omni-key='TB_PersonalInfo']//h3")
     private WebComponent profileHeader;
 
-    @FindBy(xpath="//*[@data-omni-key='CLWC_FullName']")
+    @FindBy(xpath="//*[@data-omni-key='CLWC_PersonalInfo']")
     private VlocityInput profileNameLabel;
 
-    @FindBy(xpath="//*[@data-omni-key='CLWC_DOB']")
+    @FindBy(xpath="//*[@data-omni-key='CLWC_PersonalInfo']")
     private VlocityInput profileDOBLabel;
 
-    @FindBy(xpath="//*[@data-omni-key='CLWC_SIN']")
+    @FindBy(xpath="//*[@data-omni-key='CLWC_PersonalInfo']")
     private VlocityInput profileSINLabel;
 
-    @FindBy(xpath="//*[@data-omni-key='CLWC_Email']")
+    @FindBy(xpath="//*[@data-omni-key='CLWC_PersonalInfo']")
     private VlocityInput profileEmailLabel;
 
-    @FindBy(xpath="//*[@data-omni-key='CLWC_Address']")
+    @FindBy(xpath="//*[@data-omni-key='CLWC_PersonalInfo']")
     private VlocityInput profileMailingAddressLabel;
 
-    @FindBy(xpath="//*[@data-omni-key='CLWC_FullName']")
+    @FindBy(xpath="//*[@data-omni-key='CLWC_PersonalInfo']")
     private VlocityInput profileNameData;
 
-    @FindBy(xpath="//*[@data-omni-key='CLWC_DOB']")
+    @FindBy(xpath="//*[@data-omni-key='CLWC_PersonalInfo']")
     private VlocityInput profileDOBData;
 
-    @FindBy(xpath="//*[@data-omni-key='CLWC_SIN']")
+    @FindBy(xpath="//*[@data-omni-key='CLWC_PersonalInfo']")
     private VlocityInput profileSINData;
 
-    @FindBy(xpath="//*[@data-omni-key='CLWC_Email']")
+    @FindBy(xpath="//*[@data-omni-key='CLWC_PersonalInfo']")
     private VlocityInput profileEmailData;
 
-    @FindBy(xpath="//*[@data-omni-key='CLWC_Address']")
+    @FindBy(xpath="//*[@data-omni-key='CLWC_PersonalInfo']")
     private VlocityInput profileMailingAddressData;
 
     public void validateProfileDescription(){
@@ -52,11 +52,20 @@ public class ProfileInformationPO extends PageObjectModel {
     }
 
     public void validateProfileLabels(){
-        profileNameLabel.validateInformationText(DataTypes.Data);
-        profileDOBLabel.validateInformationText(DataTypes.Data);
-        profileSINLabel.validateInformationText(DataTypes.Data);
-        profileEmailLabel.validateInformationText(DataTypes.Data);
-        profileMailingAddressLabel.validateInformationText(DataTypes.Data);
+        profileNameLabel.getInformationLabel();
+        profileNameLabel.validateInformationText(DataTypes.Initial);
+
+        profileDOBLabel.getInformationLabel();
+        profileDOBLabel.validateInformationText(DataTypes.Initial);
+
+        profileSINLabel.getInformationLabel();
+        profileSINLabel.validateInformationText(DataTypes.Initial);
+
+        profileEmailLabel.getInformationLabel();
+        profileEmailLabel.validateInformationText(DataTypes.Initial);
+
+        profileMailingAddressLabel.getInformationLabel();
+        profileMailingAddressLabel.validateInformationText(DataTypes.Initial);
     }
 
     public void validateProfileInformation(){

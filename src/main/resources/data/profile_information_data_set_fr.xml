@@ -26,15 +26,15 @@
     <profileInformationPO>
         <profileDescription>Voici l’information que le répondant de votre régime nous a transmise à votre sujet. Assurez-vous qu’elle est exacte et que tout y est. Si un renseignement ici est inexact, veuillez nous appeler au 1 800 724-3402 pour qu’une modification soit apportée.</profileDescription>
         <profileHeader>Données personnelles</profileHeader>
-        <profileNameLabel>Nom</profileNameLabel>
-        <profileDOBLabel>Date de naissance</profileDOBLabel>
-        <profileSINLabel>Numéro d'assurance sociale</profileSINLabel>
-        <profileEmailLabel>Adresse électronique</profileEmailLabel>
-        <profileMailingAddressLabel>Adresse postale</profileMailingAddressLabel>
-        <profileNameData initial="JAKE MUZZIN">JAKE MUZZIN</profileNameData>
-        <profileDOBData initial="avril 2, 1983">avril 2, 1983</profileDOBData>
-        <profileSINData initial="*** *** 889">*** *** 889</profileSINData>
-        <profileEmailData initial="muzzin@klm.com">muzzin@klm.com</profileEmailData>
-        <profileMailingAddressData initial="4979 ROSS STREET, 4979 BLAKE STREET, SMITHS FALLS, ON K7A 1C2">4979 ROSS STREET, 4979 BLAKE STREET, SMITHS FALLS, ON K7A 1C2</profileMailingAddressData>
+        <profileNameLabel initial="Nom">Nom</profileNameLabel>
+        <profileDOBLabel initial="Date de naissance">Date de naissance</profileDOBLabel>
+        <profileSINLabel initial="Numéro d'assurance sociale">Numéro</profileSINLabel>
+        <profileEmailLabel initial="Adresse électronique">Adresse électronique</profileEmailLabel>
+        <profileMailingAddressLabel initial="Adresse postale">Adresse postale</profileMailingAddressLabel>
+        <profileNameData initial="SCOTT SABOURIN">SCOTT SABOURIN</profileNameData>
+        <profileDOBData initial="juin 17, 1996">juin 17, 1996</profileDOBData>
+        <profileSINData initial="*** *** 758">*** *** 758</profileSINData>
+        <profileEmailData initial="sabourin@nop.com">sabourin@nop.com</profileEmailData>
+        <profileMailingAddressData initial="5037 CANNON LINE DRIVE, WATERSIDE, PE C1B 0S8">5037 CANNON LINE DRIVE, WATERSIDE, PE C1B 0S8</profileMailingAddressData>
     </profileInformationPO>
 </plan-domain-object>

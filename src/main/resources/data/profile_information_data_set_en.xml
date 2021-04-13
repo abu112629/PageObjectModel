@@ -26,15 +26,15 @@
     <profileInformationPO>
         <profileDescription>Here's what your plan sponsor has told us about you. Make sure it's all correct and nothing is missing. If anything here is incorrect, please call us at 1-800-724-3402 to change it.</profileDescription>
         <profileHeader>Personal info</profileHeader>
-        <profileNameLabel>Name</profileNameLabel>
-        <profileDOBLabel>Date of birth</profileDOBLabel>
-        <profileSINLabel>Social insurance number</profileSINLabel>
-        <profileEmailLabel>Email</profileEmailLabel>
-        <profileMailingAddressLabel>Mailing address</profileMailingAddressLabel>
-        <profileNameData initial="JAKE MUZZIN">JAKE MUZZIN</profileNameData>
-        <profileDOBData initial="April 2, 1983">April 2, 1983</profileDOBData>
-        <profileSINData initial="*** *** 889">*** *** 889</profileSINData>
-        <profileEmailData initial="muzzin@klm.com">muzzin@klm.com</profileEmailData>
-        <profileMailingAddressData initial="4979 ROSS STREET, 4979 BLAKE STREET, SMITHS FALLS, ON K7A 1C2">4979 ROSS STREET, 4979 BLAKE STREET, SMITHS FALLS, ON K7A 1C2</profileMailingAddressData>
+        <profileNameLabel initial="Name">Name</profileNameLabel>
+        <profileDOBLabel initial="Date of birth">Date of birth</profileDOBLabel>
+        <profileSINLabel initial="Social insurance number">Social</profileSINLabel>
+        <profileEmailLabel initial="Email">Email</profileEmailLabel>
+        <profileMailingAddressLabel initial="Mailing address">Mailing address</profileMailingAddressLabel>
+        <profileNameData initial="AUSTIN MATTHEWS">AUSTIN MATTHEWS</profileNameData>
+        <profileDOBData initial="June 11, 1979">June 11, 1979</profileDOBData>
+        <profileSINData initial="*** *** 094">*** *** 094</profileSINData>
+        <profileEmailData initial="matthew@abc.com">matthew@abc.com</profileEmailData>
+        <profileMailingAddressData initial="2419 MACLAREN STREET, OTTAWA, ON K1P 5M7">2419 MACLAREN STREET, OTTAWA, ON K1P 5M7</profileMailingAddressData>
     </profileInformationPO>
 </plan-domain-object>

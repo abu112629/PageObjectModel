@@ -72,7 +72,7 @@ public class PlanContributionsTest extends TestNGBase {
         When(plan :: user_can_select_required_plan);
         Then(plan :: user_can_see_contribution_page_for_dpsp_plan);
         And(plan :: user_can_see_contribution_progress_bar_and_subheaders);
-        And(plan :: user_can_see_additional_info_page_for_other_plans_when_click_back);
+        And(plan :: user_can_see_additional_info_page_for_dpsp_when_click_back);
     }
 
     @Features("Sprint6")

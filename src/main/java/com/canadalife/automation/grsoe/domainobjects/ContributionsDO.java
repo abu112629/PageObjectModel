@@ -163,6 +163,13 @@ public class ContributionsDO extends DomainObjectModel {
 
     }
 
+    @Step("{0} user can see Additional Info Page for DPSP when they click back from Contributions Page")
+    public void user_can_see_additional_info_page_for_dpsp_when_click_back(String gwt) {
+        planSelectionPO.clickBackButton();
+        dpspAdditionalInfoPO.clickNoforconnectedperson();
+        TestNGBase.takeScreenshot("");
+
+    }
     @Step("{0} user can see Plan Selection Page for RRSP,DPSP or TFSA when they click back from Contributions Page")
     public void user_can_see_additional_info_page_for_other_plans_when_click_back(String gwt) {
         planSelectionPO.clickBackButton();

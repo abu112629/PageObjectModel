@@ -20,7 +20,7 @@ public class ProfileInformationTest extends TestNGBase {
     @Issue("GRSOE-63")
     @Test
 
-    public void ValidateProfileInformation(@Optional("data/profile_information_data_set_fr.xml")String dataSet) {
+    public void ValidateProfileInformation(@Optional("data/profile_information_data_set_en.xml")String dataSet) {
 
         ProfileInformationDO profileInformationDO=new ProfileInformationDO(getContext()).fromResource(dataSet);
         Given(profileInformationDO :: user_is_on_profile_information_page);
