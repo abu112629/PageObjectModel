@@ -4,6 +4,8 @@ import com.canadalife.automation.grsoe.api.salesforce.SalesforceInfo;
 import com.canadalife.automation.grsoe.components.*;
 import com.canadalife.automation.grsoe.support.AppHelper;
 import datainstiller.data.Data;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ui.auto.core.components.WebComponent;
 import ui.auto.core.components.WebComponentList;
@@ -24,6 +26,9 @@ public class BeneficiariesPO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
     private VlocitySelectRadioButton beneficiariesAdd;
 
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
+    private VlocitySelectRadioButton beneficiariesDuplicateError;
+
     @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']//h4")
     private WebComponent addBeneficiaryLabel;
 
@@ -42,8 +47,17 @@ public class BeneficiariesPO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='PrimaryRelationship']")
     private VlocitySelect personBeneficiaryRelation;
 
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryRelationship']//input)[last()]")
+    private WebElement additionalPersonBeneficiaryRelation;
+
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryRelationship']//li/div[@data-label='Aunt'])[last()]")
+    private WebElement additionalPersonBeneficiarySelectRelation;
+
     @FindBy(xpath = "//*[@data-omni-key='PrimaryFirstName']")
     private VlocityInput primaryFirstName;
+
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryFirstName'])[last()]")
+    private WebElement primaryDuplicateFirstName;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryFirstName']")
     private VlocityActionInput primaryFirstNameInvalid;
@@ -53,6 +67,9 @@ public class BeneficiariesPO extends PageObjectModel {
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryLastName']")
     private VlocityInput primaryLastName;
+
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryLastName'])[last()]")
+    private WebElement primaryDuplicateLastName;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryLastName']")
     private VlocityActionInput primaryLastNameInvalid;
@@ -74,6 +91,9 @@ public class BeneficiariesPO extends PageObjectModel {
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationPerson']")
     private VlocityActionInput primaryAllocation;
+
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryAllocationPerson'])[last()]")
+    private WebElement primaryDuplicateAllocation;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationPerson']")
     private VlocityInput primaryAllocationInvalid;
@@ -166,6 +186,11 @@ public class BeneficiariesPO extends PageObjectModel {
         setElementValue(personBeneficiaryRelation);
     }
 
+    public void selectAdditionalPersonRelationBeneficiary(){
+      additionalPersonBeneficiaryRelation.click();
+      additionalPersonBeneficiarySelectRelation.click();
+    }
+
     public void validateInvalidPersonBeneficiaryDetails() {
         primaryFirstNameInvalid.click();
         setElementValue(primaryFirstNameInvalid);
@@ -191,6 +216,14 @@ public class BeneficiariesPO extends PageObjectModel {
         setElementValue(primaryAllocation);
 
     }
+    public void validateAndEnterDuplicateDetailsPrimaryBeneficiary(){
+        primaryDuplicateFirstName.sendKeys(primaryFirstName.getData());
+        AppHelper.scrollToView(primaryDuplicateLastName);
+        primaryDuplicateLastName.sendKeys(primaryLastName.getData());
+        AppHelper.scrollToView(primaryDuplicateAllocation);
+        primaryDuplicateAllocation.sendKeys(primaryAllocation.getData());
+
+    }
     public void validatePrimaryBeneficiaryOnEdit(){
         primaryFirstName.getValue().contains(primaryFirstName.getData());
         primaryLastName.getValue().contains(primaryLastName.getData());
@@ -209,6 +242,10 @@ public class BeneficiariesPO extends PageObjectModel {
 
     }
 
+    public void validateDuplicateBeneDetailsError() {
+        AppHelper.scrollToView(beneficiariesDuplicateError.getCoreElement());
+        beneficiariesDuplicateError.validateBannerError(DataTypes.Data);
+    }
     public void validatePillInformation(){
         beneficiaryType.validateBeneficiaryTypePerson(DataTypes.Data);
         beneficiaryType.validateBeneficiaryName(DataTypes.Expected);

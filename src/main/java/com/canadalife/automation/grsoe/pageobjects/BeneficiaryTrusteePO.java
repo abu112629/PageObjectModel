@@ -4,6 +4,7 @@ import com.canadalife.automation.grsoe.api.salesforce.SalesforceInfo;
 import com.canadalife.automation.grsoe.components.*;
 import com.canadalife.automation.grsoe.support.AppHelper;
 import datainstiller.data.Data;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ui.auto.core.data.DataTypes;
 import ui.auto.core.support.PageObjectModel;
@@ -27,6 +28,9 @@ public class BeneficiaryTrusteePO extends PageObjectModel {
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryIstrusteeYesNo']")
     private RadioGroup primaryTrusteeSelectionNo;
+
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryIstrusteeYesNo']//input[@value='no']/..)[last()]")
+    private WebElement primaryDuplicateTrusteeSelectionNo;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryTrusteeRelationship']")
     private VlocitySelect primaryTrusteeRelationship;
@@ -71,6 +75,11 @@ public class BeneficiaryTrusteePO extends PageObjectModel {
     public void selectPrimaryTrusteeNo(){
         AppHelper.scrollToView(primaryTrusteeSelectionNo.getCoreElement());
         setElementValue(primaryTrusteeSelectionNo);
+
+    }
+    public void selectPrimaryTrusteeNoDuplicate(){
+        AppHelper.scrollToView(primaryDuplicateTrusteeSelectionNo);
+        primaryDuplicateTrusteeSelectionNo.click();
 
     }
     public void selectPrimaryTrusteeYes(){

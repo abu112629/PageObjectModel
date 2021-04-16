@@ -25,6 +25,7 @@ public class BeneficiariesTrusteeAddTest extends TestNGBase {
         Given(beneficiariesDO :: user_on_plan_selection_page);
         When(beneficiariesDO :: user_can_select_required_plan);
         Then(beneficiariesDO :: user_clicks_continue_and_selects_no_for_both_questions);
+        And(beneficiariesDO :: user_clicks_continue_button);
         And(beneficiariesDO :: user_clicks_add_primary_beneficiary);
         And(beneficiariesDO :: user_enters_person_beneficiary_details);
         And(beneficiariesDO :: user_clicks_continue_and_is_able_to_validate_no_selection_trustee_error);

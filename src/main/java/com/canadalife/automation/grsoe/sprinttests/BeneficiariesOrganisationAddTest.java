@@ -25,6 +25,7 @@ public class BeneficiariesOrganisationAddTest extends TestNGBase {
         Given(beneficiariesDO::user_on_plan_selection_page);
         When(beneficiariesDO::user_can_select_required_plan);
         Then(beneficiariesDO :: user_clicks_continue_and_selects_no_for_both_questions);
+        And(beneficiariesDO :: user_clicks_continue_button);
         And(beneficiariesDO :: user_clicks_add_primary_beneficiary);
         And(beneficiariesDO :: user_selects_and_validates_organization_beneficiary);
         And(beneficiariesDO :: delete_all_salesforce_organization_test_records);

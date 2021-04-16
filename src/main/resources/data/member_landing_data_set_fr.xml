@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Fr</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <memberLandingPagePO>
+        <memberWelcomeLine>SCOTT, prenons quelques minutes pour configurer votre régime d’épargne</memberWelcomeLine>
+        <memberWelcomeIntro>Tout dépendant des options qui vous sont offertes, vous serez en mesure :</memberWelcomeIntro>
+        <memberQuebecIntro>À l’attention des résidents du Québec</memberQuebecIntro>
+        <memberQuebecAdditionalInformation>
+            <item>Prestation de décès</item>
+            <item>Procédures en matière de traitement des plaintes</item>
+        </memberQuebecAdditionalInformation>
+        <memberWelcomeBulletPointOne initial="De choisir vos régimes">De choisir vos régimes</memberWelcomeBulletPointOne>
+        <memberWelcomeBulletPointTwo initial="D’établir vos cotisations">D’établir vos cotisations</memberWelcomeBulletPointTwo>
+        <memberWelcomeBulletPointThree initial="De choisir vos placements">De choisir vos placements</memberWelcomeBulletPointThree>
+        <memberWelcomeBulletPointFour initial="D’ajouter des bénéficiaires">D’ajouter des bénéficiaires</memberWelcomeBulletPointFour>
+        <memberAccordionContent>
+            <item>Voici quelques renseignements sur le régime qui s’ajoutent à l’information figurant dans votre brochure explicative.</item>
+            <item>Lorsque vous adhérez au régime, et si celui-ci le permet, vous pouvez choisir qui recevra la valeur de votre régime à votre décès. C’est ce qu’on appelle une désignation de bénéficiaire. Le montant d’argent que votre bénéficiaire reçoit s’appelle la prestation de décès.</item>
+            <item>La prestation de décès est versée à votre bénéficiaire dans les 30 jours suivant la réception par la Canada Vie de tous les documents justificatifs requis (p. ex., preuve de décès), à moins que la période prévue dans la police soit plus courte.</item>
+            <item>Pour en savoir plus sur notre procédure en matière de traitement des plaintes des clients, consultez la page www.canadavie.com/plaintes.</item>
+        </memberAccordionContent>
+    </memberLandingPagePO>
+</plan-domain-object>

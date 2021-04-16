@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_En</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+
+    <memberLandingPagePO>
+        <memberWelcomeLine>AUSTIN, let's take a few minutes to set up your savings plan</memberWelcomeLine>
+        <memberWelcomeIntro>Depending on what's available to you, you'll be able to:</memberWelcomeIntro>
+        <memberQuebecIntro>Attention Quebec residents</memberQuebecIntro>
+        <memberQuebecAdditionalInformation>
+            <item>Death benefit</item>
+            <item>Complaint handling procedure</item>
+        </memberQuebecAdditionalInformation>
+        <memberWelcomeBulletPointOne initial="Select plans">Select plans</memberWelcomeBulletPointOne>
+        <memberWelcomeBulletPointTwo initial="Set contributions">Set contributions</memberWelcomeBulletPointTwo>
+        <memberWelcomeBulletPointThree initial="Choose investments">Choose investments</memberWelcomeBulletPointThree>
+        <memberWelcomeBulletPointFour initial="Add beneficiaries">Add beneficiaries</memberWelcomeBulletPointFour>
+        <memberAccordionContent>
+            <item>In addition to the information in your member booklet that's provided by your plan administrator, here are some extra notes about your plan.</item>
+            <item>When you enrol and become a member, and if your plan allows it, you can choose who’ll receive the value of your plan when you die. This is called designating a beneficiary. The monetary amount your beneficiary receives is called the death benefit.</item>
+            <item>The death benefit is paid to your beneficiary within 30 days after Canada Life receives all supporting documents requested (e.g. proof of death, etc.). This timeframe could be shorter depending on your policy.</item>
+            <item>To find out more about our customer complaint handling procedures, visit www.canadalife.com/complaints.</item>
+        </memberAccordionContent>
+    </memberLandingPagePO>
+</plan-domain-object>

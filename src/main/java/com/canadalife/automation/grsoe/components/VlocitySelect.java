@@ -13,8 +13,8 @@ public class VlocitySelect extends VlocityComponent {
     @Override
     public void setValue() {
         coreElement.findElement(By.xpath(".//input")).click();
-        WebElement country = coreElement.findElement(By.xpath(".//li/div[@data-label='" + getData() + "']"));
-        country.click();
+        WebElement list = coreElement.findElement(By.xpath(".//li/div[@data-label='" + getData() + "']"));
+        list.click();
     }
 
     @Override

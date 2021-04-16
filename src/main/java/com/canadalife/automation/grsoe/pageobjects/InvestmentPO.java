@@ -128,26 +128,26 @@ public class InvestmentPO extends PageObjectModel {
     }
     public void validateFundFeeLines(){
         AppHelper.scrollToView(investmentCardFundFeesLine.getCoreElement());
-        investmentCardFundFeesLine.getFundFeesDetails();
-        investmentCardFundFeesLine.validateFundFees(DataTypes.Expected);
+        investmentCardFundFeesLine.getListDetails();
+        investmentCardFundFeesLine.validateListDetails(DataTypes.Expected);
 
-        investmentCardFundRORline1.getFundFeesDetails();
-        investmentCardFundRORline1.validateFundFees(DataTypes.Expected);
+        investmentCardFundRORline1.getListDetails();
+        investmentCardFundRORline1.validateListDetails(DataTypes.Expected);
 
-        investmentCardFundRORline2.getFundFeesDetails();
-        investmentCardFundRORline2.validateFundFees(DataTypes.Expected);
+        investmentCardFundRORline2.getListDetails();
+        investmentCardFundRORline2.validateListDetails(DataTypes.Expected);
 
-        investmentCardFundRORline3.getFundFeesDetails();
-        investmentCardFundRORline3.validateFundFees(DataTypes.Expected);
+        investmentCardFundRORline3.getListDetails();
+        investmentCardFundRORline3.validateListDetails(DataTypes.Expected);
     }
 
     public void validateUpdatedFundFeeLines(){
         AppHelper.scrollToView(investmentCardUpdatedFundFeesLine.getCoreElement());
-        investmentCardUpdatedFundFeesLine.getFundFeesDetails();
-        investmentCardUpdatedFundFeesLine.validateFundFees(DataTypes.Expected);
+        investmentCardUpdatedFundFeesLine.getListDetails();
+        investmentCardUpdatedFundFeesLine.validateListDetails(DataTypes.Expected);
 
-        investmentCardUpdatedFundRORline1.getFundFeesDetails();
-        investmentCardUpdatedFundRORline1.validateFundFees(DataTypes.Expected);
+        investmentCardUpdatedFundRORline1.getListDetails();
+        investmentCardUpdatedFundRORline1.validateListDetails(DataTypes.Expected);
     }
 
     public void validateInvestmentCardHeader(){

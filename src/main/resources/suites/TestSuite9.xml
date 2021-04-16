@@ -29,4 +29,18 @@
             <class name="com.canadalife.automation.grsoe.sprinttests.PlanSwitchTest"/>
         </classes>
     </test>
+
+    <test name="Validate the Member Landing Page Test English">
+        <parameter name="data-set" value="data/member_landing_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.MemberLandingPageTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Member Landing Page Test French">
+        <parameter name="data-set" value="data/member_landing_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.MemberLandingPageTest"/>
+        </classes>
+    </test>
 </suite>

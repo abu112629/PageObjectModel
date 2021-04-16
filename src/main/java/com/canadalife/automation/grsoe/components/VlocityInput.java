@@ -19,8 +19,16 @@ public class VlocityInput extends VlocityComponent {
     @Override
     public void setValue() {
         WebElement input = coreElement.findElement(By.xpath(".//input"));
-        input.clear();
-        input.sendKeys(getData());
+        if(input.isEnabled()){
+            input.clear();
+            input.sendKeys(getData());
+        }
+        else{
+            WebElement input2 = coreElement.findElement(By.xpath(".//input)[2]"));
+            input2.clear();
+            input2.sendKeys(getData());
+        }
+
     }
 
     @Override

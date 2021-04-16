@@ -88,7 +88,7 @@ public abstract class VlocityComponent extends PageComponent {
         Assertions.assertThat(actual).isEqualTo(expected);
     }
 
-    public String getFundFeesDetails() {
+    public String getListDetails() {
         List<WebElement> els = coreElement.findElements(By.xpath(".//li[contains(text(),'" + getData() + "')]"));
         if (els.isEmpty()) {
             return null;
@@ -96,13 +96,11 @@ public abstract class VlocityComponent extends PageComponent {
             return els.get(0).getText();
         }
     }
-
-    public void validateFundFees(DataTypes type) {
-        String actual = getFundFeesDetails();
+    public void validateListDetails(DataTypes type) {
+        String actual = getListDetails();
         String expected = getData(type);
         Assertions.assertThat(actual).isEqualTo(expected);
     }
-
 
     public String getSelectionLabel() {
         List<WebElement> els = coreElement.findElements(By.xpath(".//*[contains(@class,'nds-form-element__control nds-form-element__control-animated-label')]"));

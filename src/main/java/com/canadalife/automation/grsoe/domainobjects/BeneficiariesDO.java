@@ -88,9 +88,13 @@ public class BeneficiariesDO extends DomainObjectModel {
         TestNGBase.takeScreenshot("");
     }
 
+    @Step("{0} user clicks continue button")
+    public void user_clicks_continue_button(String gwt){
+        planSelectionPO.clickContinueButton();
+    }
+
     @Step("{0} user clicks add Primary Beneficiary")
     public void user_clicks_add_primary_beneficiary(String gwt){
-        planSelectionPO.clickContinueButton();
         beneficiariesPO.initPage(getContext());
         AppHelper.waitForXHR(2);
         beneficiariesPO.addPrimaryBeneficiary();
@@ -183,6 +187,23 @@ public class BeneficiariesDO extends DomainObjectModel {
         rppAdditionalInfoPO.enterDOBDetails();
         TestNGBase.takeScreenshot("");
 
+    }
+
+    @Step("{0} user enters duplicate person beneficiary details")
+    public void user_enters_duplicate_person_beneficiary_details(String gwt){
+        beneficiariesPO.selectAdditionalPersonRelationBeneficiary();
+        beneficiariesPO.validateAndEnterDuplicateDetailsPrimaryBeneficiary();
+        TestNGBase.takeScreenshot("");
+        beneficiaryTrusteePO.initPage(getContext());
+        beneficiaryTrusteePO.selectPrimaryTrusteeNoDuplicate();
+        TestNGBase.takeScreenshot("");
+    }
+
+    @Step("{0} user clicks save and is able to validate all duplicate bene errors")
+    public void user_clicks_save_and_is_able_to_validate_all_duplicate_bene_errors(String gwt){
+        planSelectionPO.clickSaveButton();
+        TestNGBase.takeScreenshot("");
+        beneficiariesPO.validateDuplicateBeneDetailsError();
     }
 
     @Step("{0} user selects and validates primary Trustee")

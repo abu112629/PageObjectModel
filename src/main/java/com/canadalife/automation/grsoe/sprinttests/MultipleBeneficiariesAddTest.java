@@ -12,15 +12,15 @@ import ui.auto.core.testng.TestNGBase;
 import static com.canadalife.automation.grsoe.support.GivenWhenThen.*;
 import static com.canadalife.automation.grsoe.support.GivenWhenThen.And;
 
-public class BeneficiariesPersonEditTest extends TestNGBase {
+public class MultipleBeneficiariesAddTest extends TestNGBase {
 
-    @Features("Sprint12")
-    @Stories("Member can edit a primary beneficiary")
+    @Features("Sprint14")
+    @Stories("Member has already added a Primary beneficiary and wants to additional beneficiaries")
     @Parameters("data-set")
-    @Issue("GRSOE-418")
+    @Issue("GRSOE-480")
     @Test
 
-    public void ValidateBeneficiariesPersonAddition(@Optional("data/beneficiaries_quebec_data_set_fr.xml")String dataSet) {
+    public void ValidateMultipleBeneficiariesAddition(@Optional("data/beneficiaries_skip_data_set_en.xml")String dataSet) {
 
         BeneficiariesDO beneficiariesDO=new BeneficiariesDO(getContext()).fromResource(dataSet);
         Given(beneficiariesDO :: user_on_plan_selection_page);
@@ -28,13 +28,17 @@ public class BeneficiariesPersonEditTest extends TestNGBase {
         Then(beneficiariesDO :: user_clicks_continue_and_selects_no_for_both_questions);
         And(beneficiariesDO :: user_clicks_continue_button);
         And(beneficiariesDO :: user_clicks_add_primary_beneficiary);
+        And(beneficiariesDO :: delete_all_salesforce_test_records);
         And(beneficiariesDO :: user_enters_person_beneficiary_details);
         And(beneficiariesDO :: user_selects_and_validates_primary_trustee);
-        And(beneficiariesDO :: user_validates_quebec_question_and_checks_revocable_option);
         And(beneficiariesDO :: user_clicks_save_beneficiary);
-        And(beneficiariesDO :: user_validates_salesforce_information_is_true_for_revocable);
-        And(beneficiariesDO :: user_edits_beneficiary_person_information);
-        And(beneficiariesDO :: user_validates_salesforce_information_is_false_for_revocable);
+
+        And(beneficiariesDO :: user_clicks_add_primary_beneficiary);
+        And(beneficiariesDO :: user_enters_duplicate_person_beneficiary_details);
+        And(beneficiariesDO :: user_clicks_save_and_is_able_to_validate_all_duplicate_bene_errors);
+
+
+
 
 
     }
