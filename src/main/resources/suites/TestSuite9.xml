@@ -61,4 +61,22 @@
             <class name="com.canadalife.automation.grsoe.sprinttests.MultipleBeneficiariesAddTest"/>
         </classes>
     </test>
+
+    <test name="Validate the Multi beneficiary Allocation Test English">
+        <parameter name="data-set" value="data/beneficiaries_skip_data_set_en.xml"/>
+        <parameter name="data-set2" value="data/beneficiaries_organisation_data_set_en.xml"/>
+        <parameter name="data-set3" value="data/beneficiaries_estate_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.MultipleBeneficiariesAllocationTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Multi beneficiary Allocation Test French">
+        <parameter name="data-set" value="data/beneficiaries_skip_data_set_fr.xml"/>
+        <parameter name="data-set2" value="data/beneficiaries_organisation_data_set_fr.xml"/>
+        <parameter name="data-set3" value="data/beneficiaries_estate_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.MultipleBeneficiariesAllocationTest"/>
+        </classes>
+    </test>
 </suite>
