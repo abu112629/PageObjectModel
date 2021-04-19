@@ -52,6 +52,7 @@
         <primaryTypeLabel>Quel type de bénéficiaire voulez-vous ajouter?</primaryTypeLabel>
         <BeneRadioButton>Organisation</BeneRadioButton>
         <beneficiaryType expected="OrgTestFrench">Organisation</beneficiaryType>
+        <beneficiariesDuplicateError expected="Vous avez déjà ajouté une organisation du même nom à titre de premier bénéficiaire.">Vous avez déjà ajouté une organisation du même nom à titre de premier bénéficiaire.</beneficiariesDuplicateError>
     </beneficiariesPO>
     <beneficiaryOrganisationPO>
         <addBeneficiaryOrgLabel>Ajouter un premier bénéficiaire</addBeneficiaryOrgLabel>

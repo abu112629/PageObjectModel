@@ -68,6 +68,7 @@
     <primaryAllocationError>Entrez le pourcentage que vous voulez accorder à ce bénéficiaire.</primaryAllocationError>
     <beneficiaryType expected="TestFrench Testsample (Tante)">Personne</beneficiaryType>
     <beneficiaryAllocationPercentage initial="4.0">4 %</beneficiaryAllocationPercentage>
+    <beneficiariesDuplicateError expected="Vous avez déjà ajouté un premier bénéficiaire du même prénom et du même nom ayant le même lien avec vous.">Vous avez déjà ajouté un premier bénéficiaire du même prénom et du même nom ayant le même lien avec vous.</beneficiariesDuplicateError>
 </beneficiariesPO>
     <beneficiaryTrusteePO>
         <primaryFirstName>TestFrench</primaryFirstName>

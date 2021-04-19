@@ -4,6 +4,7 @@ import com.canadalife.automation.grsoe.api.salesforce.SalesforceInfo;
 import com.canadalife.automation.grsoe.components.*;
 import com.canadalife.automation.grsoe.support.AppHelper;
 import datainstiller.data.Data;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ui.auto.core.components.WebComponent;
 import ui.auto.core.data.DataTypes;
@@ -25,6 +26,9 @@ public class BeneficiaryEstatePO extends PageObjectModel {
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationEstate']")
     private VlocityActionInput primaryAllocationEstate;
+
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryAllocationEstate'])[last()]")
+    private WebElement primaryDuplicateAllocationEstate;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationEstate']")
     private VlocityInput primaryEstateAllocationInvalid;
@@ -59,6 +63,10 @@ public class BeneficiaryEstatePO extends PageObjectModel {
 
     }
 
+    /*For multiple beneficiaries*/
+    public void enterDetailsEstateBeneficiary(){
+        primaryDuplicateAllocationEstate.sendKeys(primaryAllocationEstate.getData());
+    }
     public void validateInvalidEstateBeneficiaryDetails() {
         AppHelper.scrollToView(primaryEstateAllocationInvalid.getCoreElement());
         primaryEstateAllocationInvalid.click();

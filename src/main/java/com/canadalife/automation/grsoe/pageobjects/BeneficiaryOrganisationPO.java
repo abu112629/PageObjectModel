@@ -6,6 +6,7 @@ import com.canadalife.automation.grsoe.components.VlocityActionInput;
 import com.canadalife.automation.grsoe.components.VlocitySelect;
 import com.canadalife.automation.grsoe.support.AppHelper;
 import datainstiller.data.Data;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ui.auto.core.components.WebComponent;
 import ui.auto.core.data.DataTypes;
@@ -28,8 +29,14 @@ public class BeneficiaryOrganisationPO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='PrimaryOrganizationNameText']")
     private VlocityActionInput beneficiaryOrganizationName;
 
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryOrganizationNameText'])[last()]")
+    private WebElement beneficiaryDuplicateOrganizationName;
+
     @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationOrganization']")
     private VlocityActionInput beneficiaryOrganizationAllocation;
+
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryAllocationOrganization'])[last()]")
+    private WebElement beneficiaryDuplicateOrganizationAllocation;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryOrganizationNameText']")
     private VlocityActionInput beneficiaryOrganizationNameError;
@@ -70,6 +77,13 @@ public class BeneficiaryOrganisationPO extends PageObjectModel {
 
     }
 
+    /*For multiple beneficiaries*/
+    public void enterDetailsOrganizationBeneficiary(){
+        beneficiaryDuplicateOrganizationName.sendKeys(beneficiaryOrganizationName.getData());
+        AppHelper.scrollToView(beneficiaryDuplicateOrganizationAllocation);
+        beneficiaryDuplicateOrganizationAllocation.sendKeys(beneficiaryOrganizationAllocation.getData());
+
+    }
     public void validateInvalidOrganizationBeneficiaryDetails() {
         AppHelper.scrollToView(beneficiaryOrganizationNameInvalid.getCoreElement());
         beneficiaryOrganizationNameInvalid.click();

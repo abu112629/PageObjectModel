@@ -4,9 +4,12 @@ import com.canadalife.automation.grsoe.api.salesforce.SalesforceInfo;
 import com.canadalife.automation.grsoe.components.*;
 import com.canadalife.automation.grsoe.support.AppHelper;
 import datainstiller.data.Data;
+import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.auto.core.components.WebComponent;
 import ui.auto.core.components.WebComponentList;
 import ui.auto.core.data.DataTypes;
@@ -26,9 +29,6 @@ public class BeneficiariesPO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
     private VlocitySelectRadioButton beneficiariesAdd;
 
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
-    private VlocitySelectRadioButton beneficiariesDuplicateError;
-
     @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']//h4")
     private WebComponent addBeneficiaryLabel;
 
@@ -41,6 +41,12 @@ public class BeneficiariesPO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaryType']")
     private VlocitySelectRadioButton BeneRadioButton;
 
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryBeneficiaryType']//span[contains(text(),'Organization')])[last()]")
+    private WebElement BeneOrganizationRadioButton;
+
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryBeneficiaryType']//span[contains(text(),'Estate')])[last()]")
+    private WebElement BeneEstateRadioButton;
+
     @FindBy(xpath = "//*[@data-omni-key='PrimaryRelationship']")
     private VlocitySelectRadioButton personDropDownQuestion;
 
@@ -49,9 +55,6 @@ public class BeneficiariesPO extends PageObjectModel {
 
     @FindBy(xpath = "(//*[@data-omni-key='PrimaryRelationship']//input)[last()]")
     private WebElement additionalPersonBeneficiaryRelation;
-
-    @FindBy(xpath = "(//*[@data-omni-key='PrimaryRelationship']//li/div[@data-label='Aunt'])[last()]")
-    private WebElement additionalPersonBeneficiarySelectRelation;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryFirstName']")
     private VlocityInput primaryFirstName;
@@ -119,6 +122,9 @@ public class BeneficiariesPO extends PageObjectModel {
     @FindBy(xpath="//*[@data-omni-key='YourBeneficiaries']//h2")
     private WebComponent beneficiariesDeleteQuestion;
 
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
+    private VlocitySelectRadioButton beneficiariesDuplicateError;
+
     @Data(skip = true)
     SalesforceInfo salesforceInfo;
 
@@ -146,7 +152,15 @@ public class BeneficiariesPO extends PageObjectModel {
     }
 
     public void addPrimaryBeneficiary(){
+        AppHelper.scrollToView(beneficiariesAdd.getCoreElement());
         setElementValue(beneficiariesAdd,false);
+    }
+
+    public void addMultiplePrimaryBeneficiary(){
+        WebDriverWait wait = new WebDriverWait(getDriver(), 20);
+        WebElement add= wait.until(ExpectedConditions.elementToBeClickable(By.
+                xpath("(//*[@data-omni-key='PrimaryBeneficiaries']//span[contains(text(),'"+beneficiariesAdd.getData()+"')])[last()]")));
+        add.click();
     }
 
     public void validateBeneficiaryFormLabels(){
@@ -178,7 +192,15 @@ public class BeneficiariesPO extends PageObjectModel {
 
     public void addBeneficiary(){
         AppHelper.scrollToView(BeneRadioButton.getCoreElement());
+        AppHelper.waitForXHR(2);
         setElementValue(BeneRadioButton,false);
+    }
+
+    /*For multiple beneficiaries*/
+    public void additionalBeneficiary(){
+        WebElement BeneRadio=getDriver().findElement(By.xpath("(//*[@data-omni-key='PrimaryBeneficiaryType']//span[contains(text(),'"+BeneRadioButton.getData()+"')])[last()]"));
+        AppHelper.waitForXHR(2);
+        BeneRadio.click();
     }
 
     public void selectPersonRelationBeneficiary(){
@@ -188,6 +210,8 @@ public class BeneficiariesPO extends PageObjectModel {
 
     public void selectAdditionalPersonRelationBeneficiary(){
       additionalPersonBeneficiaryRelation.click();
+      WebElement additionalPersonBeneficiarySelectRelation=getDriver().
+              findElement(By.xpath("(//*[@data-omni-key='PrimaryRelationship']//li/div[@data-label='"+personBeneficiaryRelation.getData()+"'])[last()]"));
       additionalPersonBeneficiarySelectRelation.click();
     }
 
@@ -244,7 +268,9 @@ public class BeneficiariesPO extends PageObjectModel {
 
     public void validateDuplicateBeneDetailsError() {
         AppHelper.scrollToView(beneficiariesDuplicateError.getCoreElement());
-        beneficiariesDuplicateError.validateBannerError(DataTypes.Data);
+        String ErrorMessage=beneficiariesDuplicateError.getCoreElement().findElements(By.xpath("//slot/p")).get(0).getText();
+        String ExpectedErrorMessage=beneficiariesDuplicateError.getData();
+        Assertions.assertThat(ErrorMessage).isEqualTo(ExpectedErrorMessage);
     }
     public void validatePillInformation(){
         beneficiaryType.validateBeneficiaryTypePerson(DataTypes.Data);

@@ -30,7 +30,7 @@ public abstract class VlocityComponent extends PageComponent {
 
     public String getBannerErrorMsg() {
         List<WebElement> els = coreElement.findElements(By.xpath(".//slot/p"));
-        if (els.isEmpty()) {
+        if (els.size()==0) {
             return null;
         } else {
             return els.get(0).getText();

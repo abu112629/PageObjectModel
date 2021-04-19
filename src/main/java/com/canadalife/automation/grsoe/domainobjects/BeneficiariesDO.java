@@ -93,11 +93,24 @@ public class BeneficiariesDO extends DomainObjectModel {
         planSelectionPO.clickContinueButton();
     }
 
+
+    @Step("{0} user clicks cancel button")
+    public void user_clicks_cancel_button(String gwt){
+        planSelectionPO.clickCancelButton();
+    }
     @Step("{0} user clicks add Primary Beneficiary")
     public void user_clicks_add_primary_beneficiary(String gwt){
         beneficiariesPO.initPage(getContext());
         AppHelper.waitForXHR(2);
         beneficiariesPO.addPrimaryBeneficiary();
+        TestNGBase.takeScreenshot("");
+    }
+
+    @Step("{0} user clicks add additional Primary Beneficiary")
+    public void user_clicks_add_additional_primary_beneficiary(String gwt){
+        beneficiariesPO.initPage(getContext());
+        AppHelper.waitForXHR(2);
+        beneficiariesPO.addMultiplePrimaryBeneficiary();
         TestNGBase.takeScreenshot("");
     }
 
@@ -199,6 +212,37 @@ public class BeneficiariesDO extends DomainObjectModel {
         TestNGBase.takeScreenshot("");
     }
 
+    @Step("{0} user selects organization beneficiary")
+    public void user_selects_organization_beneficiary(String gwt){
+        beneficiariesPO.additionalBeneficiary();
+        beneficiaryOrganisationPO.initPage(getContext());
+        TestNGBase.takeScreenshot("");
+
+    }
+    @Step("{0} user selects Estate beneficiary")
+    public void user_selects_estate_beneficiary(String gwt){
+        beneficiariesPO.additionalBeneficiary();
+        beneficiaryEstatePO.initPage(getContext());
+        TestNGBase.takeScreenshot("");
+
+    }
+    @Step("{0} user enters duplicate organization beneficiary details")
+    public void user_enters_duplicate_organization_beneficiary_details(String gwt){
+        beneficiariesPO.additionalBeneficiary();
+        TestNGBase.takeScreenshot("");
+        beneficiaryOrganisationPO.initPage(getContext());
+        beneficiaryOrganisationPO.enterDetailsOrganizationBeneficiary();
+        TestNGBase.takeScreenshot("");
+    }
+
+    @Step("{0} user enters duplicate estate beneficiary details")
+    public void user_enters_duplicate_estate_beneficiary_details(String gwt){
+        beneficiariesPO.additionalBeneficiary();
+        TestNGBase.takeScreenshot("");
+        beneficiaryEstatePO.initPage(getContext());
+        beneficiaryEstatePO.enterDetailsEstateBeneficiary();
+        TestNGBase.takeScreenshot("");
+    }
     @Step("{0} user clicks save and is able to validate all duplicate bene errors")
     public void user_clicks_save_and_is_able_to_validate_all_duplicate_bene_errors(String gwt){
         planSelectionPO.clickSaveButton();
@@ -229,12 +273,29 @@ public class BeneficiariesDO extends DomainObjectModel {
         TestNGBase.takeScreenshot("");
         planSelectionPO.clickSaveButton();
     }
+    @Step("{0} user enters and clicks on Save Beneficiary Form for Estate")
+    public void user_enters_and_clicks_save_beneficiary_for_estate(String gwt){
+        AppHelper.waitForXHR(2);
+        beneficiaryEstatePO.enterDetailsEstateBeneficiary();
+        TestNGBase.takeScreenshot("");
+        planSelectionPO.initPage(getContext());
+        planSelectionPO.clickSaveButton();
+    }
 
     @Step("{0} user clicks on Save Beneficiary Form for Organization")
     public void user_clicks_save_beneficiary_for_organization(String gwt){
         AppHelper.waitForXHR(2);
         beneficiaryOrganisationPO.validateAndEnterDetailsOrganizationBeneficiary();
         TestNGBase.takeScreenshot("");
+        planSelectionPO.clickSaveButton();
+    }
+
+    @Step("{0} user clicks on Save Beneficiary Form for Organization")
+    public void user_enters_and_clicks_save_beneficiary_for_organization(String gwt){
+        AppHelper.waitForXHR(2);
+        beneficiaryOrganisationPO.enterDetailsOrganizationBeneficiary();
+        TestNGBase.takeScreenshot("");
+        planSelectionPO.initPage(getContext());
         planSelectionPO.clickSaveButton();
     }
 
@@ -396,6 +457,7 @@ public class BeneficiariesDO extends DomainObjectModel {
     @Step("{0} Delete all salesforce Estate Test records")
     public void delete_all_salesforce_estate_test_records(String gwt){
         AppHelper.waitForXHR(1);
+        beneficiaryEstatePO.initPage(getContext());
         beneficiaryEstatePO.deleteAllTestRecords();
     }
 

@@ -51,6 +51,7 @@
         <addBeneficiaryHintLabel>Sauf indication contraire, tous les champs doivent être remplis.</addBeneficiaryHintLabel>
         <primaryTypeLabel>Quel type de bénéficiaire voulez-vous ajouter?</primaryTypeLabel>
         <BeneRadioButton>Succession</BeneRadioButton>
+        <beneficiariesDuplicateError expected="Vous avez déjà ajouté votre succession à titre de premier bénéficiaire.">Vous avez déjà ajouté votre succession à titre de premier bénéficiaire.</beneficiariesDuplicateError>
     </beneficiariesPO>
     <beneficiaryEstatePO>
         <addBeneficiaryEstateLabel>Ajouter un premier bénéficiaire</addBeneficiaryEstateLabel>
