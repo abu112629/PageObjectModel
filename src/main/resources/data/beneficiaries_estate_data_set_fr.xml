@@ -52,17 +52,21 @@
         <primaryTypeLabel>Quel type de bénéficiaire voulez-vous ajouter?</primaryTypeLabel>
         <BeneRadioButton>Succession</BeneRadioButton>
         <beneficiariesDuplicateError expected="Vous avez déjà ajouté votre succession à titre de premier bénéficiaire.">Vous avez déjà ajouté votre succession à titre de premier bénéficiaire.</beneficiariesDuplicateError>
+        <allocationInlineError>Les pourcentages attribués doivent totaliser 100 %.</allocationInlineError>
+        <beneficiariesAllocationTotal expected="Total de la répartition">Total de la répartition</beneficiariesAllocationTotal>
+        <beneficiariesAllocationAddedTotal expected="11%">100%</beneficiariesAllocationAddedTotal>
+        <beneficiariesAllocationError expected="4%">Modifiez la répartition pour vos premiers bénéficiaires afin que les pourcentages totalisent 100 %.</beneficiariesAllocationError>
     </beneficiariesPO>
     <beneficiaryEstatePO>
         <addBeneficiaryEstateLabel>Ajouter un premier bénéficiaire</addBeneficiaryEstateLabel>
         <addBeneficiaryEstateHintLabel>Sauf indication contraire, tous les champs doivent être remplis.</addBeneficiaryEstateHintLabel>
         <primaryTypeEstateLabel>Quel type de bénéficiaire voulez-vous ajouter?</primaryTypeEstateLabel>
         <beneficiaryEstateMessage>Votre succession correspond à tout ce que vous possédez au moment de votre décès. Certains biens peuvent ne pas être inclus dans votre succession, comme des biens conjoints ou des biens pour lesquels vous avez nommé un bénéficiaire. Vous pouvez avoir un testament qui précise vos volontés concernant votre succession lorsque vous décédez. Si vous n’avez pas de testament, les lois provinciales définissent ce qui adviendra de votre succession. Si vous ajoutez votre succession comme bénéficiaire, adressez-vous à un conseiller juridique.</beneficiaryEstateMessage>
-        <primaryAllocationEstate initial="Quel pourcentage voulez-vous attribuer à ce bénéficiaire?">4,00</primaryAllocationEstate>
+        <primaryAllocationEstate initial="Quel pourcentage voulez-vous attribuer à ce bénéficiaire?">89,00</primaryAllocationEstate>
         <primaryEstateAllocationInvalid initial="Entrez un pourcentage entre 1 et 100.">100,22</primaryEstateAllocationInvalid>
         <primaryEstateAllocationError>Entrez le pourcentage que vous voulez accorder à ce bénéficiaire.</primaryEstateAllocationError>
         <beneficiaryEstateType  expected="Votre succession">Succession</beneficiaryEstateType>
-        <beneficiaryAllocationEstatePercentage initial="4.0">4 %</beneficiaryAllocationEstatePercentage>
+        <beneficiaryAllocationEstatePercentage initial="89.0">89 %</beneficiaryAllocationEstatePercentage>
         <BeneEstateRadioButton>Succession</BeneEstateRadioButton>
     </beneficiaryEstatePO>
 </plan-domain-object>

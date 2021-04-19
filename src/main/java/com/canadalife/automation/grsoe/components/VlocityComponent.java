@@ -221,6 +221,51 @@ public abstract class VlocityComponent extends PageComponent {
         Assertions.assertThat(actual).isEqualTo(expected);
     }
 
+    public String getAllocationError() {
+        WebElement els=coreElement.findElement(By.xpath(".//*[contains(@class,'allocation-total allocation-fail')]"));
+        if (!els.isDisplayed()) {
+            return null;
+        } else {
+            return els.getText();
+        }
+    }
+
+    public void validateAllocationError(DataTypes type) {
+        String actual = getAllocationError();
+        String expected = getData(type);
+        Assertions.assertThat(actual).isEqualTo(expected);
+    }
+
+    public String getAllocationSuccess() {
+        WebElement els=coreElement.findElement(By.xpath(".//*[contains(@class,'allocation-total allocation-success')]"));
+        if (!els.isDisplayed()) {
+            return null;
+        } else {
+            return els.getText();
+        }
+    }
+
+    public void validateAllocationSuccess(DataTypes type) {
+        String actual = getAllocationSuccess();
+        String expected = getData(type);
+        Assertions.assertThat(actual).isEqualTo(expected);
+    }
+
+    public String getAllocationInlineError() {
+        WebElement els=coreElement.findElement(By.xpath(".//*[contains(@class,'nds-size_1-of-1 allocation-error')]"));
+        if (!els.isDisplayed()) {
+            return null;
+        } else {
+            return els.getText();
+        }
+    }
+
+    public void validateAllocationInlineError(DataTypes type) {
+        String actual = getAllocationInlineError();
+        String expected = getData(type);
+        Assertions.assertThat(actual).isEqualTo(expected);
+    }
+
     public String getCheckboxLabel() {
         WebElement els=coreElement.findElement(By.xpath(".//*[contains(@class,'nds-checkbox-span')]"));
         if (!els.isDisplayed()) {

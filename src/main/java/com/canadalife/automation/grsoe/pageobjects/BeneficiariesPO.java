@@ -125,6 +125,18 @@ public class BeneficiariesPO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
     private VlocitySelectRadioButton beneficiariesDuplicateError;
 
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
+    private VlocitySelectRadioButton beneficiariesAllocationError;
+
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
+    private VlocitySelectRadioButton beneficiariesAllocationAddedTotal;
+
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
+    private VlocitySelectRadioButton beneficiariesAllocationTotal;
+
+    @FindBy(xpath="//*[@data-omni-key='PrimaryBeneficiaries']")
+    private VlocitySelectRadioButton allocationInlineError;
+
     @Data(skip = true)
     SalesforceInfo salesforceInfo;
 
@@ -265,7 +277,10 @@ public class BeneficiariesPO extends PageObjectModel {
         primaryAllocationError.validateError(DataTypes.Data);
 
     }
-
+    public void validateAllocationError() {
+        AppHelper.scrollToView(beneficiariesAllocationError.getCoreElement());
+        beneficiariesAllocationError.validateBannerError(DataTypes.Data);
+    }
     public void validateDuplicateBeneDetailsError() {
         AppHelper.scrollToView(beneficiariesDuplicateError.getCoreElement());
         String ErrorMessage=beneficiariesDuplicateError.getCoreElement().findElements(By.xpath("//slot/p")).get(0).getText();
@@ -328,5 +343,50 @@ public class BeneficiariesPO extends PageObjectModel {
                 break;
 
         }
+    }
+
+    public void validateAllocationErrorTotalAndLogo(){
+        beneficiariesAllocationTotal.getCoreElement();
+        beneficiariesAllocationTotal.getAllocationPercentage();
+        beneficiariesAllocationTotal.validateAllocationPercentage(DataTypes.Expected);
+        beneficiariesAllocationError.validateAllocationError(DataTypes.Expected);
+        allocationInlineError.getCoreElement();
+        allocationInlineError.validateAllocationInlineError(DataTypes.Data);
+
+    }
+
+    public void validateAllocationSuccessTotalAndLogo(){
+        beneficiariesAllocationTotal.getCoreElement();
+        WebElement beneAllocationTotal=getDriver().findElement(By.
+                xpath("//div[contains(text(),'"+beneficiariesAllocationTotal.getData()+"')]"));
+        String allocationTotalText=beneAllocationTotal.getText();
+        String expectedAllocationTotalText=beneficiariesAllocationTotal.getData();
+        Assertions.assertThat(allocationTotalText).isEqualTo(expectedAllocationTotalText);
+
+        WebElement allocationAddedTotal=getDriver().findElement(By.xpath("//*[contains(@class,'allocation-total allocation-success')]"));
+        String AllocationAddedTot=allocationAddedTotal.getText();
+        String expectedAllocationAddedTot=beneficiariesAllocationAddedTotal.getData(DataTypes.Data);
+        Assertions.assertThat(AllocationAddedTot).isEqualTo(expectedAllocationAddedTot);
+
+    }
+
+    public void validateAdditionalAllocationErrorTotalAndLogo(){
+        beneficiariesAllocationTotal.getCoreElement();
+        WebElement beneAllocationTotal=getDriver().findElement(By.
+                xpath("//div[contains(text(),'"+beneficiariesAllocationTotal.getData()+"')]"));
+        String allocationTotalText=beneAllocationTotal.getText();
+        String expectedAllocationTotalText=beneficiariesAllocationTotal.getData();
+        Assertions.assertThat(allocationTotalText).isEqualTo(expectedAllocationTotalText);
+
+        WebElement allocationAddedTotal=getDriver().findElement(By.xpath("//*[contains(@class,'allocation-total allocation-fail')]"));
+        String AllocationAddedTot=allocationAddedTotal.getText();
+        String expectedAllocationAddedTot=beneficiariesAllocationAddedTotal.getData(DataTypes.Expected);
+        Assertions.assertThat(AllocationAddedTot).isEqualTo(expectedAllocationAddedTot);
+
+        WebElement allocationInline=getDriver().findElement(By.xpath("//*[contains(@class,'nds-size_1-of-1 allocation-error')]"));
+        String allocationInlineText=allocationInline.getText();
+        String expectedAllocationInlineMsg=allocationInlineError.getData();
+        Assertions.assertThat(allocationInlineText).isEqualTo(expectedAllocationInlineMsg);
+
     }
 }

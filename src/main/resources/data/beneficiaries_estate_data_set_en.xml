@@ -52,17 +52,21 @@
         <primaryTypeLabel>What type of beneficiary do you want to add?</primaryTypeLabel>
         <BeneRadioButton>Estate</BeneRadioButton>
         <beneficiariesDuplicateError expected="You've already added your estate as a primary beneficiary.">You've already added your estate as a primary beneficiary.</beneficiariesDuplicateError>
+        <allocationInlineError>Per cent must total 100.</allocationInlineError>
+        <beneficiariesAllocationTotal expected="Total allocation">Total allocation</beneficiariesAllocationTotal>
+        <beneficiariesAllocationAddedTotal expected="15%">100%</beneficiariesAllocationAddedTotal>
+        <beneficiariesAllocationError expected="4%">Edit your allocations for primary beneficiaries so that they add up to 100%.</beneficiariesAllocationError>
     </beneficiariesPO>
     <beneficiaryEstatePO>
         <addBeneficiaryEstateLabel>Add a primary beneficiary</addBeneficiaryEstateLabel>
         <addBeneficiaryEstateHintLabel>All fields are required unless labelled as optional.</addBeneficiaryEstateHintLabel>
         <primaryTypeEstateLabel>What type of beneficiary do you want to add?</primaryTypeEstateLabel>
         <beneficiaryEstateMessage>Your estate is everything you own at the time of your death. Some property may not be included in your estate, for example some jointly held property or property for which you have named a beneficiary. You may have a will that says what you want to be done with your estate when you die. If you don't have a will, provincial laws set out what will happen to your estate. If you add your estate as a beneficiary, speak to a legal advisor.</beneficiaryEstateMessage>
-        <primaryAllocationEstate initial="What percentage do you want to allocate to this beneficiary?">4.00</primaryAllocationEstate>
+        <primaryAllocationEstate initial="What percentage do you want to allocate to this beneficiary?">89.00</primaryAllocationEstate>
         <primaryEstateAllocationInvalid initial="Enter a valid percentage between 1 and 100.">100.22</primaryEstateAllocationInvalid>
         <primaryEstateAllocationError>Enter the percentage you'd like to allocate to this beneficiary.</primaryEstateAllocationError>
         <beneficiaryEstateType expected="Your estate">Estate</beneficiaryEstateType>
-        <beneficiaryAllocationEstatePercentage initial="4.0">4%</beneficiaryAllocationEstatePercentage>
+        <beneficiaryAllocationEstatePercentage initial="89.0">89%</beneficiaryAllocationEstatePercentage>
         <BeneEstateRadioButton>Estate</BeneEstateRadioButton>
     </beneficiaryEstatePO>
 </plan-domain-object>

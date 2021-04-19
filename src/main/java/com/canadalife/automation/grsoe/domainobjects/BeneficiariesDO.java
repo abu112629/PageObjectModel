@@ -93,6 +93,10 @@ public class BeneficiariesDO extends DomainObjectModel {
         planSelectionPO.clickContinueButton();
     }
 
+    @Step("{0} user clicks back button")
+    public void user_clicks_back_button(String gwt){
+        planSelectionPO.clickBackButton();
+    }
 
     @Step("{0} user clicks cancel button")
     public void user_clicks_cancel_button(String gwt){
@@ -466,4 +470,24 @@ public class BeneficiariesDO extends DomainObjectModel {
         AppHelper.waitForXHR(1);
         beneficiaryOrganisationPO.deleteAllTestRecords();
     }
+
+    @Step("{0} user clicks continue and is able to validate all allocation errors")
+    public void user_clicks_continue_and_is_able_to_validate_all_allocation_errors(String gwt){
+        TestNGBase.takeScreenshot("");
+        beneficiariesPO.validateAllocationError();
+        beneficiariesPO.validateAllocationErrorTotalAndLogo();
+    }
+    @Step("{0} user clicks continue and is able to validate all additional allocation errors")
+    public void user_clicks_continue_and_is_able_to_validate_all_additional_allocation_errors(String gwt){
+        TestNGBase.takeScreenshot("");
+        beneficiariesPO.validateAllocationError();
+        beneficiariesPO.validateAdditionalAllocationErrorTotalAndLogo();
+    }
+
+    @Step("{0} user is able to continue with allocation as 100%")
+    public void user_is_able_to_continue_with_allocation_as_100(String gwt){
+        TestNGBase.takeScreenshot("");
+        beneficiariesPO.validateAllocationSuccessTotalAndLogo();
+    }
+
 }

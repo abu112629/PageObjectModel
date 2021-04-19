@@ -69,6 +69,10 @@
     <beneficiaryType expected="TestFrench Testsample (Tante)">Personne</beneficiaryType>
     <beneficiaryAllocationPercentage initial="4.0">4 %</beneficiaryAllocationPercentage>
     <beneficiariesDuplicateError expected="Vous avez déjà ajouté un premier bénéficiaire du même prénom et du même nom ayant le même lien avec vous.">Vous avez déjà ajouté un premier bénéficiaire du même prénom et du même nom ayant le même lien avec vous.</beneficiariesDuplicateError>
+    <allocationInlineError>Les pourcentages attribués doivent totaliser 100 %.</allocationInlineError>
+    <beneficiariesAllocationError expected="4%">Modifiez la répartition pour vos premiers bénéficiaires afin que les pourcentages totalisent 100 %.</beneficiariesAllocationError>
+    <beneficiariesAllocationAddedTotal expected="11%">100%</beneficiariesAllocationAddedTotal>
+    <beneficiariesAllocationTotal expected="Total de la répartition">Total de la répartition</beneficiariesAllocationTotal>
 </beneficiariesPO>
     <beneficiaryTrusteePO>
         <primaryFirstName>TestFrench</primaryFirstName>
