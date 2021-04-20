@@ -50,6 +50,7 @@ public class NRSPIVTTest extends TestNGBase {
         BeneficiariesDO beneficiariesDO=new BeneficiariesDO(getContext()).fromResource(dataSet4);
         And(beneficiariesDO :: user_validates_beneficiaries_skip_section);
         And(beneficiariesDO :: user_clicks_back_and_reach_add_beneficiaries_page_and_back_to_investments);
+        And(beneficiariesDO :: user_clicks_continue_button);
         And(beneficiariesDO :: user_clicks_add_primary_beneficiary);
         And(beneficiariesDO :: delete_all_salesforce_test_records);
         And(beneficiariesDO :: user_enters_person_beneficiary_details);

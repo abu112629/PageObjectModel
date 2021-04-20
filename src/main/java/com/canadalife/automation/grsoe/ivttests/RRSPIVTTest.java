@@ -41,6 +41,7 @@ public class RRSPIVTTest extends TestNGBase {
         BeneficiariesDO beneficiariesDO=new BeneficiariesDO(getContext()).fromResource(dataSet3);
         And(beneficiariesDO :: user_validates_beneficiaries_skip_section);
         And(beneficiariesDO ::user_clicks_back_and_reach_add_beneficiaries_page_and_back_to_investments);
+        And(beneficiariesDO :: user_clicks_continue_button);
         And(beneficiariesDO :: user_clicks_add_primary_beneficiary);
 
         BeneficiariesDO beneficiariesDO2=new BeneficiariesDO(getContext()).fromResource(dataSet4);
