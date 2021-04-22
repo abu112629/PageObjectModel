@@ -61,7 +61,7 @@
         <addBeneficiaryEstateLabel>Ajouter un premier bénéficiaire</addBeneficiaryEstateLabel>
         <addBeneficiaryEstateHintLabel>Sauf indication contraire, tous les champs doivent être remplis.</addBeneficiaryEstateHintLabel>
         <primaryTypeEstateLabel>Quel type de bénéficiaire voulez-vous ajouter?</primaryTypeEstateLabel>
-        <beneficiaryEstateMessage>Votre succession correspond à tout ce que vous possédez au moment de votre décès. Certains biens peuvent ne pas être inclus dans votre succession, comme des biens conjoints ou des biens pour lesquels vous avez nommé un bénéficiaire. Vous pouvez avoir un testament qui précise vos volontés concernant votre succession lorsque vous décédez. Si vous n’avez pas de testament, les lois provinciales définissent ce qui adviendra de votre succession. Si vous ajoutez votre succession comme bénéficiaire, adressez-vous à un conseiller juridique.</beneficiaryEstateMessage>
+        <beneficiaryEstateMessage>Votre succession correspond à tout ce que vous possédez au moment de votre décès. Certains biens peuvent ne pas être inclus dans votre succession, comme des biens conjoints ou des biens pour lesquels vous avez nommé un bénéficiaire. Si vous ajoutez votre succession comme bénéficiaire, adressez-vous à un conseiller juridique.</beneficiaryEstateMessage>
         <primaryAllocationEstate initial="Quel pourcentage voulez-vous attribuer à ce bénéficiaire?">89,00</primaryAllocationEstate>
         <primaryEstateAllocationInvalid initial="Entrez un pourcentage entre 1 et 100.">100,22</primaryEstateAllocationInvalid>
         <primaryEstateAllocationError>Entrez le pourcentage que vous voulez accorder à ce bénéficiaire.</primaryEstateAllocationError>
