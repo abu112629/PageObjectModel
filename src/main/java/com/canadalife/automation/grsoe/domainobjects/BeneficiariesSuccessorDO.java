@@ -121,12 +121,11 @@ public class BeneficiariesSuccessorDO extends DomainObjectModel {
         beneficiarySuccessorPO.validateSalesforceBeneficiarySuccessorRecord();
     }
 
-    @Step("{0} user edits Beneficiary Successor Information and updates SIN Number")
+    @Step("{0} user clicks on edit Beneficiary Successor Information and validates stored information")
     public void user_edits_beneficiary_successor_information(String gwt){
         AppHelper.waitForXHR(1);
         beneficiarySuccessorPO.editPrimarySuccessorBeneficiary();
         beneficiarySuccessorPO.validatePrimarySuccessorBeneficiaryOnEdit();
-        beneficiarySuccessorPO.enterSINSuccessorBeneficiary();
         planSelectionPO.clickSaveButton();
     }
 

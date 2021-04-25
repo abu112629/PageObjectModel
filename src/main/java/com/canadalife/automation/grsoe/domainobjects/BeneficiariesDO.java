@@ -306,6 +306,7 @@ public class BeneficiariesDO extends DomainObjectModel {
     @Step("{0} user validates Pill information after saving the details")
     public void user_validates_pill_information_after_saving_the_details(String gwt){
         AppHelper.waitForXHR(1);
+        TestNGBase.takeScreenshot("");
         beneficiariesPO.validatePillInformation();
         TestNGBase.takeScreenshot("");
     }

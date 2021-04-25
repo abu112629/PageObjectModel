@@ -97,6 +97,7 @@ public class NRSPAdditionalInfoPO extends PageObjectModel {
     public void enterTINforUSCitizen() {
         AppHelper.scrollToView(usTinNumber.getCoreElement());
         usTinNumber.click();
+        AppHelper.waitForXHR(1);
         setElementValue(usTinNumber);
     }
 

@@ -145,6 +145,7 @@ public class BeneficiariesPO extends PageObjectModel {
     }
 
     public void deletePrimaryBeneficiary(){
+        AppHelper.scrollToView(primaryBeneDelete.getCoreElement());
         setElementValue(primaryBeneDelete,false);
 
     }
@@ -288,6 +289,7 @@ public class BeneficiariesPO extends PageObjectModel {
         Assertions.assertThat(ErrorMessage).isEqualTo(ExpectedErrorMessage);
     }
     public void validatePillInformation(){
+        AppHelper.scrollToView(beneficiaryType.getCoreElement());
         beneficiaryType.validateBeneficiaryTypePerson(DataTypes.Data);
         beneficiaryType.validateBeneficiaryName(DataTypes.Expected);
         beneficiaryAllocationPercentage.validateAllocationPercentage(DataTypes.Data);

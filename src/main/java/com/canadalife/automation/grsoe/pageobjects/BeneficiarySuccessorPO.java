@@ -100,6 +100,7 @@ public class BeneficiarySuccessorPO extends PageObjectModel {
     SalesforceInfo salesforceInfo;
 
     public void editPrimarySuccessorBeneficiary(){
+        AppHelper.scrollToView(primaryBeneSuccessorEdit.getCoreElement());
         setElementValue(primaryBeneSuccessorEdit,false);
     }
 
@@ -194,7 +195,7 @@ public class BeneficiarySuccessorPO extends PageObjectModel {
     }
 
     public void enterSINSuccessorBeneficiary(){
-        primarySuccessorUpdatedSIN.click();
+        AppHelper.scrollToView(primarySuccessorUpdatedSIN.getCoreElement());
         AppHelper.waitForXHR(3);
         setElementValue(primarySuccessorUpdatedSIN,false);
 
@@ -208,6 +209,7 @@ public class BeneficiarySuccessorPO extends PageObjectModel {
     }
 
     public void validateSuccessorPillInformation(){
+        AppHelper.scrollToView(beneficiarySuccessorType.getCoreElement());
         beneficiarySuccessorType.validateBeneficiaryTypePerson(DataTypes.Data);
         beneficiarySuccessorType.validateBeneficiaryName(DataTypes.Expected);
     }
