@@ -3,12 +3,11 @@ package com.canadalife.automation.grsoe.components;
 import com.canadalife.automation.grsoe.support.AppHelper;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import ui.auto.core.data.DataTypes;
-import ui.auto.core.utils.WebHelper;
+
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
 
 public class VlocityActionInput extends VlocityComponent{
 
@@ -22,8 +21,11 @@ public class VlocityActionInput extends VlocityComponent{
         WebElement input = coreElement.findElement(By.xpath(".//input"));
         input.clear();
         AppHelper.waitForXHR(1);
-        Actions action = new Actions(WebHelper.getWebDriver());
-        action.sendKeys(input,getData()).build().perform();
+        //Actions action = new Actions(WebHelper.getWebDriver());
+        //action.sendKeys(input,getData()).build().perform();
+        StringSelection selection = new StringSelection(getData());
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, selection);
+        input.sendKeys(getData());
     }
 
     @Override
