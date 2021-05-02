@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_En</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                NRSP
+            </item>
+        </planList>
+        <planProgressBarStep>
+            <item>Step 5 of 7: Choose your beneficiaries</item>
+        </planProgressBarStep>
+        <hintText>
+            <item>Max. 20 characters</item>
+            <item>Appoint a trustee if your beneficiary is a minor or lacks legal capacity and doesn't live in Quebec. If your beneficiary is a minor who lives in Quebec, death benefits will be paid to your beneficiary’s tutor (generally the parents) unless a trust for the minor exists. If a formal trust exists, don't complete this section. Consider getting legal advice before appointing a trustee.</item>
+            <item>In Quebec, if your spouse (married or civil union) is a beneficiary, you can't remove them without their permission unless you select the revocable checkbox below.</item>
+            <item>If you’re adding more beneficiaries, make sure the total adds up to 100%.</item>
+            <item>Max. 60 characters</item>>
+        </hintText>
+    </planSelectionPO>
+    <nrspAdditionalInfoPO>
+        <usCitizenNo>no</usCitizenNo>
+        <otherCitizenNo>no</otherCitizenNo>
+    </nrspAdditionalInfoPO>
+    <investmentPO>
+        <investmentCardSelected>Selected</investmentCardSelected>
+    </investmentPO>
+    <contingentBeneficiaryPO>
+        <contingentBeneficiaryHeader>Contingent beneficiaries</contingentBeneficiaryHeader>
+        <contingentBeneficiaryDescription>In case all your primary beneficiaries die before you, choose who you'd like to receive your savings instead of them when you die.</contingentBeneficiaryDescription>
+        <beneficiariesDeleteQuestion>Are you sure you want to delete Test Testsample?</beneficiariesDeleteQuestion>
+        <contingentBeneficiariesAdd expected="The trustee and the beneficiary can't be the same person.">Add a contingent beneficiary</contingentBeneficiariesAdd>
+        <addContingentBeneficiaryLabel>Add a contingent beneficiary</addContingentBeneficiaryLabel>
+        <addContingentBeneficiaryHintLabel>All fields are required unless labelled as optional.</addContingentBeneficiaryHintLabel>
+        <contingentTypeLabel>What type of beneficiary do you want to add?</contingentTypeLabel>
+        <BeneRadioButton>Person</BeneRadioButton>
+        <personDropDownQuestion>What’s this person’s relationship to you?</personDropDownQuestion>
+        <personBeneficiaryRelation>Aunt</personBeneficiaryRelation>
+        <contingentFirstName initial="First name">Test</contingentFirstName>
+        <contingentFirstNameInvalid initial="Enter a valid first name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</contingentFirstNameInvalid>
+        <contingentFirstNameError>Enter this beneficiary's first name.</contingentFirstNameError>
+        <contingentLastName initial="Last name">Testsample</contingentLastName>
+        <contingentLastNameInvalid initial="Enter a valid last name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</contingentLastNameInvalid>
+        <contingentLastNameError>Enter this beneficiary's last name.</contingentLastNameError>
+        <contingentDateOfBirth expected ="Date of birth (optional)">Date of birth</contingentDateOfBirth>
+        <contingentMonthLabel expected ="Month">Month</contingentMonthLabel>
+        <contingentDateLabel expected ="Day (DD)">Day (DD)</contingentDateLabel>
+        <contingentYearLabel expected ="Year (YYYY)">Year (YYYY)</contingentYearLabel>
+        <contingentAllocation initial="What percentage do you want to allocate to this beneficiary?">4.00</contingentAllocation>
+        <contingentAllocationInvalid initial="Enter a valid percentage between 1 and 100.">100.22</contingentAllocationInvalid>
+        <contingentAllocationError>Enter the percentage you'd like to allocate to this beneficiary.</contingentAllocationError>
+        <beneficiaryType expected="Test Testsample (Aunt)">Person</beneficiaryType>
+        <beneficiaryAllocationPercentage initial="4.0">4%</beneficiaryAllocationPercentage>
+        <beneficiaryRevocableQuestion initial="Make this beneficiary revocable">Do you want this beneficiary to be revocable? (optional)</beneficiaryRevocableQuestion>
+        <beneficiariesDuplicateError expected="You've already added a primary beneficiary with the same first name, last name and relationship to you.">You've already added a primary beneficiary with the same first name, last name and relationship to you.</beneficiariesDuplicateError>
+        <allocationInlineError>Per cent must total 100.</allocationInlineError>
+        <beneficiariesAllocationTotal expected="Total allocation">Total allocation</beneficiariesAllocationTotal>
+        <beneficiariesAllocationAddedTotal expected="11%">100%</beneficiariesAllocationAddedTotal>
+        <beneficiariesAllocationError expected="4%">Edit your allocations for primary beneficiaries so that they add up to 100%.</beneficiariesAllocationError>
+        <contingentBeneEdit>Edit</contingentBeneEdit>
+        <contingentBeneDelete>Delete</contingentBeneDelete>
+    </contingentBeneficiaryPO>
+    <contingentbeneficiaryTrusteePO>
+        <primaryFirstName>Test</primaryFirstName>
+        <primaryLastName>Testsample</primaryLastName>
+        <beneficiaryTrusteeType>Trustee: Trustee TestEnglish</beneficiaryTrusteeType>
+        <primaryTrusteeQuestion>Does this beneficiary require a trustee?</primaryTrusteeQuestion>
+        <primaryTrusteeSelectionYes>yes</primaryTrusteeSelectionYes>
+        <primaryTrusteeSelectionNo initial="Select if this beneficiary requires a trustee.">no</primaryTrusteeSelectionNo>
+        <primaryTrusteeRelationship initial="What's the trustee's relationship to you?">Aunt</primaryTrusteeRelationship>
+        <primaryTrusteeFirstName initial="First name">Trustee</primaryTrusteeFirstName>
+        <primaryTrusteeLastName initial="Last name">TestEnglish</primaryTrusteeLastName>
+        <primaryTrusteeFirstNameDuplicate>Test</primaryTrusteeFirstNameDuplicate>
+        <primaryTrusteeLastNameDuplicate>Testsample</primaryTrusteeLastNameDuplicate>
+        <primaryTrusteeRelationshipError>Select the trustee's relationship to you.</primaryTrusteeRelationshipError>
+        <primaryTrusteeFirstNameError>Enter the trustee's first name.</primaryTrusteeFirstNameError>
+        <primaryTrusteeLastNameError>Enter the trustee's last name.</primaryTrusteeLastNameError>
+        <primaryTrusteeFirstNameInvalid initial="Enter a valid first name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</primaryTrusteeFirstNameInvalid>
+        <primaryTrusteeLastNameInvalid initial="Enter a valid last name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</primaryTrusteeLastNameInvalid>
+        <beneficiariesAdd expected="The trustee and the beneficiary can't be the same person.">Add a primary beneficiary</beneficiariesAdd>
+    </contingentbeneficiaryTrusteePO>
+    <rppAdditionalInfoPO>
+        <slctdrpdownMonth>January</slctdrpdownMonth>
+        <birthDay>07</birthDay>
+        <birthYear>1989</birthYear>
+    </rppAdditionalInfoPO>
+</plan-domain-object>

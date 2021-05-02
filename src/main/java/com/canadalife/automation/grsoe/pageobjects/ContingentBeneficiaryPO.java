@@ -136,6 +136,11 @@ public class ContingentBeneficiaryPO extends PageObjectModel {
     @Data(skip = true)
     SalesforceInfo salesforceInfo;
 
+    public void validateContingentBeneficiaryHeaderAndDescription(){
+        contingentBeneficiaryHeader.validateData(DataTypes.Data);
+        contingentBeneficiaryDescription.validateData(DataTypes.Data);
+    }
+
     public void editContingentBeneficiary(){
         setElementValue(contingentBeneEdit,false);
     }
