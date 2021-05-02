@@ -21,8 +21,8 @@ public class ContingentBeneficiariesTest extends TestNGBase {
     @Issue("GRSOE-417")
     @Test
 
-    public void ValidateContingentBeneficiaries(@Optional("data/beneficiaries_skip_data_set_en.xml") String dataSet,
-                                                @Optional("data/contingent_beneficiaries_data_set_en.xml") String dataSet2) {
+    public void ValidateContingentBeneficiaries(@Optional("data/beneficiaries_skip_data_set_fr.xml") String dataSet,
+                                                @Optional("data/contingent_beneficiaries_data_set_fr.xml") String dataSet2) {
 
         BeneficiariesDO beneficiariesDO=new BeneficiariesDO(getContext()).fromResource(dataSet);
         Given(beneficiariesDO :: user_on_plan_selection_page);
