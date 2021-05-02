@@ -393,6 +393,7 @@ public class BeneficiariesDO extends DomainObjectModel {
     @Step("{0} user enters trustee details and clicks save")
     public void user_enters_trustee_details_and_clicks_save(String gwt){
         beneficiaryTrusteePO.validateAndEnterDetailsTrusteeBeneficiary();
+        beneficiariesPO.validateAndEnterPrimaryallocation();
         planSelectionPO.clickSaveButton();
         TestNGBase.takeScreenshot("");
 

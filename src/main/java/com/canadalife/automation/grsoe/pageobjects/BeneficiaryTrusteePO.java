@@ -24,10 +24,10 @@ public class BeneficiaryTrusteePO extends PageObjectModel {
     private RadioGroup primaryTrusteeQuestion;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryIstrusteeYesNo']")
-    private RadioGroup primaryTrusteeSelectionYes;
+    private RadioActionGroup primaryTrusteeSelectionYes;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryIstrusteeYesNo']")
-    private RadioGroup primaryTrusteeSelectionNo;
+    private RadioActionGroup primaryTrusteeSelectionNo;
 
     @FindBy(xpath = "(//*[@data-omni-key='PrimaryIstrusteeYesNo']//input[@value='no']/..)[last()]")
     private WebElement primaryDuplicateTrusteeSelectionNo;
@@ -74,7 +74,7 @@ public class BeneficiaryTrusteePO extends PageObjectModel {
 
     public void selectPrimaryTrusteeNo(){
         AppHelper.scrollToView(primaryTrusteeSelectionNo.getCoreElement());
-        setElementValue(primaryTrusteeSelectionNo);
+        setElementValue(primaryTrusteeSelectionNo,false);
 
     }
     public void selectPrimaryTrusteeNoDuplicate(){
@@ -84,7 +84,7 @@ public class BeneficiaryTrusteePO extends PageObjectModel {
     }
     public void selectPrimaryTrusteeYes(){
         AppHelper.scrollToView(primaryTrusteeSelectionYes.getCoreElement());
-        setElementValue(primaryTrusteeSelectionYes);
+        setElementValue(primaryTrusteeSelectionYes,false);
     }
     public void validatePrimaryTrusteeError(){
         AppHelper.scrollToView(primaryTrusteeSelectionNo.getCoreElement());

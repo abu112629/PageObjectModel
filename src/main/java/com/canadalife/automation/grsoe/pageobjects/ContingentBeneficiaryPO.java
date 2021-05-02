@@ -10,6 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.yandex.qatools.allure.annotations.Step;
+import ui.auto.core.components.SelectComponent;
 import ui.auto.core.components.WebComponent;
 import ui.auto.core.data.DataTypes;
 import ui.auto.core.support.PageObjectModel;
@@ -79,14 +81,23 @@ public class ContingentBeneficiaryPO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='ContingentDateOfBirth']")
     private VlocityInput contingentDateOfBirth;
 
+    @FindBy(xpath = "//*[@data-omni-key='ContingentDateOfBirth']//input[@type='number'][starts-with(@id, 'day')]")
+    private WebComponent contingentDateOfBirthInput;
+
     @FindBy(xpath = "//*[@data-omni-key='ContingentDateOfBirth']")
     private VlocityInput contingentMonthLabel;
+
+    @FindBy(xpath = "//*[@data-omni-key='ContingentDateOfBirth']//select[starts-with(@id, 'month')]")
+    private SelectComponent contingentMonthOfBirthInput;
 
     @FindBy(xpath = "//*[@data-omni-key='ContingentDateOfBirth']")
     private VlocityInput contingentDateLabel;
 
     @FindBy(xpath = "//*[@data-omni-key='ContingentDateOfBirth']")
     private VlocityInput contingentYearLabel;
+
+    @FindBy(xpath = "//*[@data-omni-key='ContingentDateOfBirth']//input[@type='number'][starts-with(@id, 'year')]")
+    private WebComponent contingentYearOfBirthInput;
 
     @FindBy(xpath = "//*[@data-omni-key='ContingentAllocationPerson']")
     private VlocityActionInput contingentAllocation;
@@ -136,6 +147,13 @@ public class ContingentBeneficiaryPO extends PageObjectModel {
     @Data(skip = true)
     SalesforceInfo salesforceInfo;
 
+    @Step("Enter Date Of Birth Details")
+    public void enterDOBDetails() {
+        setElementValue(contingentMonthOfBirthInput, false);
+        setElementValue(contingentDateOfBirthInput);
+        setElementValue(contingentYearOfBirthInput);
+
+    }
     public void validateContingentBeneficiaryHeaderAndDescription(){
         contingentBeneficiaryHeader.validateData(DataTypes.Data);
         contingentBeneficiaryDescription.validateData(DataTypes.Data);

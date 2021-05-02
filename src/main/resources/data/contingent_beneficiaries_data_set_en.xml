@@ -42,7 +42,7 @@
     <contingentBeneficiaryPO>
         <contingentBeneficiaryHeader>Contingent beneficiaries</contingentBeneficiaryHeader>
         <contingentBeneficiaryDescription>In case all your primary beneficiaries die before you, choose who you'd like to receive your savings instead of them when you die.</contingentBeneficiaryDescription>
-        <beneficiariesDeleteQuestion>Are you sure you want to delete Test Testsample?</beneficiariesDeleteQuestion>
+        <beneficiariesDeleteQuestion>Are you sure you want to delete TestContingent Testsample?</beneficiariesDeleteQuestion>
         <contingentBeneficiariesAdd expected="The trustee and the beneficiary can't be the same person.">Add a contingent beneficiary</contingentBeneficiariesAdd>
         <addContingentBeneficiaryLabel>Add a contingent beneficiary</addContingentBeneficiaryLabel>
         <addContingentBeneficiaryHintLabel>All fields are required unless labelled as optional.</addContingentBeneficiaryHintLabel>
@@ -50,7 +50,7 @@
         <BeneRadioButton>Person</BeneRadioButton>
         <personDropDownQuestion>What’s this person’s relationship to you?</personDropDownQuestion>
         <personBeneficiaryRelation>Aunt</personBeneficiaryRelation>
-        <contingentFirstName initial="First name">Test</contingentFirstName>
+        <contingentFirstName initial="First name">TestContingent</contingentFirstName>
         <contingentFirstNameInvalid initial="Enter a valid first name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</contingentFirstNameInvalid>
         <contingentFirstNameError>Enter this beneficiary's first name.</contingentFirstNameError>
         <contingentLastName initial="Last name">Testsample</contingentLastName>
@@ -63,7 +63,7 @@
         <contingentAllocation initial="What percentage do you want to allocate to this beneficiary?">4.00</contingentAllocation>
         <contingentAllocationInvalid initial="Enter a valid percentage between 1 and 100.">100.22</contingentAllocationInvalid>
         <contingentAllocationError>Enter the percentage you'd like to allocate to this beneficiary.</contingentAllocationError>
-        <beneficiaryType expected="Test Testsample (Aunt)">Person</beneficiaryType>
+        <beneficiaryType expected="TestContingent Testsample (Aunt)">Person</beneficiaryType>
         <beneficiaryAllocationPercentage initial="4.0">4%</beneficiaryAllocationPercentage>
         <beneficiaryRevocableQuestion initial="Make this beneficiary revocable">Do you want this beneficiary to be revocable? (optional)</beneficiaryRevocableQuestion>
         <beneficiariesDuplicateError expected="You've already added a primary beneficiary with the same first name, last name and relationship to you.">You've already added a primary beneficiary with the same first name, last name and relationship to you.</beneficiariesDuplicateError>
@@ -73,29 +73,27 @@
         <beneficiariesAllocationError expected="4%">Edit your allocations for primary beneficiaries so that they add up to 100%.</beneficiariesAllocationError>
         <contingentBeneEdit>Edit</contingentBeneEdit>
         <contingentBeneDelete>Delete</contingentBeneDelete>
+        <contingentMonthOfBirthInput>January</contingentMonthOfBirthInput>
+        <contingentDateOfBirthInput>07</contingentDateOfBirthInput>
+        <contingentYearOfBirthInput>1989</contingentYearOfBirthInput>
     </contingentBeneficiaryPO>
     <contingentbeneficiaryTrusteePO>
-        <primaryFirstName>Test</primaryFirstName>
-        <primaryLastName>Testsample</primaryLastName>
-        <beneficiaryTrusteeType>Trustee: Trustee TestEnglish</beneficiaryTrusteeType>
-        <primaryTrusteeQuestion>Does this beneficiary require a trustee?</primaryTrusteeQuestion>
-        <primaryTrusteeSelectionYes>yes</primaryTrusteeSelectionYes>
-        <primaryTrusteeSelectionNo initial="Select if this beneficiary requires a trustee.">no</primaryTrusteeSelectionNo>
-        <primaryTrusteeRelationship initial="What's the trustee's relationship to you?">Aunt</primaryTrusteeRelationship>
-        <primaryTrusteeFirstName initial="First name">Trustee</primaryTrusteeFirstName>
-        <primaryTrusteeLastName initial="Last name">TestEnglish</primaryTrusteeLastName>
-        <primaryTrusteeFirstNameDuplicate>Test</primaryTrusteeFirstNameDuplicate>
-        <primaryTrusteeLastNameDuplicate>Testsample</primaryTrusteeLastNameDuplicate>
-        <primaryTrusteeRelationshipError>Select the trustee's relationship to you.</primaryTrusteeRelationshipError>
-        <primaryTrusteeFirstNameError>Enter the trustee's first name.</primaryTrusteeFirstNameError>
-        <primaryTrusteeLastNameError>Enter the trustee's last name.</primaryTrusteeLastNameError>
-        <primaryTrusteeFirstNameInvalid initial="Enter a valid first name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</primaryTrusteeFirstNameInvalid>
-        <primaryTrusteeLastNameInvalid initial="Enter a valid last name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</primaryTrusteeLastNameInvalid>
-        <beneficiariesAdd expected="The trustee and the beneficiary can't be the same person.">Add a primary beneficiary</beneficiariesAdd>
+        <contingentFirstName>TestContingent</contingentFirstName>
+        <contingentLastName>Testsample</contingentLastName>
+        <beneficiaryTrusteeType>Trustee: TrusteeContingent TestEnglish</beneficiaryTrusteeType>
+        <contingentTrusteeQuestion>Does this beneficiary require a trustee?</contingentTrusteeQuestion>
+        <contingentTrusteeSelectionYes>yes</contingentTrusteeSelectionYes>
+        <contingentTrusteeSelectionNo initial="Select if this beneficiary requires a trustee.">no</contingentTrusteeSelectionNo>
+        <contingentTrusteeRelationship initial="What's the trustee's relationship to you?">Aunt</contingentTrusteeRelationship>
+        <contingentTrusteeFirstName initial="First name">TrusteeContingent</contingentTrusteeFirstName>
+        <contingentTrusteeLastName initial="Last name">TestEnglish</contingentTrusteeLastName>
+        <contingentTrusteeFirstNameDuplicate>TestContingent</contingentTrusteeFirstNameDuplicate>
+        <contingentTrusteeLastNameDuplicate>Testsample</contingentTrusteeLastNameDuplicate>
+        <contingentTrusteeRelationshipError>Select the trustee's relationship to you.</contingentTrusteeRelationshipError>
+        <contingentTrusteeFirstNameError>Enter the trustee's first name.</contingentTrusteeFirstNameError>
+        <contingentTrusteeLastNameError>Enter the trustee's last name.</contingentTrusteeLastNameError>
+        <contingentTrusteeFirstNameInvalid initial="Enter a valid first name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</contingentTrusteeFirstNameInvalid>
+        <contingentTrusteeLastNameInvalid initial="Enter a valid last name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</contingentTrusteeLastNameInvalid>
+        <beneficiariesAdd expected="The trustee and the beneficiary can't be the same person.">Add a contingent beneficiary</beneficiariesAdd>
     </contingentbeneficiaryTrusteePO>
-    <rppAdditionalInfoPO>
-        <slctdrpdownMonth>January</slctdrpdownMonth>
-        <birthDay>07</birthDay>
-        <birthYear>1989</birthYear>
-    </rppAdditionalInfoPO>
 </plan-domain-object>

@@ -25,10 +25,10 @@ public class ContingentBeneficiaryTrusteePO extends PageObjectModel {
     private RadioGroup contingentTrusteeQuestion;
 
     @FindBy(xpath = "//*[@data-omni-key='ContingentIstrusteeYesNo']")
-    private RadioGroup contingentTrusteeSelectionYes;
+    private RadioActionGroup contingentTrusteeSelectionYes;
 
     @FindBy(xpath = "//*[@data-omni-key='ContingentIstrusteeYesNo']")
-    private RadioGroup contingentTrusteeSelectionNo;
+    private RadioActionGroup contingentTrusteeSelectionNo;
 
     @FindBy(xpath = "(//*[@data-omni-key='ContingentIstrusteeYesNo']//input[@value='no']/..)[last()]")
     private WebElement contingentDuplicateTrusteeSelectionNo;
@@ -70,6 +70,7 @@ public class ContingentBeneficiaryTrusteePO extends PageObjectModel {
     SalesforceInfo salesforceInfo;
 
     public void validateBeneficaryTrusteeQuestion(){
+        AppHelper.scrollToView(contingentTrusteeQuestion.getCoreElement());
         contingentTrusteeQuestion.validateLabelHeader(DataTypes.Data);
     }
 

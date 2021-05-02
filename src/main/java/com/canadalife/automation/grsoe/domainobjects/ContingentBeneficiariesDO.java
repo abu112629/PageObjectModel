@@ -14,7 +14,6 @@ public class ContingentBeneficiariesDO extends DomainObjectModel {
     private LoginPO loginPO;
     private PlanSelectionPO planSelectionPO;
     private NRSPAdditionalInfoPO nrspAdditionalInfoPO;
-    private RPPAdditionalInfoPO rppAdditionalInfoPO;
     private InvestmentPO investmentPO;
     private ContingentBeneficiaryPO contingentBeneficiaryPO;
     private ContingentBeneficiaryEstatePO contingentbeneficiaryEstatePO;
@@ -133,8 +132,7 @@ public class ContingentBeneficiariesDO extends DomainObjectModel {
         contingentBeneficiaryPO.selectPersonRelationBeneficiary();
         contingentBeneficiaryPO.validateAndEnterDetailsContingentBeneficiary();
         TestNGBase.takeScreenshot("");
-        rppAdditionalInfoPO.initPage(getContext());
-        rppAdditionalInfoPO.enterDOBDetails();
+        contingentBeneficiaryPO.enterDOBDetails();
         TestNGBase.takeScreenshot("");
 
     }
@@ -326,6 +324,7 @@ public class ContingentBeneficiariesDO extends DomainObjectModel {
     @Step("{0} user enters trustee details and clicks save")
     public void user_enters_trustee_details_and_clicks_save(String gwt){
         contingentbeneficiaryTrusteePO.validateAndEnterDetailsTrusteeBeneficiary();
+        contingentBeneficiaryPO.validateAndEnterContingentAllocation();
         planSelectionPO.clickSaveButton();
         TestNGBase.takeScreenshot("");
 

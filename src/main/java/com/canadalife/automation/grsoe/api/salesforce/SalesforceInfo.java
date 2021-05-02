@@ -216,9 +216,14 @@ public class SalesforceInfo {
                                     assertEquals(record2.getAllocationC(), Allocation);
                                     assertEquals(record2.getAssetRoleC(), "Primary beneficiary");
                                     assertEquals(record2.getRevocableC().booleanValue(), true);
-                                } else {
+                                } else if(record2.getAssetRoleC().contains("Successor holder")){
                                     assertEquals(record2.getAllocationC(), Allocation);
                                     assertEquals(record2.getAssetRoleC(), "Successor holder");
+                                    assertEquals(record2.getRevocableC().booleanValue(), true);
+                                }
+                                else{
+                                    assertEquals(record2.getAllocationC(), Allocation);
+                                    assertEquals(record2.getAssetRoleC(), "Contingent beneficiary");
                                     assertEquals(record2.getRevocableC().booleanValue(), true);
                                 }
 
