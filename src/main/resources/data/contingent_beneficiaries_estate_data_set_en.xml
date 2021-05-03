@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_En</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                NRSP
+            </item>
+        </planList>
+        <planProgressBarStep>
+            <item>Step 5 of 7: Choose your beneficiaries</item>
+        </planProgressBarStep>
+        <hintText>
+            <item>Max. 20 characters</item>
+            <item>Appoint a trustee if your beneficiary is a minor or lacks legal capacity and doesn't live in Quebec. If your beneficiary is a minor who lives in Quebec, death benefits will be paid to your beneficiary’s tutor (generally the parents) unless a trust for the minor exists. If a formal trust exists, don't complete this section. Consider getting legal advice before appointing a trustee.</item>
+            <item>In Quebec, if your spouse (married or civil union) is a beneficiary, you can't remove them without their permission unless you select the revocable checkbox below.</item>
+            <item>If you’re adding more beneficiaries, make sure the total adds up to 100%.</item>
+            <item>Max. 60 characters</item>>
+        </hintText>
+    </planSelectionPO>
+    <nrspAdditionalInfoPO>
+        <usCitizenNo>no</usCitizenNo>
+        <otherCitizenNo>no</otherCitizenNo>
+    </nrspAdditionalInfoPO>
+    <investmentPO>
+        <investmentCardSelected>Selected</investmentCardSelected>
+    </investmentPO>
+    <contingentBeneficiaryPO>
+        <contingentBeneficiariesAdd>Add a contingent beneficiary</contingentBeneficiariesAdd>
+        <addContingentBeneficiaryLabel>Add a contingent beneficiary</addContingentBeneficiaryLabel>
+        <addContingentBeneficiaryHintLabel>All fields are required unless labelled as optional.</addContingentBeneficiaryHintLabel>
+        <contingentTypeLabel>What type of beneficiary do you want to add?</contingentTypeLabel>
+        <BeneRadioButton>Estate</BeneRadioButton>
+        <beneficiariesDuplicateError expected="You've already added your estate as a primary beneficiary.">You've already added your estate as a primary beneficiary.</beneficiariesDuplicateError>
+        <allocationInlineError>Per cent must total 100.</allocationInlineError>
+        <beneficiariesAllocationTotal expected="Total allocation">Total allocation</beneficiariesAllocationTotal>
+        <beneficiariesAllocationAddedTotal expected="15%">100%</beneficiariesAllocationAddedTotal>
+        <beneficiariesAllocationError expected="4%">Edit your allocations for primary beneficiaries so that they add up to 100%.</beneficiariesAllocationError>
+    </contingentBeneficiaryPO>
+    <contingentbeneficiaryEstatePO>
+        <contingentTypeEstateLabel>What type of beneficiary do you want to add?</contingentTypeEstateLabel>
+        <beneficiaryEstateMessage>Your estate is everything you own at the time of your death. Some property may not be included in your estate, for example some jointly held property or property for which you have named a beneficiary. If you add your estate as a beneficiary, speak to a legal advisor.</beneficiaryEstateMessage>
+        <contingentAllocationEstate initial="What percentage do you want to allocate to this beneficiary?">89.00</contingentAllocationEstate>
+        <contingentEstateAllocationInvalid initial="Enter a valid percentage between 1 and 100.">100.22</contingentEstateAllocationInvalid>
+        <contingentEstateAllocationError>Enter the percentage you'd like to allocate to this beneficiary.</contingentEstateAllocationError>
+        <beneficiaryEstateType expected="Your estate">Estate</beneficiaryEstateType>
+        <beneficiaryAllocationEstatePercentage initial="89.0">89%</beneficiaryAllocationEstatePercentage>
+        <BeneEstateRadioButton>Estate</BeneEstateRadioButton>
+    </contingentbeneficiaryEstatePO>
+</plan-domain-object>

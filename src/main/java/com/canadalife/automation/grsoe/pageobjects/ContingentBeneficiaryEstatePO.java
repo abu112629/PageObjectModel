@@ -12,46 +12,38 @@ import ui.auto.core.support.PageObjectModel;
 
 public class ContingentBeneficiaryEstatePO extends PageObjectModel {
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaries']//h4")
-    private WebComponent addBeneficiaryEstateLabel;
-
-    @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaries']//p")
-    private WebComponent addBeneficiaryEstateHintLabel;
-
-    @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaryType']")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentBeneficiaryType'])[last()]")
     private RadioGroup contingentTypeEstateLabel;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentEstateFeedbackMessage']//p")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentEstateFeedbackMessage']//p)[last()]")
     private WebComponent beneficiaryEstateMessage;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentAllocationEstate']")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentAllocationEstate'])[last()]")
     private VlocityActionInput contingentAllocationEstate;
 
     @FindBy(xpath = "(//*[@data-omni-key='ContingentAllocationEstate'])[last()]")
     private WebElement contingentDuplicateAllocationEstate;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentAllocationEstate']")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentAllocationEstate'])[last()]")
     private VlocityInput contingentEstateAllocationInvalid;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentAllocationEstate']")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentAllocationEstate'])[last()]")
     private VlocityInput contingentEstateAllocationError;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaries']")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentBeneficiaries'])[last()]")
     private VlocitySelect beneficiaryEstateType;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaries']")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentBeneficiaries'])[last()]")
     private VlocitySelect beneficiaryAllocationEstatePercentage;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaryType']")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentBeneficiaryType'])[last()]")
     private VlocitySelectRadioButton BeneEstateRadioButton;
 
     @Data(skip = true)
     SalesforceInfo salesforceInfo;
 
     public void validateEstateBeneFormLabels(){
-        AppHelper.scrollToView(addBeneficiaryEstateLabel.getCoreElement());
-        addBeneficiaryEstateLabel.validateData(DataTypes.Data);
-        addBeneficiaryEstateHintLabel.validateData(DataTypes.Data);
+        AppHelper.scrollToView(contingentTypeEstateLabel.getCoreElement());
         contingentTypeEstateLabel.validateLabelHeader(DataTypes.Data);
 
         beneficiaryEstateMessage.validateData(DataTypes.Data);

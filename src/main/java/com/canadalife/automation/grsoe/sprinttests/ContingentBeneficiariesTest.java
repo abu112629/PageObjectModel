@@ -17,13 +17,14 @@ public class ContingentBeneficiariesTest extends TestNGBase {
 
     @Features("Sprint15")
     @Stories("Member can add contingent beneficiaries as a person/organization/estate")
-    @Parameters({"data-set","data-set2","data-set3"})
+    @Parameters({"data-set","data-set2","data-set3","data-set4"})
     @Issue("GRSOE-417")
     @Test
 
     public void ValidateContingentBeneficiaries(@Optional("data/beneficiaries_skip_data_set_fr.xml") String dataSet,
                                                 @Optional("data/contingent_beneficiaries_data_set_fr.xml") String dataSet2,
-                                                @Optional("data/contingent_beneficiaries_organisation_data_set_fr.xml") String dataSet3) {
+                                                @Optional("data/contingent_beneficiaries_organisation_data_set_fr.xml") String dataSet3,
+                                                @Optional("data/contingent_beneficiaries_estate_data_set_fr.xml") String dataSet4) {
 
         BeneficiariesDO beneficiariesDO=new BeneficiariesDO(getContext()).fromResource(dataSet);
         Given(beneficiariesDO :: user_on_plan_selection_page);
@@ -66,6 +67,16 @@ public class ContingentBeneficiariesTest extends TestNGBase {
         And(contingentbeneficiariesDO2 :: user_clicks_save_beneficiary_for_organization);
         And(contingentbeneficiariesDO2 ::user_validates_pill_information_for_organization_after_saving_the_details);
         And(contingentbeneficiariesDO2 :: user_validates_salesforce_information_is_saved_for_organization);
+
+        ContingentBeneficiariesDO contingentbeneficiariesDO3=new ContingentBeneficiariesDO(getContext()).fromResource(dataSet4);
+        And(contingentbeneficiariesDO3 :: user_clicks_add_contingent_beneficiary);
+        And(contingentbeneficiariesDO3 :: user_selects_and_validates_estate_beneficiary);
+        And(contingentbeneficiariesDO3 :: delete_all_salesforce_estate_test_records);
+        And(contingentbeneficiariesDO3 :: user_clicks_continue_and_is_able_to_validate_all_estate_errors);
+        And(contingentbeneficiariesDO3 :: user_enters_invalid_estate_beneficiary);
+        And(contingentbeneficiariesDO3 :: user_clicks_save_beneficiary_for_estate);
+        And(contingentbeneficiariesDO3 :: user_validates_pill_information_for_estate_after_saving_the_details);
+        And(contingentbeneficiariesDO3 :: user_validates_salesforce_information_is_saved_for_estate);
     }
 
 }

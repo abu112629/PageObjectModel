@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Fr</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                RERN
+            </item>
+        </planList>
+        <planProgressBarStep>
+            <item>Étape 5 de 7: Choisissez vos bénéficiaires</item>
+        </planProgressBarStep>
+        <hintText>
+            <item>20 caractères maximum</item>
+            <item>Nommez un fiduciaire si votre bénéficiaire est mineur ou n’a pas de capacité juridique et ne réside pas au Québec. Si votre bénéficiaire est un mineur qui réside au Québec, la prestation de décès sera versée à son tuteur (habituellement les parents) à moins qu’une fiducie ait été établie au bénéfice du mineur. Si une fiducie formelle existe, ne remplissez pas cette section. Il est recommandé de consulter un conseiller juridique avant de nommer un fiduciaire.</item>
+            <item>Au Québec, si votre conjoint (conjoint marié ou conjoint uni civilement) est un bénéficiaire, vous ne pouvez pas le retirer sans sa permission, à moins que vous ne cochiez la case ci-dessous.</item>
+            <item>Si vous désignez plus d’un bénéficiaire, veillez à ce que le total corresponde à 100 %.</item>
+            <item>60 caractères maximum</item>
+        </hintText>
+    </planSelectionPO>
+    <nrspAdditionalInfoPO>
+        <usCitizenNo>no</usCitizenNo>
+        <otherCitizenNo>no</otherCitizenNo>
+    </nrspAdditionalInfoPO>
+    <investmentPO>
+        <investmentCardSelected>Choisie</investmentCardSelected>
+    </investmentPO>
+    <contingentBeneficiaryPO>
+        <contingentBeneficiariesAdd>Ajouter un bénéficiaire subsidiaire</contingentBeneficiariesAdd>
+        <addContingentBeneficiaryLabel>Ajouter un bénéficiaire subsidiaire</addContingentBeneficiaryLabel>
+        <addContingentBeneficiaryHintLabel>Sauf indication contraire, tous les champs doivent être remplis.</addContingentBeneficiaryHintLabel>
+        <contingentTypeLabel>Quel type de bénéficiaire voulez-vous ajouter?</contingentTypeLabel>
+        <BeneRadioButton>Succession</BeneRadioButton>
+        <beneficiariesDuplicateError expected="You've already added your estate as a primary beneficiary.">You've already added your estate as a primary beneficiary.</beneficiariesDuplicateError>
+        <allocationInlineError>Les pourcentages attribués doivent totaliser 100 %.</allocationInlineError>
+        <beneficiariesAllocationTotal expected="Total de la répartition">Total de la répartition</beneficiariesAllocationTotal>
+        <beneficiariesAllocationAddedTotal expected="15%">100%</beneficiariesAllocationAddedTotal>
+        <beneficiariesAllocationError expected="4%">Edit your allocations for primary beneficiaries so that they add up to 100%.</beneficiariesAllocationError>
+    </contingentBeneficiaryPO>
+    <contingentbeneficiaryEstatePO>
+        <contingentTypeEstateLabel>Quel type de bénéficiaire voulez-vous ajouter?</contingentTypeEstateLabel>
+        <beneficiaryEstateMessage>Votre succession correspond à tout ce que vous possédez au moment de votre décès. Certains biens peuvent ne pas être inclus dans votre succession, comme des biens conjoints ou des biens pour lesquels vous avez nommé un bénéficiaire. Si vous ajoutez votre succession comme bénéficiaire, adressez-vous à un conseiller juridique.</beneficiaryEstateMessage>
+        <contingentAllocationEstate initial="Quel pourcentage voulez-vous attribuer à ce bénéficiaire?">89,00</contingentAllocationEstate>
+        <contingentEstateAllocationInvalid initial="Entrez un pourcentage entre 1 et 100.">100,22</contingentEstateAllocationInvalid>
+        <contingentEstateAllocationError>Entrez le pourcentage que vous voulez accorder à ce bénéficiaire.</contingentEstateAllocationError>
+        <beneficiaryEstateType expected="Votre succession">Succession</beneficiaryEstateType>
+        <beneficiaryAllocationEstatePercentage initial="89.0">89 %</beneficiaryAllocationEstatePercentage>
+        <BeneEstateRadioButton>Succession</BeneEstateRadioButton>
+    </contingentbeneficiaryEstatePO>
+</plan-domain-object>

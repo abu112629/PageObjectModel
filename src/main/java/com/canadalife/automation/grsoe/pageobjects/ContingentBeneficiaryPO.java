@@ -24,7 +24,7 @@ public class ContingentBeneficiaryPO extends PageObjectModel {
     @FindBy(xpath="//*[@data-omni-key='ContingentBeneHeadingTextBlock']//p")
     private WebComponent contingentBeneficiaryDescription;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaries']")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentBeneficiaries'])[last()]")
     private VlocitySelectRadioButton contingentBeneficiariesAdd;
 
     @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaries']//h4")

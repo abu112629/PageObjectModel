@@ -70,7 +70,7 @@ public class ContingentBeneficiariesDO extends DomainObjectModel {
     public void user_selects_and_validates_estate_beneficiary(String gwt){
         contingentBeneficiaryPO.initPage(getContext());
         planSelectionPO.initPage(getContext());
-        contingentBeneficiaryPO.addBeneficiary();
+        contingentBeneficiaryPO.additionalBeneficiary();
         contingentbeneficiaryEstatePO.initPage(getContext());
         contingentbeneficiaryEstatePO.validateEstateBeneFormLabels();
         TestNGBase.takeScreenshot("");
