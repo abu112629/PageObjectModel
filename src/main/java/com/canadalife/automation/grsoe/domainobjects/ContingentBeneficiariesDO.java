@@ -198,6 +198,7 @@ public class ContingentBeneficiariesDO extends DomainObjectModel {
         AppHelper.waitForXHR(2);
         contingentBeneficiaryPO.validateAndEnterContingentAllocation();
         TestNGBase.takeScreenshot("");
+        planSelectionPO.initPage(getContext());
         planSelectionPO.clickSaveButton();
     }
 

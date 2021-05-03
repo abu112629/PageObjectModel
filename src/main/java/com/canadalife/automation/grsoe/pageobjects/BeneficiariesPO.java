@@ -125,8 +125,11 @@ public class BeneficiariesPO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
     private VlocitySelectRadioButton beneficiariesDuplicateError;
 
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryFeedbackMessage']")
     private VlocitySelectRadioButton beneficiariesAllocationError;
+
+    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
+    private VlocitySelectRadioButton beneficiariesAllocationPercentage;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
     private VlocitySelectRadioButton beneficiariesAllocationAddedTotal;
@@ -351,7 +354,7 @@ public class BeneficiariesPO extends PageObjectModel {
         beneficiariesAllocationTotal.getCoreElement();
         beneficiariesAllocationTotal.getAllocationPercentage();
         beneficiariesAllocationTotal.validateAllocationPercentage(DataTypes.Expected);
-        beneficiariesAllocationError.validateAllocationError(DataTypes.Expected);
+        beneficiariesAllocationPercentage.validateAllocationError(DataTypes.Data);
         allocationInlineError.getCoreElement();
         allocationInlineError.validateAllocationInlineError(DataTypes.Data);
 

@@ -73,6 +73,7 @@
     <beneficiariesAllocationError expected="4%">Modifiez la répartition pour vos premiers bénéficiaires afin que les pourcentages totalisent 100 %.</beneficiariesAllocationError>
     <beneficiariesAllocationAddedTotal expected="11%">100%</beneficiariesAllocationAddedTotal>
     <beneficiariesAllocationTotal expected="Total de la répartition">Total de la répartition</beneficiariesAllocationTotal>
+        <beneficiariesAllocationPercentage>4%</beneficiariesAllocationPercentage>
 </beneficiariesPO>
     <beneficiaryTrusteePO>
         <primaryFirstName>TestFrench</primaryFirstName>

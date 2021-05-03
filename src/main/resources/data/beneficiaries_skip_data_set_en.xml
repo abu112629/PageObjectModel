@@ -75,6 +75,7 @@
         <beneficiariesAllocationTotal expected="Total allocation">Total allocation</beneficiariesAllocationTotal>
         <beneficiariesAllocationAddedTotal expected="11%">100%</beneficiariesAllocationAddedTotal>
         <beneficiariesAllocationError expected="4%">Edit your allocations for primary beneficiaries so that they add up to 100%.</beneficiariesAllocationError>
+        <beneficiariesAllocationPercentage expected="11%">4%</beneficiariesAllocationPercentage>
     </beneficiariesPO>
     <beneficiaryTrusteePO>
         <primaryFirstName>Test</primaryFirstName>

@@ -132,8 +132,11 @@ public class ContingentBeneficiaryPO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaries']")
     private VlocitySelectRadioButton beneficiariesDuplicateError;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaries']")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentFeedbackMessage'])[last()]")
     private VlocitySelectRadioButton beneficiariesAllocationError;
+
+    @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaries']")
+    private VlocitySelectRadioButton beneficiariesAllocationPercentage;
 
     @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaries']")
     private VlocitySelectRadioButton beneficiariesAllocationAddedTotal;
@@ -362,7 +365,7 @@ public class ContingentBeneficiaryPO extends PageObjectModel {
         beneficiariesAllocationTotal.getCoreElement();
         beneficiariesAllocationTotal.getAllocationPercentage();
         beneficiariesAllocationTotal.validateAllocationPercentage(DataTypes.Expected);
-        beneficiariesAllocationError.validateAllocationError(DataTypes.Expected);
+        beneficiariesAllocationPercentage.validateAllocationError(DataTypes.Data);
         allocationInlineError.getCoreElement();
         allocationInlineError.validateAllocationInlineError(DataTypes.Data);
 
@@ -391,12 +394,12 @@ public class ContingentBeneficiaryPO extends PageObjectModel {
         String expectedAllocationTotalText=beneficiariesAllocationTotal.getData();
         Assertions.assertThat(allocationTotalText).isEqualTo(expectedAllocationTotalText);
 
-        WebElement allocationAddedTotal=getDriver().findElement(By.xpath("//*[contains(@class,'allocation-total allocation-fail')]"));
+        WebElement allocationAddedTotal=getDriver().findElement(By.xpath("//*[@data-omni-key='ContingentBeneficiaries']//div[@class='allocation-total allocation-fail']"));
         String AllocationAddedTot=allocationAddedTotal.getText();
         String expectedAllocationAddedTot=beneficiariesAllocationAddedTotal.getData(DataTypes.Expected);
         Assertions.assertThat(AllocationAddedTot).isEqualTo(expectedAllocationAddedTot);
 
-        WebElement allocationInline=getDriver().findElement(By.xpath("//*[contains(@class,'nds-size_1-of-1 allocation-error')]"));
+        WebElement allocationInline=getDriver().findElement(By.xpath("//*[@data-omni-key='ContingentBeneficiaries']//div[contains(@class,'nds-size_1-of-1 allocation-error')]"));
         String allocationInlineText=allocationInline.getText();
         String expectedAllocationInlineMsg=allocationInlineError.getData();
         Assertions.assertThat(allocationInlineText).isEqualTo(expectedAllocationInlineMsg);

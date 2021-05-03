@@ -57,6 +57,8 @@ public class ContingentBeneficiariesTest extends TestNGBase {
         And(contingentbeneficiariesDO :: user_validates_pill_information_after_saving_the_details);
         And(contingentbeneficiariesDO :: user_validates_salesforce_information_is_saved_for_member);
         And(contingentbeneficiariesDO :: user_validates_pill_information_after_saving_the_details);
+        And(beneficiariesDO:: user_clicks_continue_button);
+        And(contingentbeneficiariesDO::user_clicks_continue_and_is_able_to_validate_all_allocation_errors);
 
         ContingentBeneficiariesDO contingentbeneficiariesDO2=new ContingentBeneficiariesDO(getContext()).fromResource(dataSet3);
         And(contingentbeneficiariesDO2 :: user_clicks_add_contingent_beneficiary);
@@ -67,6 +69,9 @@ public class ContingentBeneficiariesTest extends TestNGBase {
         And(contingentbeneficiariesDO2 :: user_clicks_save_beneficiary_for_organization);
         And(contingentbeneficiariesDO2 ::user_validates_pill_information_for_organization_after_saving_the_details);
         And(contingentbeneficiariesDO2 :: user_validates_salesforce_information_is_saved_for_organization);
+        And(beneficiariesDO:: user_clicks_continue_button);
+        And(contingentbeneficiariesDO::user_clicks_continue_and_is_able_to_validate_all_additional_allocation_errors);
+
 
         ContingentBeneficiariesDO contingentbeneficiariesDO3=new ContingentBeneficiariesDO(getContext()).fromResource(dataSet4);
         And(contingentbeneficiariesDO3 :: user_clicks_add_contingent_beneficiary);
@@ -77,6 +82,8 @@ public class ContingentBeneficiariesTest extends TestNGBase {
         And(contingentbeneficiariesDO3 :: user_clicks_save_beneficiary_for_estate);
         And(contingentbeneficiariesDO3 :: user_validates_pill_information_for_estate_after_saving_the_details);
         And(contingentbeneficiariesDO3 :: user_validates_salesforce_information_is_saved_for_estate);
+        And(contingentbeneficiariesDO::user_is_able_to_continue_with_allocation_as_100);
+        And(beneficiariesDO::user_clicks_continue_button);
     }
 
 }
