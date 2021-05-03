@@ -3,6 +3,7 @@ package com.canadalife.automation.grsoe.pageobjects;
 import com.canadalife.automation.grsoe.api.salesforce.SalesforceInfo;
 import com.canadalife.automation.grsoe.components.RadioGroup;
 import com.canadalife.automation.grsoe.components.VlocityActionInput;
+import com.canadalife.automation.grsoe.components.VlocityInput;
 import com.canadalife.automation.grsoe.components.VlocitySelect;
 import com.canadalife.automation.grsoe.support.AppHelper;
 import datainstiller.data.Data;
@@ -14,60 +15,59 @@ import ui.auto.core.support.PageObjectModel;
 
 public class ContingentBeneficiaryOrganizationPO extends PageObjectModel {
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaries']//h4")
-    private WebComponent addBeneficiaryOrgLabel;
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentBeneficiaryType']//span[contains(@class,'nds-m-right_x-small')])[last()]")
+    private WebComponent contingentTypeOrgLabel;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaries']//p")
-    private WebComponent addBeneficiaryOrgHintLabel;
-
-    @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaryType']")
-    private RadioGroup contingentTypeOrgLabel;
-
-    @FindBy(xpath = "//*[@data-omni-key='ContingentOrganizationHelpTextBlock']//div")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentOrganizationHelpTextBlock']//div)[last()]")
     private WebComponent beneficiaryOrganizationMessage;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentOrganizationNameText']")
-    private VlocityActionInput beneficiaryOrganizationName;
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentOrganizationNameText'])[last()]")
+    private VlocityInput beneficiaryOrganizationName;
+
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentOrganizationNameText']//label)[last()]")
+    private WebComponent beneficiaryOrganizationNameLabel;
 
     @FindBy(xpath = "(//*[@data-omni-key='ContingentOrganizationNameText'])[last()]")
     private WebElement beneficiaryDuplicateOrganizationName;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentAllocationOrganization']")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentAllocationOrganization'])[last()]")
     private VlocityActionInput beneficiaryOrganizationAllocation;
+
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentAllocationOrganization']//label)[last()]")
+    private WebComponent beneficiaryOrganizationAllocationLabel;
 
     @FindBy(xpath = "(//*[@data-omni-key='ContingentAllocationOrganization'])[last()]")
     private WebElement beneficiaryDuplicateOrganizationAllocation;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentOrganizationNameText']")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentOrganizationNameText'])[last()]")
     private VlocityActionInput beneficiaryOrganizationNameError;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentAllocationOrganization']")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentAllocationOrganization'])[last()]")
     private VlocityActionInput beneficiaryOrganizationAllocationError;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentOrganizationNameText']")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentOrganizationNameText'])[last()]")
     private VlocityActionInput beneficiaryOrganizationNameInvalid;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentAllocationOrganization']")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentAllocationOrganization'])[last()]")
     private VlocityActionInput beneficiaryOrganizationAllocationInvalid;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaries']")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentBeneficiaries'])[last()]")
     private VlocitySelect beneficiaryOrgType;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaries']")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentBeneficiaries'])[last()]")
     private VlocitySelect beneficiaryOrgAllocationPercentage;
 
     @Data(skip = true)
     SalesforceInfo salesforceInfo;
 
     public void validateOrganisationBeneFormLabels(){
-        AppHelper.scrollToView(addBeneficiaryOrgLabel.getCoreElement());
-        addBeneficiaryOrgLabel.validateData(DataTypes.Data);
-        addBeneficiaryOrgHintLabel.validateData(DataTypes.Data);
-        contingentTypeOrgLabel.validateLabelHeader(DataTypes.Data);
+
+        AppHelper.scrollToView(contingentTypeOrgLabel.getCoreElement());
+        contingentTypeOrgLabel.validateData(DataTypes.Data);
 
         beneficiaryOrganizationMessage.validateData(DataTypes.Data);
-        beneficiaryOrganizationName.validateInputLabel(DataTypes.Initial);
-        beneficiaryOrganizationAllocation.validateInputLabel(DataTypes.Initial);
+        beneficiaryOrganizationNameLabel.validateData(DataTypes.Data);
+        beneficiaryOrganizationAllocationLabel.validateData(DataTypes.Data);
 
     }
 
@@ -99,6 +99,7 @@ public class ContingentBeneficiaryOrganizationPO extends PageObjectModel {
     }
 
     public void validateOrganizationError(){
+        AppHelper.scrollToView(beneficiaryOrganizationNameLabel.getCoreElement());
         beneficiaryOrganizationNameError.validateError(DataTypes.Data);
         beneficiaryOrganizationAllocationError.validateError(DataTypes.Data);
     }

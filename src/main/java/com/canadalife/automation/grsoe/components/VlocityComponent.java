@@ -1,5 +1,6 @@
 package com.canadalife.automation.grsoe.components;
 
+import com.canadalife.automation.grsoe.support.AppHelper;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
