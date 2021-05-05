@@ -44,10 +44,10 @@
         <BeneRadioButton>Organization</BeneRadioButton>
         <beneficiaryType expected="OrgTestContingent">Organization</beneficiaryType>
         <beneficiaryAllocationPercentage>7%</beneficiaryAllocationPercentage>
-        <beneficiariesDuplicateError expected="You've already added an organization with the same name as a primary beneficiary.">You've already added an organization with the same name as a primary beneficiary.</beneficiariesDuplicateError>
+        <beneficiariesDuplicateError expected="You can't add this organization as a contingent beneficiary because you've already added an organization with the same name as a primary beneficiary.">You've already added an organization with the same name as a contingent beneficiary.</beneficiariesDuplicateError>
     </contingentBeneficiaryPO>
     <contingentbeneficiaryOrganizationPO>
-        <contingentTypeOrgLabel>What type of beneficiary do you want to add?</contingentTypeOrgLabel>
+        <contingentTypeOrgLabel expected="OrgTest">What type of beneficiary do you want to add?</contingentTypeOrgLabel>
         <beneficiaryOrganizationMessage>You can choose an organization, such as a charity, society, association or corporation, to receive your savings when you die.</beneficiaryOrganizationMessage>
         <beneficiaryOrganizationName initial="What's the organization's name?">OrgTestContingent</beneficiaryOrganizationName>
         <beneficiaryOrganizationNameLabel>What's the organization's name?</beneficiaryOrganizationNameLabel>

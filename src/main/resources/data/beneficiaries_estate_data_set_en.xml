@@ -68,5 +68,6 @@
         <beneficiaryEstateType expected="Your estate">Estate</beneficiaryEstateType>
         <beneficiaryAllocationEstatePercentage initial="89.0">89%</beneficiaryAllocationEstatePercentage>
         <BeneEstateRadioButton>Estate</BeneEstateRadioButton>
+        <primaryBeneDelete>Delete</primaryBeneDelete>
     </beneficiaryEstatePO>
 </plan-domain-object>

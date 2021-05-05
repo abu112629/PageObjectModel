@@ -68,5 +68,6 @@
         <beneficiaryEstateType  expected="Votre succession">Succession</beneficiaryEstateType>
         <beneficiaryAllocationEstatePercentage initial="89.0">89 %</beneficiaryAllocationEstatePercentage>
         <BeneEstateRadioButton>Succession</BeneEstateRadioButton>
+        <primaryBeneDelete>Supprimer</primaryBeneDelete>
     </beneficiaryEstatePO>
 </plan-domain-object>

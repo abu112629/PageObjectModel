@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.internal.DynamicGraphHelper;
 import ui.auto.core.components.WebComponent;
 import ui.auto.core.components.WebComponentList;
 import ui.auto.core.data.DataTypes;
@@ -176,6 +177,7 @@ public class BeneficiariesPO extends PageObjectModel {
         WebDriverWait wait = new WebDriverWait(getDriver(), 20);
         WebElement add= wait.until(ExpectedConditions.elementToBeClickable(By.
                 xpath("(//*[@data-omni-key='PrimaryBeneficiaries']//span[contains(text(),'"+beneficiariesAdd.getData()+"')])[last()]")));
+        AppHelper.scrollToView(add);
         add.click();
     }
 

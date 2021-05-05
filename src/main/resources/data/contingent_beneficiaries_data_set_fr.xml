@@ -40,8 +40,8 @@
         <investmentCardSelected>Choisie</investmentCardSelected>
     </investmentPO>
     <contingentBeneficiaryPO>
-        <contingentBeneficiaryHeader>Bénéficiaires subsidiaires</contingentBeneficiaryHeader>
-        <contingentBeneficiaryDescription>Indiquez à qui vous souhaitez que votre épargne soit versée si tous vos premiers bénéficiaires décèdent avant vous.</contingentBeneficiaryDescription>
+        <contingentBeneficiaryHeader expected="TestFrench">Bénéficiaires subsidiaires</contingentBeneficiaryHeader>
+        <contingentBeneficiaryDescription expected="Testsample">Indiquez à qui vous souhaitez que votre épargne soit versée si tous vos premiers bénéficiaires décèdent avant vous.</contingentBeneficiaryDescription>
         <beneficiariesDeleteQuestion>Êtes-vous sûr de vouloir supprimer TestContingentFr Testsample?</beneficiariesDeleteQuestion>
         <contingentBeneficiariesAdd expected="Le fiduciaire et le bénéficiaire ne peuvent pas être la même personne.">Ajouter un bénéficiaire subsidiaire</contingentBeneficiariesAdd>
         <addContingentBeneficiaryLabel>Ajouter un bénéficiaire subsidiaire</addContingentBeneficiaryLabel>
@@ -66,7 +66,7 @@
         <beneficiaryType expected="TestContingentFr Testsample (Tante)">Personne</beneficiaryType>
         <beneficiaryAllocationPercentage initial="4.0">4 %</beneficiaryAllocationPercentage>
         <beneficiaryRevocableQuestion initial="Désigner cette personne à titre de bénéficiaire révocable">Voulez-vous que ce bénéficiaire soit révocable? (facultatif)</beneficiaryRevocableQuestion>
-        <beneficiariesDuplicateError expected="Vous avez déjà ajouté un bénéficiaire subsidiaire du même prénom et du même nom ayant le même lien avec vous.">Vous avez déjà ajouté un bénéficiaire subsidiaire du même prénom et du même nom ayant le même lien avec vous.</beneficiariesDuplicateError>
+        <beneficiariesDuplicateError expected="Vous ne pouvez pas désigner cette personne comme bénéficiaire subsidiaire, car vous avez déjà désigné comme premier bénéficiaire une personne du même prénom et du même nom ayant le même lien avec vous.">Vous avez déjà ajouté un bénéficiaire subsidiaire du même prénom et du même nom ayant le même lien avec vous.</beneficiariesDuplicateError>
         <allocationInlineError>Les pourcentages attribués doivent totaliser 100 %.</allocationInlineError>
         <beneficiariesAllocationTotal expected="Total de la répartition">Total de la répartition</beneficiariesAllocationTotal>
         <beneficiariesAllocationAddedTotal expected="11%">100%</beneficiariesAllocationAddedTotal>

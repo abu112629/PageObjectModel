@@ -40,8 +40,8 @@
         <investmentCardSelected>Selected</investmentCardSelected>
     </investmentPO>
     <contingentBeneficiaryPO>
-        <contingentBeneficiaryHeader>Contingent beneficiaries</contingentBeneficiaryHeader>
-        <contingentBeneficiaryDescription>In case all your primary beneficiaries die before you, choose who you'd like to receive your savings instead of them when you die.</contingentBeneficiaryDescription>
+        <contingentBeneficiaryHeader expected="Test">Contingent beneficiaries</contingentBeneficiaryHeader>
+        <contingentBeneficiaryDescription expected="Testsample">In case all your primary beneficiaries die before you, choose who you'd like to receive your savings instead of them when you die.</contingentBeneficiaryDescription>
         <beneficiariesDeleteQuestion>Are you sure you want to delete TestContingent Testsample?</beneficiariesDeleteQuestion>
         <contingentBeneficiariesAdd expected="The trustee and the beneficiary can't be the same person.">Add a contingent beneficiary</contingentBeneficiariesAdd>
         <addContingentBeneficiaryLabel>Add a contingent beneficiary</addContingentBeneficiaryLabel>
@@ -66,7 +66,7 @@
         <beneficiaryType expected="TestContingent Testsample (Aunt)">Person</beneficiaryType>
         <beneficiaryAllocationPercentage initial="4.0">4%</beneficiaryAllocationPercentage>
         <beneficiaryRevocableQuestion initial="Make this beneficiary revocable">Do you want this beneficiary to be revocable? (optional)</beneficiaryRevocableQuestion>
-        <beneficiariesDuplicateError expected="You've already added a primary beneficiary with the same first name, last name and relationship to you.">You've already added a primary beneficiary with the same first name, last name and relationship to you.</beneficiariesDuplicateError>
+        <beneficiariesDuplicateError expected="You can't add this person as a contingent beneficiary because you've already added them as a primary beneficiary with the same first name, last name and relationship to you.">You've already added a contingent beneficiary with the same first name, last name and relationship to you.</beneficiariesDuplicateError>
         <allocationInlineError>Per cent must total 100.</allocationInlineError>
         <beneficiariesAllocationTotal expected="Total allocation">Total allocation</beneficiariesAllocationTotal>
         <beneficiariesAllocationAddedTotal expected="11%">100%</beneficiariesAllocationAddedTotal>

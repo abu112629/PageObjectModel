@@ -44,10 +44,10 @@
         <BeneRadioButton>Organisation</BeneRadioButton>
         <beneficiaryType expected="OrgTestContingentFr">Organisation</beneficiaryType>
         <beneficiaryAllocationPercentage>7 %</beneficiaryAllocationPercentage>
-        <beneficiariesDuplicateError expected="You've already added an organization with the same name as a primary beneficiary.">You've already added an organization with the same name as a primary beneficiary.</beneficiariesDuplicateError>
+        <beneficiariesDuplicateError expected="Vous ne pouvez pas désigner cette organisation comme bénéficiaire subsidiaire, car vous avez déjà désigné une organisation du même nom comme premier bénéficiaire.">Vous avez déjà désigné une organisation du même nom comme bénéficiaire subsidiaire.</beneficiariesDuplicateError>
     </contingentBeneficiaryPO>
     <contingentbeneficiaryOrganizationPO>
-        <contingentTypeOrgLabel>Quel type de bénéficiaire voulez-vous ajouter?</contingentTypeOrgLabel>
+        <contingentTypeOrgLabel expected="OrgTestFrench">Quel type de bénéficiaire voulez-vous ajouter?</contingentTypeOrgLabel>
         <beneficiaryOrganizationMessage>Vous pouvez choisir une organisation, comme un organisme de bienfaisance, une société, une association ou une entreprise, comme bénéficiaire de votre épargne à votre décès.</beneficiaryOrganizationMessage>
         <beneficiaryOrganizationName initial="Quel est le nom de l’organisation?">OrgTestContingentFr</beneficiaryOrganizationName>
         <beneficiaryOrganizationNameLabel>Quel est le nom de l’organisation?</beneficiaryOrganizationNameLabel>

@@ -84,6 +84,13 @@ public class ContingentBeneficiaryOrganizationPO extends PageObjectModel {
         beneficiaryDuplicateOrganizationAllocation.sendKeys(beneficiaryOrganizationAllocation.getData());
 
     }
+    /*For same beneficiaries in contingent like primary*/
+    public void enterDetailsDuplicateOrganizationBeneficiary(){
+        beneficiaryDuplicateOrganizationName.sendKeys(contingentTypeOrgLabel.getData(DataTypes.Expected));
+        AppHelper.scrollToView(beneficiaryDuplicateOrganizationAllocation);
+        beneficiaryDuplicateOrganizationAllocation.sendKeys(beneficiaryOrganizationAllocation.getData());
+
+    }
     public void validateInvalidOrganizationBeneficiaryDetails() {
         AppHelper.scrollToView(beneficiaryOrganizationNameInvalid.getCoreElement());
         beneficiaryOrganizationNameInvalid.click();

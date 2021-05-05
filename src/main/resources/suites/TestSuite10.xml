@@ -1,0 +1,45 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Contingent Beneficiary validations" verbose="1" parallel="tests">
+
+    <test name="Validate the Contingent beneficiary Delete Test English">
+        <parameter name="data-set" value="data/beneficiaries_quebec_data_set_en.xml"/>
+        <parameter name="data-set2" value="data/contingent_beneficiaries_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.ContingentBeneficiariesDeleteTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Contingent beneficiary Delete Test French">
+        <parameter name="data-set" value="data/beneficiaries_quebec_data_set_fr.xml"/>
+        <parameter name="data-set2" value="data/contingent_beneficiaries_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.ContingentBeneficiariesDeleteTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Duplicate Contingent beneficiary Test English">
+        <parameter name="data-set" value="data/beneficiaries_skip_data_set_fr.xml"/>
+        <parameter name="data-set2" value="data/beneficiaries_organisation_data_set_fr.xml"/>
+        <parameter name="data-set3" value="data/contingent_beneficiaries_data_set_fr.xml"/>
+        <parameter name="data-set4" value="data/contingent_beneficiaries_organisation_data_set_fr.xml"/>
+        <parameter name="data-set5" value="data/beneficiaries_estate_data_set_fr.xml"/>
+        <parameter name="data-set6" value="data/contingent_beneficiaries_estate_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.DuplicateContingentBeneficiariesTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate theDuplicate Contingent beneficiary Test French">
+        <parameter name="data-set" value="data/beneficiaries_skip_data_set_en.xml"/>
+        <parameter name="data-set2" value="data/beneficiaries_organisation_data_set_en.xml"/>
+        <parameter name="data-set3" value="data/contingent_beneficiaries_data_set_en.xml"/>
+        <parameter name="data-set4" value="data/contingent_beneficiaries_organisation_data_set_en.xml"/>
+        <parameter name="data-set5" value="data/beneficiaries_estate_data_set_en.xml"/>
+        <parameter name="data-set6" value="data/contingent_beneficiaries_estate_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.DuplicateContingentBeneficiariesTest"/>
+        </classes>
+    </test>
+
+</suite>

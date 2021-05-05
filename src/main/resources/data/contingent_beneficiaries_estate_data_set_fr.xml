@@ -45,7 +45,7 @@
         <addContingentBeneficiaryHintLabel>Sauf indication contraire, tous les champs doivent être remplis.</addContingentBeneficiaryHintLabel>
         <contingentTypeLabel>Quel type de bénéficiaire voulez-vous ajouter?</contingentTypeLabel>
         <BeneRadioButton>Succession</BeneRadioButton>
-        <beneficiariesDuplicateError expected="You've already added your estate as a primary beneficiary.">You've already added your estate as a primary beneficiary.</beneficiariesDuplicateError>
+        <beneficiariesDuplicateError expected="Vous ne pouvez pas désigner votre succession comme bénéficiaire subsidiaire, car vous l’avez déjà désignée comme premier bénéficiaire.">Vous avez déjà désigné votre succession comme bénéficiaire subsidiaire.</beneficiariesDuplicateError>
         <allocationInlineError>Les pourcentages attribués doivent totaliser 100 %.</allocationInlineError>
         <beneficiariesAllocationTotal expected="Total de la répartition">Total de la répartition</beneficiariesAllocationTotal>
         <beneficiariesAllocationAddedTotal expected="15%">100%</beneficiariesAllocationAddedTotal>

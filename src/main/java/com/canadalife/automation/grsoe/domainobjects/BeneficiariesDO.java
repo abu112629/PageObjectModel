@@ -454,6 +454,12 @@ public class BeneficiariesDO extends DomainObjectModel {
         beneficiariesPO.validateBeneficiariesDeleteQuestion();
         planSelectionPO.clickSkipContinueButton();
     }
+    @Step("{0} user deletes Beneficiary Estate Information")
+    public void user_deletes_beneficiary_estate_information(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiaryEstatePO.deleteEstateBeneficiary();
+        planSelectionPO.clickSkipContinueButton();
+    }
     @Step("{0} Delete all salesforce Test records")
     public void delete_all_salesforce_test_records(String gwt){
         AppHelper.waitForXHR(1);

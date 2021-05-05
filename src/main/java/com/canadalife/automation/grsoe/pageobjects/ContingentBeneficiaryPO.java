@@ -129,7 +129,7 @@ public class ContingentBeneficiaryPO extends PageObjectModel {
     @FindBy(xpath="//*[@data-omni-key='YourBeneficiaries']//h2")
     private WebComponent beneficiariesDeleteQuestion;
 
-    @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaries']")
+    @FindBy(xpath = "(//*[@data-omni-key='ContingentBeneficiaries'])[last()]")
     private VlocitySelectRadioButton beneficiariesDuplicateError;
 
     @FindBy(xpath = "(//*[@data-omni-key='ContingentFeedbackMessage'])[last()]")
@@ -275,6 +275,15 @@ public class ContingentBeneficiaryPO extends PageObjectModel {
         contingentDuplicateAllocation.sendKeys(contingentAllocation.getData());
 
     }
+    /*Duplicate bene details in contingent like primary person*/
+    public void validateAndEnterDuplicateDetailsBeneficiary(){
+        contingentDuplicateFirstName.sendKeys(contingentBeneficiaryHeader.getData(DataTypes.Expected));
+        AppHelper.scrollToView(contingentDuplicateLastName);
+        contingentDuplicateLastName.sendKeys(contingentBeneficiaryDescription.getData(DataTypes.Expected));
+        AppHelper.scrollToView(contingentDuplicateAllocation);
+        contingentDuplicateAllocation.sendKeys(contingentAllocation.getData());
+
+    }
     public void validateContingentBeneficiaryOnEdit(){
         contingentFirstName.getValue().contains(contingentFirstName.getData());
         contingentLastName.getValue().contains(contingentLastName.getData());
@@ -298,9 +307,15 @@ public class ContingentBeneficiaryPO extends PageObjectModel {
     }
     public void validateDuplicateBeneDetailsError() {
         AppHelper.scrollToView(beneficiariesDuplicateError.getCoreElement());
-        String ErrorMessage=beneficiariesDuplicateError.getCoreElement().findElements(By.xpath("//slot/p")).get(0).getText();
-        String ExpectedErrorMessage=beneficiariesDuplicateError.getData();
-        Assertions.assertThat(ErrorMessage).isEqualTo(ExpectedErrorMessage);
+        beneficiariesDuplicateError.getBannerErrorMsg();
+        beneficiariesDuplicateError.validateBannerError(DataTypes.Data);
+    }
+    /*Error validation with same contingent and primary sets*/
+
+    public void validateDuplicateContingentPrimaryDetailsError() {
+        AppHelper.scrollToView(beneficiariesDuplicateError.getCoreElement());
+        beneficiariesDuplicateError.getBannerErrorMsg();
+        beneficiariesDuplicateError.validateBannerError(DataTypes.Expected);
     }
     public void validatePillInformation(){
         AppHelper.scrollToView(beneficiaryType.getCoreElement());

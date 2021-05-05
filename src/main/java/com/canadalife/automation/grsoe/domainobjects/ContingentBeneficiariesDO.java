@@ -147,6 +147,16 @@ public class ContingentBeneficiariesDO extends DomainObjectModel {
         TestNGBase.takeScreenshot("");
     }
 
+    @Step("{0} user enters duplicate person beneficiary details for contingent as in primary")
+    public void user_enters_duplicate_person_beneficiary_details_like_primary(String gwt){
+        contingentBeneficiaryPO.selectAdditionalPersonRelationBeneficiary();
+        contingentBeneficiaryPO.validateAndEnterDuplicateDetailsBeneficiary();
+        TestNGBase.takeScreenshot("");
+        contingentbeneficiaryTrusteePO.initPage(getContext());
+        contingentbeneficiaryTrusteePO.selectContingentTrusteeNoDuplicate();
+        TestNGBase.takeScreenshot("");
+    }
+
     @Step("{0} user selects organization beneficiary")
     public void user_selects_organization_beneficiary(String gwt){
         contingentBeneficiaryPO.additionalBeneficiary();
@@ -170,6 +180,15 @@ public class ContingentBeneficiariesDO extends DomainObjectModel {
         TestNGBase.takeScreenshot("");
     }
 
+    @Step("{0} user enters duplicate organization beneficiary details for contingent as in primary")
+    public void user_enters_duplicate_organization_beneficiary_details_like_primary(String gwt){
+        contingentBeneficiaryPO.additionalBeneficiary();
+        TestNGBase.takeScreenshot("");
+        contingentbeneficiaryOrganizationPO.initPage(getContext());
+        contingentbeneficiaryOrganizationPO.enterDetailsDuplicateOrganizationBeneficiary();
+        TestNGBase.takeScreenshot("");
+    }
+
     @Step("{0} user enters duplicate estate beneficiary details")
     public void user_enters_duplicate_estate_beneficiary_details(String gwt){
         contingentBeneficiaryPO.additionalBeneficiary();
@@ -183,6 +202,14 @@ public class ContingentBeneficiariesDO extends DomainObjectModel {
         planSelectionPO.clickSaveButton();
         TestNGBase.takeScreenshot("");
         contingentBeneficiaryPO.validateDuplicateBeneDetailsError();
+    }
+
+    @Step("{0} user clicks save and is able to validate all duplicate primary contingent errors")
+    public void user_clicks_save_and_is_able_to_validate_all_duplicate_primary_contingent_errors(String gwt){
+        planSelectionPO.initPage(getContext());
+        planSelectionPO.clickSaveButton();
+        TestNGBase.takeScreenshot("");
+        contingentBeneficiaryPO.validateDuplicateContingentPrimaryDetailsError();
     }
 
     @Step("{0} user selects and validates primary Trustee")

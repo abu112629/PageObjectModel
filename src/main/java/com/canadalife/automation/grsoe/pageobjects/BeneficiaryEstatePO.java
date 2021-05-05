@@ -45,9 +45,17 @@ public class BeneficiaryEstatePO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaryType']")
     private VlocitySelectRadioButton BeneEstateRadioButton;
 
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryBeneficiaries'])[last()]")
+    private VlocitySelectRadioButton primaryBeneDelete;
+
     @Data(skip = true)
     SalesforceInfo salesforceInfo;
 
+    public void deleteEstateBeneficiary(){
+        AppHelper.scrollToView(primaryBeneDelete.getCoreElement());
+        setElementValue(primaryBeneDelete,false);
+
+    }
     public void validateEstateBeneFormLabels(){
         AppHelper.scrollToView(addBeneficiaryEstateLabel.getCoreElement());
         addBeneficiaryEstateLabel.validateData(DataTypes.Data);
