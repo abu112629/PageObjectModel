@@ -20,7 +20,7 @@ public class DuplicateContingentBeneficiariesTest extends TestNGBase {
     @Issue("GRSOE-987")
     @Test
 
-    public void ValidateContingentBeneficiaries(@Optional("data/beneficiaries_skip_data_set_fr.xml") String dataSet,
+    public void ValidateDuplicateContingentBeneficiaries(@Optional("data/beneficiaries_skip_data_set_fr.xml") String dataSet,
                                                 @Optional("data/beneficiaries_organisation_data_set_fr.xml")String dataSet2,
                                                 @Optional("data/contingent_beneficiaries_data_set_fr.xml") String dataSet3,
                                                 @Optional("data/contingent_beneficiaries_organisation_data_set_fr.xml") String dataSet4,
@@ -40,14 +40,12 @@ public class DuplicateContingentBeneficiariesTest extends TestNGBase {
 
         BeneficiariesDO beneficiariesDO2=new BeneficiariesDO(getContext()).fromResource(dataSet2);
         And(beneficiariesDO2 :: user_clicks_add_primary_beneficiary);
-        And(beneficiariesDO2 :: delete_all_salesforce_organization_test_records);
         And(beneficiariesDO2 :: user_selects_organization_beneficiary);
         And(beneficiariesDO2 :: user_enters_and_clicks_save_beneficiary_for_organization);
 
         ContingentBeneficiariesDO contingentbeneficiariesDO=new ContingentBeneficiariesDO(getContext()).fromResource(dataSet3);
         And(contingentbeneficiariesDO :: user_validates_contingent_beneficiary_header_and_description);
         And(contingentbeneficiariesDO :: user_clicks_add_contingent_beneficiary);
-        And(contingentbeneficiariesDO :: delete_all_salesforce_test_records);
         And(contingentbeneficiariesDO :: user_enters_person_beneficiary_details);
         And(contingentbeneficiariesDO :: user_selects_and_validates_primary_trustee);
         And(contingentbeneficiariesDO :: user_clicks_save_beneficiary);
@@ -65,7 +63,6 @@ public class DuplicateContingentBeneficiariesTest extends TestNGBase {
         ContingentBeneficiariesDO contingentbeneficiariesDO2=new ContingentBeneficiariesDO(getContext()).fromResource(dataSet4);
         And(contingentbeneficiariesDO2 :: user_clicks_add_contingent_beneficiary);
         And(contingentbeneficiariesDO2 :: user_selects_and_validates_organization_beneficiary);
-        And(contingentbeneficiariesDO2 :: delete_all_salesforce_organization_test_records);
         And(contingentbeneficiariesDO2 :: user_enters_and_clicks_save_beneficiary_for_organization);
 
         And(contingentbeneficiariesDO2 :: user_clicks_add_additional_contingent_beneficiary);
@@ -80,7 +77,6 @@ public class DuplicateContingentBeneficiariesTest extends TestNGBase {
 
         BeneficiariesDO beneficiariesDO3=new BeneficiariesDO(getContext()).fromResource(dataSet5);
         And(beneficiariesDO3 :: user_clicks_add_additional_primary_beneficiary);
-        And(beneficiariesDO3 :: delete_all_salesforce_estate_test_records);
         And(beneficiariesDO3 :: user_selects_estate_beneficiary);
         And(beneficiariesDO3 :: user_enters_and_clicks_save_beneficiary_for_estate);
 
@@ -93,7 +89,6 @@ public class DuplicateContingentBeneficiariesTest extends TestNGBase {
 
         And(contingentbeneficiariesDO3 :: user_clicks_add_contingent_beneficiary);
         And(contingentbeneficiariesDO3 :: user_selects_and_validates_estate_beneficiary);
-        And(contingentbeneficiariesDO3 :: delete_all_salesforce_estate_test_records);
         And(contingentbeneficiariesDO3 :: user_enters_and_clicks_save_beneficiary_for_estate);
 
         And(contingentbeneficiariesDO3 :: user_clicks_add_additional_contingent_beneficiary);
