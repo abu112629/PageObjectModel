@@ -11,7 +11,7 @@ public class ProfileInformationPO extends PageObjectModel {
     @FindBy(xpath="//*[@data-omni-key='TB_Description_Header']//p")
     private WebComponent profileDescription;
 
-    @FindBy(xpath="//*[@data-omni-key='TB_PersonalInfo']//h3")
+    @FindBy(xpath="//*[@data-omni-key='TB_PersonalInfo']//div/div")
     private WebComponent profileHeader;
 
     @FindBy(xpath="//*[@data-omni-key='CLWC_PersonalInfo']")

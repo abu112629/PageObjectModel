@@ -123,7 +123,7 @@ public class BeneficiariesPO extends PageObjectModel {
     @FindBy(xpath="//*[@data-omni-key='YourBeneficiaries']//h2")
     private WebComponent beneficiariesDeleteQuestion;
 
-    @FindBy(xpath = "//*[@data-omni-key='PrimaryBeneficiaries']")
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryBeneficiaries'])[last()]")
     private VlocitySelectRadioButton beneficiariesDuplicateError;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryFeedbackMessage']")
@@ -289,9 +289,8 @@ public class BeneficiariesPO extends PageObjectModel {
     }
     public void validateDuplicateBeneDetailsError() {
         AppHelper.scrollToView(beneficiariesDuplicateError.getCoreElement());
-        String ErrorMessage=beneficiariesDuplicateError.getCoreElement().findElements(By.xpath("//slot/p")).get(0).getText();
-        String ExpectedErrorMessage=beneficiariesDuplicateError.getData();
-        Assertions.assertThat(ErrorMessage).isEqualTo(ExpectedErrorMessage);
+        beneficiariesDuplicateError.getBannerErrorMsg();
+        beneficiariesDuplicateError.validateBannerError(DataTypes.Data);
     }
     public void validatePillInformation(){
         AppHelper.scrollToView(beneficiaryType.getCoreElement());
