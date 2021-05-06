@@ -76,6 +76,7 @@ public class ContingentBeneficiariesTest extends TestNGBase {
         ContingentBeneficiariesDO contingentbeneficiariesDO3=new ContingentBeneficiariesDO(getContext()).fromResource(dataSet4);
         And(contingentbeneficiariesDO3 :: user_clicks_add_contingent_beneficiary);
         And(contingentbeneficiariesDO3 :: user_selects_and_validates_estate_beneficiary);
+        And(contingentbeneficiariesDO3 :: delete_all_salesforce_estate_test_records);
         And(contingentbeneficiariesDO3 :: user_clicks_continue_and_is_able_to_validate_all_estate_errors);
         And(contingentbeneficiariesDO3 :: user_enters_invalid_estate_beneficiary);
         And(contingentbeneficiariesDO3 :: user_clicks_save_beneficiary_for_estate);

@@ -4,7 +4,7 @@
 
     <test name="Validate the Contingent beneficiary Delete Test English">
         <parameter name="data-set" value="data/beneficiaries_quebec_data_set_en.xml"/>
-        <parameter name="data-set2" value="data/contingent_beneficiaries_data_set_en.xml"/>
+        <parameter name="data-set2" value="data/contingent_beneficiaries_delete_data_set_en.xml"/>
         <classes>
             <class name="com.canadalife.automation.grsoe.sprinttests.ContingentBeneficiariesDeleteTest"/>
         </classes>
@@ -12,7 +12,7 @@
 
     <test name="Validate the Contingent beneficiary Delete Test French">
         <parameter name="data-set" value="data/beneficiaries_quebec_data_set_fr.xml"/>
-        <parameter name="data-set2" value="data/contingent_beneficiaries_data_set_fr.xml"/>
+        <parameter name="data-set2" value="data/contingent_beneficiaries_delete_data_set_fr.xml"/>
         <classes>
             <class name="com.canadalife.automation.grsoe.sprinttests.ContingentBeneficiariesDeleteTest"/>
         </classes>

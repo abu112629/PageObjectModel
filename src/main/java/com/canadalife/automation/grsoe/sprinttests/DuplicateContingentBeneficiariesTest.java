@@ -33,7 +33,6 @@ public class DuplicateContingentBeneficiariesTest extends TestNGBase {
         Then(beneficiariesDO :: user_clicks_continue_and_selects_no_for_both_questions);
         And(beneficiariesDO :: user_clicks_continue_button);
         And(beneficiariesDO :: user_clicks_add_primary_beneficiary);
-        And(beneficiariesDO :: delete_all_salesforce_test_records);
         And(beneficiariesDO :: user_enters_person_beneficiary_details);
         And(beneficiariesDO :: user_selects_and_validates_primary_trustee);
         And(beneficiariesDO :: user_clicks_save_beneficiary);

@@ -30,7 +30,6 @@ public class MultipleBeneficiariesAddTest extends TestNGBase {
         Then(beneficiariesDO :: user_clicks_continue_and_selects_no_for_both_questions);
         And(beneficiariesDO :: user_clicks_continue_button);
         And(beneficiariesDO :: user_clicks_add_primary_beneficiary);
-        And(beneficiariesDO :: delete_all_salesforce_test_records);
         And(beneficiariesDO :: user_enters_person_beneficiary_details);
         And(beneficiariesDO :: user_selects_and_validates_primary_trustee);
         And(beneficiariesDO :: user_clicks_save_beneficiary);
@@ -43,7 +42,6 @@ public class MultipleBeneficiariesAddTest extends TestNGBase {
 
         BeneficiariesDO beneficiariesDO2=new BeneficiariesDO(getContext()).fromResource(dataSet2);
         And(beneficiariesDO2 :: user_clicks_add_primary_beneficiary);
-        And(beneficiariesDO2 :: delete_all_salesforce_organization_test_records);
         And(beneficiariesDO2 :: user_selects_organization_beneficiary);
         And(beneficiariesDO2 :: user_enters_and_clicks_save_beneficiary_for_organization);
 
@@ -54,7 +52,6 @@ public class MultipleBeneficiariesAddTest extends TestNGBase {
 
         BeneficiariesDO beneficiariesDO3=new BeneficiariesDO(getContext()).fromResource(dataSet3);
         And(beneficiariesDO3 :: user_clicks_add_additional_primary_beneficiary);
-        And(beneficiariesDO3 :: delete_all_salesforce_estate_test_records);
         And(beneficiariesDO3 :: user_selects_estate_beneficiary);
         And(beneficiariesDO3 :: user_enters_and_clicks_save_beneficiary_for_estate);
 

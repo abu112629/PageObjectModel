@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_En</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                NRSP
+            </item>
+        </planList>
+        <planProgressBarInfo>
+            <item>Your enrolment summary</item>
+        </planProgressBarInfo>
+        <planProgressBarStep>
+            <item>Step 6 of 7: Review and submit your application</item>
+        </planProgressBarStep>
+    </planSelectionPO>
+    <nrspAdditionalInfoPO>
+        <usCitizenNo>no</usCitizenNo>
+        <otherCitizenNo>no</otherCitizenNo>
+    </nrspAdditionalInfoPO>
+    <beneficiariesPO>
+        <beneficiariesDescription>
+            <item>Choose who should receive your savings when you pass away. If you don't designate a beneficiary or none of them survive you, the money will go to your estate unless the law requires otherwise.</item>
+            <item>Generally, you can change your beneficiaries at any time using your online account.</item>
+        </beneficiariesDescription>
+    </beneficiariesPO>
+    <profileInformationPO>
+        <profileDescription>You're almost done! Just look over the details in this summary and make sure they're all correct. If you need to make any changes, use the Back button at the bottom of this page to return to the step with that info. Once you're sure everything is right, read and accept the terms and conditions, and submit your application.</profileDescription>
+        <profileHeader>Personal info</profileHeader>
+        <profileNameLabel initial="Name">Name</profileNameLabel>
+        <profileDOBLabel initial="Date of birth">Date of birth</profileDOBLabel>
+        <profileSINLabel initial="Social insurance number">Social</profileSINLabel>
+        <profileEmailLabel initial="Email">Email</profileEmailLabel>
+        <profileMailingAddressLabel initial="Mailing address">Mailing address</profileMailingAddressLabel>
+        <profileNameData initial="AUSTIN MATTHEWS">AUSTIN MATTHEWS</profileNameData>
+        <profileDOBData initial="June 11, 1979">June 11, 1979</profileDOBData>
+        <profileSINData initial="*** *** 094">*** *** 094</profileSINData>
+        <profileEmailData initial="matthew@abc.com">matthew@abc.com</profileEmailData>
+        <profileMailingAddressData initial="2419 MACLAREN STREET, OTTAWA, ON K1P 5M7">2419 MACLAREN STREET, OTTAWA, ON K1P 5M7</profileMailingAddressData>
+    </profileInformationPO>
+</plan-domain-object>
