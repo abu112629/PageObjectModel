@@ -42,4 +42,18 @@
         </classes>
     </test>
 
+    <test name="Validate the Review and Submit Information Test English">
+        <parameter name="data-set" value="data/review_and_submit_information_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.ReviewAndSubmitTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Review and Submit Information Test French">
+        <parameter name="data-set" value="data/review_and_submit_information_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.ReviewAndSubmitTest"/>
+        </classes>
+    </test>
+
 </suite>
