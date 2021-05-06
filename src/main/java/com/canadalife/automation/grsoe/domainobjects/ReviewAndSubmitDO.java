@@ -82,7 +82,7 @@ public class ReviewAndSubmitDO extends DomainObjectModel {
     public void user_can_view_the_profile_information_and_details(String gwt){
         AppHelper.waitForXHR(2);
         profileInformationPO.initPage(getContext());
-        profileInformationPO.validateProfileHeader();
+        profileInformationPO.validateReviewProfileHeader();
         profileInformationPO.validateProfileDescription();
         profileInformationPO.validateProfileLabels();
         profileInformationPO.validateProfileInformation();

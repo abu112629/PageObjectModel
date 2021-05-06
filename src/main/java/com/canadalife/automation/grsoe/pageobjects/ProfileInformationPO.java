@@ -11,8 +11,11 @@ public class ProfileInformationPO extends PageObjectModel {
     @FindBy(xpath="//*[@data-omni-key='TB_Description_Header']//p")
     private WebComponent profileDescription;
 
-    @FindBy(xpath="//*[@data-omni-key='TB_PersonalInfo']//div/div")
+    @FindBy(xpath="//*[@data-omni-key='TB_PersonalInfo']//h3")
     private WebComponent profileHeader;
+
+    @FindBy(xpath="//*[@data-omni-key='TB_PersonalInfo']//div/div")
+    private WebComponent reviewProfileHeader;
 
     @FindBy(xpath="//*[@data-omni-key='CLWC_PersonalInfo']")
     private VlocityInput profileNameLabel;
@@ -50,7 +53,9 @@ public class ProfileInformationPO extends PageObjectModel {
     public void validateProfileHeader(){
         profileHeader.validateData(DataTypes.Data);
     }
-
+    public void validateReviewProfileHeader(){
+        reviewProfileHeader.validateData(DataTypes.Data);
+    }
     public void validateProfileLabels(){
         profileNameLabel.getInformationLabel();
         profileNameLabel.validateInformationText(DataTypes.Initial);

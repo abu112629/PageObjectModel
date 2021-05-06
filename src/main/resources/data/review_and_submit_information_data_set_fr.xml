@@ -40,7 +40,7 @@
     </beneficiariesPO>
     <profileInformationPO>
         <profileDescription>Vous avez presque terminé! Il ne vous reste qu’à passer en revue l’information de ce sommaire pour vous assurer qu’elle est correcte. Si vous souhaitez la modifier, utilisez le bouton Précédent au bas de la page pour retourner à l’étape où vous avez saisi l’information. Lorsque vous avez confirmé que toute l’information est correcte, lisez et acceptez les conditions, puis soumettez votre demande.</profileDescription>
-        <profileHeader>Données personnelles</profileHeader>
+        <reviewProfileHeader>Données personnelles</reviewProfileHeader>
         <profileNameLabel initial="Nom">Nom</profileNameLabel>
         <profileDOBLabel initial="Date de naissance">Date de naissance</profileDOBLabel>
         <profileSINLabel initial="Numéro d'assurance sociale">Numéro</profileSINLabel>
