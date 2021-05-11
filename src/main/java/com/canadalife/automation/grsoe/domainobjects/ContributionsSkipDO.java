@@ -36,6 +36,7 @@ public class ContributionsSkipDO extends DomainObjectModel {
 
     @Step("{0} user can select required Plan")
     public void user_can_select_required_plan(String gwt) {
+        planSelectionPO.initPage(getContext());
         planSelectionPO.selectRequiredPlan();
         TestNGBase.takeScreenshot("");
         planSelectionPO.clickContinueButton();
