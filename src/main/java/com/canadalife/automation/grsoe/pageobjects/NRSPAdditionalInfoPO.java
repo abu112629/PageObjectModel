@@ -80,6 +80,7 @@ public class NRSPAdditionalInfoPO extends PageObjectModel {
 
     @Step("Click no button for US Citizen Tax Purposes")
     public void clickNoforUSCitizen() {
+        AppHelper.scrollToView(usCitizenNo.getCoreElement());
         setElementValue(usCitizenNo);
     }
 
