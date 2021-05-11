@@ -10,6 +10,13 @@ webdriver.install=true
 webdriver.browser.type=CHROME
 #webdriver.extra.capabilities=
 
+#For responsive mobile automation
+#driver.provider=ui.auto.core.utils.MobileDriverProvider
+#webdriver.extra.capabilities=
+
+#user.agent=Mobile,Moto G4
+
+
 #webdriver.screen.size - Initial browser window size
 #webdriver.screen.size=1280x800
 #timeout.page - Timeout for page load in seconds
