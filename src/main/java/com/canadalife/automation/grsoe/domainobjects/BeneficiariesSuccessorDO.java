@@ -101,6 +101,38 @@ public class BeneficiariesSuccessorDO extends DomainObjectModel {
 
     }
 
+    @Step("{0} user enters successor beneficiary name and DOB")
+    public void user_enters_successor_beneficiary_name_and_dob(String gwt){
+        beneficiarySuccessorPO.enterDetailsSuccessorBeneficiary();
+        TestNGBase.takeScreenshot("");
+        rppAdditionalInfoPO.initPage(getContext());
+        rppAdditionalInfoPO.enterDOBDetails();
+        TestNGBase.takeScreenshot("");
+
+    }
+
+    @Step("{0} user enters invalid and same beneficiary SIN")
+    public void user_enters_invalid_successor_beneficiary_sin(String gwt){
+        beneficiarySuccessorPO.enterInvalidSINSuccessorBeneficiary();
+        TestNGBase.takeScreenshot("");
+        planSelectionPO.clickSaveButton();
+        beneficiarySuccessorPO.validateInvalidErrorSINSuccessorBeneficiary();
+        TestNGBase.takeScreenshot("");
+
+        beneficiarySuccessorPO.enterSameMemberSINSuccessorBeneficiary();
+        TestNGBase.takeScreenshot("");
+        planSelectionPO.clickSaveButton();
+        beneficiarySuccessorPO.validateSameErrorSINSuccessorBeneficiary();
+        TestNGBase.takeScreenshot("");
+
+    }
+
+    @Step("{0} user enters valid successor beneficiary SIN")
+    public void user_enters_valid_successor_beneficiary_sin(String gwt){
+        beneficiarySuccessorPO.enterSINSuccessorBeneficiary();
+        TestNGBase.takeScreenshot("");
+    }
+
     @Step("{0} user clicks on Save Beneficiary Form")
     public void user_clicks_save_beneficiary(String gwt){
         AppHelper.waitForXHR(2);

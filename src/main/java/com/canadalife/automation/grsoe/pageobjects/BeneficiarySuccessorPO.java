@@ -79,6 +79,12 @@ public class BeneficiarySuccessorPO extends PageObjectModel {
     private VlocityActionInput primarySuccessorUpdatedSIN;
 
     @FindBy(xpath = "//*[@data-omni-key='SuccessorSIN']")
+    private VlocityActionInput primarySuccessorSameSIN;
+
+    @FindBy(xpath = "//*[@data-omni-key='SuccessorSIN']")
+    private VlocityActionInput primarySuccessorNotValidSIN;
+
+    @FindBy(xpath = "//*[@data-omni-key='SuccessorSIN']")
     private VlocityActionInput primarySuccessorInvalidSIN;
 
     @FindBy(xpath = "//*[@data-omni-key='SuccessorSIN']")
@@ -194,9 +200,41 @@ public class BeneficiarySuccessorPO extends PageObjectModel {
 
     }
 
+    public void enterDetailsSuccessorBeneficiary(){
+        setElementValue(primarySuccessorFirstName);
+        setElementValue(primarySuccessorLastName);
+    }
+
+
+    public void enterInvalidSINSuccessorBeneficiary(){
+
+        AppHelper.scrollToView(primarySuccessorNotValidSIN.getCoreElement());
+        AppHelper.waitForXHR(3);
+        primarySuccessorNotValidSIN.click();
+        setElementValue(primarySuccessorNotValidSIN,false);
+        AppHelper.waitForXHR(2);
+
+    }
+    public void validateInvalidErrorSINSuccessorBeneficiary(){
+        primarySuccessorNotValidSIN.validateError(DataTypes.Initial);
+
+    }
+    public void enterSameMemberSINSuccessorBeneficiary(){
+
+        AppHelper.scrollToView(primarySuccessorSameSIN.getCoreElement());
+        AppHelper.waitForXHR(3);
+        primarySuccessorSameSIN.click();
+        setElementValue(primarySuccessorSameSIN,false);
+
+    }
+    public void validateSameErrorSINSuccessorBeneficiary(){
+        primarySuccessorSameSIN.validateError(DataTypes.Initial);
+
+    }
     public void enterSINSuccessorBeneficiary(){
         AppHelper.scrollToView(primarySuccessorUpdatedSIN.getCoreElement());
         AppHelper.waitForXHR(3);
+        primarySuccessorUpdatedSIN.click();
         setElementValue(primarySuccessorUpdatedSIN,false);
 
     }

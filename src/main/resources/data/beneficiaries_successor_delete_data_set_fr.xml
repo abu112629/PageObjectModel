@@ -54,7 +54,7 @@
         <primarySuccessorMonthLabel expected ="Mois">Mois</primarySuccessorMonthLabel>
         <primarySuccessorDateLabel expected ="Jour (JJ)">Jour (JJ)</primarySuccessorDateLabel>
         <primarySuccessorYearLabel expected ="Année (AAAA)">Année (AAAA)</primarySuccessorYearLabel>
-        <primarySuccessorSIN initial="Numéro d'assurance sociale">678890899</primarySuccessorSIN>
+        <primarySuccessorSIN initial="Numéro d'assurance sociale">363697954</primarySuccessorSIN>
         <primarySuccessorInvalidSIN initial="Entrez un numéro d’assurance sociale à 9 chiffres valide.">6788</primarySuccessorInvalidSIN>
         <primarySuccessorSINError>Entrez un numéro d’assurance sociale à 9 chiffres valide.</primarySuccessorSINError>
         <beneficiarySuccessorType expected="TestSuccessor TestFrench0329">Personne</beneficiarySuccessorType>

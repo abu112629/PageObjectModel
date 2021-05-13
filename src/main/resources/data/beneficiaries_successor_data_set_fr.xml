@@ -53,7 +53,9 @@
         <primarySuccessorMonthLabel expected ="Mois">Mois</primarySuccessorMonthLabel>
         <primarySuccessorDateLabel expected ="Jour (JJ)">Jour (JJ)</primarySuccessorDateLabel>
         <primarySuccessorYearLabel expected ="Année (AAAA)">Année (AAAA)</primarySuccessorYearLabel>
-        <primarySuccessorSIN initial="Numéro d'assurance sociale">678890899</primarySuccessorSIN>
+        <primarySuccessorSIN initial="Numéro d'assurance sociale">363697954</primarySuccessorSIN>
+        <primarySuccessorNotValidSIN initial="Ce numéro d’assurance sociale n’est pas valide. Assurez-vous d’avoir les bons renseignements et essayez de nouveau.">363628954</primarySuccessorNotValidSIN>
+        <primarySuccessorSameSIN initial="Il s’agit de votre numéro d’assurance sociale (NAS). Veuillez entrer le NAS de votre titulaire successeur.">622826758</primarySuccessorSameSIN>
         <primarySuccessorInvalidSIN initial="Entrez un numéro d’assurance sociale à 9 chiffres valide.">6788</primarySuccessorInvalidSIN>
         <primarySuccessorSINError>Entrez un numéro d’assurance sociale à 9 chiffres valide.</primarySuccessorSINError>
         <beneficiarySuccessorType expected="TestSuccessor TestFrench0329">Personne</beneficiarySuccessorType>
