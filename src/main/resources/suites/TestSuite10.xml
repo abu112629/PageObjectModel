@@ -56,4 +56,18 @@
         </classes>
     </test>
 
+    <test name="Validate the Successor SIN Test English">
+        <parameter name="data-set" value="data/beneficiaries_successor_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.SuccessorSINTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Successor SIN Test French">
+        <parameter name="data-set" value="data/beneficiaries_successor_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.SuccessorSINTest"/>
+        </classes>
+    </test>
+
 </suite>
