@@ -39,7 +39,7 @@
         <beneficiariesSuccessorSubHeader>Appoint a spouse or common-law partner who would become the owner of your TFSA when you die.</beneficiariesSuccessorSubHeader>
         <beneficiariesPrimaryHeader>Primary beneficiaries</beneficiariesPrimaryHeader>
         <primarySuccessorDeleteQuestion>Are you sure you want to delete TestSuccessor Testsample0329?</primarySuccessorDeleteQuestion>
-        <beneficiariesPrimarySubHeader>Choose who you want to receive your savings when you die. Then specify the percentage of savings they should receive. Make sure the total adds up to 100% for each plan.</beneficiariesPrimarySubHeader>
+        <beneficiariesPrimarySubHeader>Choose who you want to receive your savings when you die. Each beneficiary can be a person, organization or your estate. You'll need to specify the percentage of savings they should receive. Make sure the total adds up to 100% for each plan.</beneficiariesPrimarySubHeader>
         <beneficiariesSuccessorAdd>Add a successor holder</beneficiariesSuccessorAdd>
         <addSuccessorBeneficiaryLabel>Add a successor holder</addSuccessorBeneficiaryLabel>
         <addSuccessorBeneficiaryHintLabel>All fields are required unless labelled as optional.</addSuccessorBeneficiaryHintLabel>

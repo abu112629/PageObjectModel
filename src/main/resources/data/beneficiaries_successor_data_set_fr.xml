@@ -38,7 +38,7 @@
         <beneficiariesSuccessorHeader>Titulaire successeur</beneficiariesSuccessorHeader>
         <beneficiariesSuccessorSubHeader>Désignez votre conjoint ou conjoint de fait afin qu’il devienne le propriétaire de votre CELI à votre décès.</beneficiariesSuccessorSubHeader>
         <beneficiariesPrimaryHeader>Premier bénéficiaires</beneficiariesPrimaryHeader>
-        <beneficiariesPrimarySubHeader>Choisissez qui recevra votre épargne à votre décès. Précisez ensuite le pourcentage de l’épargne qui lui reviendra. Assurez-vous que les pourcentages totalisent 100 % pour chaque régime.</beneficiariesPrimarySubHeader>
+        <beneficiariesPrimarySubHeader>Choisissez qui recevra votre épargne à votre décès. Vous pouvez désigner une personne, une organisation ou votre succession à titre de bénéficiaire. Vous devez préciser le pourcentage de l’épargne qui lui reviendra. Assurez-vous que les pourcentages totalisent 100 % pour chaque régime.</beneficiariesPrimarySubHeader>
         <beneficiariesSuccessorAdd>Ajouter un titulaire successeur</beneficiariesSuccessorAdd>
         <addSuccessorBeneficiaryLabel>Ajouter un titulaire successeur</addSuccessorBeneficiaryLabel>
         <addSuccessorBeneficiaryHintLabel>Sauf indication contraire, tous les champs doivent être remplis.</addSuccessorBeneficiaryHintLabel>

@@ -50,7 +50,6 @@ public class RRSPIVTTest extends TestNGBase {
 
         BeneficiariesDO beneficiariesDO2=new BeneficiariesDO(getContext()).fromResource(dataSet5);
         And(beneficiariesDO2 :: user_selects_and_validates_estate_beneficiary);
-        And(beneficiariesDO2 :: delete_all_salesforce_estate_test_records);
         And(beneficiariesDO2 :: user_clicks_save_beneficiary_for_estate);
         And(beneficiariesDO2 :: user_validates_pill_information_for_estate_after_saving_the_details);
         And(beneficiariesDO2 :: user_validates_salesforce_information_is_saved_for_estate);

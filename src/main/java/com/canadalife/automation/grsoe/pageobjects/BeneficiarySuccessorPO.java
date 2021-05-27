@@ -263,8 +263,8 @@ public class BeneficiarySuccessorPO extends PageObjectModel {
     public void validatePrimarySuccessorBeneficiaryOnEdit(){
         primarySuccessorFirstName.getValue().contains(primarySuccessorFirstName.getData());
         primarySuccessorLastName.getValue().contains(primarySuccessorLastName.getData());
-        AppHelper.scrollToView(primarySuccessorSIN.getCoreElement());
-        primarySuccessorSIN.getValue().contains(primarySuccessorSIN.getData());
+        //AppHelper.scrollToView(primarySuccessorSIN.getCoreElement());
+        //primarySuccessorSIN.getValue().contains(primarySuccessorSIN.getData());
 
     }
 
