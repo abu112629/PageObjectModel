@@ -4,6 +4,7 @@ import com.canadalife.automation.grsoe.components.RadioGroup;
 import com.canadalife.automation.grsoe.support.AppHelper;
 import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.allure.annotations.Step;
+import ui.auto.core.components.WebComponent;
 import ui.auto.core.components.WebComponentList;
 import ui.auto.core.data.DataTypes;
 import ui.auto.core.support.PageObjectModel;
@@ -19,8 +20,8 @@ public class DPSPAdditionalInfoPO extends PageObjectModel {
     @FindBy(xpath = "//*[(@data-omni-key='DPSPConnectedPerson')]//*[contains(@class,'nds-form-element__static')]")
     private WebComponentList connectedPersonDetailedText;
 
-    @FindBy(xpath = "//slot/p")
-    private WebComponentList connectedPersonDisclaimer;
+    @FindBy(xpath = "//*[(@data-omni-key='DPSPDisclaimer')]//slot/p")
+    private WebComponent connectedPersonDisclaimer;
 
     @Step("Click yes button for connected person Question")
     public void clickYesforconnectedperson() {
@@ -47,8 +48,9 @@ public class DPSPAdditionalInfoPO extends PageObjectModel {
 
     @Step("Connected Person Disclaimer is visible on selecting yes for Connected Person")
     public void validateConnectedPersonDisclaimer() {
-        connectedPersonDisclaimer.initPage(getContext());
         AppHelper.scrollToView(connectedPersonbuttonYes.getCoreElement());
-        connectedPersonDisclaimer.validateAll();
+        AppHelper.waitForXHR(3);
+        AppHelper.scrollToView(connectedPersonDisclaimer.getCoreElement());
+        connectedPersonDisclaimer.validateData();
     }
 }

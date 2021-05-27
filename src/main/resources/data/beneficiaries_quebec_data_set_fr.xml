@@ -41,8 +41,7 @@
     </investmentPO>
     <beneficiariesPO>
         <beneficiariesDescription>
-            <item>Vous pouvez décider de ce qu’il adviendra de votre épargne après votre décès en désignant un ou plusieurs bénéficiaires. Si vous ne désignez pas de bénéficiaire ou si aucun de vos bénéficiaires n’est vivant à votre décès, les sommes payables seront automatiquement versées à votre succession, sauf disposition contraire dans la loi.</item>
-            <item>En règle générale, vous pouvez changer vos bénéficiaires à n’importe quel moment dans votre compte en ligne.</item>
+            <item>Vous pouvez décider de ce qu’il adviendra de votre épargne après votre décès en désignant un ou plusieurs bénéficiaires. Si vous ne désignez pas de bénéficiaire ou si aucun de vos bénéficiaires n’est vivant à votre décès, les sommes payables seront automatiquement versées à votre succession, sauf disposition contraire dans la loi. En règle générale, vous pouvez changer vos bénéficiaires à n’importe quel moment après votre adhésion à partir de votre compte en ligne.</item>
         </beneficiariesDescription>
         <beneficiariesSkipQuestion>Êtes-vous certain de vouloir continuer sans ajouter de bénéficiaire?</beneficiariesSkipQuestion>
         <beneficiariesSkipDetails>Lorsque vous désignez un bénéficiaire, il est plus facile de déterminer à qui votre épargne devrait être transférée à votre décès.</beneficiariesSkipDetails>

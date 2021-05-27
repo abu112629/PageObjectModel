@@ -25,11 +25,7 @@
                 You're a connected person if you're not independent of your employer. For example, if you're a relative of the company’s owners, including by marriage or adoption. You're also a connected person if you're a specified shareholder as defined in Canada's Income Tax Act; or if you directly or indirectly own 10% or more of your employer's stock, or stock of a company related to your employer.
             </item>
         </connectedPersonDetailedText>
-        <connectedPersonDisclaimer>
-            <item>
-                Due to Canadian tax laws, you can't enrol in a DPSP if you're a connected person. Please go back and select a different plan.
-            </item>
-        </connectedPersonDisclaimer>
+        <connectedPersonDisclaimer>Due to Canadian tax laws, you can't enrol in a DPSP if you're a connected person. Please go back and select a different plan.</connectedPersonDisclaimer>
     </dpspAdditionalInfoPO>
     <planSelectionPO>
         <planAdditionalInfoQuestions>

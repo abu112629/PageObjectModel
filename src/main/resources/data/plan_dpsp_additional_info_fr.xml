@@ -25,11 +25,7 @@
                 Vous êtes une personne rattachée si vous n’êtes pas indépendant de votre employeur, par exemple, si vous êtes un membre de la famille d’un propriétaire de l’entreprise, y compris par les liens du mariage ou de l’adoption. Vous êtes également une personne rattachée si vous êtes un actionnaire déterminé au sens de la Loi de l’impôt sur le revenu (Canada), ou si vous possédez, directement ou indirectement, 10 % ou plus des actions de votre employeur, ou des actions d’une société liée à votre employeur.
             </item>
         </connectedPersonDetailedText>
-        <connectedPersonDisclaimer>
-            <item>
-                En raison des lois fiscales canadiennes, vous ne pouvez pas adhérer à un RPDB si vous êtes une personne rattachée. Veuillez revenir en arrière et sélectionner un autre régime.
-            </item>
-        </connectedPersonDisclaimer>
+        <connectedPersonDisclaimer>En raison des lois fiscales canadiennes, vous ne pouvez pas adhérer à un RPDB si vous êtes une personne rattachée. Veuillez revenir en arrière et sélectionner un autre régime.</connectedPersonDisclaimer>
     </dpspAdditionalInfoPO>
     <planSelectionPO>
         <planAdditionalInfoQuestions>
