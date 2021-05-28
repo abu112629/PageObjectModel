@@ -50,7 +50,7 @@
 
     <test name="Validate the Trustee Beneficiary Duplicate Test English">
         <parameter name="data-set" value="data/beneficiaries_skip_data_set_en.xml"/>
-        <parameter name="data-set" value="data/contingent_beneficiaries_data_set_en.xml"/>
+        <parameter name="data-set2" value="data/contingent_beneficiaries_data_set_en.xml"/>
         <classes>
             <class name="com.canadalife.automation.grsoe.sprinttests.TrusteeBeneficiaryDuplicateTest"/>
         </classes>
@@ -58,7 +58,7 @@
 
     <test name="Validate the Trustee Beneficiary Duplicate Test French">
         <parameter name="data-set" value="data/beneficiaries_skip_data_set_fr.xml"/>
-        <parameter name="data-set" value="data/contingent_beneficiaries_data_set_fr.xml"/>
+        <parameter name="data-set2" value="data/contingent_beneficiaries_data_set_fr.xml"/>
         <classes>
             <class name="com.canadalife.automation.grsoe.sprinttests.TrusteeBeneficiaryDuplicateTest"/>
         </classes>

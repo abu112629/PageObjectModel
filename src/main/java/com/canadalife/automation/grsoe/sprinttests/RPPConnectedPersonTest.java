@@ -22,7 +22,7 @@ public class RPPConnectedPersonTest extends TestNGBase {
     @Issue("GRSOE-219")
     @Test
 
-    public void connectedPersonStepsValidation(@Optional("data/plan_rpp_additional_info_fr.xml") String dataSet){
+    public void connectedPersonStepsValidation(@Optional("data/plan_rpp_additional_info_en.xml") String dataSet){
         RPPPlanDO plan = new RPPPlanDO(getContext()).fromResource(dataSet);
         Given(plan :: user_on_plan_selection_page);
         When(plan :: user_can_select_required_plan);

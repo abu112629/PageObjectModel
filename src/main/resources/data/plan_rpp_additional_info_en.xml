@@ -47,6 +47,7 @@
             If you're a connected person, your employer must submit Form T1007 to the Canada Revenue Agency within 60 days of you joining the RPP.
             </item>
         </connectedPersonDisclaimer>
+        <connectedPersonDisclaimerText>If you're a connected person, your employer must submit Form T1007 to the Canada Revenue Agency within 60 days of you joining the RPP.</connectedPersonDisclaimerText>
     </rppplanSelectionPO>
     <planSelectionPO>
         <planAdditionalInfoQuestions>

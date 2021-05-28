@@ -19,7 +19,7 @@
 
     <rppplanSelectionPO>
         <spousebuttonYes initial="Indiquez si vous avez un conjoint ou un conjoint de fait.">yes</spousebuttonYes>
-        <connectedPersonbuttonYes initial ="Indiquez si vous êtes une personne rattachée.">no</connectedPersonbuttonYes>
+        <connectedPersonbuttonYes initial ="Indiquez si vous êtes une personne rattachée.">yes</connectedPersonbuttonYes>
         <spousebuttonNo>no</spousebuttonNo>
         <connectedPersonbuttonNo>no</connectedPersonbuttonNo>
         <spouseFirstNameLabel>
@@ -47,6 +47,7 @@
                 Si vous êtes une personne rattachée, votre employeur doit soumettre le formulaire T1007 à l’Agence du revenu du Canada dans les 60 jours suivant votre adhésion au RRA.
             </item>
         </connectedPersonDisclaimer>
+        <connectedPersonDisclaimerText>Si vous êtes une personne rattachée, votre employeur doit soumettre le formulaire T1007 à l’Agence du revenu du Canada dans les 60 jours suivant votre adhésion au RRA.</connectedPersonDisclaimerText>
     </rppplanSelectionPO>
     <planSelectionPO>
         <planAdditionalInfoQuestions>

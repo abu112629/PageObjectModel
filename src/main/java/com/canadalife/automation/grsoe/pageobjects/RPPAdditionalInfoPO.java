@@ -67,8 +67,11 @@ public class RPPAdditionalInfoPO extends PageObjectModel {
     @FindBy(xpath = "//*[(@data-omni-key='ConnectedPerson')]//*[contains(@class,'nds-form-element__static')]")
     private WebComponentList connectedPersonDetailedText;
 
-    @FindBy(xpath = "//slot/p")
+    @FindBy(xpath = "//*[(@data-omni-key='ConnectedPersonDisclaimer')]//slot/p")
     private WebComponentList connectedPersonDisclaimer;
+
+    @FindBy(xpath = "//*[(@data-omni-key='ConnectedPersonDisclaimer')]//slot/p")
+    private WebComponent connectedPersonDisclaimerText;
 
     @Data(skip = true)
     SalesforceInfo salesforceInfo;
@@ -193,14 +196,15 @@ public class RPPAdditionalInfoPO extends PageObjectModel {
 
     @Step("Connected Person Disclaimer is visible on selecting yes for Connected Person")
     public void validateConnectedPersonDisclaimer() {
-        connectedPersonDisclaimer.initPage(getContext());
         AppHelper.scrollToView(connectedPersonbuttonYes.getCoreElement());
-        connectedPersonDisclaimer.validateAll();
+        AppHelper.waitForXHR(3);
+        connectedPersonDisclaimerText.validateData();
     }
 
     @Step("Connected Person Disclaimer is not visible on selecting no for Connected Person")
     public void validateConnectedPersonDisclaimernotVisible() {
         setElementValue(connectedPersonbuttonNo);
+        connectedPersonDisclaimer.initPage(getContext());
         Assertions.assertThat(connectedPersonDisclaimer.getElementsMap().get(0)).isNull();
 
     }
