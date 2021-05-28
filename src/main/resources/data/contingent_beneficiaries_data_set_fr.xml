@@ -90,11 +90,14 @@
         <contingentTrusteeLastName initial="Nom de famille">TestFrench</contingentTrusteeLastName>
         <contingentTrusteeFirstNameDuplicate>TestContingentFr</contingentTrusteeFirstNameDuplicate>
         <contingentTrusteeLastNameDuplicate>Testsample</contingentTrusteeLastNameDuplicate>
+        <contingentTrusteePrimaryFirstNameDuplicate>TestFrench</contingentTrusteePrimaryFirstNameDuplicate>
+        <contingentTrusteePrimaryLastNameDuplicate>Testsample</contingentTrusteePrimaryLastNameDuplicate>
         <contingentTrusteeRelationshipError>Indiquez le lien du fiduciaire avec vous.</contingentTrusteeRelationshipError>
         <contingentTrusteeFirstNameError>Entrez le prénom du fiduciaire.</contingentTrusteeFirstNameError>
         <contingentTrusteeLastNameError>Entrez le nom de famille du fiduciaire.</contingentTrusteeLastNameError>
         <contingentTrusteeFirstNameInvalid initial="Entrez un prénom valide. Seuls les lettres, les traits d’union, les espaces, les apostrophes, les crochets et les points sont acceptés.">&lt;</contingentTrusteeFirstNameInvalid>
         <contingentTrusteeLastNameInvalid initial="Entrez un nom de famille valide. Seuls les lettres, les traits d’union, les espaces, les apostrophes, les crochets et les points sont acceptés.">&lt;</contingentTrusteeLastNameInvalid>
         <beneficiariesAdd expected="Le fiduciaire et le bénéficiaire ne peuvent pas être la même personne.">Ajouter un bénéficiaire subsidiaire</beneficiariesAdd>
+        <primaryTrusteeDuplicateError>Vous ne pouvez pas désigner cette personne comme fiduciaire, car vous avez déjà désigné comme premier bénéficiaire une personne du même prénom et du même nom ayant le même lien avec vous.</primaryTrusteeDuplicateError>
     </contingentbeneficiaryTrusteePO>
 </plan-domain-object>

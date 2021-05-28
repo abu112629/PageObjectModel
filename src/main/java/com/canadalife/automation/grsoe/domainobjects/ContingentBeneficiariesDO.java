@@ -328,6 +328,7 @@ public class ContingentBeneficiariesDO extends DomainObjectModel {
         contingentbeneficiaryTrusteePO.initPage(getContext());
         contingentbeneficiaryTrusteePO.validateBeneficaryTrusteeQuestion();
         contingentbeneficiaryTrusteePO.selectContingentTrusteeYes();
+        planSelectionPO.initPage(getContext());
         planSelectionPO.clickSaveButton();
         TestNGBase.takeScreenshot("");
         contingentbeneficiaryTrusteePO.validateTrusteeFormLabels();
@@ -345,6 +346,15 @@ public class ContingentBeneficiariesDO extends DomainObjectModel {
         contingentbeneficiaryTrusteePO.validateDuplicateBeneTrusteeDetails();
         planSelectionPO.clickSaveButton();
         contingentbeneficiaryTrusteePO.validateDuplicateBeneTrusteeDetailsError();
+        TestNGBase.takeScreenshot("");
+
+    }
+
+    @Step("{0} user enters duplicate trustee details as primary and beneficiary details")
+    public void user_enters_duplicate_trustee_as_primary_and_beneficiary_details(String gwt){
+        contingentbeneficiaryTrusteePO.validateDuplicateTrusteePrimaryDetails();
+        planSelectionPO.clickSaveButton();
+        contingentbeneficiaryTrusteePO.validateDuplicatePrimaryTrusteeDetailsError();
         TestNGBase.takeScreenshot("");
 
     }
@@ -450,5 +460,6 @@ public class ContingentBeneficiariesDO extends DomainObjectModel {
         TestNGBase.takeScreenshot("");
         contingentBeneficiaryPO.validateAllocationSuccessTotalAndLogo();
     }
+
 
 }

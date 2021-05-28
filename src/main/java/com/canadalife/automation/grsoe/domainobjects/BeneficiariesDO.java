@@ -205,6 +205,17 @@ public class BeneficiariesDO extends DomainObjectModel {
         TestNGBase.takeScreenshot("");
 
     }
+    /*User Enters duplicate Contingent bene information in Primary bene*/
+    @Step("{0} user enters duplicate person beneficiary details like in contingent")
+    public void user_enters_person_duplicate_beneficiary_details_as_in_contingent(String gwt){
+        beneficiariesPO.selectAdditionalPersonRelationBeneficiary();
+        beneficiariesPO.validateAndEnterDuplicateContingentDetailsPrimaryBeneficiary();
+        TestNGBase.takeScreenshot("");
+        rppAdditionalInfoPO.initPage(getContext());
+        beneficiaryTrusteePO.selectPrimaryTrusteeNoDuplicate();
+        TestNGBase.takeScreenshot("");
+
+    }
 
     @Step("{0} user enters duplicate person beneficiary details")
     public void user_enters_duplicate_person_beneficiary_details(String gwt){
@@ -236,6 +247,16 @@ public class BeneficiariesDO extends DomainObjectModel {
         TestNGBase.takeScreenshot("");
         beneficiaryOrganisationPO.initPage(getContext());
         beneficiaryOrganisationPO.enterDetailsOrganizationBeneficiary();
+        TestNGBase.takeScreenshot("");
+    }
+
+    /*User enters duplicate contingent and primary bene details*/
+    @Step("{0} user enters duplicate organization beneficiary details as in  contingent")
+    public void user_enters_duplicate_organization_beneficiary_details_as_in_contingent(String gwt){
+        beneficiariesPO.additionalBeneficiary();
+        TestNGBase.takeScreenshot("");
+        beneficiaryOrganisationPO.initPage(getContext());
+        beneficiaryOrganisationPO.enterDetailsDuplicateOrganizationBeneficiary();
         TestNGBase.takeScreenshot("");
     }
 
@@ -335,6 +356,12 @@ public class BeneficiariesDO extends DomainObjectModel {
     public void user_validates_salesforce_information_is_deleted_for_member(String gwt){
         AppHelper.waitForXHR(1);
         beneficiariesPO.validateSalesforceBeneficiaryRecordDeleted();
+    }
+
+    @Step("{0} user validates Salesforce Information is deleted for organization")
+    public void user_validates_salesforce_information_is_deleted_for_organization(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiaryOrganisationPO.validateSalesforceBeneficiaryOrgRecordDeleted();
     }
 
     @Step("{0} user validates Salesforce Information is saved for Estate")
@@ -447,11 +474,26 @@ public class BeneficiariesDO extends DomainObjectModel {
         beneficiariesPO.validateBeneficiariesDeleteQuestion();
         planSelectionPO.clickSkipBackButton();
     }
+
+    @Step("{0} user clicks delete only Beneficiary Information and clicks back")
+    public void user_clicks_delete_only_beneficiary_information_and_clicks_back(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiariesPO.deletePrimaryBeneficiary();
+        beneficiariesPO.validateOnlyBeneficiariesDeleteQuestion();
+        planSelectionPO.clickSkipBackButton();
+    }
     @Step("{0} user deletes Beneficiary Person Information")
     public void user_deletes_beneficiary_person_information(String gwt){
         AppHelper.waitForXHR(1);
         beneficiariesPO.deletePrimaryBeneficiary();
         beneficiariesPO.validateBeneficiariesDeleteQuestion();
+        planSelectionPO.clickSkipContinueButton();
+    }
+    @Step("{0} user deletes only Beneficiary Information")
+    public void user_deletes_only_beneficiary_information(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiariesPO.deletePrimaryBeneficiary();
+        beneficiariesPO.validateOnlyBeneficiariesDeleteQuestion();
         planSelectionPO.clickSkipContinueButton();
     }
     @Step("{0} user deletes Beneficiary Estate Information")
@@ -496,6 +538,14 @@ public class BeneficiariesDO extends DomainObjectModel {
     public void user_is_able_to_continue_with_allocation_as_100(String gwt){
         TestNGBase.takeScreenshot("");
         beneficiariesPO.validateAllocationSuccessTotalAndLogo();
+    }
+
+    @Step("{0} user clicks save and is able to validate all duplicate primary contingent errors")
+    public void user_clicks_save_and_is_able_to_validate_all_duplicate_primary_contingent_errors(String gwt){
+        planSelectionPO.initPage(getContext());
+        planSelectionPO.clickSaveButton();
+        TestNGBase.takeScreenshot("");
+        beneficiariesPO.validateDuplicateContingentPrimaryDetailsError();
     }
 
 }

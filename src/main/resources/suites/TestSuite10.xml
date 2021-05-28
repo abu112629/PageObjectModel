@@ -70,4 +70,27 @@
         </classes>
     </test>
 
+    <test name="Validate the Identical Beneficiaries Primary and Contingent Test English">
+        <parameter name="data-set" value="data/beneficiaries_skip_data_set_en.xml"/>
+        <parameter name="data-set2" value="data/contingent_beneficiaries_data_set_en.xml"/>
+        <parameter name="data-set3" value="data/contingent_beneficiaries_organisation_data_set_en.xml"/>
+        <parameter name="data-set4" value="data/contingent_beneficiaries_estate_data_set_en.xml"/>
+        <parameter name="data-set5" value="data/beneficiaries_organisation_data_set_en.xml"/>
+        <parameter name="data-set6" value="data/beneficiaries_estate_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.IdenticalBeneficiariesErrorTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Identical Beneficiaries Primary and Contingent  Test French">
+        <parameter name="data-set" value="data/beneficiaries_skip_data_set_fr.xml"/>
+        <parameter name="data-set2" value="data/contingent_beneficiaries_data_set_fr.xml"/>
+        <parameter name="data-set3" value="data/contingent_beneficiaries_organisation_data_set_fr.xml"/>
+        <parameter name="data-set4" value="data/contingent_beneficiaries_estate_data_set_fr.xml"/>
+        <parameter name="data-set5" value="data/beneficiaries_organisation_data_set_fr.xml"/>
+        <parameter name="data-set6" value="data/beneficiaries_estate_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.IdenticalBeneficiariesErrorTest"/>
+        </classes>
+    </test>
 </suite>

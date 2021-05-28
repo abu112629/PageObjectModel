@@ -1,10 +1,7 @@
 package com.canadalife.automation.grsoe.pageobjects;
 
 import com.canadalife.automation.grsoe.api.salesforce.SalesforceInfo;
-import com.canadalife.automation.grsoe.components.VlocityActionInput;
-import com.canadalife.automation.grsoe.components.VlocityInput;
-import com.canadalife.automation.grsoe.components.VlocitySelect;
-import com.canadalife.automation.grsoe.components.VlocitySelectRadioButton;
+import com.canadalife.automation.grsoe.components.*;
 import com.canadalife.automation.grsoe.support.AppHelper;
 import datainstiller.data.Data;
 import org.openqa.selenium.support.FindBy;
@@ -74,6 +71,12 @@ public class BeneficiarySuccessorPO extends PageObjectModel {
 
     @FindBy(xpath = "//*[@data-omni-key='SuccessorSIN']")
     private VlocityActionInput primarySuccessorSIN;
+
+    @FindBy(xpath = "//*[@data-omni-key='SuccessorFormattedSINLabel']//p")
+    private WebComponent primarySuccessorFormattedSIN;
+
+    @FindBy(xpath = "//*[@data-omni-key='SuccessorChangeSINCheckBox']")
+    private VlocityMaskedCheckBox primarySuccessorSINCheckBox;
 
     @FindBy(xpath = "//*[@data-omni-key='SuccessorSIN']")
     private VlocityActionInput primarySuccessorUpdatedSIN;
@@ -263,9 +266,14 @@ public class BeneficiarySuccessorPO extends PageObjectModel {
     public void validatePrimarySuccessorBeneficiaryOnEdit(){
         primarySuccessorFirstName.getValue().contains(primarySuccessorFirstName.getData());
         primarySuccessorLastName.getValue().contains(primarySuccessorLastName.getData());
-        //AppHelper.scrollToView(primarySuccessorSIN.getCoreElement());
-        //primarySuccessorSIN.getValue().contains(primarySuccessorSIN.getData());
+        AppHelper.scrollToView(primarySuccessorFormattedSIN.getCoreElement());
+        primarySuccessorFormattedSIN.getValue().contains(primarySuccessorFormattedSIN.getData());
 
+    }
+
+    public void validateAndClickChangeSINCheckBox() {
+        AppHelper.scrollToView(primarySuccessorSINCheckBox.getCoreElement());
+        setElementValue(primarySuccessorSINCheckBox,false);
     }
 
     public void deleteAllTestRecords() {

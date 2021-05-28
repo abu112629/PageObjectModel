@@ -48,6 +48,12 @@ public class ContingentBeneficiaryTrusteePO extends PageObjectModel {
     @FindBy(xpath = "//*[@data-omni-key='ContingentTrusteeLastName']")
     private VlocityActionInput contingentTrusteeLastNameDuplicate;
 
+    @FindBy(xpath = "//*[@data-omni-key='ContingentTrusteeFirstName']")
+    private VlocityActionInput contingentTrusteePrimaryFirstNameDuplicate;
+
+    @FindBy(xpath = "//*[@data-omni-key='ContingentTrusteeLastName']")
+    private VlocityActionInput contingentTrusteePrimaryLastNameDuplicate;
+
     @FindBy(xpath = "//*[@data-omni-key='ContingentTrusteeRelationship']")
     private RadioGroup contingentTrusteeRelationshipError;
 
@@ -65,6 +71,9 @@ public class ContingentBeneficiaryTrusteePO extends PageObjectModel {
 
     @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaries']")
     private VlocitySelectRadioButton beneficiariesAdd;
+
+    @FindBy(xpath = "//*[@data-omni-key='ContingentBeneficiaries']")
+    private VlocitySelectRadioButton primaryTrusteeDuplicateError;
 
     @Data(skip = true)
     SalesforceInfo salesforceInfo;
@@ -129,11 +138,22 @@ public class ContingentBeneficiaryTrusteePO extends PageObjectModel {
         setElementValue(contingentTrusteeLastNameDuplicate);
     }
 
+    public void validateDuplicateTrusteePrimaryDetails() {
+        AppHelper.scrollToView(contingentTrusteePrimaryFirstNameDuplicate.getCoreElement());
+        setElementValue(contingentTrusteePrimaryFirstNameDuplicate);
+        setElementValue(contingentTrusteePrimaryLastNameDuplicate);
+    }
     public void validateDuplicateBeneTrusteeDetailsError() {
         AppHelper.scrollToView(beneficiariesAdd.getCoreElement());
+        AppHelper.waitForXHR(3);
         beneficiariesAdd.validateBannerError(DataTypes.Expected);
     }
 
+    public void validateDuplicatePrimaryTrusteeDetailsError() {
+        AppHelper.scrollToView(primaryTrusteeDuplicateError.getCoreElement());
+        AppHelper.waitForXHR(3);
+        primaryTrusteeDuplicateError.validateBannerError(DataTypes.Data);
+    }
     public void validateAndEnterDetailsTrusteeBeneficiary(){
         AppHelper.scrollToView(contingentTrusteeRelationship.getCoreElement());
         setElementValue(contingentTrusteeRelationship);

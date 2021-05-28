@@ -55,13 +55,15 @@
         <primarySuccessorSIN initial="Numéro d'assurance sociale">363697954</primarySuccessorSIN>
         <primarySuccessorNotValidSIN initial="Ce numéro d’assurance sociale n’est pas valide. Assurez-vous d’avoir les bons renseignements et essayez de nouveau.">363628954</primarySuccessorNotValidSIN>
         <primarySuccessorSameSIN initial="Il s’agit de votre numéro d’assurance sociale (NAS). Veuillez entrer le NAS de votre titulaire successeur.">622826758</primarySuccessorSameSIN>
+        <primarySuccessorFormattedSIN>*** *** 954</primarySuccessorFormattedSIN>
+        <primarySuccessorSINCheckBox>Modifier le NAS</primarySuccessorSINCheckBox>
         <primarySuccessorInvalidSIN initial="Entrez un numéro d’assurance sociale à 9 chiffres valide.">6788</primarySuccessorInvalidSIN>
         <primarySuccessorSINError>Entrez un numéro d’assurance sociale à 9 chiffres valide.</primarySuccessorSINError>
         <beneficiarySuccessorType expected="TestSuccessor TestFrench0329">Personne</beneficiarySuccessorType>
         <primarySuccessorDateOfBirthHint>Votre titulaire successeur doit être âgé d’au moins 18 ans.</primarySuccessorDateOfBirthHint>
         <primarySuccessorDateOfBirthError expected="Entrez une date de naissance valide.">Entrez la date de naissance de votre titulaire successeur.</primarySuccessorDateOfBirthError>
         <primaryBeneSuccessorEdit>Modifier</primaryBeneSuccessorEdit>
-        <primarySuccessorUpdatedSIN>678890123</primarySuccessorUpdatedSIN>
+        <primarySuccessorUpdatedSIN>363697954</primarySuccessorUpdatedSIN>
     </beneficiarySuccessorPO>
     <rppAdditionalInfoPO>
         <slctdrpdownMonth>janvier</slctdrpdownMonth>

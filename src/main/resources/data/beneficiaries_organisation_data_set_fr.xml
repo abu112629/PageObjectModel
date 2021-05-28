@@ -51,7 +51,7 @@
         <primaryTypeLabel>Quel type de bénéficiaire voulez-vous ajouter?</primaryTypeLabel>
         <BeneRadioButton>Organisation</BeneRadioButton>
         <beneficiaryType expected="OrgTestFrench">Organisation</beneficiaryType>
-        <beneficiariesDuplicateError expected="Vous avez déjà ajouté une organisation du même nom à titre de premier bénéficiaire.">Vous avez déjà ajouté une organisation du même nom à titre de premier bénéficiaire.</beneficiariesDuplicateError>
+        <beneficiariesDuplicateError expected="Vous ne pouvez pas désigner cette organisation comme premier bénéficiaire, car vous avez déjà désigné une organisation du même nom comme bénéficiaire subsidiaire.">Vous avez déjà ajouté une organisation du même nom à titre de premier bénéficiaire.</beneficiariesDuplicateError>
     </beneficiariesPO>
     <beneficiaryOrganisationPO>
         <addBeneficiaryOrgLabel>Ajouter un premier bénéficiaire</addBeneficiaryOrgLabel>
@@ -66,5 +66,7 @@
         <beneficiaryOrganizationNameInvalid initial="Entrez un nom d’organisation valide. Seuls les lettres, les traits d’union, les espaces, les apostrophes, les crochets et les points sont acceptés.">&lt;</beneficiaryOrganizationNameInvalid>
         <beneficiaryOrganizationAllocationInvalid initial="Entrez un pourcentage entre 1 et 100.">100,22</beneficiaryOrganizationAllocationInvalid>
         <beneficiaryOrgType expected="OrgTestFrench">Organisation</beneficiaryOrgType>
+        <beneficiaryContingentDuplicateOrganizationName>OrgTestContingentFr</beneficiaryContingentDuplicateOrganizationName>
+        <beneficiaryContingentDuplicateOrganizationAllocation>7%</beneficiaryContingentDuplicateOrganizationAllocation>
     </beneficiaryOrganisationPO>
 </plan-domain-object>

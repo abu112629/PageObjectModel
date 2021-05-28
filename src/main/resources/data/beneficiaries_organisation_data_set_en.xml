@@ -49,7 +49,7 @@
         <BeneRadioButton>Organization</BeneRadioButton>
         <beneficiaryType expected="OrgTest">Organization</beneficiaryType>
         <beneficiaryAllocationPercentage>7%</beneficiaryAllocationPercentage>
-        <beneficiariesDuplicateError expected="You've already added an organization with the same name as a primary beneficiary.">You've already added an organization with the same name as a primary beneficiary.</beneficiariesDuplicateError>
+        <beneficiariesDuplicateError expected="You can't add this organization as a  primary beneficiary because you've already added an organization with the same name as a contingent beneficiary.">You've already added an organization with the same name as a primary beneficiary.</beneficiariesDuplicateError>
     </beneficiariesPO>
     <beneficiaryOrganisationPO>
         <addBeneficiaryOrgLabel>Add a primary beneficiary</addBeneficiaryOrgLabel>
@@ -64,5 +64,7 @@
         <beneficiaryOrganizationAllocationInvalid initial="Enter a valid percentage between 1 and 100.">100.22</beneficiaryOrganizationAllocationInvalid>
         <beneficiaryOrgType expected="OrgTest">Organization</beneficiaryOrgType>
         <beneficiaryOrgAllocationPercentage initial="7.0">7%</beneficiaryOrgAllocationPercentage>
+        <beneficiaryContingentDuplicateOrganizationName>OrgTestContingent</beneficiaryContingentDuplicateOrganizationName>
+        <beneficiaryContingentDuplicateOrganizationAllocation>7%</beneficiaryContingentDuplicateOrganizationAllocation>
     </beneficiaryOrganisationPO>
 </plan-domain-object>

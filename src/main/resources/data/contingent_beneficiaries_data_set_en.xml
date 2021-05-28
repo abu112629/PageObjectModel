@@ -88,6 +88,8 @@
         <contingentTrusteeRelationship initial="What's the trustee's relationship to you?">Aunt</contingentTrusteeRelationship>
         <contingentTrusteeFirstName initial="First name">TrusteeContingent</contingentTrusteeFirstName>
         <contingentTrusteeLastName initial="Last name">TestEnglish</contingentTrusteeLastName>
+        <contingentTrusteePrimaryFirstNameDuplicate>Test</contingentTrusteePrimaryFirstNameDuplicate>
+        <contingentTrusteePrimaryLastNameDuplicate>Testsample</contingentTrusteePrimaryLastNameDuplicate>
         <contingentTrusteeFirstNameDuplicate>TestContingent</contingentTrusteeFirstNameDuplicate>
         <contingentTrusteeLastNameDuplicate>Testsample</contingentTrusteeLastNameDuplicate>
         <contingentTrusteeRelationshipError>Select the trustee's relationship to you.</contingentTrusteeRelationshipError>
@@ -96,5 +98,6 @@
         <contingentTrusteeFirstNameInvalid initial="Enter a valid first name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</contingentTrusteeFirstNameInvalid>
         <contingentTrusteeLastNameInvalid initial="Enter a valid last name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</contingentTrusteeLastNameInvalid>
         <beneficiariesAdd expected="The trustee and the beneficiary can't be the same person.">Add a contingent beneficiary</beneficiariesAdd>
+        <primaryTrusteeDuplicateError>You can't add this person as a trustee because you've already added a primary beneficiary with the same first name, last name and relationship to you.</primaryTrusteeDuplicateError>
     </contingentbeneficiaryTrusteePO>
 </plan-domain-object>

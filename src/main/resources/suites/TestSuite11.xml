@@ -1,0 +1,66 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Contingent Beneficiary validations" verbose="1" parallel="tests">
+
+    <test name="Validate the beneficiary Stepper Content Test English">
+        <parameter name="data-set" value="data/beneficiaries_successor_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesStepperContentTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the beneficiary Stepper Content Test French">
+        <parameter name="data-set" value="data/beneficiaries_successor_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesStepperContentTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Delete only primary removes contingent Test English">
+        <parameter name="data-set" value="data/beneficiaries_delete_data_set_en.xml"/>
+        <parameter name="data-set2" value="data/beneficiaries_organisation_data_set_en.xml"/>
+        <parameter name="data-set3" value="data/contingent_beneficiaries_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.DeleteOnlyPrimaryRemovesContingentTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Delete only primary removes contingent Test French">
+        <parameter name="data-set" value="data/beneficiaries_delete_data_set_fr.xml"/>
+        <parameter name="data-set2" value="data/beneficiaries_organisation_data_set_fr.xml"/>
+        <parameter name="data-set3" value="data/contingent_beneficiaries_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.DeleteOnlyPrimaryRemovesContingentTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Successor Change SIN Test English">
+        <parameter name="data-set" value="data/beneficiaries_successor_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.SuccessorSinChangeTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Successor Change SIN Test Test French">
+        <parameter name="data-set" value="data/beneficiaries_successor_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.SuccessorSinChangeTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Trustee Beneficiary Duplicate Test English">
+        <parameter name="data-set" value="data/beneficiaries_skip_data_set_en.xml"/>
+        <parameter name="data-set" value="data/contingent_beneficiaries_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.TrusteeBeneficiaryDuplicateTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Trustee Beneficiary Duplicate Test French">
+        <parameter name="data-set" value="data/beneficiaries_skip_data_set_fr.xml"/>
+        <parameter name="data-set" value="data/contingent_beneficiaries_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.TrusteeBeneficiaryDuplicateTest"/>
+        </classes>
+    </test>
+</suite>

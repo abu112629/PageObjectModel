@@ -50,7 +50,7 @@
         <addBeneficiaryHintLabel>All fields are required unless labelled as optional.</addBeneficiaryHintLabel>
         <primaryTypeLabel>What type of beneficiary do you want to add?</primaryTypeLabel>
         <BeneRadioButton>Estate</BeneRadioButton>
-        <beneficiariesDuplicateError expected="You've already added your estate as a primary beneficiary.">You've already added your estate as a primary beneficiary.</beneficiariesDuplicateError>
+        <beneficiariesDuplicateError expected="You can't add your estate as a primary beneficiary because you've already added it as a contingent beneficiary.">You've already added your estate as a primary beneficiary.</beneficiariesDuplicateError>
         <allocationInlineError>Per cent must total 100.</allocationInlineError>
         <beneficiariesAllocationTotal expected="Total allocation">Total allocation</beneficiariesAllocationTotal>
         <beneficiariesAllocationAddedTotal expected="15%">100%</beneficiariesAllocationAddedTotal>

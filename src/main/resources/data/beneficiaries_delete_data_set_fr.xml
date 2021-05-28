@@ -45,7 +45,7 @@
         </beneficiariesDescription>
         <beneficiariesSkipQuestion>Êtes-vous certain de vouloir continuer sans ajouter de bénéficiaire?</beneficiariesSkipQuestion>
         <beneficiariesSkipDetails>Lorsque vous désignez un bénéficiaire, il est plus facile de déterminer à qui votre épargne devrait être transférée à votre décès.</beneficiariesSkipDetails>
-        <beneficiariesDeleteQuestion>Êtes-vous sûr de vouloir supprimer TestFrench Testsample?</beneficiariesDeleteQuestion>
+        <beneficiariesDeleteQuestion initial="Êtes-vous sûr de vouloir supprimer votre seul premier bénéficiaire?">Êtes-vous sûr de vouloir supprimer TestFrench Testsample?</beneficiariesDeleteQuestion>
         <beneficiariesAdd expected="Le fiduciaire et le bénéficiaire ne peuvent pas être la même personne.">Ajouter un premier bénéficiaire</beneficiariesAdd>
         <addBeneficiaryLabel>Ajouter un premier bénéficiaire</addBeneficiaryLabel>
         <addBeneficiaryHintLabel>Sauf indication contraire, tous les champs doivent être remplis.</addBeneficiaryHintLabel>

@@ -55,13 +55,15 @@
         <primarySuccessorSIN initial="Social insurance number">363697954</primarySuccessorSIN>
         <primarySuccessorNotValidSIN initial="That social insurance number isn't valid. Check your info and try again.">363628954</primarySuccessorNotValidSIN>
         <primarySuccessorSameSIN initial="That’s your social insurance number (SIN). Enter your successor holder’s SIN.">148566094</primarySuccessorSameSIN>
+        <primarySuccessorFormattedSIN>*** *** 954</primarySuccessorFormattedSIN>
+        <primarySuccessorSINCheckBox>Change SIN</primarySuccessorSINCheckBox>
         <primarySuccessorInvalidSIN initial="Enter a valid 9-digit social insurance number.">6788</primarySuccessorInvalidSIN>
         <primarySuccessorSINError>Enter a valid 9-digit social insurance number.</primarySuccessorSINError>
         <beneficiarySuccessorType expected="TestSuccessor Testsample0329">Person</beneficiarySuccessorType>
         <primarySuccessorDateOfBirthHint>Your successor holder must be at least 18 years old.</primarySuccessorDateOfBirthHint>
         <primarySuccessorDateOfBirthError expected="Enter a valid date of birth.">Enter your successor holder's full date of birth.</primarySuccessorDateOfBirthError>
         <primaryBeneSuccessorEdit>Edit</primaryBeneSuccessorEdit>
-        <primarySuccessorUpdatedSIN>678890123</primarySuccessorUpdatedSIN>
+        <primarySuccessorUpdatedSIN>363697954</primarySuccessorUpdatedSIN>
     </beneficiarySuccessorPO>
     <rppAdditionalInfoPO>
         <slctdrpdownMonth>January</slctdrpdownMonth>

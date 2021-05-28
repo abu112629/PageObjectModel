@@ -62,6 +62,9 @@ public class BeneficiariesPO extends PageObjectModel {
     @FindBy(xpath = "(//*[@data-omni-key='PrimaryFirstName'])[last()]")
     private WebElement primaryDuplicateFirstName;
 
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryFirstName'])[last()]")
+    private WebComponent primaryContingentDuplicateFirstName;
+
     @FindBy(xpath = "//*[@data-omni-key='PrimaryFirstName']")
     private VlocityActionInput primaryFirstNameInvalid;
 
@@ -73,6 +76,9 @@ public class BeneficiariesPO extends PageObjectModel {
 
     @FindBy(xpath = "(//*[@data-omni-key='PrimaryLastName'])[last()]")
     private WebElement primaryDuplicateLastName;
+
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryLastName'])[last()]")
+    private WebComponent primaryContingentDuplicateLastName;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryLastName']")
     private VlocityActionInput primaryLastNameInvalid;
@@ -97,6 +103,9 @@ public class BeneficiariesPO extends PageObjectModel {
 
     @FindBy(xpath = "(//*[@data-omni-key='PrimaryAllocationPerson'])[last()]")
     private WebElement primaryDuplicateAllocation;
+
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryAllocationPerson'])[last()]")
+    private WebComponent primaryContingentDuplicateAllocation;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationPerson']")
     private VlocityInput primaryAllocationInvalid;
@@ -155,6 +164,10 @@ public class BeneficiariesPO extends PageObjectModel {
 
     public void validateBeneficiariesDeleteQuestion(){
         beneficiariesDeleteQuestion.validateData(DataTypes.Data);
+    }
+
+    public void validateOnlyBeneficiariesDeleteQuestion(){
+        beneficiariesDeleteQuestion.validateData(DataTypes.Initial);
     }
 
     public void validateBeneficiariesDescription(){
@@ -264,6 +277,14 @@ public class BeneficiariesPO extends PageObjectModel {
         AppHelper.scrollToView(primaryDuplicateAllocation);
         primaryDuplicateAllocation.sendKeys(primaryAllocation.getData());
 
+    }
+    /*Duplicate details in primary as in Contingent*/
+    public void validateAndEnterDuplicateContingentDetailsPrimaryBeneficiary(){
+        primaryDuplicateFirstName.sendKeys(primaryContingentDuplicateFirstName.getData());
+        AppHelper.scrollToView(primaryDuplicateLastName);
+        primaryDuplicateLastName.sendKeys(primaryContingentDuplicateLastName.getData());
+        AppHelper.scrollToView(primaryDuplicateAllocation);
+        primaryDuplicateAllocation.sendKeys(primaryContingentDuplicateAllocation.getData());
     }
     public void validatePrimaryBeneficiaryOnEdit(){
         primaryFirstName.getValue().contains(primaryFirstName.getData());
@@ -393,5 +414,12 @@ public class BeneficiariesPO extends PageObjectModel {
         String expectedAllocationInlineMsg=allocationInlineError.getData();
         Assertions.assertThat(allocationInlineText).isEqualTo(expectedAllocationInlineMsg);
 
+    }
+
+    /*Error validation with same contingent and primary sets*/
+    public void validateDuplicateContingentPrimaryDetailsError() {
+        AppHelper.scrollToView(beneficiariesDuplicateError.getCoreElement());
+        beneficiariesDuplicateError.getBannerErrorMsg();
+        beneficiariesDuplicateError.validateBannerError(DataTypes.Expected);
     }
 }

@@ -32,11 +32,17 @@ public class BeneficiaryOrganisationPO extends PageObjectModel {
     @FindBy(xpath = "(//*[@data-omni-key='PrimaryOrganizationNameText'])[last()]")
     private WebElement beneficiaryDuplicateOrganizationName;
 
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryOrganizationNameText'])[last()]")
+    private WebComponent beneficiaryContingentDuplicateOrganizationName;
+
     @FindBy(xpath = "//*[@data-omni-key='PrimaryAllocationOrganization']")
     private VlocityActionInput beneficiaryOrganizationAllocation;
 
     @FindBy(xpath = "(//*[@data-omni-key='PrimaryAllocationOrganization'])[last()]")
     private WebElement beneficiaryDuplicateOrganizationAllocation;
+
+    @FindBy(xpath = "(//*[@data-omni-key='PrimaryAllocationOrganization'])[last()]")
+    private WebComponent beneficiaryContingentDuplicateOrganizationAllocation;
 
     @FindBy(xpath = "//*[@data-omni-key='PrimaryOrganizationNameText']")
     private VlocityActionInput beneficiaryOrganizationNameError;
@@ -84,6 +90,14 @@ public class BeneficiaryOrganisationPO extends PageObjectModel {
         beneficiaryDuplicateOrganizationAllocation.sendKeys(beneficiaryOrganizationAllocation.getData());
 
     }
+
+    /*For duplicate contingent and primary beneficiaries*/
+    public void enterDetailsDuplicateOrganizationBeneficiary(){
+        beneficiaryDuplicateOrganizationName.sendKeys(beneficiaryContingentDuplicateOrganizationName.getData());
+        AppHelper.scrollToView(beneficiaryDuplicateOrganizationAllocation);
+        beneficiaryDuplicateOrganizationAllocation.sendKeys(beneficiaryContingentDuplicateOrganizationAllocation.getData());
+
+    }
     public void validateInvalidOrganizationBeneficiaryDetails() {
         AppHelper.scrollToView(beneficiaryOrganizationNameInvalid.getCoreElement());
         beneficiaryOrganizationNameInvalid.click();
@@ -116,6 +130,12 @@ public class BeneficiaryOrganisationPO extends PageObjectModel {
                 Float.valueOf(beneficiaryOrgAllocationPercentage.getData(DataTypes.Initial)));
     }
 
+    public void validateSalesforceBeneficiaryOrgRecordDeleted() {
+        AppHelper.waitForXHR(1);
+        salesforceInfo = new SalesforceInfo();
+        salesforceInfo.checkBeneficiaryDetailsDeleted(beneficiaryOrganizationName.getData(),"",
+                Float.valueOf(beneficiaryOrgAllocationPercentage.getData(DataTypes.Initial)));
+    }
     public void validateSalesforceOrganizationRecord() {
         AppHelper.waitForXHR(1);
         salesforceInfo = new SalesforceInfo();

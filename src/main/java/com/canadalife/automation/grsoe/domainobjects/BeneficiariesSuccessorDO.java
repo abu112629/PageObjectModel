@@ -52,6 +52,21 @@ public class BeneficiariesSuccessorDO extends DomainObjectModel {
         TestNGBase.takeScreenshot("");
     }
 
+    @Step("{0} user validates Beneficiary Step Description and Primary Description")
+    public void user_validates_beneficiary_step_description_and_primary_description(String gwt){
+        planSelectionPO.clickContinueButton();
+        planSelectionPO.clickSkipContinueButton();
+        planSelectionPO.clickContinueButton();
+
+        beneficiarySuccessorPO.initPage(getContext());
+        beneficiariesPO.initPage(getContext());
+        AppHelper.waitForXHR(2);
+        beneficiariesPO.validateBeneficiariesDescription();
+        beneficiarySuccessorPO.validateBeneficiariesSuccessorDescription();
+
+        TestNGBase.takeScreenshot("");
+    }
+
     @Step("{0} user clicks continue and is able to validate all errors")
     public void user_clicks_continue_and_is_able_to_validate_all_errors(String gwt){
         planSelectionPO.clickSaveButton();
@@ -159,6 +174,14 @@ public class BeneficiariesSuccessorDO extends DomainObjectModel {
         beneficiarySuccessorPO.editPrimarySuccessorBeneficiary();
         beneficiarySuccessorPO.validatePrimarySuccessorBeneficiaryOnEdit();
         planSelectionPO.clickSaveButton();
+    }
+
+    @Step("{0} user clicks on edit Beneficiary Successor Information and updates SIN information")
+    public void user_edits_beneficiary_successor_information_and_updates_SIN_information(String gwt){
+        AppHelper.waitForXHR(1);
+        beneficiarySuccessorPO.editPrimarySuccessorBeneficiary();
+        beneficiarySuccessorPO.validatePrimarySuccessorBeneficiaryOnEdit();
+        beneficiarySuccessorPO.validateAndClickChangeSINCheckBox();
     }
 
     @Step("{0} Delete all salesforce Test records")
