@@ -49,7 +49,7 @@
         <BeneRadioButton>Organization</BeneRadioButton>
         <beneficiaryType expected="OrgTest">Organization</beneficiaryType>
         <beneficiaryAllocationPercentage>7%</beneficiaryAllocationPercentage>
-        <beneficiariesDuplicateError expected="You can't add this organization as a  primary beneficiary because you've already added an organization with the same name as a contingent beneficiary.">You've already added an organization with the same name as a primary beneficiary.</beneficiariesDuplicateError>
+        <beneficiariesDuplicateError expected="You can't add this organization as a primary beneficiary because you've already added an organization with the same name as a contingent beneficiary.">You've already added an organization with the same name as a primary beneficiary.</beneficiariesDuplicateError>
     </beneficiariesPO>
     <beneficiaryOrganisationPO>
         <addBeneficiaryOrgLabel>Add a primary beneficiary</addBeneficiaryOrgLabel>

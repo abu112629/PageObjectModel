@@ -75,6 +75,9 @@
         <beneficiariesAllocationAddedTotal expected="11%">100%</beneficiariesAllocationAddedTotal>
         <beneficiariesAllocationError expected="4%">Edit your allocations for primary beneficiaries so that they add up to 100%.</beneficiariesAllocationError>
         <beneficiariesAllocationPercentage expected="11%">4%</beneficiariesAllocationPercentage>
+        <primaryContingentDuplicateFirstName>TestContingent</primaryContingentDuplicateFirstName>
+        <primaryContingentDuplicateLastName>Testsample</primaryContingentDuplicateLastName>
+        <primaryContingentDuplicateAllocation>4.00</primaryContingentDuplicateAllocation>
     </beneficiariesPO>
     <beneficiaryTrusteePO>
         <primaryFirstName>Test</primaryFirstName>
@@ -94,9 +97,6 @@
         <primaryTrusteeFirstNameInvalid initial="Enter a valid first name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</primaryTrusteeFirstNameInvalid>
         <primaryTrusteeLastNameInvalid initial="Enter a valid last name that contains only letters, hyphens, spaces, apostrophes, brackets and periods.">&lt;</primaryTrusteeLastNameInvalid>
         <beneficiariesAdd expected="The trustee and the beneficiary can't be the same person.">Add a primary beneficiary</beneficiariesAdd>
-        <primaryContingentDuplicateFirstName>TestContingent</primaryContingentDuplicateFirstName>
-        <primaryContingentDuplicateLastName>Testsample</primaryContingentDuplicateLastName>
-        <primaryContingentDuplicateAllocation>4.00</primaryContingentDuplicateAllocation>
     </beneficiaryTrusteePO>
     <rppAdditionalInfoPO>
         <slctdrpdownMonth>January</slctdrpdownMonth>
