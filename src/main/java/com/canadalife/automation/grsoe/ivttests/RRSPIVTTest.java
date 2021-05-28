@@ -20,11 +20,11 @@ public class RRSPIVTTest extends TestNGBase {
     @Parameters({"data-set","data-set2","data-set3","data-set4","data-set5"})
     @Test
 
-    public void ValidateRRSPIVT(@Optional("data/plan_nrsp_additional_info_fr.xml")String dataSet,
-                                @Optional("data/contributions_all_voluntary_skip_data_set_fr.xml")String dataSet2,
-                                @Optional("data/investment_skip_data_set_fr.xml")String dataSet3,
-                                @Optional("data/beneficiaries_skip_data_set_fr.xml")String dataSet4,
-                                @Optional("data/beneficiaries_estate_data_set_fr.xml")String dataSet5){
+    public void ValidateRRSPIVT(@Optional("data/plan_nrsp_additional_info_en.xml")String dataSet,
+                                @Optional("data/contributions_all_voluntary_skip_data_set_en.xml")String dataSet2,
+                                @Optional("data/investment_skip_data_set_en.xml")String dataSet3,
+                                @Optional("data/beneficiaries_skip_data_set_en.xml")String dataSet4,
+                                @Optional("data/beneficiaries_estate_data_set_en.xml")String dataSet5){
 
         NRSPPlanDO select = new NRSPPlanDO(getContext()).fromResource(dataSet);
         Given(select ::user_on_plan_selection_page);
@@ -50,6 +50,7 @@ public class RRSPIVTTest extends TestNGBase {
 
         BeneficiariesDO beneficiariesDO2=new BeneficiariesDO(getContext()).fromResource(dataSet5);
         And(beneficiariesDO2 :: user_selects_and_validates_estate_beneficiary);
+        And(beneficiariesDO2 :: delete_all_salesforce_estate_test_records);
         And(beneficiariesDO2 :: user_clicks_save_beneficiary_for_estate);
         And(beneficiariesDO2 :: user_validates_pill_information_for_estate_after_saving_the_details);
         And(beneficiariesDO2 :: user_validates_salesforce_information_is_saved_for_estate);
