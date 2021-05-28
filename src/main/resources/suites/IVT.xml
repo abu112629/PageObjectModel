@@ -56,17 +56,6 @@
         </classes>
     </test>
 
-    <test name="Validate all RRSP Plan corresponding Pages for French account">
-        <parameter name="data-set" value="data/plan_nrsp_additional_info_fr.xml"/>
-        <parameter name="data-set2" value="data/contributions_all_voluntary_skip_data_set_fr.xml"/>
-        <parameter name="data-set3" value="data/investment_skip_data_set_fr.xml"/>
-        <parameter name="data-set4" value="data/beneficiaries_skip_data_set_fr.xml"/>
-        <parameter name="data-set5" value="data/beneficiaries_estate_data_set_fr.xml"/>
-        <classes>
-            <class name="com.canadalife.automation.grsoe.ivttests.RRSPIVTTest"/>
-        </classes>
-    </test>
-
     <test name="Validate all DPSP Plan corresponding Pages for English account">
         <parameter name="data-set" value="data/plan_dpsp_additional_info_en.xml"/>
         <parameter name="data-set2" value="data/investment_data_set_en_RPP.xml"/>
