@@ -50,5 +50,8 @@
         <profileSINData initial="*** *** 758">*** *** 758</profileSINData>
         <profileEmailData initial="sabourin@nop.com">sabourin@nop.com</profileEmailData>
         <profileMailingAddressData initial="5037 CANNON LINE DRIVE, WATERSIDE, PE C1B 0S8">5037 CANNON LINE DRIVE, WATERSIDE, PE C1B 0S8</profileMailingAddressData>
+        <reviewPlanProfileHeader>Votre régime</reviewPlanProfileHeader>
+        <reviewFieldLabel expected="Nom du régime">Nom du régime</reviewFieldLabel>
+        <reviewPlanFieldData expected="RER NON-ENREGISTRE (RERN)">RER NON-ENREGISTRE (RERN)</reviewPlanFieldData>
     </profileInformationPO>
 </plan-domain-object>

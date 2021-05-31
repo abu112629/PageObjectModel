@@ -50,5 +50,9 @@
         <profileSINData initial="*** *** 094">*** *** 094</profileSINData>
         <profileEmailData initial="matthew@abc.com">matthew@abc.com</profileEmailData>
         <profileMailingAddressData initial="2419 MACLAREN STREET, OTTAWA, ON K1P 5M7">2419 MACLAREN STREET, OTTAWA, ON K1P 5M7</profileMailingAddressData>
+        <reviewPlanProfileHeader>Your plan</reviewPlanProfileHeader>
+        <reviewFieldLabel expected="Plan name">Plan name</reviewFieldLabel>
+        <reviewPlanFieldData expected="NON REGISTERED RSP (NRSP)">NON REGISTERED RSP (NRSP)</reviewPlanFieldData>
+
     </profileInformationPO>
 </plan-domain-object>

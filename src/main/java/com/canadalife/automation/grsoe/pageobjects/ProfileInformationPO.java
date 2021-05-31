@@ -47,6 +47,15 @@ public class ProfileInformationPO extends PageObjectModel {
     @FindBy(xpath="//*[@data-omni-key='CLWC_PersonalInfo']")
     private VlocityInput profileMailingAddressData;
 
+    @FindBy(xpath="//*[@data-omni-key='PlanSelectedHeadingTextBlock']//h3")
+    private WebComponent reviewPlanProfileHeader;
+
+    @FindBy(xpath="//*[@data-omni-key='ReviewPlanSelectionLWC']")
+    private VlocityInput reviewFieldLabel;
+
+    @FindBy(xpath="//*[@data-omni-key='ReviewPlanSelectionLWC']")
+    private VlocityInput reviewPlanFieldData;
+
     public void validateProfileDescription(){
         profileDescription.validateData(DataTypes.Data);
     }
@@ -88,5 +97,19 @@ public class ProfileInformationPO extends PageObjectModel {
 
         profileMailingAddressData.getAllocationPercentage();
         profileMailingAddressData.validateAllocationPercentage(DataTypes.Initial);
+    }
+
+    public void validatePlanProfileHeader(){
+        reviewPlanProfileHeader.validateData(DataTypes.Data);
+    }
+
+    public void validatePlanFieldLabels(){
+        reviewFieldLabel.getInformationLabel();
+        reviewFieldLabel.validateInformationText(DataTypes.Expected);
+    }
+
+    public void validatePlanFieldData(){
+        reviewPlanFieldData.getAllocationPercentage();
+        reviewPlanFieldData.validateAllocationPercentage(DataTypes.Expected);
     }
 }

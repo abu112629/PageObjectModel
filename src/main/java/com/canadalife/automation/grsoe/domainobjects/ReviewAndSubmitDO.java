@@ -97,4 +97,13 @@ public class ReviewAndSubmitDO extends DomainObjectModel {
     public void user_clicks_back_button(String gwt){
         planSelectionPO.clickBackButton();
     }
+
+    @Step("{0} Member can view the Plan Profile Information and Details")
+    public void user_can_view_the_plan_profile_information_and_details(String gwt){
+        AppHelper.waitForXHR(2);
+        profileInformationPO.initPage(getContext());
+        profileInformationPO.validatePlanProfileHeader();
+        profileInformationPO.validatePlanFieldLabels();
+        profileInformationPO.validatePlanFieldData();
+    }
 }
