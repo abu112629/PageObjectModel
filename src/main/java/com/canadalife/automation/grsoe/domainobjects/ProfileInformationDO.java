@@ -48,4 +48,13 @@ public class ProfileInformationDO extends DomainObjectModel {
         profileInformationPO.validateProfileLabels();
         profileInformationPO.validateProfileInformation();
     }
+
+    @Step("{0} Member can view the Employee Information and Details")
+    public void user_can_view_the_employee_information_and_details(String gwt){
+        AppHelper.waitForXHR(2);
+        profileInformationPO.initPage(getContext());
+        profileInformationPO.validateEmploymentInfoHeader();
+        profileInformationPO.validateEmploymentFieldLabels();
+        profileInformationPO.validateEmploymentFieldData();
+    }
 }

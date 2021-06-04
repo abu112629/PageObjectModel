@@ -16,6 +16,8 @@ public class ReviewAndSubmitDO extends DomainObjectModel {
     private ProfileInformationPO profileInformationPO;
     private NRSPAdditionalInfoPO nrspAdditionalInfoPO;
     private BeneficiariesPO beneficiariesPO;
+    private RPPAdditionalInfoPO rppAdditionalInfoPO;
+    private DPSPAdditionalInfoPO dpspAdditionalInfoPO;
 
     private ReviewAndSubmitDO() {}
     public ReviewAndSubmitDO(TestContext context){
@@ -49,6 +51,33 @@ public class ReviewAndSubmitDO extends DomainObjectModel {
 
     }
 
+    @Step("{0} user clicks continue and selects no for both questions in RPP plan")
+    public void user_clicks_continue_and_selects_no_for_both_questions_in_rpp(String gwt) {
+        rppAdditionalInfoPO.initPage(getContext());
+        rppAdditionalInfoPO.clickNoforspouse();
+        rppAdditionalInfoPO.clickNoforconnectedperson();
+        TestNGBase.takeScreenshot("");
+        planSelectionPO.clickContinueButton();
+        TestNGBase.takeScreenshot("");
+
+    }
+
+    @Step("{0} user clicks no for connected person for DPSP plan")
+    public void user_clicks_no_for_connected_person_for_dpsp_plan(String gwt) {
+        dpspAdditionalInfoPO.initPage(getContext());
+        dpspAdditionalInfoPO.clickNoforconnectedperson();
+        TestNGBase.takeScreenshot("");
+        planSelectionPO.clickContinueButton();
+        TestNGBase.takeScreenshot("");
+
+    }
+
+    @Step("{0} user selects TFSA plan and clicks continue")
+    public void user_selects_tfsa_plan_and_clicks_continue(String gwt){
+        planSelectionPO.clickContinueButton();
+        planSelectionPO.clickSkipContinueButton();
+        TestNGBase.takeScreenshot("");
+    }
     @Step("{0} user validates beneficiaries Skip section and clicks continue")
     public void user_validates_beneficiaries_skip_section(String gwt){
         planSelectionPO.initPage(getContext());
@@ -88,6 +117,11 @@ public class ReviewAndSubmitDO extends DomainObjectModel {
         profileInformationPO.validateProfileInformation();
     }
 
+    @Step("{0} user clicks continue button")
+    public void user_clicks_continue_button(String gwt){
+        planSelectionPO.clickContinueButton();
+    }
+
     @Step("{0} user clicks submit button")
     public void user_clicks_submit_button(String gwt){
         planSelectionPO.clickContinueButton();
@@ -105,5 +139,14 @@ public class ReviewAndSubmitDO extends DomainObjectModel {
         profileInformationPO.validatePlanProfileHeader();
         profileInformationPO.validatePlanFieldLabels();
         profileInformationPO.validatePlanFieldData();
+    }
+
+    @Step("{0} Member can view the DPSP Plan Additional Information and Details")
+    public void user_can_view_the_dpsp_plan_additional_information_and_details(String gwt){
+        AppHelper.waitForXHR(2);
+        profileInformationPO.initPage(getContext());
+        profileInformationPO.validateAdditionalInfoHeader();
+        profileInformationPO.validateAdditionalInfoDPSPLabel();
+        profileInformationPO.validateAdditionalInfoDPSPData();
     }
 }

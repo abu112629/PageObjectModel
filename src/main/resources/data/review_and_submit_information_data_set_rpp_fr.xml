@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plan-domain-object>
+
+    <aliases>
+        <url>${env.getUrl()}</url>
+        <userRole>User_Fr</userRole>
+        <user>${env.getUser(userRole)}</user>
+        <userName>${user.getUserName()}</userName>
+        <password>${user.getPassword()}</password>
+    </aliases>
+    <loginPO>
+        <url>${url}</url>
+        <userRole>${userRole}</userRole>
+        <username>${userName}</username>
+        <password>${password}</password>
+    </loginPO>
+    <planSelectionPO>
+        <planList>
+            <item expected="select">
+                RRA
+            </item>
+        </planList>
+        <planProgressBarInfo>
+            <item>Votre sommaire d’adhésion</item>
+        </planProgressBarInfo>
+        <planProgressBarStep>
+            <item>Étape 6 de 7: Passer votre demande en revue et la soumettre</item>
+        </planProgressBarStep>
+    </planSelectionPO>
+    <rppAdditionalInfoPO>
+        <spousebuttonNo>no</spousebuttonNo>
+        <connectedPersonbuttonNo>no</connectedPersonbuttonNo>
+    </rppAdditionalInfoPO>
+    <beneficiariesPO>
+        <beneficiariesDescription>
+            <item>Vous pouvez décider de ce qu’il adviendra de votre épargne après votre décès en désignant un ou plusieurs bénéficiaires. Si vous ne désignez pas de bénéficiaire ou si aucun de vos bénéficiaires n’est vivant à votre décès, les sommes payables seront automatiquement versées à votre succession, sauf disposition contraire dans la loi. En règle générale, vous pouvez changer vos bénéficiaires à n’importe quel moment après votre adhésion à partir de votre compte en ligne.</item>
+        </beneficiariesDescription>
+    </beneficiariesPO>
+    <profileInformationPO>
+        <profileDescription>Vous avez presque terminé! Il ne vous reste qu’à passer en revue l’information de ce sommaire pour vous assurer qu’elle est correcte. Si vous souhaitez la modifier, utilisez le bouton Précédent au bas de la page pour retourner à l’étape où vous avez saisi l’information. Lorsque vous avez confirmé que toute l’information est correcte, lisez et acceptez les conditions, puis soumettez votre demande.</profileDescription>
+        <reviewProfileHeader>Données personnelles</reviewProfileHeader>
+        <profileNameLabel initial="Nom">Nom</profileNameLabel>
+        <profileDOBLabel initial="Date de naissance">Date de naissance</profileDOBLabel>
+        <profileSINLabel initial="Numéro d'assurance sociale">Numéro</profileSINLabel>
+        <profileEmailLabel initial="Adresse électronique">Adresse électronique</profileEmailLabel>
+        <profileMailingAddressLabel initial="Adresse postale">Adresse postale</profileMailingAddressLabel>
+        <profileNameData initial="SCOTT SABOURIN">SCOTT SABOURIN</profileNameData>
+        <profileDOBData initial="juin 17, 1996">juin 17, 1996</profileDOBData>
+        <profileSINData initial="*** *** 758">*** *** 758</profileSINData>
+        <profileEmailData initial="sabourin@nop.com">sabourin@nop.com</profileEmailData>
+        <profileMailingAddressData initial="5037 CANNON LINE DRIVE, WATERSIDE, PE C1B 0S8">5037 CANNON LINE DRIVE, WATERSIDE, PE C1B 0S8</profileMailingAddressData>
+        <reviewPlanProfileHeader>Votre régime</reviewPlanProfileHeader>
+        <reviewFieldLabel expected="Nom du régime">Nom du régime</reviewFieldLabel>
+        <reviewPlanFieldData expected="FR CUSTOME NAME (RRA)">FR CUSTOME NAME (RRA)</reviewPlanFieldData>
+    </profileInformationPO>
+</plan-domain-object>

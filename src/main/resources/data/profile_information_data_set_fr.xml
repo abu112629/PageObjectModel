@@ -20,7 +20,7 @@
             <item>Votre profil</item>
         </planProgressBarInfo>
         <planProgressBarStep>
-            <item>Étape 1 de 6: Confirmer vos renseignements personnels</item>
+            <item>Étape 1 de 6: Confirmer vos renseignements personnels et sur l’emploi</item>
         </planProgressBarStep>
     </planSelectionPO>
     <profileInformationPO>
@@ -36,5 +36,12 @@
         <profileSINData initial="*** *** 758">*** *** 758</profileSINData>
         <profileEmailData initial="sabourin@nop.com">sabourin@nop.com</profileEmailData>
         <profileMailingAddressData initial="5037 CANNON LINE DRIVE, WATERSIDE, PE C1B 0S8">5037 CANNON LINE DRIVE, WATERSIDE, PE C1B 0S8</profileMailingAddressData>
+        <employmentInfoHeader>Renseignements sur l’emploi</employmentInfoHeader>
+        <employeeNumberLabel expected="Numéro d’employé">Numéro d’employé</employeeNumberLabel>
+        <employeeNumberData expected="802007">802007</employeeNumberData>
+        <employeeDOHLabel expected="Date d’embauche">Date d’embauche</employeeDOHLabel>
+        <employeeDOHData expected="novembre 12, 2020">novembre 12, 2020</employeeDOHData>
+        <employeeProvinceLabel expected="Province/territoire d’emploi">Province/territoire d’emploi</employeeProvinceLabel>
+        <employeeProvinceData expected="BC">BC</employeeProvinceData>
     </profileInformationPO>
 </plan-domain-object>

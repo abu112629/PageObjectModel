@@ -1,6 +1,7 @@
 package com.canadalife.automation.grsoe.pageobjects;
 
 import com.canadalife.automation.grsoe.components.VlocityInput;
+import com.canadalife.automation.grsoe.support.AppHelper;
 import org.openqa.selenium.support.FindBy;
 import ui.auto.core.components.WebComponent;
 import ui.auto.core.data.DataTypes;
@@ -55,6 +56,36 @@ public class ProfileInformationPO extends PageObjectModel {
 
     @FindBy(xpath="//*[@data-omni-key='ReviewPlanSelectionLWC']")
     private VlocityInput reviewPlanFieldData;
+
+    @FindBy(xpath="//*[@data-omni-key='TB_EmploymentInfo']//h3")
+    private WebComponent employmentInfoHeader;
+
+    @FindBy(xpath="//*[@data-omni-key='CLWC_EmploymentInfo']")
+    private VlocityInput employeeNumberLabel;
+
+    @FindBy(xpath="//*[@data-omni-key='CLWC_EmploymentInfo']")
+    private VlocityInput employeeNumberData;
+
+    @FindBy(xpath="//*[@data-omni-key='CLWC_EmploymentInfo']")
+    private VlocityInput employeeDOHLabel;
+
+    @FindBy(xpath="//*[@data-omni-key='CLWC_EmploymentInfo']")
+    private VlocityInput employeeDOHData;
+
+    @FindBy(xpath="//*[@data-omni-key='CLWC_EmploymentInfo']")
+    private VlocityInput employeeProvinceLabel;
+
+    @FindBy(xpath="//*[@data-omni-key='CLWC_EmploymentInfo']")
+    private VlocityInput employeeProvinceData;
+
+    @FindBy(xpath="//*[@data-omni-key='AdditionalInformationHeadingTextBlock']//h4")
+    private WebComponent additionalInfoHeader;
+
+    @FindBy(xpath="//*[@data-omni-key='AdditionalInformationDPSPLWC']")
+    private VlocityInput additionalInfoDPSPLabel;
+
+    @FindBy(xpath="//*[@data-omni-key='AdditionalInformationDPSPLWC']")
+    private VlocityInput additionalInfoDPSPData;
 
     public void validateProfileDescription(){
         profileDescription.validateData(DataTypes.Data);
@@ -111,5 +142,47 @@ public class ProfileInformationPO extends PageObjectModel {
     public void validatePlanFieldData(){
         reviewPlanFieldData.getAllocationPercentage();
         reviewPlanFieldData.validateAllocationPercentage(DataTypes.Expected);
+    }
+
+    public void validateEmploymentInfoHeader(){
+        AppHelper.scrollToView(employmentInfoHeader.getCoreElement());
+        employmentInfoHeader.validateData(DataTypes.Data);
+    }
+
+    public void validateEmploymentFieldLabels(){
+        employeeNumberLabel.getInformationLabel();
+        employeeNumberLabel.validateInformationText(DataTypes.Expected);
+
+        employeeDOHLabel.getInformationLabel();
+        employeeDOHLabel.validateInformationText(DataTypes.Expected);
+
+        employeeProvinceLabel.getInformationLabel();
+        employeeProvinceLabel.validateInformationText(DataTypes.Expected);
+    }
+
+    public void validateEmploymentFieldData(){
+        employeeNumberData.getAllocationPercentage();
+        employeeNumberData.validateAllocationPercentage(DataTypes.Expected);
+
+        employeeDOHData.getAllocationPercentage();
+        employeeDOHData.validateAllocationPercentage(DataTypes.Expected);
+
+        employeeProvinceData.getAllocationPercentage();
+        employeeProvinceData.validateAllocationPercentage(DataTypes.Expected);
+    }
+
+    public void validateAdditionalInfoHeader(){
+        AppHelper.scrollToView(additionalInfoHeader.getCoreElement());
+        additionalInfoHeader.validateData(DataTypes.Data);
+    }
+
+    public void validateAdditionalInfoDPSPLabel(){
+        additionalInfoDPSPLabel.getInformationLabel();
+        additionalInfoDPSPLabel.validateInformationText(DataTypes.Expected);
+    }
+
+    public void validateAdditionalInfoDPSPData(){
+        additionalInfoDPSPData.getAllocationPercentage();
+        additionalInfoDPSPData.validateAllocationPercentage(DataTypes.Expected);
     }
 }

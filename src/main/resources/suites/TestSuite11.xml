@@ -63,4 +63,54 @@
             <class name="com.canadalife.automation.grsoe.sprinttests.TrusteeBeneficiaryDuplicateTest"/>
         </classes>
     </test>
+
+    <test name="Validate the Plan Selection Review Page Test English">
+        <parameter name="data-set" value="data/review_and_submit_information_data_set_en.xml"/>
+        <parameter name="data-set2" value="data/review_and_submit_information_data_set_rpp_en.xml"/>
+        <parameter name="data-set3" value="data/review_and_submit_information_data_set_tfsa_en.xml"/>
+        <parameter name="data-set4" value="data/review_and_submit_information_data_set_dpsp_en.xml"/>
+        <parameter name="data-set5" value="data/review_and_submit_information_data_set_rrsp_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.PlanSelectionReviewPageTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Plan Selection Review Page Test French">
+        <parameter name="data-set" value="data/review_and_submit_information_data_set_fr.xml"/>
+        <parameter name="data-set2" value="data/review_and_submit_information_data_set_rpp_fr.xml"/>
+        <parameter name="data-set3" value="data/review_and_submit_information_data_set_tfsa_fr.xml"/>
+        <parameter name="data-set4" value="data/review_and_submit_information_data_set_dpsp_fr.xml"/>
+        <parameter name="data-set5" value="data/review_and_submit_information_data_set_rrsp_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.PlanSelectionReviewPageTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the Employer Information Profile Page Test English">
+        <parameter name="data-set" value="data/profile_information_data_set_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.EmploymentInformationTest"/>
+        </classes>
+    </test>
+
+    <test name="VValidate the Employer Information Profile Page Test French">
+        <parameter name="data-set" value="data/profile_information_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.EmploymentInformationTest"/>
+        </classes>
+    </test>
+
+    <test name="Validate the DPSP Addtional Information Submit Page Test English">
+        <parameter name="data-set" value="data/review_and_submit_information_data_set_dpsp_en.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.DPSPReviewPageTest"/>
+        </classes>
+    </test>
+
+    <test name="VValidate the DPSP Addtional Information Submit Page Test French">
+        <parameter name="data-set" value="data/review_and_submit_information_data_set_dpsp_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.DPSPReviewPageTest"/>
+        </classes>
+    </test>
 </suite>
