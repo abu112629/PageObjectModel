@@ -2,6 +2,13 @@
 
 <suite name="Beneficiary Validations" verbose="1" parallel="tests">
 
+    <test name="Validate the Beneficiaries Estate Add Test French">
+        <parameter name="data-set" value="data/beneficiaries_estate_data_set_fr.xml"/>
+        <classes>
+            <class name="com.canadalife.automation.grsoe.sprinttests.BeneficiariesEstateAddTest"/>
+        </classes>
+    </test>
+
     <test name="Validate the Beneficiaries Quebec Add Test English">
         <parameter name="data-set" value="data/beneficiaries_quebec_data_set_en.xml"/>
         <classes>
